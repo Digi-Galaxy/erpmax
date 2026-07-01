@@ -1,5 +1,1 @@
-import frappe
-from frappe.model.document import Document
-
-class Address(Document):
-    pass
+from erpmax.commerce.doctype.address.address import *

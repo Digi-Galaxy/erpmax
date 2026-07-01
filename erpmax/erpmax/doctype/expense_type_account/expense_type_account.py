@@ -1,4 +1,1 @@
-import frappe
-from frappe.model.document import Document
-class ExpenseTypeAccount(Document):
-    pass
+from erpmax.expense_management.doctype.expense_type_account.expense_type_account import *

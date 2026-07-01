@@ -1,4 +1,1 @@
-import frappe
-from frappe.model.document import Document
-class ExpenseClaimDetail(Document):
-    pass
+from erpmax.business_setup.doctype.expense_claim_detail.expense_claim_detail import *

@@ -1,5 +1,1 @@
-import frappe
-from frappe.model.document import Document
-
-class Item(Document):
-    pass
+from erpmax.inventory.doctype.item.item import *

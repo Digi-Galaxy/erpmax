@@ -1,0 +1,66 @@
+{
+ "doctype": "DocType",
+ "name": "VAT Process",
+ "module": "Commerce",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "process_type",
+   "label": "Process Type",
+   "fieldtype": "Select",
+   "options": "Sales Quotation\nSales Order\nProforma Invoice\nSales Invoice\nPurchase Order\nPurchase Invoice\nProject Billing\nService Billing",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company"
+  },
+  {
+   "fieldname": "posting_date",
+   "label": "Posting Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "column_break_vp1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "label": "From Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "to_date",
+   "label": "To Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "section_items",
+   "label": "VAT Process Items",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "label": "Items",
+   "fieldtype": "Table",
+   "options": "VAT Process Item"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "track_changes": 1,
+ "search_fields": "name"
+}

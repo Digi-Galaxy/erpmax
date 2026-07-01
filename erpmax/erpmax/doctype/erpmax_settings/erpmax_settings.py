@@ -1,6 +1,1 @@
-import frappe
-from frappe.model.document import Document
-
-class ERPMaxSettings(Document):
-    def validate(self):
-        pass
+from erpmax.business_setup.doctype.erpmax_settings.erpmax_settings import *

@@ -1,0 +1,50 @@
+{
+ "doctype": "DocType",
+ "name": "Expense Type Account",
+ "module": "Expense Management",
+ "custom": 0,
+ "istable": 1,
+ "fields": [
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "account",
+   "label": "Account",
+   "fieldtype": "Link",
+   "options": "Account",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "cost_center",
+   "label": "Cost Center",
+   "fieldtype": "Link",
+   "options": "Cost Centre"
+  },
+  {
+   "fieldname": "budget_period",
+   "label": "Budget Period",
+   "fieldtype": "Select",
+   "options": "Monthly\nQuarterly\nYearly",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "budget_amount",
+   "label": "Budget Amount",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "budget_alert_percentage",
+   "label": "Budget Alert %",
+   "fieldtype": "Percent",
+   "default": 100
+  }
+ ],
+ "permissions": []
+}

@@ -1,5 +1,1 @@
-import frappe
-from frappe.model.document import Document
-
-class ProjectService(Document):
-    pass
+from erpmax.project_management.doctype.project_service.project_service import *

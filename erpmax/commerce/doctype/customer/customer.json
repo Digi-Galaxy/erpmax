@@ -1,0 +1,270 @@
+{
+ "doctype": "DocType",
+ "name": "Customer",
+ "module": "Commerce",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "customer_name",
+   "label": "Customer Name",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_name_arabic",
+   "label": "Customer Name (Arabic)",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "customer_type",
+   "label": "Customer Type",
+   "fieldtype": "Select",
+   "options": "Individual\nCompany",
+   "default": "Company"
+  },
+  {
+   "fieldname": "column_break_cust1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_group",
+   "label": "Customer Group",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "territory",
+   "label": "Territory",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "default_currency",
+   "label": "Default Currency",
+   "fieldtype": "Data",
+   "default": "SAR"
+  },
+  {
+   "fieldname": "section_cust_vat",
+   "label": "VAT Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vat_number",
+   "label": "VAT Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "vat_registration_number",
+   "label": "VAT Registration Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_cust2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_method",
+   "label": "Payment Method",
+   "fieldtype": "Select",
+   "options": "Cash\nCredit\nBank Payment\nBank"
+  },
+  {
+   "fieldname": "country",
+   "label": "Customer Country",
+   "fieldtype": "Link",
+   "options": "Country"
+  },
+  {
+   "fieldname": "section_cust_reg",
+   "label": "Registration Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "registration_scheme",
+   "label": "Registration Scheme",
+   "fieldtype": "Select",
+   "options": "Commercial Registration Number\nTax ID\nOther"
+  },
+  {
+   "fieldname": "registration_number",
+   "label": "Registration Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_cust3",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_ids_section",
+   "label": "Customer IDs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "national_id",
+   "label": "National ID / Iqama",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "cnic",
+   "label": "CNIC",
+   "fieldtype": "Data",
+   "description": "CNIC/National ID for Pakistan individual customers"
+  },
+  {
+   "fieldname": "ntn",
+   "label": "NTN",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "strn",
+   "label": "STRN",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_contact",
+   "label": "Contact Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "email",
+   "label": "Email",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "mobile",
+   "label": "Mobile",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_cust4",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone",
+   "label": "Phone",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "website",
+   "label": "Website",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_address",
+   "label": "Primary Address",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address_line1",
+   "label": "Address Line 1",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "city",
+   "label": "City",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_cust5",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state",
+   "label": "State",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "zip_code",
+   "label": "ZIP Code",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_customer_printing",
+   "label": "Printing and Billing Defaults",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "default_sales_invoice_print_format",
+   "label": "Default Sales Invoice Print Format",
+   "fieldtype": "Link",
+   "options": "Print Format"
+  },
+  {
+   "fieldname": "default_print_heading",
+   "label": "Default Print Heading",
+   "fieldtype": "Link",
+   "options": "Print Heading"
+  },
+  {
+   "fieldname": "print_language",
+   "label": "Print Language",
+   "fieldtype": "Link",
+   "options": "Language"
+  },
+  {
+   "fieldname": "column_break_customer_printing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice_table_format",
+   "label": "Invoice Table Format",
+   "fieldtype": "Select",
+   "options": "Standard\nDetailed\nService Summary\nGrouped Services\nCompact"
+  },
+  {
+   "fieldname": "invoice_wording",
+   "label": "Invoice Wording",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "terms_and_conditions_text",
+   "label": "Terms and Conditions",
+   "fieldtype": "Text Editor"
+  },
+  {
+   "fieldname": "use_custom_letter_head",
+   "label": "Use Custom Letter Head",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "letter_head",
+   "label": "Letter Head",
+   "fieldtype": "Link",
+   "options": "Letter Head"
+  },
+  {
+   "fieldname": "apply_retention_by_default",
+   "label": "Apply Retention By Default",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "default_retention_percentage",
+   "label": "Default Retention Percentage",
+   "fieldtype": "Percent"
+  },
+  {
+   "fieldname": "default_retention_account",
+   "label": "Default Retention Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "track_changes": 1,
+ "search_fields": "name,customer_name,vat_number,registration_number"
+}

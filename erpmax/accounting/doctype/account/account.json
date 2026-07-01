@@ -1,0 +1,129 @@
+{
+  "doctype": "DocType",
+  "name": "Account",
+  "module": "Accounting",
+  "custom": 0,
+  "is_tree": 1,
+  "naming_rule": "By fieldname",
+  "autoname": "field:account_name",
+  "fields": [
+    {
+      "fieldname": "account_name",
+      "label": "Account Name",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "account_number",
+      "label": "Account Number",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "parent_account",
+      "label": "Parent Account",
+      "fieldtype": "Link",
+      "options": "Account"
+    },
+    {
+      "fieldname": "is_group",
+      "label": "Is Group",
+      "fieldtype": "Check",
+      "default": 0
+    },
+    {
+      "fieldname": "column_break_ac1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "root_type",
+      "label": "Root Type",
+      "fieldtype": "Select",
+      "options": "Asset\nLiability\nIncome\nExpense\nEquity"
+    },
+    {
+      "fieldname": "report_type",
+      "label": "Report Type",
+      "fieldtype": "Select",
+      "options": "Balance Sheet\nProfit and Loss"
+    },
+    {
+      "fieldname": "account_currency",
+      "label": "Account Currency",
+      "fieldtype": "Data",
+      "default": "SAR"
+    },
+    {
+      "fieldname": "account_type",
+      "label": "Account Type",
+      "fieldtype": "Select",
+      "options": "Cash\nBank\nPayable\nReceivable\nTax\nStock\nFixed Asset\nCost of Goods Sold\nExpenses Account\nIncome Account\nEquity\nAccumulated Depreciation\nCapital Work in Progress\nCurrent Asset\nCurrent Liability\nDeferred Expense\nDeferred Revenue\nDepreciation\nExchange Gain/Loss\nLease Liability\nLoan Payable\nPayroll\nProvision\nPurchases Account\nRound Off\nShipping Charges\nStock Adjustment\nSuspense\nTemporary"
+    },
+    {
+      "fieldname": "tax_rate",
+      "label": "Tax Rate",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "section_freeze",
+      "label": "Freeze",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "is_frozen",
+      "label": "Is Frozen",
+      "fieldtype": "Check"
+    },
+    {
+      "fieldname": "disabled",
+      "label": "Disabled",
+      "fieldtype": "Check"
+    },
+    {
+      "fieldname": "lft",
+      "label": "Left",
+      "fieldtype": "Int",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "rgt",
+      "label": "Right",
+      "fieldtype": "Int",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "old_parent",
+      "label": "Old Parent",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "hidden": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Accounts User",
+      "read": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "modified_by": "Administrator",
+  "owner": "Administrator",
+  "track_changes": 1,
+  "search_fields": "name"
+}

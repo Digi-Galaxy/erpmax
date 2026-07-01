@@ -1,0 +1,176 @@
+{
+ "doctype": "DocType",
+ "name": "Expense Claim Detail",
+ "module": "Business Setup",
+ "custom": 0,
+ "istable": 1,
+ "fields": [
+  {
+   "fieldname": "expense_type",
+   "label": "Expense Type",
+   "fieldtype": "Link",
+   "options": "Expense Type",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "label": "Description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "merchant",
+   "label": "Merchant",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "receipt_no",
+   "label": "Receipt No",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "beneficiary_name",
+   "label": "Beneficiary Name",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "date",
+   "label": "Date",
+   "fieldtype": "Date",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "project",
+   "label": "Project",
+   "fieldtype": "Link",
+   "options": "Project"
+  },
+  {
+   "fieldname": "item",
+   "label": "Item",
+   "fieldtype": "Link",
+   "options": "Item"
+  },
+  {
+   "fieldname": "customer",
+   "label": "Customer",
+   "fieldtype": "Link",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "service_item",
+   "label": "Service Item",
+   "fieldtype": "Link",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_ecd1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "label": "Amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "qty",
+   "label": "Qty",
+   "fieldtype": "Float",
+   "default": 1
+  },
+  {
+   "fieldname": "rate",
+   "label": "Rate",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "tax_amount",
+   "label": "Tax Amount",
+   "fieldtype": "Currency",
+   "default": 0
+  },
+  {
+   "fieldname": "total_amount",
+   "label": "Total Amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_billable_to_customer",
+   "label": "Billable To Customer",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "billable_amount",
+   "label": "Billable Amount",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "add_to_service_cost",
+   "label": "Add To Service Cost",
+   "fieldtype": "Check",
+   "default": 1
+  },
+  {
+   "fieldname": "account",
+   "label": "Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  },
+  {
+   "fieldname": "cost_center",
+   "label": "Cost Center",
+   "fieldtype": "Link",
+   "options": "Cost Centre"
+  },
+  {
+   "fieldname": "section_budget_tracking",
+   "label": "Budget Tracking",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "budget_period",
+   "label": "Budget Period",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "budget_amount",
+   "label": "Budget Amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_before_claim",
+   "label": "Actual Before Claim",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_budget_tracking",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "actual_after_claim",
+   "label": "Actual After Claim",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "budget_variance",
+   "label": "Budget Variance",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "over_budget",
+   "label": "Over Budget",
+   "fieldtype": "Check",
+   "read_only": 1
+  }
+ ],
+ "permissions": []
+}

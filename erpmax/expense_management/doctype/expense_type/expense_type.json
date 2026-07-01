@@ -1,0 +1,72 @@
+{
+ "doctype": "DocType",
+ "name": "Expense Type",
+ "module": "Expense Management",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "expense_type",
+   "label": "Expense Type",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "label": "Description",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "expense_category",
+   "label": "Expense Category",
+   "fieldtype": "Select",
+   "options": "Travel\nFuel\nMaintenance\nMaterials\nUtilities\nOffice\nLabor\nSubcontract\nMeals\nAccommodation\nOther"
+  },
+  {
+   "fieldname": "default_mode_of_payment",
+   "label": "Default Mode of Payment",
+   "fieldtype": "Select",
+   "options": "Cash\nBank\nCheque"
+  },
+  {
+   "fieldname": "requires_receipt",
+   "label": "Requires Receipt",
+   "fieldtype": "Check",
+   "default": 1
+  },
+  {
+   "fieldname": "is_billable",
+   "label": "Is Billable",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "section_accounts",
+   "label": "Default Accounts",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "accounts",
+   "label": "Company Accounts",
+   "fieldtype": "Table",
+   "options": "Expense Type Account"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "track_changes": 1,
+ "search_fields": "expense_type,expense_category"
+}

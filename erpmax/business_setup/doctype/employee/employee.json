@@ -1,0 +1,104 @@
+{
+ "doctype": "DocType",
+ "name": "Employee",
+ "module": "Business Setup",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "employee_name",
+   "label": "Employee Name",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_id",
+   "label": "Employee ID",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_emp1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company"
+  },
+  {
+   "fieldname": "section_personal",
+   "label": "Personal Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "department",
+   "label": "Department",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "designation",
+   "label": "Designation",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_emp2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile",
+   "label": "Mobile",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "email",
+   "label": "Email",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_employment",
+   "label": "Employment",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "joining_date",
+   "label": "Joining Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "column_break_emp3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Active\nLeft\nSuspended",
+   "default": "Active"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Accounts User",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "quick_entry": 1,
+ "track_changes": 1,
+ "search_fields": "employee_name"
+}

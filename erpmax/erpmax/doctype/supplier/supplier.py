@@ -1,4 +1,1 @@
-import frappe
-from frappe.model.document import Document
-class Supplier(Document):
-    pass
+from erpmax.purchase.doctype.supplier.supplier import *

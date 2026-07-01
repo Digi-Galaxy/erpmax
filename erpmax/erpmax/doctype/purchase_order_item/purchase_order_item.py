@@ -1,4 +1,1 @@
-import frappe
-from frappe.model.document import Document
-class PurchaseOrderItem(Document):
-    pass
+from erpmax.purchase.doctype.purchase_order_item.purchase_order_item import *

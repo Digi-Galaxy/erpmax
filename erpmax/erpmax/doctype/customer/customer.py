@@ -1,5 +1,1 @@
-import frappe
-from frappe.model.document import Document
-
-class Customer(Document):
-    pass
+from erpmax.commerce.doctype.customer.customer import *

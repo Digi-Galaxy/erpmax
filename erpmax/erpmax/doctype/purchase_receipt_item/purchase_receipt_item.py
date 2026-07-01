@@ -1,4 +1,1 @@
-import frappe
-from frappe.model.document import Document
-class PurchaseReceiptItem(Document):
-    pass
+from erpmax.purchase.doctype.purchase_receipt_item.purchase_receipt_item import *

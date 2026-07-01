@@ -1,0 +1,313 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "naming_series:",
+  "creation": "2025-01-01 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "title",
+    "payment_type",
+    "party_type",
+    "party",
+    "party_name",
+    "column_break_5",
+    "posting_date",
+    "company",
+    "mode_of_payment",
+    "section_party_details",
+    "paid_from",
+    "paid_from_account_currency",
+    "paid_from_account_balance",
+    "paid_to",
+    "paid_to_account_currency",
+    "paid_to_account_balance",
+    "section_amounts",
+    "paid_amount",
+    "received_amount",
+    "base_paid_amount",
+    "base_received_amount",
+    "column_break_amounts",
+    "total_allocated_amount",
+    "difference_amount",
+    "unallocated_amount",
+    "section_reference",
+    "references",
+    "section_more",
+    "cost_center",
+    "project",
+    "column_break_more",
+    "source_exchange_rate",
+    "target_exchange_rate",
+    "amended_from"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "PAY-.YYYY.-",
+      "reqd": 1,
+      "default": "PAY-.YYYY.-"
+    },
+    {
+      "fieldname": "title",
+      "fieldtype": "Data",
+      "label": "Title",
+      "reqd": 1
+    },
+    {
+      "fieldname": "payment_type",
+      "fieldtype": "Select",
+      "label": "Payment Type",
+      "options": "Receive\nPay\nInternal Transfer",
+      "reqd": 1,
+      "default": "Receive"
+    },
+    {
+      "fieldname": "party_type",
+      "fieldtype": "Select",
+      "label": "Party Type",
+      "options": "\nCustomer\nSupplier",
+      "reqd": 1
+    },
+    {
+      "fieldname": "party",
+      "fieldtype": "Dynamic Link",
+      "label": "Party",
+      "options": "party_type",
+      "reqd": 1
+    },
+    {
+      "fieldname": "party_name",
+      "fieldtype": "Data",
+      "label": "Party Name",
+      "fetch_from": "party.customer_name",
+      "depends_on": "eval:doc.party_type==\"Customer\""
+    },
+    {
+      "fieldname": "column_break_5",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "Today",
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "mode_of_payment",
+      "fieldtype": "Select",
+      "label": "Mode of Payment",
+      "options": "Cash\nBank\nCheque\nCredit Card\nTransfer\nOther"
+    },
+    {
+      "fieldname": "section_party_details",
+      "fieldtype": "Section Break",
+      "label": "Account Details"
+    },
+    {
+      "fieldname": "paid_from",
+      "fieldtype": "Link",
+      "label": "Paid From",
+      "options": "Account"
+    },
+    {
+      "fieldname": "paid_from_account_currency",
+      "fieldtype": "Link",
+      "label": "Paid From Account Currency",
+      "options": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "paid_from_account_balance",
+      "fieldtype": "Currency",
+      "label": "Paid From Account Balance",
+      "read_only": 1
+    },
+    {
+      "fieldname": "paid_to",
+      "fieldtype": "Link",
+      "label": "Paid To",
+      "options": "Account"
+    },
+    {
+      "fieldname": "paid_to_account_currency",
+      "fieldtype": "Link",
+      "label": "Paid To Account Currency",
+      "options": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "paid_to_account_balance",
+      "fieldtype": "Currency",
+      "label": "Paid To Account Balance",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_amounts",
+      "fieldtype": "Section Break",
+      "label": "Amounts"
+    },
+    {
+      "fieldname": "paid_amount",
+      "fieldtype": "Currency",
+      "label": "Paid Amount",
+      "options": "Company:company:default_currency"
+    },
+    {
+      "fieldname": "received_amount",
+      "fieldtype": "Currency",
+      "label": "Received Amount",
+      "options": "Company:company:default_currency"
+    },
+    {
+      "fieldname": "base_paid_amount",
+      "fieldtype": "Currency",
+      "label": "Base Paid Amount",
+      "options": "Company:company:default_currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "base_received_amount",
+      "fieldtype": "Currency",
+      "label": "Base Received Amount",
+      "options": "Company:company:default_currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_amounts",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "total_allocated_amount",
+      "fieldtype": "Currency",
+      "label": "Total Allocated Amount",
+      "options": "Company:company:default_currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "difference_amount",
+      "fieldtype": "Currency",
+      "label": "Difference Amount",
+      "options": "Company:company:default_currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "unallocated_amount",
+      "fieldtype": "Currency",
+      "label": "Unallocated Amount",
+      "options": "Company:company:default_currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_reference",
+      "fieldtype": "Section Break",
+      "label": "References"
+    },
+    {
+      "fieldname": "references",
+      "fieldtype": "Table",
+      "label": "References",
+      "options": "Payment Entry Reference"
+    },
+    {
+      "fieldname": "section_more",
+      "fieldtype": "Section Break",
+      "label": "More Info"
+    },
+    {
+      "fieldname": "cost_center",
+      "fieldtype": "Link",
+      "label": "Cost Center",
+      "options": "Cost Center"
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "column_break_more",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "1",
+      "fieldname": "source_exchange_rate",
+      "fieldtype": "Float",
+      "label": "Source Exchange Rate"
+    },
+    {
+      "default": "1",
+      "fieldname": "target_exchange_rate",
+      "fieldtype": "Float",
+      "label": "Target Exchange Rate"
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "label": "Amended From",
+      "no_copy": 1,
+      "print_hide": 1,
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2025-01-01 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Accounting",
+  "name": "Payment Entry",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "amend": 1,
+      "cancel": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Accounts Manager",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "amend": 1,
+      "cancel": 1,
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Accounts User",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Auditor"
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

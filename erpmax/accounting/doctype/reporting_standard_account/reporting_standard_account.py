@@ -1,0 +1,1 @@
+from erpmax.reporting.doctype.reporting_standard_account.reporting_standard_account import *

@@ -1,5 +1,1 @@
-import frappe
-from frappe.model.document import Document
-
-class VATProcess(Document):
-    pass
+from erpmax.commerce.doctype.vat_process.vat_process import *

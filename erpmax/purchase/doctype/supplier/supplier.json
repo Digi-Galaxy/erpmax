@@ -1,0 +1,156 @@
+{
+ "doctype": "DocType",
+ "name": "Supplier",
+ "module": "Purchase",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "supplier_name",
+   "label": "Supplier Name",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier_id",
+   "label": "Supplier ID",
+   "fieldtype": "Data",
+   "unique": 1
+  },
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_sup1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier_type",
+   "label": "Supplier Type",
+   "fieldtype": "Select",
+   "options": "Company\nIndividual",
+   "default": "Company"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Active\nDisabled",
+   "default": "Active"
+  },
+  {
+   "fieldname": "section_tax",
+   "label": "Tax Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tax_id",
+   "label": "Tax ID",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "ntn",
+   "label": "NTN",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "strn",
+   "label": "STRN",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_sup2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crn",
+   "label": "CRN",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "vat_number",
+   "label": "VAT Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_contact",
+   "label": "Contact",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mobile",
+   "label": "Mobile",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "email",
+   "label": "Email",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_sup3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_line1",
+   "label": "Address",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "city",
+   "label": "City",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_accounting",
+   "label": "Accounting",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "default_payable_account",
+   "label": "Default Payable Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Accounts User",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Purchase Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Purchase User",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "quick_entry": 1,
+ "track_changes": 1,
+ "search_fields": "supplier_name"
+}

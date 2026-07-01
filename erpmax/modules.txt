@@ -1,2 +1,12 @@
 ERPMax
+Accounting
+Business Setup
+Commerce
+Project Management
+Inventory
+Expense Management
+Purchase
+Sales
+Reporting
+Printings
 E-Invoicing
