@@ -126,6 +126,7 @@ app_license = "mit"
 # }
 
 # DocType Class
+override_doctype_class = {"Sales Invoice": "erpmax.erpmax.doctype.sales_invoice.sales_invoice.SalesInvoice"}
 # ---------------
 # Override standard doctype classes
 

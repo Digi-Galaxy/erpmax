@@ -81,6 +81,29 @@
    "options": "Bank Account"
   },
   {
+   "fieldname": "payment_received",
+   "label": "Payment Received",
+   "fieldtype": "Currency",
+   "description": "Amount already received against this invoice"
+  },
+  {
+   "fieldname": "payment_date",
+   "label": "Payment Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "payment_reference",
+   "label": "Payment Reference",
+   "fieldtype": "Data",
+   "description": "Cheque/Transfer/Reference No"
+  },
+  {
+   "fieldname": "payment_method_received",
+   "label": "Payment Method",
+   "fieldtype": "Select",
+   "options": "Cash\nBank Transfer\nCheque\nCredit Card\nOther"
+  },
+  {
    "fieldname": "column_break_si2",
    "label": "",
    "fieldtype": "Column Break"
@@ -93,6 +116,45 @@
   {
    "fieldname": "po_no",
    "label": "Customer PO No",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_adv_address",
+   "label": "Advanced Address",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "addr_building_number",
+   "label": "Building Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "addr_street",
+   "label": "Street Name",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "addr_district",
+   "label": "District",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_addr3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "addr_city",
+   "label": "City",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "addr_postal_code",
+   "label": "Postal Code",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "addr_additional_number",
+   "label": "Additional Number",
    "fieldtype": "Data"
   },
   {
@@ -176,6 +238,21 @@
    "fieldname": "outstanding_amount",
    "label": "Outstanding Amount",
    "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "cnic",
+   "label": "CNIC",
+   "fieldtype": "Data",
+   "fetch_from": "customer.cnic",
+   "read_only": 1,
+   "description": "Customer CNIC (auto-fetched)"
+  },
+  {
+   "fieldname": "previous_balance",
+   "label": "Previous Balance",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "description": "Customer outstanding balance before this invoice"
   },
   {
    "fieldname": "section_zatca",

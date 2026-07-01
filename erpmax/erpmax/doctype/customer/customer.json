@@ -107,6 +107,12 @@
    "fieldtype": "Data"
   },
   {
+   "fieldname": "cnic",
+   "label": "CNIC",
+   "fieldtype": "Data",
+   "description": "CNIC/National ID for Pakistan individual customers"
+  },
+  {
    "fieldname": "ntn",
    "label": "NTN",
    "fieldtype": "Data"

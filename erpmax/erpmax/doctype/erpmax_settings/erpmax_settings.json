@@ -1,0 +1,128 @@
+{
+ "doctype": "DocType",
+ "name": "ERPMax Settings",
+ "module": "ERPMax",
+ "custom": 0,
+ "issingle": 1,
+ "istable": 0,
+ "editable_grid": 0,
+ "track_changes": 1,
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "fields": [
+  {
+   "fieldname": "section_display",
+   "label": "Display Options",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "show_previous_balance",
+   "label": "Show Previous Balance",
+   "fieldtype": "Check",
+   "default": 0,
+   "description": "Display customer previous outstanding balance on Sales Invoice"
+  },
+  {
+   "fieldname": "cnic_mandatory_for_pakistan",
+   "label": "CNIC Mandatory for Pakistan",
+   "fieldtype": "Check",
+   "default": 0,
+   "description": "Make CNIC required for Pakistan Individual customers"
+  },
+  {
+   "fieldname": "column_break_settings1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enable_advanced_address",
+   "label": "Enable Advanced Address",
+   "fieldtype": "Check",
+   "default": 0,
+   "description": "Show ZATCA-compliant advanced address fields per country"
+  },
+  {
+   "fieldname": "enable_urdu_font",
+   "label": "Enable Urdu/Arabic Font",
+   "fieldtype": "Check",
+   "default": 0,
+   "description": "Load custom Urdu/Arabic font from public folder"
+  },
+  {
+   "fieldname": "section_transport",
+   "label": "Transport Module",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "enable_transport_module",
+   "label": "Enable Transport Module",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "column_break_settings2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "free_delivery_policy",
+   "label": "Free Delivery Policy",
+   "fieldtype": "Select",
+   "options": "None\nCity Only\nCity + Doorstep\nSupplier Warehouse Only",
+   "default": "None"
+  },
+  {
+   "fieldname": "section_project",
+   "label": "Project Invoicing",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "enable_project_invoicing",
+   "label": "Enable Project Invoicing",
+   "fieldtype": "Check",
+   "default": 0,
+   "description": "Enable contract/sub-contract and detailed services"
+  },
+  {
+   "fieldname": "column_break_settings3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enable_contracts",
+   "label": "Enable Contracts",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "section_onboarding",
+   "label": "Onboarding",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "onboarding_complete",
+   "label": "Onboarding Complete",
+   "fieldtype": "Check",
+   "default": 0,
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Accounts User",
+   "read": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": ""
+}
