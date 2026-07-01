@@ -69,5 +69,7 @@
  ],
  "sort_field": "sale_type",
  "title_field": "sale_type",
- "search_fields": "sale_type, scenario_id"
+ "search_fields": "sale_type, scenario_id",
+ "naming_rule": "By fieldname",
+ "autoname": "field:sale_type"
 }
