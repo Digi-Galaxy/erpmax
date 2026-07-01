@@ -1,0 +1,47 @@
+{
+ "doctype": "DocType",
+ "name": "Expense Claim Detail",
+ "module": "ERPMax",
+ "custom": 0,
+ "istable": 1,
+ "fields": [
+  {
+   "fieldname": "expense_type",
+   "label": "Expense Type",
+   "fieldtype": "Link",
+   "options": "Expense Type",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "label": "Description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "date",
+   "label": "Date",
+   "fieldtype": "Date",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_ecd1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "label": "Amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "account",
+   "label": "Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  }
+ ],
+ "permissions": []
+}

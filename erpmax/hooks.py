@@ -25,7 +25,7 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/erpmax/css/erpmax.css"
+app_include_css = "/assets/erpmax/fonts/fonts.css"
 # app_include_js = "/assets/erpmax/js/erpmax.js"
 
 # include js, css files in header of web template
