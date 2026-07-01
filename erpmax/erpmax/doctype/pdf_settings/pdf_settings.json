@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:company",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "section_break_print",
+  "use_chrome_pdf",
+  "print_format",
+  "pdf_orientation",
+  "page_size",
+  "column_break_style",
+  "include_fonts",
+  "include_letterhead",
+  "section_break_folders",
+  "customer_folder_enabled",
+  "supplier_folder_enabled",
+  "column_break_folder",
+  "default_folder"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_print",
+   "fieldtype": "Section Break",
+   "label": "Print Settings"
+  },
+  {
+   "default": "1",
+   "fieldname": "use_chrome_pdf",
+   "fieldtype": "Check",
+   "label": "Use Chrome PDF Engine"
+  },
+  {
+   "fieldname": "print_format",
+   "fieldtype": "Link",
+   "label": "Default Print Format",
+   "options": "Print Format"
+  },
+  {
+   "fieldname": "pdf_orientation",
+   "fieldtype": "Select",
+   "label": "PDF Orientation",
+   "options": "Portrait\nLandscape"
+  },
+  {
+   "fieldname": "page_size",
+   "fieldtype": "Select",
+   "label": "Page Size",
+   "options": "A4\nA3\nLetter\nLegal"
+  },
+  {
+   "fieldname": "column_break_style",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "include_fonts",
+   "fieldtype": "Check",
+   "label": "Include Urdu/Arabic Fonts"
+  },
+  {
+   "default": "1",
+   "fieldname": "include_letterhead",
+   "fieldtype": "Check",
+   "label": "Include Letterhead"
+  },
+  {
+   "fieldname": "section_break_folders",
+   "fieldtype": "Section Break",
+   "label": "Folder Settings"
+  },
+  {
+   "default": "1",
+   "fieldname": "customer_folder_enabled",
+   "fieldtype": "Check",
+   "label": "Organize PDFs in Customer Folders"
+  },
+  {
+   "default": "1",
+   "fieldname": "supplier_folder_enabled",
+   "fieldtype": "Check",
+   "label": "Organize PDFs in Supplier Folders"
+  },
+  {
+   "fieldname": "column_break_folder",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_folder",
+   "fieldtype": "Data",
+   "label": "Default Folder",
+   "default": "Home/Attachments"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2025-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "ERPMax",
+ "name": "PDF Settings",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Accounts User"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

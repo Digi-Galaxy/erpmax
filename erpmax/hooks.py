@@ -43,7 +43,16 @@ app_include_css = "/assets/erpmax/fonts/fonts.css"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Company" : "public/js/company.js"}
+doctype_js = {
+	"Company": "public/js/company.js",
+	"Sales Invoice": "public/js/pdf_generator.js",
+	"Purchase Invoice": "public/js/pdf_generator.js",
+	"Purchase Order": "public/js/pdf_generator.js",
+	"Purchase Receipt": "public/js/pdf_generator.js",
+	"Journal Entry": "public/js/pdf_generator.js",
+	"Payment Entry": "public/js/pdf_generator.js",
+	"Expense Claim": "public/js/pdf_generator.js",
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
