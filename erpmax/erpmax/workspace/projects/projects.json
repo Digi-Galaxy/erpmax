@@ -68,5 +68,7 @@
  "modified": "2026-07-01 00:00:00",
  "modified_by": "Administrator",
  "name": "Projects",
- "owner": "Administrator"
+ "owner": "Administrator",
+ "title": "Projects",
+ "public": 1
 }

@@ -101,5 +101,7 @@
  "modified": "2026-07-01 00:00:00",
  "modified_by": "Administrator",
  "name": "Buying",
- "owner": "Administrator"
+ "owner": "Administrator",
+ "title": "Buying",
+ "public": 1
 }

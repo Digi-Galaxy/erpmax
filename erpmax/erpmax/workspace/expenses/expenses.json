@@ -79,5 +79,7 @@
  "modified": "2026-07-01 00:00:00",
  "modified_by": "Administrator",
  "name": "Expenses",
- "owner": "Administrator"
+ "owner": "Administrator",
+ "title": "Expenses",
+ "public": 1
 }
