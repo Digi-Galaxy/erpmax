@@ -1,0 +1,96 @@
+{
+ "doctype": "DocType",
+ "name": "Account",
+ "module": "ERPMax",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "account_name",
+   "label": "Account Name",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "account_number",
+   "label": "Account Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "parent_account",
+   "label": "Parent Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  },
+  {
+   "fieldname": "is_group",
+   "label": "Is Group",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "column_break_ac1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "root_type",
+   "label": "Root Type",
+   "fieldtype": "Select",
+   "options": "Asset\nLiability\nIncome\nExpense\nEquity"
+  },
+  {
+   "fieldname": "report_type",
+   "label": "Report Type",
+   "fieldtype": "Select",
+   "options": "Balance Sheet\nProfit and Loss"
+  },
+  {
+   "fieldname": "account_currency",
+   "label": "Account Currency",
+   "fieldtype": "Data",
+   "default": "SAR"
+  },
+  {
+   "fieldname": "tax_type",
+   "label": "Tax Type",
+   "fieldtype": "Select",
+   "options": "Standard Rate\nZero Rate\nExempt"
+  },
+  {
+   "fieldname": "section_break_ac2",
+   "label": "Balance",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "balance",
+   "label": "Balance",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ac3",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "account_type",
+   "label": "Account Type",
+   "fieldtype": "Select",
+   "options": "Cash\nBank\nPayable\nReceivable\nTax\nStock\nFixed Asset\nCost of Goods Sold\nExpenses Account\nIncome Account"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "track_changes": 1,
+ "search_fields": "name"
+}

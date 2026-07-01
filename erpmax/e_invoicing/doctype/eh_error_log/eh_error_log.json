@@ -1,0 +1,82 @@
+{
+ "doctype": "DocType",
+ "name": "EH Error Log",
+ "module": "E-Invoicing",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "error_type",
+   "label": "Error Type",
+   "fieldtype": "Select",
+   "options": "Validation\nSigning\nSubmission\nConnection\nAuthentication\nSystem"
+  },
+  {
+   "fieldname": "severity",
+   "label": "Severity",
+   "fieldtype": "Select",
+   "options": "Critical\nHigh\nMedium\nLow"
+  },
+  {
+   "fieldname": "einvoice",
+   "label": "E-Invoice",
+   "fieldtype": "Link",
+   "options": "EH E-Invoice"
+  },
+  {
+   "fieldname": "column_break_err",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "error_message",
+   "label": "Error Message",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "traceback",
+   "label": "Traceback",
+   "fieldtype": "Code"
+  },
+  {
+   "fieldname": "section_resolution",
+   "label": "Resolution",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "suggested_fix",
+   "label": "Suggested Fix",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "column_break_res",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "resolved",
+   "label": "Resolved",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "resolved_at",
+   "label": "Resolved At",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "resolved_by",
+   "label": "Resolved By",
+   "fieldtype": "Link",
+   "options": "User"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "sort_field": "modified",
+ "track_changes": 1
+}

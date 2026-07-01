@@ -1,0 +1,92 @@
+{
+ "doctype": "DocType",
+ "name": "EH Signing Certificate",
+ "module": "E-Invoicing",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "certificate_type",
+   "label": "Certificate Type",
+   "fieldtype": "Select",
+   "options": "ECDSA\nRSA\nX509"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Active\nExpired\nRevoked",
+   "default": "Active"
+  },
+  {
+   "fieldname": "is_active",
+   "label": "Is Active",
+   "fieldtype": "Check",
+   "default": 1
+  },
+  {
+   "fieldname": "certificate",
+   "label": "Certificate",
+   "fieldtype": "Attach"
+  },
+  {
+   "fieldname": "private_key",
+   "label": "Private Key",
+   "fieldtype": "Attach"
+  },
+  {
+   "fieldname": "column_break_dates",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valid_from",
+   "label": "Valid From",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "valid_to",
+   "label": "Valid To",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "issuer",
+   "label": "Issuer",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "serial_number",
+   "label": "Serial Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_csr",
+   "label": "CSR",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "csr_content",
+   "label": "CSR Content",
+   "fieldtype": "Text"
+  },
+  {
+   "fieldname": "column_break_csr",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "csr_generated_at",
+   "label": "CSR Generated At",
+   "fieldtype": "Datetime"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified"
+}

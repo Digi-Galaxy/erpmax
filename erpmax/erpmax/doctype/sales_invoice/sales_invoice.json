@@ -1,0 +1,430 @@
+{
+ "doctype": "DocType",
+ "name": "Sales Invoice",
+ "module": "ERPMax",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "label": "Series",
+   "fieldtype": "Select",
+   "options": "INV-.YYYY.-",
+   "default": "INV-.YYYY.-"
+  },
+  {
+   "fieldname": "customer",
+   "label": "Customer",
+   "fieldtype": "Link",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "label": "Customer Name",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "customer_name_text",
+   "label": "Customer Name Text",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "posting_date",
+   "label": "Posting Date",
+   "fieldtype": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "delivery_date",
+   "label": "Delivery Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "column_break_si1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "label": "Currency",
+   "fieldtype": "Data",
+   "default": "SAR"
+  },
+  {
+   "fieldname": "shipping_address",
+   "label": "Shipping Address",
+   "fieldtype": "Link",
+   "options": "Address"
+  },
+  {
+   "fieldname": "section_payment",
+   "label": "Payment",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payment_method",
+   "label": "Payment Method",
+   "fieldtype": "Select",
+   "options": "Cash\nCredit\nBank Payment\nBank"
+  },
+  {
+   "fieldname": "print_bank_account",
+   "label": "Print Bank Account",
+   "fieldtype": "Link",
+   "options": "Bank Account"
+  },
+  {
+   "fieldname": "column_break_si2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "due_date",
+   "label": "Due Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "po_no",
+   "label": "Customer PO No",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "items_section",
+   "label": "Invoice Items",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "label": "Items",
+   "fieldtype": "Table",
+   "options": "Sales Invoice Item"
+  },
+  {
+   "fieldname": "section_retention",
+   "label": "Payment Retention",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "apply_retention",
+   "label": "Apply Retention",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "retention_percentage",
+   "label": "Retention Percentage",
+   "fieldtype": "Percent"
+  },
+  {
+   "fieldname": "retention_amount",
+   "label": "Retention Amount",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "column_break_si3",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "retention_account",
+   "label": "Retention Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  },
+  {
+   "fieldname": "base_retention_amount",
+   "label": "Base Retention Amount",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "net_payable_after_retention",
+   "label": "Net Payable After Retention",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "section_totals",
+   "label": "Totals",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_tax",
+   "label": "Total Tax",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "total",
+   "label": "Total",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "column_break_si4",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grand_total",
+   "label": "Grand Total",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "label": "Outstanding Amount",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "section_zatca",
+   "label": "E-Invoice Details",
+   "fieldtype": "Tab Break"
+  },
+  {
+   "fieldname": "zatca_enable",
+   "label": "Enable ZATCA E-Invoicing",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "zatca_phase",
+   "label": "ZATCA Phase",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "is_zatca_test",
+   "label": "Is ZATCA Test",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "column_break_si5",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice_type",
+   "label": "Invoice Type",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "compliance",
+   "label": "Compliance",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "return_reason",
+   "label": "Return/Debit Reason",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_zatca_ids",
+   "label": "ZATCA IDs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "invoice_unique_identifier",
+   "label": "Invoice Unique Identifier",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "invoice_hash",
+   "label": "Invoice Hash",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_si6",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice_icv",
+   "label": "Invoice ICV",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "has_warnings",
+   "label": "Has Warnings",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "section_zatca_status",
+   "label": "ZATCA Status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "zatca_submit_status",
+   "label": "ZATCA Status",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "zatca_submit_time",
+   "label": "ZATCA Submit Time",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "column_break_si7",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "validation_results",
+   "label": "Validation Results",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "has_warnings2",
+   "label": "Has Warnings",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "section_seller",
+   "label": "Seller Info",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "seller_name",
+   "label": "Seller Name",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "seller_vat",
+   "label": "Seller VAT",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "seller_address",
+   "label": "Seller Address",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "column_break_si8",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "buyer_name",
+   "label": "Buyer Name",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "buyer_vat",
+   "label": "Buyer VAT",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "buyer_address",
+   "label": "Buyer Address",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "section_files",
+   "label": "ZATCA Files",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "invoice_xml",
+   "label": "Cleared Invoice XML",
+   "fieldtype": "Attach"
+  },
+  {
+   "fieldname": "invoice_qr_code",
+   "label": "Invoice QR Code",
+   "fieldtype": "Attach"
+  },
+  {
+   "fieldname": "column_break_si9",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ksa_einv_qr",
+   "label": "KSA E-Invoicing QR",
+   "fieldtype": "Attach Image"
+  },
+  {
+   "fieldname": "zatca_qr_payload",
+   "label": "ZATCA QR Payload",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "section_credit_note",
+   "label": "Credit Note Details",
+   "fieldtype": "Tab Break"
+  },
+  {
+   "fieldname": "is_return",
+   "label": "Is Return / Credit Note",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "cn_ref",
+   "label": "Credit Note References",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "column_break_si10",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_name_field",
+   "label": "Customer",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "days_count",
+   "label": "Days Count",
+   "fieldtype": "Int"
+  },
+  {
+   "fieldname": "get_all_items",
+   "label": "Get All Items",
+   "fieldtype": "Button"
+  },
+  {
+   "fieldname": "section_credit_items",
+   "label": "Credit Note Items",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "credit_details",
+   "label": "Credit Details",
+   "fieldtype": "Table",
+   "options": "Credit Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "label": "Amended From",
+   "fieldtype": "Link",
+   "options": "Sales Invoice"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "Accounts User",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "track_changes": 1,
+ "search_fields": "name"
+}

@@ -1,0 +1,93 @@
+{
+ "doctype": "DocType",
+ "name": "EH Provider Config",
+ "module": "E-Invoicing",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "country_profile",
+   "label": "Country Profile",
+   "fieldtype": "Link",
+   "options": "EH Country Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "environment",
+   "label": "Environment",
+   "fieldtype": "Select",
+   "options": "Sandbox\nProduction",
+   "default": "Sandbox"
+  },
+  {
+   "fieldname": "tax_id",
+   "label": "Tax ID / VAT Number",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "commercial_registration",
+   "label": "Commercial Registration",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "branch_id",
+   "label": "Branch ID",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_auth",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "api_key",
+   "label": "API Key",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "api_secret",
+   "label": "API Secret",
+   "fieldtype": "Password"
+  },
+  {
+   "fieldname": "section_cert",
+   "label": "Certificate Settings",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "certificate_serial",
+   "label": "Certificate Serial Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_cert",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "signing_certificate",
+   "label": "Signing Certificate",
+   "fieldtype": "Link",
+   "options": "EH Signing Certificate"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "company",
+ "search_fields": "company, tax_id, country_profile"
+}

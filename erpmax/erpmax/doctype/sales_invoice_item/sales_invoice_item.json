@@ -1,0 +1,97 @@
+{
+ "doctype": "DocType",
+ "name": "Sales Invoice Item",
+ "module": "ERPMax",
+ "custom": 0,
+ "istable": 1,
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "label": "Item Code",
+   "fieldtype": "Link",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_name",
+   "label": "Item Name",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "description",
+   "label": "Description",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "qty",
+   "label": "Quantity",
+   "fieldtype": "Float",
+   "default": 1
+  },
+  {
+   "fieldname": "column_break_sii1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate",
+   "label": "Rate",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "amount",
+   "label": "Amount",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "tax_rate",
+   "label": "Tax Rate (%)",
+   "fieldtype": "Float",
+   "default": 15.0
+  },
+  {
+   "fieldname": "tax_amount",
+   "label": "Tax Amount",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "column_break_sii2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "label": "Total Amount",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "item_type",
+   "label": "Item Type",
+   "fieldtype": "Select",
+   "options": "Product\nService\nLump Sum Service"
+  },
+  {
+   "fieldname": "income_account",
+   "label": "Income Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  },
+  {
+   "fieldname": "zatca_item_tax_category",
+   "label": "ZATCA Tax Category",
+   "fieldtype": "Select",
+   "options": "Standard Rate\nServices Outside Scope\nServices Subject to VAT\nOther"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "modified_by": "Administrator",
+ "owner": "Administrator"
+}

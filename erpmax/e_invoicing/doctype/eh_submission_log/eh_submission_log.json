@@ -1,0 +1,82 @@
+{
+ "doctype": "DocType",
+ "name": "EH Submission Log",
+ "module": "E-Invoicing",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "einvoice",
+   "label": "E-Invoice",
+   "fieldtype": "Link",
+   "options": "EH E-Invoice"
+  },
+  {
+   "fieldname": "action_type",
+   "label": "Action Type",
+   "fieldtype": "Select",
+   "options": "Validate\nSign\nSubmit\nStatus Check\nCancel\nRetry"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Success\nFailed\nPending"
+  },
+  {
+   "fieldname": "column_break_log",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "timestamp",
+   "label": "Timestamp",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "performed_by",
+   "label": "Performed By",
+   "fieldtype": "Link",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_details",
+   "label": "Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "request_data",
+   "label": "Request Data",
+   "fieldtype": "Code"
+  },
+  {
+   "fieldname": "response_data",
+   "label": "Response Data",
+   "fieldtype": "Code"
+  },
+  {
+   "fieldname": "column_break_details",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "error_message",
+   "label": "Error Message",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "duration_ms",
+   "label": "Duration (ms)",
+   "fieldtype": "Int"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "sort_field": "modified",
+ "track_changes": 1
+}

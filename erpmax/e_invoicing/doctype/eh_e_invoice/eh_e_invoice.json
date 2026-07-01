@@ -1,0 +1,211 @@
+{
+ "doctype": "DocType",
+ "name": "EH E-Invoice",
+ "module": "E-Invoicing",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "invoice_type",
+   "label": "Invoice Type",
+   "fieldtype": "Select",
+   "options": "Standard\nSimplified\nCredit Note\nDebit Note",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Draft\nValidated\nSigned\nPending Submission\nSubmitted\nAccepted\nCleared\nRejected\nCancelled\nFailed",
+   "default": "Draft",
+   "reqd": 1
+  },
+  {
+   "fieldname": "erpnext_invoice_type",
+   "label": "ERPNext Invoice Type",
+   "fieldtype": "Select",
+   "options": "Sales Invoice\nPurchase Invoice"
+  },
+  {
+   "fieldname": "erpnext_invoice",
+   "label": "ERPNext Invoice",
+   "fieldtype": "Dynamic Link",
+   "options": "erpnext_invoice_type"
+  },
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company"
+  },
+  {
+   "fieldname": "customer",
+   "label": "Customer",
+   "fieldtype": "Link",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "country_profile",
+   "label": "Country Profile",
+   "fieldtype": "Link",
+   "options": "EH Country Profile"
+  },
+  {
+   "fieldname": "provider_config",
+   "label": "Provider Config",
+   "fieldtype": "Link",
+   "options": "EH Provider Config"
+  },
+  {
+   "fieldname": "column_break_main",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "label": "Posting Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "due_date",
+   "label": "Due Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "currency",
+   "label": "Currency",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "grand_total",
+   "label": "Grand Total",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "total_vat",
+   "label": "Total VAT",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "section_ids",
+   "label": "Authority IDs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "submission_id",
+   "label": "Authority Submission ID",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "invoice_hash",
+   "label": "Invoice Hash",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_ids",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cleared_invoice_id",
+   "label": "Cleared Invoice ID",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "signed_xml",
+   "label": "Signed XML",
+   "fieldtype": "Attach"
+  },
+  {
+   "fieldname": "qr_code",
+   "label": "QR Code",
+   "fieldtype": "Attach Image"
+  },
+  {
+   "fieldname": "section_submission",
+   "label": "Submission Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "submitted_at",
+   "label": "Submitted At",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "submitted_by",
+   "label": "Submitted By",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_sub",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_status_check",
+   "label": "Last Status Check",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "status_message",
+   "label": "Status Message",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "section_errors",
+   "label": "Errors & Warnings",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "error_log",
+   "label": "Error Log",
+   "fieldtype": "Link",
+   "options": "EH Error Log"
+  },
+  {
+   "fieldname": "column_break_err",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "validation_results",
+   "label": "Validation Results",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "has_warnings",
+   "label": "Has Warnings",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "amended_from",
+   "label": "Amended From",
+   "fieldtype": "Link",
+   "options": "EH E-Invoice"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "Accounts User",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "track_changes": 1,
+ "search_fields": "name, submission_id, status"
+}

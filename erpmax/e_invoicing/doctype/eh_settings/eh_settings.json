@@ -1,0 +1,76 @@
+{
+ "doctype": "DocType",
+ "name": "EH Settings",
+ "module": "E-Invoicing",
+ "custom": 0,
+ "issingle": 1,
+ "fields": [
+  {
+   "fieldname": "default_country_profile",
+   "label": "Default Country Profile",
+   "fieldtype": "Link",
+   "options": "EH Country Profile"
+  },
+  {
+   "fieldname": "environment",
+   "label": "Environment",
+   "fieldtype": "Select",
+   "options": "Sandbox\nProduction",
+   "default": "Sandbox"
+  },
+  {
+   "fieldname": "auto_generate_einvoice",
+   "label": "Auto-Generate E-Invoice on Submit",
+   "fieldtype": "Check",
+   "default": 1
+  },
+  {
+   "fieldname": "auto_sign_invoice",
+   "label": "Auto-Sign Invoice",
+   "fieldtype": "Check",
+   "default": 1
+  },
+  {
+   "fieldname": "auto_submit_invoice",
+   "label": "Auto-Submit to Authority",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "column_break_gen",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "retry_on_failure",
+   "label": "Retry on Failure",
+   "fieldtype": "Check",
+   "default": 1
+  },
+  {
+   "fieldname": "max_retries",
+   "label": "Max Retries",
+   "fieldtype": "Int",
+   "default": 3
+  },
+  {
+   "fieldname": "notify_on_failure",
+   "label": "Notify on Failure",
+   "fieldtype": "Check",
+   "default": 1
+  },
+  {
+   "fieldname": "debug_mode",
+   "label": "Debug Mode",
+   "fieldtype": "Check",
+   "default": 0
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1
+  }
+ ]
+}

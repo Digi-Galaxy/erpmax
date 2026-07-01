@@ -1,0 +1,287 @@
+{
+ "doctype": "DocType",
+ "name": "Company",
+ "module": "ERPMax",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "company_name",
+   "label": "Company Name",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_name_arabic",
+   "label": "Company Name (Arabic)",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "abbreviation",
+   "label": "Abbreviation",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "domain",
+   "label": "Domain",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "date_format",
+   "label": "Date Format",
+   "fieldtype": "Select",
+   "options": "dd-mm-yyyy\nmm-dd-yyyy\nyyyy-mm-dd",
+   "default": "yyyy-mm-dd"
+  },
+  {
+   "fieldname": "country",
+   "label": "Country",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "default_currency",
+   "label": "Default Currency",
+   "fieldtype": "Data",
+   "default": "SAR"
+  },
+  {
+   "fieldname": "enable_perpetual_inventory",
+   "label": "Enable Perpetual Inventory",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "column_break_accounting",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_fiscal_year",
+   "label": "Default Fiscal Year",
+   "fieldtype": "Link",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "default_holiday_list",
+   "label": "Default Holiday List",
+   "fieldtype": "Link",
+   "options": "Holiday List"
+  },
+  {
+   "fieldname": "default_payable_account",
+   "label": "Default Payable Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_receivable_account",
+   "label": "Default Receivable Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_discount_account",
+   "label": "Default Discount Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  },
+  {
+   "fieldname": "round_off_account",
+   "label": "Round Off Account",
+   "fieldtype": "Link",
+   "options": "Account"
+  },
+  {
+   "fieldname": "section_tax",
+   "label": "Tax Settings",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tax_id",
+   "label": "Tax ID",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "vat_number",
+   "label": "VAT Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_tax",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_sales_tax",
+   "label": "Default Sales Tax Template",
+   "fieldtype": "Link",
+   "options": "Sales Taxes and Charges Template"
+  },
+  {
+   "fieldname": "default_purchase_tax",
+   "label": "Default Purchase Tax Template",
+   "fieldtype": "Link",
+   "options": "Purchase Taxes and Charges Template"
+  },
+  {
+   "fieldname": "section_zatca",
+   "label": "ZATCA E-Invoicing Settings",
+   "fieldtype": "Tab Break"
+  },
+  {
+   "fieldname": "enable_zatca_e_invoicing",
+   "label": "Enable ZATCA E-Invoicing",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "zatca_phase",
+   "label": "ZATCA Phase",
+   "fieldtype": "Select",
+   "options": "Phase 1\nPhase 2",
+   "default": "Phase 1"
+  },
+  {
+   "fieldname": "include_po_no",
+   "label": "Include PO Number",
+   "fieldtype": "Check",
+   "default": 1
+  },
+  {
+   "fieldname": "enforce_date_validation",
+   "label": "Enforce Date Validation",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "col_break_zatca1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "generate_pdf3a_through",
+   "label": "Generate PDF/A-3b Through",
+   "fieldtype": "Select",
+   "options": "JavaScript\nConvertAPI"
+  },
+  {
+   "fieldname": "convertapi_token",
+   "label": "ConvertAPI Token",
+   "fieldtype": "Password"
+  },
+  {
+   "fieldname": "csr_settings",
+   "label": "CSR Settings (Phase 1)",
+   "fieldtype": "Link",
+   "options": "ZATCA CSR Settings"
+  },
+  {
+   "fieldname": "production_csid",
+   "label": "Production CSID (Phase 2)",
+   "fieldtype": "Link",
+   "options": "ZATCA CSID"
+  },
+  {
+   "fieldname": "section_submission",
+   "label": "Submission Frequency Settings",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "b2c_auto_sales_submission_enabled",
+   "label": "B2C Auto Sales Submission Enabled",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "sales_information_submission_frequency",
+   "label": "Sales Info Submission Frequency",
+   "fieldtype": "Select",
+   "options": "Daily\nWeekly\nMonthly"
+  },
+  {
+   "fieldname": "col_break_submission",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "b2c_cron_format",
+   "label": "B2C Cron Format",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "enable_sales_retention",
+   "label": "Enable Sales Retention",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "enable_stock_delivered_unbilled",
+   "label": "Enable Stock Delivered Unbilled",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "section_address",
+   "label": "Address",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address_line1",
+   "label": "Street Name",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "address_line2",
+   "label": "Building Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "city",
+   "label": "Subdivision / City",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "col_break_addr",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state",
+   "label": "State / Province",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "zip_code",
+   "label": "ZIP Code",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "phone",
+   "label": "Phone",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "email",
+   "label": "Email",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "website",
+   "label": "Website",
+   "fieldtype": "Data"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "company_name",
+ "title_field": "company_name",
+ "autoname": "field:company_name",
+ "search_fields": "company_name, tax_id, vat_number"
+}

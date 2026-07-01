@@ -1,0 +1,116 @@
+{
+ "doctype": "DocType",
+ "name": "EH Country Profile",
+ "module": "E-Invoicing",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "country_code",
+   "label": "Country Code",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "country_name",
+   "label": "Country Name",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "is_default",
+   "label": "Is Default",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "provider_type",
+   "label": "Provider Type",
+   "fieldtype": "Select",
+   "options": "ZATCA\nETA\nFTA\nISTD\nNBR\nPEPPOL\nGeneric",
+   "reqd": 1
+  },
+  {
+   "fieldname": "xml_format",
+   "label": "XML Format",
+   "fieldtype": "Select",
+   "options": "UBL 2.1\nPEPPOL BIS 3.0\nETA JSON\nCII"
+  },
+  {
+   "fieldname": "signing_algorithm",
+   "label": "Signing Algorithm",
+   "fieldtype": "Select",
+   "options": "ECDSA-SHA256\nRSA-SHA256\nXML-DSIG"
+  },
+  {
+   "fieldname": "qr_encoding",
+   "label": "QR Encoding",
+   "fieldtype": "Select",
+   "options": "TLV\nJSON\nBase64\nNone"
+  },
+  {
+   "fieldname": "column_break_api",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "api_base_url_sandbox",
+   "label": "API Base URL (Sandbox)",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "api_base_url_production",
+   "label": "API Base URL (Production)",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "vat_rate",
+   "label": "Default VAT Rate (%)",
+   "fieldtype": "Percent"
+  },
+  {
+   "fieldname": "invoice_retention_years",
+   "label": "Invoice Retention (Years)",
+   "fieldtype": "Int",
+   "default": 6
+  },
+  {
+   "fieldname": "section_clearance",
+   "label": "Clearance Settings",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "requires_clearance",
+   "label": "Requires Clearance",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "standard_invoice_limit",
+   "label": "Standard Invoice Limit (SAR)",
+   "fieldtype": "Currency",
+   "default": 1000
+  },
+  {
+   "fieldname": "column_break_clearance",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mandatory_fields",
+   "label": "Mandatory Fields",
+   "fieldtype": "Small Text"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "country_name",
+ "title_field": "country_name",
+ "search_fields": "country_code, country_name, provider_type"
+}

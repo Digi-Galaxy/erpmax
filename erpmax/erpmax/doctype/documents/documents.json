@@ -1,0 +1,46 @@
+{
+ "doctype": "DocType",
+ "name": "Documents",
+ "module": "ERPMax",
+ "custom": 0,
+ "istable": 1,
+ "fields": [
+  {
+   "fieldname": "document_type",
+   "label": "Document Type",
+   "fieldtype": "Select",
+   "options": "Registration\nInsurance\nLicense\nContract\nOther"
+  },
+  {
+   "fieldname": "document_name",
+   "label": "Document Name",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_doc",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attachment",
+   "label": "Attachment",
+   "fieldtype": "Attach"
+  },
+  {
+   "fieldname": "expiry_date",
+   "label": "Expiry Date",
+   "fieldtype": "Date"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "modified_by": "Administrator",
+ "owner": "Administrator"
+}

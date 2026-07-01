@@ -247,3 +247,14 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+after_install = "erpmax.e_invoicing.install.after_install"
+
+doc_events = {
+	"Sales Invoice": {
+		"on_submit": "erpmax.e_invoicing.integrations.on_sales_invoice_submit",
+	},
+}
+
+fixtures = [
+	{"dt": "EH Country Profile", "filters": [["name", "like", "%"]]},
+]

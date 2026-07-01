@@ -1,0 +1,46 @@
+{
+ "doctype": "DocType",
+ "name": "VAT Process Item",
+ "module": "ERPMax",
+ "custom": 0,
+ "istable": 1,
+ "fields": [
+  {
+   "fieldname": "document_type",
+   "label": "Document Type",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "document_name",
+   "label": "Document Name",
+   "fieldtype": "Dynamic Link",
+   "options": "document_type"
+  },
+  {
+   "fieldname": "column_break_vpi",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total",
+   "label": "Total",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "vat_amount",
+   "label": "VAT Amount",
+   "fieldtype": "Currency"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "modified_by": "Administrator",
+ "owner": "Administrator"
+}
