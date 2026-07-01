@@ -1,0 +1,23 @@
+/* ERPMax Fonts - Urdu/Arabic/Currency Support */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap');
+
+.urdu-text, .arabic-text {
+    font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Arabic', 'Scheherazade New', 'Traditional Arabic', serif;
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+.currency-pkr::before { content: 'PKR\00a0'; }
+.currency-sar::before { content: 'SAR\00a0'; }
+.currency-aed::before { content: 'AED\00a0'; }
+.currency-usd::before { content: '$\00a0'; }
+
+.si-print-title { font-size: 18pt; font-weight: bold; text-align: center; }
+.si-print-table { width: 100%; border-collapse: collapse; }
+.si-print-table th, .si-print-table td { border: 1px solid #000; padding: 4px 8px; text-align: left; }
+.si-print-table th { background: #f0f0f0; font-weight: bold; }
+.si-print-amount { text-align: right; }
+.si-print-footer { margin-top: 20px; }
