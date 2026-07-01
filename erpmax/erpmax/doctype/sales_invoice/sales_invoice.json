@@ -398,6 +398,51 @@
    "label": "Amended From",
    "fieldtype": "Link",
    "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "section_fbr",
+   "label": "FBR E-Invoicing",
+   "fieldtype": "Tab Break"
+  },
+  {
+   "fieldname": "submit_to_fbr",
+   "label": "Submit to FBR",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "fbr_status",
+   "label": "FBR Status",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fbr_invoice_number",
+   "label": "FBR Invoice Number",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_fbr",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fbr_datetime",
+   "label": "FBR DateTime",
+   "fieldtype": "Datetime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fbr_qr_code",
+   "label": "FBR QR Code",
+   "fieldtype": "Attach Image",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fbr_response",
+   "label": "FBR Response",
+   "fieldtype": "Code",
+   "read_only": 1
   }
  ],
  "permissions": [

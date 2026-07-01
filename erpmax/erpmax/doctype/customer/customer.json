@@ -107,6 +107,16 @@
    "fieldtype": "Data"
   },
   {
+   "fieldname": "ntn",
+   "label": "NTN",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "strn",
+   "label": "STRN",
+   "fieldtype": "Data"
+  },
+  {
    "fieldname": "section_contact",
    "label": "Contact Details",
    "fieldtype": "Section Break"

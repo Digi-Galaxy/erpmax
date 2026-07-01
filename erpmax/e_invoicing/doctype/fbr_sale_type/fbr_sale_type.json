@@ -1,0 +1,73 @@
+{
+ "doctype": "DocType",
+ "name": "FBR Sale Type",
+ "module": "E-Invoicing",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "sale_type",
+   "label": "Sale Type",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "scenario_id",
+   "label": "Scenario ID",
+   "fieldtype": "Select",
+   "options": "SN001\nSN002\nSN005\nSN006\nSN007\nSN008\nSN017\nSN024\nSN026\nSN027\nSN028"
+  },
+  {
+   "fieldname": "description",
+   "label": "Description",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "column_break_tax",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "further_tax",
+   "label": "Further Tax Applicable",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "tax_exempted",
+   "label": "Tax Exempted",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "fixed_notified_value",
+   "label": "Fixed Notified Value / Retail Price",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "sro_schedule_no",
+   "label": "SRO Schedule No",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "sro_item_serial_no",
+   "label": "SRO Item Serial No",
+   "fieldtype": "Data"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "sort_field": "sale_type",
+ "title_field": "sale_type",
+ "search_fields": "sale_type, scenario_id"
+}

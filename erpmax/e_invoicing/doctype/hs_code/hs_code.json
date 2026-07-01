@@ -1,0 +1,48 @@
+{
+ "doctype": "DocType",
+ "name": "HS Code",
+ "module": "E-Invoicing",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "hs_code",
+   "label": "HS Code",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "label": "Description",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "column_break_uom",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "uom",
+   "label": "UOM",
+   "fieldtype": "Data"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "sort_field": "hs_code",
+ "title_field": "hs_code",
+ "search_fields": "hs_code, description"
+}

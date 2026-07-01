@@ -10,6 +10,7 @@ COUNTRY_PROVIDER_MAP = {
     "KW": "kuwait",
     "OM": "oman",
     "MA": "dgi",
+    "PK": "fbr",
 }
 
 PROVIDER_MODULE_MAP = {}
@@ -29,6 +30,9 @@ def get_provider(provider_type):
     elif provider_type == "fta":
         from .fta import FTAProvider
         PROVIDER_MODULE_MAP[provider_type] = FTAProvider
+    elif provider_type == "fbr":
+        from .fbr import FBRProvider
+        PROVIDER_MODULE_MAP[provider_type] = FBRProvider
     else:
         raise ValueError(_("Unsupported provider type: {0}").format(provider_type))
 

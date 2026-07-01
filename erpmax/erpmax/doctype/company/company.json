@@ -215,6 +215,38 @@
    "default": 0
   },
   {
+   "fieldname": "section_fbr",
+   "label": "FBR E-Invoicing Settings",
+   "fieldtype": "Tab Break"
+  },
+  {
+   "fieldname": "fbr_authorization_token",
+   "label": "PRAL Authorization Token",
+   "fieldtype": "Password"
+  },
+  {
+   "fieldname": "fbr_mode",
+   "label": "Mode",
+   "fieldtype": "Select",
+   "options": "Sandbox Testing\nProduction"
+  },
+  {
+   "fieldname": "fbr_api_endpoint",
+   "label": "API Endpoint",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "col_break_fbr",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "province",
+   "label": "Province",
+   "fieldtype": "Select",
+   "options": "Punjab\nSindh\nKhyber Pakhtunkhwa\nBalochistan\nCapital Territory\nGilgit Baltistan\nAzad Jammu and Kashmir"
+  },
+  {
    "fieldname": "enable_stock_delivered_unbilled",
    "label": "Enable Stock Delivered Unbilled",
    "fieldtype": "Check",

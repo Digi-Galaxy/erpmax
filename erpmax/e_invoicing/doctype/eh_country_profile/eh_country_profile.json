@@ -26,14 +26,14 @@
    "fieldname": "provider_type",
    "label": "Provider Type",
    "fieldtype": "Select",
-   "options": "ZATCA\nETA\nFTA\nISTD\nNBR\nPEPPOL\nGeneric",
+   "options": "ZATCA\nETA\nFTA\nISTD\nNBR\nPEPPOL\nGeneric\nFBR",
    "reqd": 1
   },
   {
    "fieldname": "xml_format",
    "label": "XML Format",
    "fieldtype": "Select",
-   "options": "UBL 2.1\nPEPPOL BIS 3.0\nETA JSON\nCII"
+   "options": "UBL 2.1\nPEPPOL BIS 3.0\nETA JSON\nCII\nJSON"
   },
   {
    "fieldname": "signing_algorithm",

@@ -81,6 +81,18 @@
    "label": "ZATCA Tax Category",
    "fieldtype": "Select",
    "options": "Standard Rate\nServices Outside Scope\nServices Subject to VAT\nOther"
+  },
+  {
+   "fieldname": "hs_code",
+   "label": "HS Code",
+   "fieldtype": "Link",
+   "options": "HS Code"
+  },
+  {
+   "fieldname": "fbr_sale_type",
+   "label": "FBR Sale Type",
+   "fieldtype": "Link",
+   "options": "FBR Sale Type"
   }
  ],
  "permissions": [
