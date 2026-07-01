@@ -92,6 +92,16 @@
    "options": "Account"
   },
   {
+   "fieldname": "chart_template",
+   "label": "Chart Template",
+   "fieldtype": "Select",
+   "options": "\nPakistan - ICAP Standard\nIFRS Standard\nSaudi Arabia - SOCPA\nUAE - IFRS Based\nUS GAAP Standard"
+  },
+  {
+   "fieldname": "column_break_ct",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "section_tax",
    "label": "Tax Settings",
    "fieldtype": "Section Break"

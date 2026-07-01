@@ -1,0 +1,536 @@
+{
+  "template_name": "Pakistan - ICAP Standard",
+  "standard": "Pakistan",
+  "accounts": [
+    {
+      "n": "Equity",
+      "rt": "Equity",
+      "g": true,
+      "t": "Equity",
+      "c": [
+        {
+          "n": "Owner's Capital",
+          "rt": "Equity",
+          "g": true,
+          "t": "Equity",
+          "c": [
+            {
+              "n": "Capital Account",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            },
+            {
+              "n": "Drawings",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            },
+            {
+              "n": "Retained Earnings",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            }
+          ]
+        },
+        {
+          "n": "Reserves and Surplus",
+          "rt": "Equity",
+          "g": true,
+          "t": "Equity",
+          "c": [
+            {
+              "n": "General Reserve",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            },
+            {
+              "n": "Share Premium",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            },
+            {
+              "n": "Revaluation Reserve",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            }
+          ]
+        },
+        {
+          "n": "Share Capital",
+          "rt": "Equity",
+          "g": true,
+          "t": "Equity",
+          "c": [
+            {
+              "n": "Ordinary Share Capital",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            },
+            {
+              "n": "Preference Share Capital",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            }
+          ]
+        },
+        {
+          "n": "Current Year Profit/Loss",
+          "rt": "Equity",
+          "g": false,
+          "t": "Equity"
+        }
+      ]
+    },
+    {
+      "n": "Liabilities",
+      "rt": "Liability",
+      "g": true,
+      "c": [
+        {
+          "n": "Current Liabilities",
+          "rt": "Liability",
+          "g": true,
+          "c": [
+            {
+              "n": "Accounts Payable",
+              "rt": "Liability",
+              "g": false,
+              "t": "Payable"
+            },
+            {
+              "n": "Accrued Expenses",
+              "rt": "Liability",
+              "g": false,
+              "t": "Current Liability"
+            },
+            {
+              "n": "Advances from Customers",
+              "rt": "Liability",
+              "g": false,
+              "t": "Current Liability"
+            },
+            {
+              "n": "Provision for Taxation",
+              "rt": "Liability",
+              "g": false,
+              "t": "Tax"
+            },
+            {
+              "n": "Sales Tax Payable",
+              "rt": "Liability",
+              "g": false,
+              "t": "Tax"
+            },
+            {
+              "n": "WHT Payable",
+              "rt": "Liability",
+              "g": false,
+              "t": "Tax"
+            },
+            {
+              "n": "Unearned Revenue",
+              "rt": "Liability",
+              "g": false,
+              "t": "Current Liability"
+            },
+            {
+              "n": "Short Term Borrowings",
+              "rt": "Liability",
+              "g": false,
+              "t": "Current Liability"
+            }
+          ]
+        },
+        {
+          "n": "Long Term Liabilities",
+          "rt": "Liability",
+          "g": true,
+          "c": [
+            {
+              "n": "Long Term Loans Payable",
+              "rt": "Liability",
+              "g": false,
+              "t": "Loan Payable"
+            },
+            {
+              "n": "Lease Liabilities",
+              "rt": "Liability",
+              "g": false,
+              "t": "Lease Liability"
+            },
+            {
+              "n": "Deferred Tax Liability",
+              "rt": "Liability",
+              "g": false,
+              "t": "Deferred Revenue"
+            },
+            {
+              "n": "Provision for Gratuity",
+              "rt": "Liability",
+              "g": false,
+              "t": "Provision"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "n": "Assets",
+      "rt": "Asset",
+      "g": true,
+      "c": [
+        {
+          "n": "Current Assets",
+          "rt": "Asset",
+          "g": true,
+          "c": [
+            {
+              "n": "Cash in Hand",
+              "rt": "Asset",
+              "g": false,
+              "t": "Cash"
+            },
+            {
+              "n": "Bank Accounts",
+              "rt": "Asset",
+              "g": true,
+              "c": [
+                {
+                  "n": "Main Bank Account",
+                  "rt": "Asset",
+                  "g": false,
+                  "t": "Bank"
+                },
+                {
+                  "n": "Savings Account",
+                  "rt": "Asset",
+                  "g": false,
+                  "t": "Bank"
+                }
+              ]
+            },
+            {
+              "n": "Accounts Receivable",
+              "rt": "Asset",
+              "g": false,
+              "t": "Receivable"
+            },
+            {
+              "n": "Inventory",
+              "rt": "Asset",
+              "g": false,
+              "t": "Stock"
+            },
+            {
+              "n": "Prepaid Expenses",
+              "rt": "Asset",
+              "g": false,
+              "t": "Deferred Expense"
+            },
+            {
+              "n": "Short Term Investments",
+              "rt": "Asset",
+              "g": false,
+              "t": "Current Asset"
+            }
+          ]
+        },
+        {
+          "n": "Fixed Assets",
+          "rt": "Asset",
+          "g": true,
+          "c": [
+            {
+              "n": "Land",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Buildings",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Plant and Machinery",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Furniture and Fixtures",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Computer Equipment",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Vehicles",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Capital Work in Progress",
+              "rt": "Asset",
+              "g": false,
+              "t": "Capital Work in Progress"
+            },
+            {
+              "n": "Accumulated Depreciation",
+              "rt": "Asset",
+              "g": true,
+              "c": [
+                {
+                  "n": "Acc Dep - Buildings",
+                  "rt": "Asset",
+                  "g": false,
+                  "t": "Accumulated Depreciation"
+                },
+                {
+                  "n": "Acc Dep - Plant",
+                  "rt": "Asset",
+                  "g": false,
+                  "t": "Accumulated Depreciation"
+                },
+                {
+                  "n": "Acc Dep - Furniture",
+                  "rt": "Asset",
+                  "g": false,
+                  "t": "Accumulated Depreciation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "n": "Intangible Assets",
+          "rt": "Asset",
+          "g": true,
+          "c": [
+            {
+              "n": "Goodwill",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Patents and Trademarks",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "n": "Income",
+      "rt": "Income",
+      "g": true,
+      "c": [
+        {
+          "n": "Operating Income",
+          "rt": "Income",
+          "g": true,
+          "c": [
+            {
+              "n": "Sales Revenue",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            },
+            {
+              "n": "Service Revenue",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            }
+          ]
+        },
+        {
+          "n": "Other Income",
+          "rt": "Income",
+          "g": true,
+          "c": [
+            {
+              "n": "Interest Income",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            },
+            {
+              "n": "Exchange Gain",
+              "rt": "Income",
+              "g": false,
+              "t": "Exchange Gain/Loss"
+            },
+            {
+              "n": "Miscellaneous Income",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "n": "Expenses",
+      "rt": "Expense",
+      "g": true,
+      "c": [
+        {
+          "n": "Cost of Sales",
+          "rt": "Expense",
+          "g": true,
+          "c": [
+            {
+              "n": "Cost of Goods Sold",
+              "rt": "Expense",
+              "g": false,
+              "t": "Cost of Goods Sold"
+            },
+            {
+              "n": "Purchases",
+              "rt": "Expense",
+              "g": false,
+              "t": "Purchases Account"
+            }
+          ]
+        },
+        {
+          "n": "Administrative Expenses",
+          "rt": "Expense",
+          "g": true,
+          "c": [
+            {
+              "n": "Salaries and Wages",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Rent Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Utilities",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Legal and Professional",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Audit Fees",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Insurance Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Bank Charges",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Depreciation Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Depreciation"
+            }
+          ]
+        },
+        {
+          "n": "Selling and Distribution",
+          "rt": "Expense",
+          "g": true,
+          "c": [
+            {
+              "n": "Advertising Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Sales Commission",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Delivery and Freight",
+              "rt": "Expense",
+              "g": false,
+              "t": "Shipping Charges"
+            }
+          ]
+        },
+        {
+          "n": "Finance Costs",
+          "rt": "Expense",
+          "g": true,
+          "c": [
+            {
+              "n": "Interest Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Exchange Loss",
+              "rt": "Expense",
+              "g": false,
+              "t": "Exchange Gain/Loss"
+            }
+          ]
+        },
+        {
+          "n": "Tax Expenses",
+          "rt": "Expense",
+          "g": true,
+          "c": [
+            {
+              "n": "Current Tax Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Tax"
+            },
+            {
+              "n": "Deferred Tax Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Tax"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

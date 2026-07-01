@@ -3,6 +3,9 @@
  "name": "Account",
  "module": "ERPMax",
  "custom": 0,
+ "is_tree": 1,
+ "naming_rule": "By fieldname",
+ "autoname": "field:account_name",
  "fields": [
   {
    "fieldname": "account_name",
@@ -29,7 +32,6 @@
   },
   {
    "fieldname": "column_break_ac1",
-   "label": "",
    "fieldtype": "Column Break"
   },
   {
@@ -51,32 +53,51 @@
    "default": "SAR"
   },
   {
-   "fieldname": "tax_type",
-   "label": "Tax Type",
-   "fieldtype": "Select",
-   "options": "Standard Rate\nZero Rate\nExempt"
-  },
-  {
-   "fieldname": "section_break_ac2",
-   "label": "Balance",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "balance",
-   "label": "Balance",
-   "fieldtype": "Currency",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_ac3",
-   "label": "",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "account_type",
    "label": "Account Type",
    "fieldtype": "Select",
-   "options": "Cash\nBank\nPayable\nReceivable\nTax\nStock\nFixed Asset\nCost of Goods Sold\nExpenses Account\nIncome Account"
+   "options": "Cash\nBank\nPayable\nReceivable\nTax\nStock\nFixed Asset\nCost of Goods Sold\nExpenses Account\nIncome Account\nEquity\nAccumulated Depreciation\nCapital Work in Progress\nCurrent Asset\nCurrent Liability\nDeferred Expense\nDeferred Revenue\nDepreciation\nExchange Gain/Loss\nLease Liability\nLoan Payable\nPayroll\nProvision\nPurchases Account\nRound Off\nShipping Charges\nStock Adjustment\nSuspense\nTemporary"
+  },
+  {
+   "fieldname": "tax_rate",
+   "label": "Tax Rate",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "section_freeze",
+   "label": "Freeze",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "is_frozen",
+   "label": "Is Frozen",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "disabled",
+   "label": "Disabled",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "lft",
+   "label": "Left",
+   "fieldtype": "Int",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "rgt",
+   "label": "Right",
+   "fieldtype": "Int",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "old_parent",
+   "label": "Old Parent",
+   "fieldtype": "Data",
+   "read_only": 1,
+   "hidden": 1
   }
  ],
  "permissions": [
@@ -86,6 +107,18 @@
    "write": 1,
    "create": 1,
    "delete": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Accounts User",
+   "read": 1,
+   "write": 1
   }
  ],
  "sort_field": "modified",

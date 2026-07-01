@@ -1,0 +1,605 @@
+{
+  "template_name": "US GAAP Standard",
+  "standard": "US GAAP",
+  "accounts": [
+    {
+      "n": "Equity",
+      "rt": "Equity",
+      "g": true,
+      "t": "Equity",
+      "c": [
+        {
+          "n": "Capital Stock",
+          "rt": "Equity",
+          "g": true,
+          "t": "Equity",
+          "c": [
+            {
+              "n": "Common Stock",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            },
+            {
+              "n": "Preferred Stock",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            },
+            {
+              "n": "Treasury Stock",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            }
+          ]
+        },
+        {
+          "n": "Additional Paid-in Capital",
+          "rt": "Equity",
+          "g": false,
+          "t": "Equity"
+        },
+        {
+          "n": "Retained Earnings",
+          "rt": "Equity",
+          "g": true,
+          "t": "Equity",
+          "c": [
+            {
+              "n": "Appropriated Retained Earnings",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            },
+            {
+              "n": "Unappropriated Retained Earnings",
+              "rt": "Equity",
+              "g": false,
+              "t": "Equity"
+            }
+          ]
+        },
+        {
+          "n": "Accumulated Other Comprehensive Income",
+          "rt": "Equity",
+          "g": false,
+          "t": "Equity"
+        },
+        {
+          "n": "Net Income (Loss)",
+          "rt": "Equity",
+          "g": false,
+          "t": "Equity"
+        }
+      ]
+    },
+    {
+      "n": "Liabilities",
+      "rt": "Liability",
+      "g": true,
+      "c": [
+        {
+          "n": "Current Liabilities",
+          "rt": "Liability",
+          "g": true,
+          "c": [
+            {
+              "n": "Accounts Payable",
+              "rt": "Liability",
+              "g": false,
+              "t": "Payable"
+            },
+            {
+              "n": "Accrued Liabilities",
+              "rt": "Liability",
+              "g": false,
+              "t": "Current Liability"
+            },
+            {
+              "n": "Accrued Payroll",
+              "rt": "Liability",
+              "g": false,
+              "t": "Payroll"
+            },
+            {
+              "n": "Income Taxes Payable",
+              "rt": "Liability",
+              "g": false,
+              "t": "Tax"
+            },
+            {
+              "n": "Sales Tax Payable",
+              "rt": "Liability",
+              "g": false,
+              "t": "Tax"
+            },
+            {
+              "n": "Short Term Notes Payable",
+              "rt": "Liability",
+              "g": false,
+              "t": "Current Liability"
+            },
+            {
+              "n": "Current Portion of Long Term Debt",
+              "rt": "Liability",
+              "g": false,
+              "t": "Current Liability"
+            },
+            {
+              "n": "Unearned Revenue",
+              "rt": "Liability",
+              "g": false,
+              "t": "Deferred Revenue"
+            }
+          ]
+        },
+        {
+          "n": "Long Term Liabilities",
+          "rt": "Liability",
+          "g": true,
+          "c": [
+            {
+              "n": "Long Term Notes Payable",
+              "rt": "Liability",
+              "g": false,
+              "t": "Loan Payable"
+            },
+            {
+              "n": "Bonds Payable",
+              "rt": "Liability",
+              "g": false,
+              "t": "Loan Payable"
+            },
+            {
+              "n": "Lease Obligations",
+              "rt": "Liability",
+              "g": false,
+              "t": "Lease Liability"
+            },
+            {
+              "n": "Deferred Tax Liabilities",
+              "rt": "Liability",
+              "g": false,
+              "t": "Deferred Revenue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "n": "Assets",
+      "rt": "Asset",
+      "g": true,
+      "c": [
+        {
+          "n": "Current Assets",
+          "rt": "Asset",
+          "g": true,
+          "c": [
+            {
+              "n": "Cash and Cash Equivalents",
+              "rt": "Asset",
+              "g": true,
+              "c": [
+                {
+                  "n": "Cash on Hand",
+                  "rt": "Asset",
+                  "g": false,
+                  "t": "Cash"
+                },
+                {
+                  "n": "Checking Account",
+                  "rt": "Asset",
+                  "g": false,
+                  "t": "Bank"
+                }
+              ]
+            },
+            {
+              "n": "Accounts Receivable",
+              "rt": "Asset",
+              "g": false,
+              "t": "Receivable"
+            },
+            {
+              "n": "Allowance for Doubtful Accounts",
+              "rt": "Asset",
+              "g": false,
+              "t": "Receivable"
+            },
+            {
+              "n": "Inventory",
+              "rt": "Asset",
+              "g": false,
+              "t": "Stock"
+            },
+            {
+              "n": "Prepaid Expenses",
+              "rt": "Asset",
+              "g": false,
+              "t": "Deferred Expense"
+            },
+            {
+              "n": "Short Term Investments",
+              "rt": "Asset",
+              "g": false,
+              "t": "Current Asset"
+            }
+          ]
+        },
+        {
+          "n": "Fixed Assets",
+          "rt": "Asset",
+          "g": true,
+          "c": [
+            {
+              "n": "Land",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Buildings",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Machinery and Equipment",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Furniture and Fixtures",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Computer Equipment",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Vehicles",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Construction in Progress",
+              "rt": "Asset",
+              "g": false,
+              "t": "Capital Work in Progress"
+            },
+            {
+              "n": "Accumulated Depreciation",
+              "rt": "Asset",
+              "g": false,
+              "t": "Accumulated Depreciation"
+            }
+          ]
+        },
+        {
+          "n": "Intangible Assets",
+          "rt": "Asset",
+          "g": true,
+          "c": [
+            {
+              "n": "Goodwill",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Patents",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Trademarks",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Software",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            }
+          ]
+        },
+        {
+          "n": "Other Assets",
+          "rt": "Asset",
+          "g": true,
+          "c": [
+            {
+              "n": "Long Term Investments",
+              "rt": "Asset",
+              "g": false,
+              "t": "Fixed Asset"
+            },
+            {
+              "n": "Deferred Tax Assets",
+              "rt": "Asset",
+              "g": false,
+              "t": "Deferred Expense"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "n": "Revenue",
+      "rt": "Income",
+      "g": true,
+      "c": [
+        {
+          "n": "Operating Revenue",
+          "rt": "Income",
+          "g": true,
+          "c": [
+            {
+              "n": "Product Sales",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            },
+            {
+              "n": "Service Revenue",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            },
+            {
+              "n": "Consulting Revenue",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            },
+            {
+              "n": "Rental Revenue",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            }
+          ]
+        },
+        {
+          "n": "Other Revenue",
+          "rt": "Income",
+          "g": true,
+          "c": [
+            {
+              "n": "Interest Income",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            },
+            {
+              "n": "Dividend Income",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            },
+            {
+              "n": "Gain on Sale of Assets",
+              "rt": "Income",
+              "g": false,
+              "t": "Income Account"
+            },
+            {
+              "n": "Foreign Exchange Gain",
+              "rt": "Income",
+              "g": false,
+              "t": "Exchange Gain/Loss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "n": "Expenses",
+      "rt": "Expense",
+      "g": true,
+      "c": [
+        {
+          "n": "Cost of Goods Sold",
+          "rt": "Expense",
+          "g": true,
+          "c": [
+            {
+              "n": "COGS - Material",
+              "rt": "Expense",
+              "g": false,
+              "t": "Cost of Goods Sold"
+            },
+            {
+              "n": "COGS - Labor",
+              "rt": "Expense",
+              "g": false,
+              "t": "Cost of Goods Sold"
+            },
+            {
+              "n": "COGS - Overhead",
+              "rt": "Expense",
+              "g": false,
+              "t": "Cost of Goods Sold"
+            },
+            {
+              "n": "Purchases",
+              "rt": "Expense",
+              "g": false,
+              "t": "Purchases Account"
+            },
+            {
+              "n": "Freight In",
+              "rt": "Expense",
+              "g": false,
+              "t": "Shipping Charges"
+            }
+          ]
+        },
+        {
+          "n": "Selling, General & Administrative",
+          "rt": "Expense",
+          "g": true,
+          "c": [
+            {
+              "n": "Salaries and Wages",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Payroll Taxes",
+              "rt": "Expense",
+              "g": false,
+              "t": "Tax"
+            },
+            {
+              "n": "Employee Benefits",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Rent Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Utilities",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Office Supplies",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Telephone and Internet",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Insurance",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Legal and Professional",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Travel and Entertainment",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Advertising and Marketing",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Sales Commission",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Shipping and Delivery",
+              "rt": "Expense",
+              "g": false,
+              "t": "Shipping Charges"
+            },
+            {
+              "n": "Bank Service Charges",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Depreciation and Amortization",
+              "rt": "Expense",
+              "g": false,
+              "t": "Depreciation"
+            },
+            {
+              "n": "Bad Debt Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Repairs and Maintenance",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            }
+          ]
+        },
+        {
+          "n": "Finance Costs",
+          "rt": "Expense",
+          "g": true,
+          "c": [
+            {
+              "n": "Interest Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Expenses Account"
+            },
+            {
+              "n": "Foreign Exchange Loss",
+              "rt": "Expense",
+              "g": false,
+              "t": "Exchange Gain/Loss"
+            }
+          ]
+        },
+        {
+          "n": "Income Tax Expense",
+          "rt": "Expense",
+          "g": true,
+          "c": [
+            {
+              "n": "Federal Income Tax",
+              "rt": "Expense",
+              "g": false,
+              "t": "Tax"
+            },
+            {
+              "n": "State Income Tax",
+              "rt": "Expense",
+              "g": false,
+              "t": "Tax"
+            },
+            {
+              "n": "Deferred Tax Expense",
+              "rt": "Expense",
+              "g": false,
+              "t": "Tax"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

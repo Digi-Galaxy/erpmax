@@ -1,0 +1,54 @@
+{
+ "doctype": "DocType",
+ "name": "Chart of Accounts Template",
+ "module": "ERPMax",
+ "custom": 0,
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "label": "Template Name",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "country",
+   "label": "Country",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "standard",
+   "label": "Standard",
+   "fieldtype": "Select",
+   "options": "IFRS\nUS GAAP\nPakistan\nSaudi Arabia\nUAE"
+  },
+  {
+   "fieldname": "column_break_tpl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "disabled",
+   "label": "Disabled",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "section_accounts",
+   "label": "Accounts",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "accounts",
+   "label": "Accounts",
+   "fieldtype": "Table",
+   "options": "Chart of Accounts Account"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ]
+}
