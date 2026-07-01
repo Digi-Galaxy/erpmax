@@ -158,6 +158,23 @@
    "fieldtype": "Data"
   },
   {
+   "fieldname": "section_project",
+   "label": "Project",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "project",
+   "label": "Project",
+   "fieldtype": "Link",
+   "options": "Project"
+  },
+  {
+   "fieldname": "cost_centre",
+   "label": "Cost Centre",
+   "fieldtype": "Link",
+   "options": "Cost Centre"
+  },
+  {
    "fieldname": "items_section",
    "label": "Invoice Items",
    "fieldtype": "Section Break"

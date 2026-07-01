@@ -1,0 +1,143 @@
+{
+ "doctype": "DocType",
+ "name": "Project",
+ "module": "ERPMax",
+ "custom": 0,
+ "naming_rule": "Random",
+ "autoname": "PRJ.######",
+ "issingle": 0,
+ "istable": 0,
+ "editable_grid": 0,
+ "track_changes": 1,
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "fields": [
+  {
+   "fieldname": "project_name",
+   "label": "Project Name",
+   "fieldtype": "Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "label": "Customer",
+   "fieldtype": "Link",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "cost_centre",
+   "label": "Cost Centre",
+   "fieldtype": "Link",
+   "options": "Cost Centre",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Open\nIn Progress\nCompleted\nCancelled",
+   "default": "Open"
+  },
+  {
+   "fieldname": "column_break_prj1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "label": "Start Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "end_date",
+   "label": "End Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "estimated_cost",
+   "label": "Estimated Cost",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "description",
+   "label": "Description",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "section_contract",
+   "label": "Contract Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contract_type",
+   "label": "Contract Type",
+   "fieldtype": "Select",
+   "options": "Internal\nContract\nSub-Contract"
+  },
+  {
+   "fieldname": "contract_party",
+   "label": "Contract Party",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_prj2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_start",
+   "label": "Contract Start",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "contract_end",
+   "label": "Contract End",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "contract_value",
+   "label": "Contract Value",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "is_subcontract",
+   "label": "Is Sub-Contract",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "section_services",
+   "label": "Services",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "services",
+   "label": "Services",
+   "fieldtype": "Table",
+   "options": "Project Service"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Project Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Accounts User",
+   "read": 1
+  }
+ ]
+}
