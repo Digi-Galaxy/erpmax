@@ -1,1 +1,0 @@
-from erpmax.accounting.doctype.purchase_taxes_and_charges.purchase_taxes_and_charges import *

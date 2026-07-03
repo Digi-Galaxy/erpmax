@@ -1,1 +1,6 @@
-from erpmax.reporting.doctype.reporting_standard.reporting_standard import *
+import frappe
+from frappe.model.document import Document
+
+
+class ReportingStandard(Document):
+    pass

@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "autoname": "field:name",
+ "creation": "2026-07-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name",
+  "company",
+  "country",
+  "compliance_type",
+  "document_type",
+  "document_name",
+  "status",
+  "submission_date",
+  "response",
+  "error_message"
+ ],
+ "fields": [
+  {
+   "fieldname": "name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "compliance_type",
+   "fieldtype": "Select",
+   "label": "Compliance Type",
+   "options": "ZATCA\nFBR\nVAT\nGST"
+  },
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Data",
+   "label": "Document Type"
+  },
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Data",
+   "label": "Document Name"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nSubmitted\nAccepted\nRejected\nError"
+  },
+  {
+   "fieldname": "submission_date",
+   "fieldtype": "Datetime",
+   "label": "Submission Date"
+  },
+  {
+   "fieldname": "response",
+   "fieldtype": "Long Text",
+   "label": "Response"
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Long Text",
+   "label": "Error Message"
+  }
+ ],
+ "index_web_search_for_values": 0,
+ "links": [],
+ "modified": "2026-07-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Taxation",
+ "name": "Compliance Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

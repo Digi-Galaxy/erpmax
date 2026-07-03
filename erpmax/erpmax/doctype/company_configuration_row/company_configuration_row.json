@@ -1,0 +1,23 @@
+{
+  "actions": [],
+  "creation": "2026-07-03 00:00:00",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": ["config_key", "value_type", "config_value", "column_break_1", "notes"],
+  "fields": [
+    {"fieldname": "config_key", "fieldtype": "Data", "label": "Key", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "value_type", "fieldtype": "Select", "label": "Value Type", "options": "Text\nNumber\nJSON\nHTML\nCode", "in_list_view": 1},
+    {"fieldname": "config_value", "fieldtype": "Small Text", "label": "Value", "in_list_view": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+  ],
+  "istable": 1,
+  "links": [],
+  "modified": "2026-07-03 00:00:00",
+  "module": "ERPMax",
+  "name": "Company Configuration Row",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

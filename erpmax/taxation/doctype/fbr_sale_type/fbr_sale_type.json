@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "autoname": "field:name",
+ "creation": "2026-07-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name",
+  "sale_type_code",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "sale_type_code",
+   "fieldtype": "Data",
+   "label": "Sale Type Code"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  }
+ ],
+ "index_web_search_for_values": 0,
+ "links": [],
+ "modified": "2026-07-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Taxation",
+ "name": "Fbr Sale Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,61 +1,16 @@
 {
- "doctype": "DocType",
- "name": "Purchase Invoice Item",
- "module": "Purchase",
- "custom": 0,
- "istable": 1,
+ "actions": [], "creation": "2026-07-01 00:00:00", "doctype": "DocType", "editable_grid": 1, "engine": "InnoDB",
+ "field_order": ["item_name", "description", "qty", "rate", "amount", "expense_account", "column_break_6", "uom"],
  "fields": [
-  {
-   "fieldname": "item",
-   "label": "Item",
-   "fieldtype": "Link",
-   "options": "Item",
-   "in_list_view": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "description",
-   "label": "Description",
-   "fieldtype": "Small Text",
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "qty",
-   "label": "Qty",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "column_break_pii1",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "rate",
-   "label": "Rate",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "amount",
-   "label": "Amount",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "purchase_order",
-   "label": "Purchase Order",
-   "fieldtype": "Link",
-   "options": "Purchase Order"
-  },
-  {
-   "fieldname": "purchase_receipt",
-   "label": "Purchase Receipt",
-   "fieldtype": "Link",
-   "options": "Purchase Receipt"
-  }
+  {"fieldname": "item_name", "fieldtype": "Data", "in_list_view": 1, "label": "Item Name", "reqd": 1},
+  {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"},
+  {"fieldname": "qty", "fieldtype": "Float", "in_list_view": 1, "label": "Qty", "reqd": 1},
+  {"fieldname": "rate", "fieldtype": "Currency", "in_list_view": 1, "label": "Rate", "reqd": 1},
+  {"fieldname": "amount", "fieldtype": "Currency", "in_list_view": 1, "label": "Amount", "read_only": 1},
+  {"fieldname": "expense_account", "fieldtype": "Link", "label": "Expense Account", "options": "Account"},
+  {"fieldname": "column_break_6", "fieldtype": "Column Break"},
+  {"fieldname": "uom", "fieldtype": "Data", "label": "UOM"}
  ],
- "permissions": []
+ "istable": 1, "modified": "2026-07-01 00:00:00", "module": "Purchase", "name": "Purchase Invoice Item",
+ "permissions": [], "sort_field": "modified"
 }

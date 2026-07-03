@@ -1,270 +1,241 @@
+# -*- coding: utf-8 -*-
+"""
+ERPMax - Standalone ERP Application
+Built on Frappe Framework
+"""
+
+from . import __version__ as app_version
+
 app_name = "erpmax"
 app_title = "ERPMax"
-app_publisher = "Galaxy Labs"
-app_description = "Enterprise Resource Planning Max"
-app_email = "galaxylab2020@gmail.com"
-app_license = "mit"
+app_publisher = "ERPMax"
+app_description = "Standalone configurable ERP platform for small to enterprise businesses"
+app_email = "support@erpmax.com"
+app_license = "MIT"
 
-# Apps
-# ------------------
+# Required Apps
+required_apps = ["frappe"]
 
-# required_apps = []
-
-# Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "erpmax",
-# 		"logo": "/assets/erpmax/logo.png",
-# 		"title": "ERPMax",
-# 		"route": "/erpmax",
-# 		"has_permission": "erpmax.api.permission.has_app_permission"
-# 	}
-# ]
-
-# Includes in <head>
-# ------------------
-
-# include js, css files in header of desk.html
-app_include_css = "/assets/erpmax/fonts/fonts.css"
-# app_include_js = "/assets/erpmax/js/erpmax.js"
-
-# include js, css files in header of web template
-# web_include_css = "/assets/erpmax/css/erpmax.css"
-# web_include_js = "/assets/erpmax/js/erpmax.js"
-
-# include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "erpmax/public/scss/website"
-
-# include js, css files in header of web form
-# webform_include_js = {"doctype": "public/js/doctype.js"}
-# webform_include_css = {"doctype": "public/css/doctype.css"}
-
-# include js in page
-# page_js = {"page" : "public/js/file.js"}
-
-# include js in doctype views
+# DocTypes
 doctype_js = {
-	"Company": "public/js/company.js",
-	"Sales Invoice": "public/js/pdf_generator.js",
-	"Purchase Invoice": "public/js/pdf_generator.js",
-	"Purchase Order": "public/js/pdf_generator.js",
-	"Purchase Receipt": "public/js/pdf_generator.js",
-	"Journal Entry": "public/js/pdf_generator.js",
-	"Payment Entry": "public/js/pdf_generator.js",
-	"Expense Claim": "public/js/pdf_generator.js",
+    "Company": "public/js/company.js",
+    "Sales Invoice": "public/js/sales_invoice.js",
+    "Purchase Invoice": "public/js/purchase_invoice.js",
+    "Journal Entry": "public/js/journal_entry.js",
+    "Payment Entry": "public/js/payment_entry.js",
 }
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
-# doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
-# doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
-# Svg Icons
-# ------------------
-# include app icons in desk
-# app_include_icons = "erpmax/public/icons.svg"
+doctype_list_js = {
+    "Company": "public/js/company_list.js",
+    "Sales Invoice": "public/js/sales_invoice_list.js",
+}
 
-# Home Pages
-# ----------
+doctype_tree_js = {
+    "Account": "public/js/account_tree.js",
+    "Company": "public/js/company_tree.js",
+    "Item Category": "public/js/item_category_tree.js",
+}
 
-# application home page (will override Website Settings)
-# home_page = "login"
+# Calendar
+calendars = ["Holiday List"]
 
-# website user home page (by Role)
-# role_home_page = {
-# 	"Role": "home_page"
-# }
+# Scheduled Jobs
+scheduler_events = {
+    "daily": [
+        "erpmax.accounting.doctype.fiscal_year.fiscal_year.auto_create_fiscal_year",
+        "erpmax.sales.doctype.recurring_invoice_template.recurring_invoice_template.process_recurring_invoices",
+    ],
+    "cron": {
+        "0 0 * * *": [
+            "erpmax.e_invoicing.doctype.zatca_csid.zatca_csid.renew_csid_if_needed",
+        ]
+    }
+}
 
-# Generators
-# ----------
+# Fixtures
+fixtures = [
+    {
+        "dt": "DocType",
+        "filters": [["module", "in", ["ERPMax", "Accounts", "Sales", "Purchase", "Inventory", "Commerce"]]]
+    },
+    {
+        "dt": "Role",
+        "filters": [["name", "in", ["Company Admin", "Accounts Manager", "Accounts User", "Sales User", "Purchase User"]]]
+    },
+    {
+        "dt": "Workflow",
+        "filters": [["document_type", "in", ["Sales Invoice", "Purchase Invoice", "Journal Entry", "Payment Entry"]]]
+    },
+]
 
-# automatically create page for each record of this doctype
-# website_generators = ["Web Page"]
+# Permission Query Conditions
+permission_query_conditions = {
+    "Company": "erpmax.erpmax.doctype.company.company.get_permission_query_conditions",
+}
 
-# Jinja
-# ----------
+# Has Permission
+has_permission = {
+    "Company": "erpmax.erpmax.doctype.company.company.has_permission",
+}
 
-# add methods and filters to jinja environment
-# jinja = {
-# 	"methods": "erpmax.utils.jinja_methods",
-# 	"filters": "erpmax.utils.jinja_filters"
-# }
+# Jinja Filters
+jinja = {
+    "methods": [
+        "erpmax.utils.naming.get_transaction_naming_series",
+        "erpmax.accounting.api.reports.get_account_balance",
+    ]
+}
 
-# Installation
-# ------------
+# Website Routes
+website_route_rules = [
+    {"from_route": "/erpmax/<path:app_path>", "to_route": "erpmax"},
+]
 
-# before_install = "erpmax.install.before_install"
-# after_install = "erpmax.install.after_install"
+# After Install
+after_install = "erpmax.setup.install.after_install"
 
-# Uninstallation
-# ------------
+# After Migrate
+after_migrate = "erpmax.setup.migrate.after_migrate"
 
-# before_uninstall = "erpmax.uninstall.before_uninstall"
-# after_uninstall = "erpmax.uninstall.after_uninstall"
+# On Login
+on_login = "erpmax.utils.user.on_login"
 
-# Integration Setup
-# ------------------
-# To set up dependencies/integrations with other apps
-# Name of the app being installed is passed as an argument
+# User Data Privacy
+user_data_fields = [
+    {
+        "doctype": "Company",
+        "match_field": "owner",
+        "personal_fields": ["owner_email", "owner_mobile"],
+    },
+    {
+        "doctype": "Customer",
+        "match_field": "owner",
+    },
+]
 
-# before_app_install = "erpmax.utils.before_app_install"
-# after_app_install = "erpmax.utils.after_app_install"
+# Standard Portlets
+standard_portlets = {
+    "Accounts": [
+        {
+            "label": "Financial Summary",
+            "route": "/app/financial-summary",
+            "icon": "fa fa-chart-line",
+        }
+    ]
+}
 
-# Integration Cleanup
-# -------------------
-# To clean up dependencies/integrations with other apps
-# Name of the app being uninstalled is passed as an argument
+# Default Roles
+default_roles = [
+    {"role": "Company Admin", "desk_access": 1},
+    {"role": "Accounts Manager", "desk_access": 1},
+    {"role": "Accounts User", "desk_access": 1},
+    {"role": "Sales User", "desk_access": 1},
+    {"role": "Purchase User", "desk_access": 1},
+]
 
-# before_app_uninstall = "erpmax.utils.before_app_uninstall"
-# after_app_uninstall = "erpmax.utils.after_app_uninstall"
+# Translations
+app_include_js = "/assets/erpmax/js/erpmax.bundle.js?v=2"
+app_include_css = "/assets/erpmax/css/erpmax.bundle.css?v=2"
 
-# Desk Notifications
-# ------------------
-# See frappe.core.notifications.get_notification_config
+# Global Search
+global_search_doctypes = {
+    "Default": [
+        {"doctype": "Company", "index": 0},
+        {"doctype": "Customer", "index": 1},
+        {"doctype": "Supplier", "index": 2},
+        {"doctype": "Item", "index": 3},
+        {"doctype": "Sales Invoice", "index": 4},
+        {"doctype": "Purchase Invoice", "index": 5},
+        {"doctype": "Project", "index": 6},
+    ]
+}
 
-# notification_config = "erpmax.notifications.get_notification_config"
+# Notification Configuration
+notification_config = "erpmax.notifications.get_notification_config"
 
-# Permissions
-# -----------
-# Permissions evaluated in scripted ways
-
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
-#
-# has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
-
-# DocType Class
-override_doctype_class = {"Sales Invoice": "erpmax.erpmax.doctype.sales_invoice.sales_invoice.SalesInvoice"}
-# ---------------
-# Override standard doctype classes
-
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+# Email Hooks
+email_hooks = {
+    "Sales Invoice": "erpmax.sales.doctype.sales_invoice.sales_invoice.send_invoice_email",
+}
 
 # Document Events
-# ---------------
-# Hook on document methods and events
-
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
-
-# Scheduled Tasks
-# ---------------
-
-# scheduler_events = {
-# 	"all": [
-# 		"erpmax.tasks.all"
-# 	],
-# 	"daily": [
-# 		"erpmax.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"erpmax.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"erpmax.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"erpmax.tasks.monthly"
-# 	],
-# }
-
-# Testing
-# -------
-
-# before_tests = "erpmax.install.before_tests"
-
-# Overriding Methods
-# ------------------------------
-#
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "erpmax.event.get_events"
-# }
-#
-# each overriding function accepts a `data` argument;
-# generated from the base implementation of the doctype dashboard,
-# along with any modifications made in other Frappe apps
-# override_doctype_dashboards = {
-# 	"Task": "erpmax.task.get_dashboard_data"
-# }
-
-# exempt linked doctypes from being automatically cancelled
-#
-# auto_cancel_exempted_doctypes = ["Auto Repeat"]
-
-# Ignore links to specified DocTypes when deleting documents
-# -----------------------------------------------------------
-
-# ignore_links_on_delete = ["Communication", "ToDo"]
-
-# Request Events
-# ----------------
-# before_request = ["erpmax.utils.before_request"]
-# after_request = ["erpmax.utils.after_request"]
-
-# Job Events
-# ----------
-# before_job = ["erpmax.utils.before_job"]
-# after_job = ["erpmax.utils.after_job"]
-
-# User Data Protection
-# --------------------
-
-# user_data_fields = [
-# 	{
-# 		"doctype": "{doctype_1}",
-# 		"filter_by": "{filter_by}",
-# 		"redact_fields": ["{field_1}", "{field_2}"],
-# 		"partial": 1,
-# 	},
-# 	{
-# 		"doctype": "{doctype_2}",
-# 		"filter_by": "{filter_by}",
-# 		"partial": 1,
-# 	},
-# 	{
-# 		"doctype": "{doctype_3}",
-# 		"strict": False,
-# 	},
-# 	{
-# 		"doctype": "{doctype_4}"
-# 	}
-# ]
-
-# Authentication and authorization
-# --------------------------------
-
-# auth_hooks = [
-# 	"erpmax.auth.validate"
-# ]
-
-# Automatically update python controller files with type annotations for this app.
-# export_python_type_annotations = True
-
-# default_log_clearing_doctypes = {
-# 	"Logging DocType Name": 30  # days to retain logs
-# }
-
-# Translation
-# ------------
-# List of apps whose translatable strings should be excluded from this app's translations.
-# ignore_translatable_strings_from = []
-
-after_install = "erpmax.e_invoicing.install.after_install"
-
 doc_events = {
-	"Sales Invoice": {
-		"on_submit": "erpmax.e_invoicing.integrations.on_sales_invoice_submit",
-	},
+    "Company": {
+        "onload": "erpmax.erpmax.doctype.company.company.onload",
+        "validate": "erpmax.erpmax.doctype.company.company.validate",
+        "on_update": "erpmax.erpmax.doctype.company.company.on_update",
+    },
 }
 
-fixtures = [
-	{"dt": "EH Country Profile", "filters": [["name", "like", "%"]]},
+# Boot Session
+boot_session = "erpmax.boot.boot_session"
+
+# Whitelisted Methods
+whitelisted_methods = {
+    "erpmax.accounting.api.coa.get_chart_of_accounts": True,
+    "erpmax.accounting.api.coa.import_chart_of_accounts": True,
+    "erpmax.accounting.api.fiscal_years.get_fiscal_year": True,
+    "erpmax.accounting.api.reports.get_trial_balance": True,
+    "erpmax.accounting.api.reports.get_balance_sheet": True,
+    "erpmax.accounting.api.reports.get_profit_and_loss": True,
+    "erpmax.utils.naming.get_naming_series_options": True,
+}
+
+# Ignore Links on Cancel
+ignore_links_on_delete = [
+    "GL Entry",
+    "Payment Entry Reference",
 ]
+
+# Override Whitelisted Methods
+override_whitelisted_methods = {
+    "frappe.client.get_count": "erpmax.utils.client.get_count",
+}
+
+# Tree Doctypes
+treeviews = [
+    "Account",
+    "Company",
+    "Item Category",
+]
+
+# Before Tests
+before_tests = "erpmax.utils.test_utils.before_tests"
+
+# Automatically Cancelled Documents
+auto_cancel_exempted_doctypes = [
+    "GL Entry",
+]
+
+# Accounting Dimensions
+accounting_dimension_doctypes = [
+    "GL Entry",
+    "Sales Invoice",
+    "Purchase Invoice",
+    "Journal Entry Account",
+    "Payment Entry",
+]
+
+# Reports
+standard_reports = {
+    "Trial Balance": "erpmax.accounting.report.trial_balance.trial_balance",
+    "General Ledger": "erpmax.accounting.report.general_ledger.general_ledger",
+    "Balance Sheet": "erpmax.accounting.report.balance_sheet.balance_sheet",
+    "Profit and Loss Statement": "erpmax.accounting.report.profit_and_loss_statement.profit_and_loss_statement",
+    "Sales Register": "erpmax.sales.report.sales_register.sales_register",
+    "Purchase Register": "erpmax.purchase.report.purchase_register.purchase_register",
+    "Accounts Receivable": "erpmax.accounting.report.accounts_receivable.accounts_receivable",
+    "Accounts Payable": "erpmax.accounting.report.accounts_payable.accounts_payable",
+}
+
+# Setup Wizard
+setup_wizard_requires = "/assets/erpmax/js/setup_wizard.js"
+setup_wizard_complete = "erpmax.setup.setup_wizard.setup_complete"
+setup_wizard_stages = "erpmax.setup.setup_wizard.get_setup_stages"
+
+# Branding
+app_logo_url = "/assets/erpmax/images/erpmax-logo.svg?v=2"
+app_home = "/app/company"
+
+# Default Language
+default_language = "en"

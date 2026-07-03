@@ -1,0 +1,34 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "field:distributor_name",
+  "creation": "2026-07-03 00:00:00",
+  "doctype": "DocType",
+  "document_type": "Setup",
+  "engine": "InnoDB",
+  "field_order": ["distributor_name", "distributor_abbr", "company", "region", "parent_distributor", "is_group", "commission_rate", "notes"],
+  "fields": [
+    {"fieldname": "distributor_name", "fieldtype": "Data", "label": "Distributor Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "distributor_abbr", "fieldtype": "Data", "label": "Distributor Abbr", "in_list_view": 1},
+    {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "in_standard_filter": 1},
+    {"fieldname": "region", "fieldtype": "Link", "label": "Region", "options": "Region"},
+    {"fieldname": "parent_distributor", "fieldtype": "Link", "label": "Parent Distributor", "options": "Distributor"},
+    {"default": "0", "fieldname": "is_group", "fieldtype": "Check", "label": "Is Group"},
+    {"default": "0", "fieldname": "commission_rate", "fieldtype": "Float", "label": "Commission Rate"},
+    {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+  ],
+  "is_tree": 1,
+  "links": [],
+  "modified": "2026-07-03 00:00:00",
+  "module": "Business Setup",
+  "name": "Distributor",
+  "permissions": [
+    {"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1},
+    {"create": 1, "read": 1, "role": "Company Admin", "write": 1}
+  ],
+  "search_fields": "distributor_name, distributor_abbr",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "distributor_name",
+  "track_changes": 1
+}

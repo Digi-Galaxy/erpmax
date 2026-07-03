@@ -1,1 +1,0 @@
-from erpmax.expense_management.doctype.expense_type_account.expense_type_account import *

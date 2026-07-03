@@ -1,54 +1,71 @@
 import frappe
-from frappe import _
 from frappe.model.document import Document
 
-
-def flt(val, precision=2):
-    if val is None:
-        return 0.0
-    return round(float(val), precision)
-
-
 class JournalEntry(Document):
+    def autoname(self):
+        from erpmax.utils.naming import autoname_transaction
+        autoname_transaction(self)
+
+
     def validate(self):
-        self.set_totals()
-        self.validate_balance()
+        self.total_debit = sum(row.debit or 0 for row in self.accounts)
+        self.total_credit = sum(row.credit or 0 for row in self.accounts)
+        if abs(self.total_debit - self.total_credit) > 0.01:
+            frappe.throw("Total Debit must equal Total Credit")
+        self.validate_account_company()
+
+    def validate_account_company(self):
+        for row in self.accounts:
+            if row.account:
+                acc = frappe.get_cached_doc("Account", row.account)
+                if acc.company != self.company:
+                    frappe.throw(
+                        "Account {0} belongs to {1}, but Journal Entry is for {2}".format(
+                            row.account, acc.company, self.company
+                        )
+                    )
 
     def on_submit(self):
-        self.set_as_posted()
+        self.make_gl_entries()
 
     def on_cancel(self):
-        self.set_as_cancelled()
+        self.make_reverse_gl_entries()
 
-    def set_totals(self):
-        total_debit = 0.0
-        total_credit = 0.0
-        for row in self.get("accounts", []):
-            total_debit += flt(row.debit)
-            total_credit += flt(row.credit)
-        self.total_debit = total_debit
-        self.total_credit = total_credit
-        self.difference = total_debit - total_credit
+    def make_gl_entries(self):
+        for row in self.accounts:
+            if row.debit or row.credit:
+                gl = frappe.get_doc({
+                    "doctype": "GL Entry",
+                    "company": self.company,
+                    "posting_date": self.posting_date,
+                    "account": row.account,
+                    "debit": row.debit or 0,
+                    "credit": row.credit or 0,
+                    "voucher_type": self.doctype,
+                    "voucher_no": self.name,
+                    "party_type": row.party_type,
+                    "party": row.party,
+                    "against_voucher_type": None,
+                    "against_voucher": None,
+                })
+                gl.flags.ignore_permissions = True
+                gl.insert()
 
-    def validate_balance(self):
-        if abs(self.difference) > 0.01:
-            frappe.throw(_("Total Debit ({0}) must equal Total Credit ({1})").format(
-                self.total_debit, self.total_credit
-            ))
+    def make_reverse_gl_entries(self):
+        existing = frappe.get_all("GL Entry", filters={
+            "voucher_type": self.doctype,
+            "voucher_no": self.name
+        })
+        for gle in existing:
+            frappe.db.set_value("GL Entry", gle.name, "is_cancelled", 1)
 
-    def set_as_posted(self):
-        for row in self.get("accounts", []):
-            frappe.db.sql("""
-                UPDATE `tabAccount`
-                SET current_balance = current_balance + %s - %s
-                WHERE name = %s
-            """, (flt(row.debit), flt(row.credit), row.account))
+# Module-level hooks wrappers for doc_events
 
-    def set_as_cancelled(self):
-        for row in self.get("accounts", []):
-            frappe.db.sql("""
-                UPDATE `tabAccount`
-                SET current_balance = current_balance - %s + %s
-                WHERE name = %s
-            """, (flt(row.debit), flt(row.credit), row.account))
+def validate(doc, method):
+    pass
 
+def on_submit(doc, method):
+    pass
+
+def on_cancel(doc, method):
+    pass

@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "autoname": "field:company",
+ "creation": "2026-07-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "status",
+  "section_break_options",
+  "delete_sales_invoices",
+  "delete_purchase_invoices",
+  "delete_payment_entries",
+  "delete_journal_entries",
+  "delete_gl_entries",
+  "delete_purchase_orders",
+  "delete_purchase_receipts",
+  "column_break_options",
+  "delete_sales_orders",
+  "delete_delivery_notes",
+  "delete_stock_entries",
+  "delete_material_requests",
+  "delete_quotations",
+  "delete_proj",
+  "section_break_progress",
+  "progress",
+  "error_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Queued",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Queued\nRunning\nCompleted\nFailed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_options",
+   "fieldtype": "Section Break",
+   "label": "Delete Options"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_sales_invoices",
+   "fieldtype": "Check",
+   "label": "Delete Sales Invoices"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_purchase_invoices",
+   "fieldtype": "Check",
+   "label": "Delete Purchase Invoices"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_payment_entries",
+   "fieldtype": "Check",
+   "label": "Delete Payment Entries"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_journal_entries",
+   "fieldtype": "Check",
+   "label": "Delete Journal Entries"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_gl_entries",
+   "fieldtype": "Check",
+   "label": "Delete GL Entries"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_purchase_orders",
+   "fieldtype": "Check",
+   "label": "Delete Purchase Orders"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_purchase_receipts",
+   "fieldtype": "Check",
+   "label": "Delete Purchase Receipts"
+  },
+  {
+   "fieldname": "column_break_options",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_sales_orders",
+   "fieldtype": "Check",
+   "label": "Delete Sales Orders"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_delivery_notes",
+   "fieldtype": "Check",
+   "label": "Delete Delivery Notes"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_stock_entries",
+   "fieldtype": "Check",
+   "label": "Delete Stock Entries"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_material_requests",
+   "fieldtype": "Check",
+   "label": "Delete Material Requests"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_quotations",
+   "fieldtype": "Check",
+   "label": "Delete Quotations"
+  },
+  {
+   "default": 1,
+   "fieldname": "delete_proj",
+   "fieldtype": "Check",
+   "label": "Delete Projects"
+  },
+  {
+   "fieldname": "section_break_progress",
+   "fieldtype": "Section Break",
+   "label": "Progress"
+  },
+  {
+   "fieldname": "progress",
+   "fieldtype": "Small Text",
+   "label": "Progress",
+   "read_only": 1
+  },
+  {
+   "fieldname": "error_log",
+   "fieldtype": "Long Text",
+   "label": "Error Log",
+   "read_only": 1
+  }
+ ],
+ "index_web_search_for_values": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-07-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "ERPMax",
+ "name": "Transaction Deletion Record",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "write": 1,
+   "submit": 1,
+   "cancel": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "company",
+ "track_changes": 1
+}

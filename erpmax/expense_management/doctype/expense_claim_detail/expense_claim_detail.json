@@ -1,0 +1,14 @@
+{
+ "actions": [], "creation": "2026-07-01 00:00:00", "doctype": "DocType", "editable_grid": 1, "engine": "InnoDB",
+ "field_order": ["expense_type", "description", "amount", "column_break_3", "approved_amount", "project"],
+ "fields": [
+  {"fieldname": "expense_type", "fieldtype": "Link", "in_list_view": 1, "label": "Expense Type", "options": "Expense Type", "reqd": 1},
+  {"fieldname": "description", "fieldtype": "Small Text", "in_list_view": 1, "label": "Description"},
+  {"fieldname": "amount", "fieldtype": "Currency", "in_list_view": 1, "label": "Amount", "reqd": 1},
+  {"fieldname": "column_break_3", "fieldtype": "Column Break"},
+  {"fieldname": "approved_amount", "fieldtype": "Currency", "in_list_view": 1, "label": "Approved Amount"},
+  {"fieldname": "project", "fieldtype": "Link", "label": "Project", "options": "Project"}
+ ],
+ "istable": 1, "modified": "2026-07-01 00:00:00", "module": "Expense Management", "name": "Expense Claim Detail",
+ "permissions": [], "sort_field": "modified"
+}

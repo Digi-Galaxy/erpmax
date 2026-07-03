@@ -1,129 +1,62 @@
 {
-  "doctype": "DocType",
-  "name": "Account",
-  "module": "Accounting",
-  "custom": 0,
-  "is_tree": 1,
-  "naming_rule": "By fieldname",
-  "autoname": "field:account_name",
-  "fields": [
-    {
-      "fieldname": "account_name",
-      "label": "Account Name",
-      "fieldtype": "Data",
-      "reqd": 1
-    },
-    {
-      "fieldname": "account_number",
-      "label": "Account Number",
-      "fieldtype": "Data"
-    },
-    {
-      "fieldname": "parent_account",
-      "label": "Parent Account",
-      "fieldtype": "Link",
-      "options": "Account"
-    },
-    {
-      "fieldname": "is_group",
-      "label": "Is Group",
-      "fieldtype": "Check",
-      "default": 0
-    },
-    {
-      "fieldname": "column_break_ac1",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "root_type",
-      "label": "Root Type",
-      "fieldtype": "Select",
-      "options": "Asset\nLiability\nIncome\nExpense\nEquity"
-    },
-    {
-      "fieldname": "report_type",
-      "label": "Report Type",
-      "fieldtype": "Select",
-      "options": "Balance Sheet\nProfit and Loss"
-    },
-    {
-      "fieldname": "account_currency",
-      "label": "Account Currency",
-      "fieldtype": "Data",
-      "default": "SAR"
-    },
-    {
-      "fieldname": "account_type",
-      "label": "Account Type",
-      "fieldtype": "Select",
-      "options": "Cash\nBank\nPayable\nReceivable\nTax\nStock\nFixed Asset\nCost of Goods Sold\nExpenses Account\nIncome Account\nEquity\nAccumulated Depreciation\nCapital Work in Progress\nCurrent Asset\nCurrent Liability\nDeferred Expense\nDeferred Revenue\nDepreciation\nExchange Gain/Loss\nLease Liability\nLoan Payable\nPayroll\nProvision\nPurchases Account\nRound Off\nShipping Charges\nStock Adjustment\nSuspense\nTemporary"
-    },
-    {
-      "fieldname": "tax_rate",
-      "label": "Tax Rate",
-      "fieldtype": "Float"
-    },
-    {
-      "fieldname": "section_freeze",
-      "label": "Freeze",
-      "fieldtype": "Section Break"
-    },
-    {
-      "fieldname": "is_frozen",
-      "label": "Is Frozen",
-      "fieldtype": "Check"
-    },
-    {
-      "fieldname": "disabled",
-      "label": "Disabled",
-      "fieldtype": "Check"
-    },
-    {
-      "fieldname": "lft",
-      "label": "Left",
-      "fieldtype": "Int",
-      "read_only": 1,
-      "hidden": 1
-    },
-    {
-      "fieldname": "rgt",
-      "label": "Right",
-      "fieldtype": "Int",
-      "read_only": 1,
-      "hidden": 1
-    },
-    {
-      "fieldname": "old_parent",
-      "label": "Old Parent",
-      "fieldtype": "Data",
-      "read_only": 1,
-      "hidden": 1
-    }
-  ],
-  "permissions": [
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1
-    },
-    {
-      "role": "Accounts Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1
-    },
-    {
-      "role": "Accounts User",
-      "read": 1,
-      "write": 1
-    }
-  ],
-  "sort_field": "modified",
-  "modified_by": "Administrator",
-  "owner": "Administrator",
-  "track_changes": 1,
-  "search_fields": "name"
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:account_name",
+ "creation": "2026-06-15 00:00:00",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "account_name",
+  "company",
+  "parent_account",
+  "root_type",
+  "is_group",
+  "account_currency",
+  "tax_rate",
+  "account_number",
+  "freeze_account",
+  "report_type",
+  "balance_must_be",
+  "lft",
+  "rgt",
+  "old_parent"
+ ],
+ "fields": [
+  {"fieldname": "account_name", "fieldtype": "Data", "in_list_view": 1, "label": "Account Name", "reqd": 1, "unique": 1},
+  {"fieldname": "company", "fieldtype": "Link", "in_list_view": 1, "in_standard_filter": 1, "label": "Company", "options": "Company", "reqd": 1},
+  {"fieldname": "parent_account", "fieldtype": "Link", "in_list_view": 1, "label": "Parent Account", "options": "Account"},
+  {"fieldname": "root_type", "fieldtype": "Select", "in_list_view": 1, "label": "Root Type", "options": "Asset\nLiability\nIncome\nExpense\nEquity", "reqd": 1},
+  {"default": "0", "fieldname": "is_group", "fieldtype": "Check", "label": "Is Group"},
+  {"default": "SAR", "fieldname": "account_currency", "fieldtype": "Link", "label": "Currency", "options": "Currency"},
+  {"fieldname": "tax_rate", "fieldtype": "Float", "label": "Tax Rate"},
+  {"fieldname": "account_number", "fieldtype": "Data", "label": "Account Number"},
+  {"default": "0", "fieldname": "freeze_account", "fieldtype": "Check", "label": "Freeze Account"},
+  {"fieldname": "report_type", "fieldtype": "Select", "label": "Report Type", "options": "\nBalance Sheet\nProfit and Loss"},
+  {"fieldname": "balance_must_be", "fieldtype": "Select", "label": "Balance Must Be", "options": "\nDebit\nCredit"},
+  {"fieldname": "lft", "fieldtype": "Int", "hidden": 1, "label": "lft", "no_copy": 1, "read_only": 1},
+  {"fieldname": "rgt", "fieldtype": "Int", "hidden": 1, "label": "rgt", "no_copy": 1, "read_only": 1},
+  {"fieldname": "old_parent", "fieldtype": "Data", "hidden": 1, "label": "old_parent", "no_copy": 1, "read_only": 1}
+ ],
+ "icon": "fa fa-book",
+ "is_tree": 1,
+ "links": [],
+ "modified": "2026-07-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Accounting",
+ "name": "Account",
+ "nsm_parent_field": "parent_account",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+  {"read": 1, "role": "Accounts User"}
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "account_name,account_number",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "account_name",
+ "track_changes": 1,
+ "track_seen": 1
 }

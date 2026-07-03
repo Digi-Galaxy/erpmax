@@ -1,0 +1,48 @@
+[
+ {
+  "account_name": "Assets",
+  "company": "_Test Company",
+  "root_type": "Asset",
+  "is_group": 1,
+  "doctype": "Account"
+ },
+ {
+  "account_name": "Cash in Hand",
+  "company": "_Test Company",
+  "parent_account": "Assets",
+  "root_type": "Asset",
+  "is_group": 1,
+  "account_currency": "SAR",
+  "doctype": "Account"
+ },
+ {
+  "account_name": "Cash",
+  "company": "_Test Company",
+  "parent_account": "Cash in Hand",
+  "root_type": "Asset",
+  "is_group": 0,
+  "account_currency": "SAR",
+  "doctype": "Account"
+ },
+ {
+  "account_name": "Liabilities",
+  "company": "_Test Company",
+  "root_type": "Liability",
+  "is_group": 1,
+  "doctype": "Account"
+ },
+ {
+  "account_name": "Income",
+  "company": "_Test Company",
+  "root_type": "Income",
+  "is_group": 1,
+  "doctype": "Account"
+ },
+ {
+  "account_name": "Expenses",
+  "company": "_Test Company",
+  "root_type": "Expense",
+  "is_group": 1,
+  "doctype": "Account"
+ }
+]

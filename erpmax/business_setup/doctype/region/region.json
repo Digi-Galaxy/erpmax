@@ -1,0 +1,33 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "field:region_name",
+  "creation": "2026-07-03 00:00:00",
+  "doctype": "DocType",
+  "document_type": "Setup",
+  "engine": "InnoDB",
+  "field_order": ["region_name", "region_abbr", "company", "parent_region", "is_group", "status", "notes"],
+  "fields": [
+    {"fieldname": "region_name", "fieldtype": "Data", "label": "Region Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "region_abbr", "fieldtype": "Data", "label": "Region Abbr", "in_list_view": 1},
+    {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "in_standard_filter": 1},
+    {"fieldname": "parent_region", "fieldtype": "Link", "label": "Parent Region", "options": "Region"},
+    {"default": "0", "fieldname": "is_group", "fieldtype": "Check", "label": "Is Group"},
+    {"default": "Active", "fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nInactive"},
+    {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+  ],
+  "is_tree": 1,
+  "links": [],
+  "modified": "2026-07-03 00:00:00",
+  "module": "Business Setup",
+  "name": "Region",
+  "permissions": [
+    {"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1},
+    {"create": 1, "read": 1, "role": "Company Admin", "write": 1}
+  ],
+  "search_fields": "region_name, region_abbr",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "region_name",
+  "track_changes": 1
+}

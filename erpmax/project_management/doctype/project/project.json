@@ -1,143 +1,30 @@
 {
- "doctype": "DocType",
- "name": "Project",
- "module": "Project Management",
- "custom": 0,
- "naming_rule": "Random",
- "autoname": "PRJ.######",
- "issingle": 0,
- "istable": 0,
- "editable_grid": 0,
- "track_changes": 1,
- "modified_by": "Administrator",
- "owner": "Administrator",
+  "actions": [], "allow_rename": 1, "autoname": "method:erpmax.utils.naming.autoname_transaction",
+ "naming_rule": "By script", "creation": "2026-07-01 00:00:00",
+ "doctype": "DocType", "document_type": "Setup", "engine": "InnoDB",
+  "field_order": ["project_name", "company", "customer", "region", "distributor", "status", "column_break_4", "start_date", "end_date", "estimated_cost", "project_description", "billing_description", "sb_services", "services", "sb_more", "notes", "amended_from"],
  "fields": [
-  {
-   "fieldname": "project_name",
-   "label": "Project Name",
-   "fieldtype": "Data",
-   "reqd": 1
-  },
-  {
-   "fieldname": "company",
-   "label": "Company",
-   "fieldtype": "Link",
-   "options": "Company",
-   "reqd": 1
-  },
-  {
-   "fieldname": "customer",
-   "label": "Customer",
-   "fieldtype": "Link",
-   "options": "Customer"
-  },
-  {
-   "fieldname": "cost_centre",
-   "label": "Cost Centre",
-   "fieldtype": "Link",
-   "options": "Cost Centre",
-   "read_only": 1
-  },
-  {
-   "fieldname": "status",
-   "label": "Status",
-   "fieldtype": "Select",
-   "options": "Open\nIn Progress\nCompleted\nCancelled",
-   "default": "Open"
-  },
-  {
-   "fieldname": "column_break_prj1",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "start_date",
-   "label": "Start Date",
-   "fieldtype": "Date"
-  },
-  {
-   "fieldname": "end_date",
-   "label": "End Date",
-   "fieldtype": "Date"
-  },
-  {
-   "fieldname": "estimated_cost",
-   "label": "Estimated Cost",
-   "fieldtype": "Currency"
-  },
-  {
-   "fieldname": "description",
-   "label": "Description",
-   "fieldtype": "Small Text"
-  },
-  {
-   "fieldname": "section_contract",
-   "label": "Contract Details",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "contract_type",
-   "label": "Contract Type",
-   "fieldtype": "Select",
-   "options": "Internal\nContract\nSub-Contract"
-  },
-  {
-   "fieldname": "contract_party",
-   "label": "Contract Party",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "column_break_prj2",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "contract_start",
-   "label": "Contract Start",
-   "fieldtype": "Date"
-  },
-  {
-   "fieldname": "contract_end",
-   "label": "Contract End",
-   "fieldtype": "Date"
-  },
-  {
-   "fieldname": "contract_value",
-   "label": "Contract Value",
-   "fieldtype": "Currency"
-  },
-  {
-   "fieldname": "is_subcontract",
-   "label": "Is Sub-Contract",
-   "fieldtype": "Check"
-  },
-  {
-   "fieldname": "section_services",
-   "label": "Services",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "services",
-   "label": "Services",
-   "fieldtype": "Table",
-   "options": "Project Service"
-  }
+  {"fieldname": "project_name", "fieldtype": "Data", "in_list_view": 1, "label": "Project Name", "reqd": 1, "unique": 1},
+   {"fieldname": "company", "fieldtype": "Link", "in_standard_filter": 1, "label": "Company", "options": "Company", "reqd": 1},
+   {"fieldname": "customer", "fieldtype": "Link", "label": "Customer", "options": "Customer"},
+   {"fieldname": "region", "fieldtype": "Link", "label": "Region", "options": "Region"},
+   {"fieldname": "distributor", "fieldtype": "Link", "label": "Distributor", "options": "Distributor"},
+   {"default": "Planning", "fieldname": "status", "fieldtype": "Select", "in_list_view": 1, "label": "Status", "options": "Planning\nIn Progress\nOn Hold\nCompleted\nCancelled", "reqd": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+   {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date"},
+   {"fieldname": "end_date", "fieldtype": "Date", "label": "End Date"},
+   {"fieldname": "estimated_cost", "fieldtype": "Currency", "label": "Estimated Cost"},
+   {"fieldname": "project_description", "fieldtype": "Small Text", "label": "Project Description"},
+   {"fieldname": "billing_description", "fieldtype": "Small Text", "label": "Billing Description"},
+   {"fieldname": "sb_services", "fieldtype": "Section Break", "label": "Services"},
+  {"fieldname": "services", "fieldtype": "Table", "label": "Services", "options": "Project Service"},
+  {"fieldname": "sb_more", "fieldtype": "Section Break"},
+  {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"},
+  {"fieldname": "amended_from", "fieldtype": "Data", "label": "Amended From", "no_copy": 1, "print_hide": 1, "read_only": 1}
  ],
- "permissions": [
-  {
-   "role": "System Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1
-  },
-  {
-   "role": "Project Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1
-  },
-  {
-   "role": "Accounts User",
-   "read": 1
-  }
- ]
+ "icon": "fa fa-tasks",
+ "is_submittable": 1,
+ "modified": "2026-07-01 00:00:00", "module": "Project Management", "name": "Project",
+ "permissions": [{"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1, "submit": 1, "cancel": 1, "amend": 1}, {"create": 1, "read": 1, "role": "Project Manager", "write": 1}],
+ "search_fields": "project_name, customer", "sort_field": "modified", "title_field": "project_name", "track_changes": 1, "track_seen": 1
 }

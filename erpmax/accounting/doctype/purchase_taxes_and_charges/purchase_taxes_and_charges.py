@@ -1,1 +1,5 @@
-from erpmax.accounting.doctype.purchase_taxes_and_charges.purchase_taxes_and_charges import *
+import frappe
+from frappe.model.document import Document
+
+class PurchaseTaxesandCharges(Document):
+    pass

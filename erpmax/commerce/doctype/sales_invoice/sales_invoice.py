@@ -1,1 +1,6 @@
-from erpmax.sales.doctype.sales_invoice.sales_invoice import *
+import frappe
+from frappe.model.document import Document
+
+
+class SalesInvoice(Document):
+    pass

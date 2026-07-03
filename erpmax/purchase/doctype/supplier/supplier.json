@@ -1,156 +1,45 @@
 {
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:supplier_name",
+ "creation": "2026-07-01 00:00:00",
  "doctype": "DocType",
- "name": "Supplier",
- "module": "Purchase",
- "custom": 0,
+ "document_type": "Setup",
+ "engine": "InnoDB",
+  "field_order": ["supplier_name", "supplier_type", "company", "supplier_display_name", "region", "distributor", "commission_rate", "column_break_3", "tax_id", "default_currency", "sb_address", "address_line_1", "city", "state", "country", "column_break_11", "phone", "email", "website", "sb_accounting", "default_payable_account", "column_break_18", "payment_terms"],
  "fields": [
-  {
-   "fieldname": "supplier_name",
-   "label": "Supplier Name",
-   "fieldtype": "Data",
-   "reqd": 1
-  },
-  {
-   "fieldname": "supplier_id",
-   "label": "Supplier ID",
-   "fieldtype": "Data",
-   "unique": 1
-  },
-  {
-   "fieldname": "company",
-   "label": "Company",
-   "fieldtype": "Link",
-   "options": "Company"
-  },
-  {
-   "fieldname": "column_break_sup1",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "supplier_type",
-   "label": "Supplier Type",
-   "fieldtype": "Select",
-   "options": "Company\nIndividual",
-   "default": "Company"
-  },
-  {
-   "fieldname": "status",
-   "label": "Status",
-   "fieldtype": "Select",
-   "options": "Active\nDisabled",
-   "default": "Active"
-  },
-  {
-   "fieldname": "section_tax",
-   "label": "Tax Details",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "tax_id",
-   "label": "Tax ID",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "ntn",
-   "label": "NTN",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "strn",
-   "label": "STRN",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "column_break_sup2",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "crn",
-   "label": "CRN",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "vat_number",
-   "label": "VAT Number",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "section_contact",
-   "label": "Contact",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "mobile",
-   "label": "Mobile",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "email",
-   "label": "Email",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "column_break_sup3",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "address_line1",
-   "label": "Address",
-   "fieldtype": "Small Text"
-  },
-  {
-   "fieldname": "city",
-   "label": "City",
-   "fieldtype": "Data"
-  },
-  {
-   "fieldname": "section_accounting",
-   "label": "Accounting",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "default_payable_account",
-   "label": "Default Payable Account",
-   "fieldtype": "Link",
-   "options": "Account"
-  }
+  {"fieldname": "supplier_name", "fieldtype": "Data", "in_list_view": 1, "label": "Supplier Name", "reqd": 1, "unique": 1},
+  {"fieldname": "supplier_type", "fieldtype": "Select", "in_list_view": 1, "label": "Supplier Type", "options": "\nCompany\nIndividual", "reqd": 1},
+   {"fieldname": "company", "fieldtype": "Link", "in_standard_filter": 1, "label": "Company", "options": "Company", "reqd": 1},
+   {"fieldname": "supplier_display_name", "fieldtype": "Data", "label": "Supplier Display Name"},
+   {"fieldname": "region", "fieldtype": "Link", "label": "Region", "options": "Region"},
+   {"fieldname": "distributor", "fieldtype": "Link", "label": "Distributor", "options": "Distributor"},
+   {"fieldname": "commission_rate", "fieldtype": "Float", "label": "Commission Rate"},
+   {"fieldname": "column_break_3", "fieldtype": "Column Break"},
+  {"fieldname": "tax_id", "fieldtype": "Data", "label": "Tax ID"},
+  {"fieldname": "default_currency", "fieldtype": "Link", "label": "Default Currency", "options": "Currency"},
+  {"fieldname": "sb_address", "fieldtype": "Section Break", "label": "Address"},
+  {"fieldname": "address_line_1", "fieldtype": "Data", "label": "Address Line 1"},
+  {"fieldname": "city", "fieldtype": "Link", "label": "City", "options": "City"},
+  {"fieldname": "state", "fieldtype": "Link", "label": "State", "options": "State"},
+  {"fieldname": "country", "fieldtype": "Link", "label": "Country", "options": "Country"},
+  {"fieldname": "column_break_11", "fieldtype": "Column Break"},
+  {"fieldname": "phone", "fieldtype": "Data", "label": "Phone", "options": "Phone"},
+  {"fieldname": "email", "fieldtype": "Data", "label": "Email", "options": "Email"},
+  {"fieldname": "website", "fieldtype": "Data", "label": "Website"},
+  {"fieldname": "sb_accounting", "fieldtype": "Section Break", "label": "Accounting"},
+  {"fieldname": "default_payable_account", "fieldtype": "Link", "label": "Default Payable Account", "options": "Account"},
+  {"fieldname": "column_break_18", "fieldtype": "Column Break"},
+  {"fieldname": "payment_terms", "fieldtype": "Data", "label": "Payment Terms"}
  ],
- "permissions": [
-  {
-   "role": "System Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1
-  },
-  {
-   "role": "Accounts Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1
-  },
-  {
-   "role": "Accounts User",
-   "read": 1,
-   "write": 1,
-   "create": 1
-  },
-  {
-   "role": "Purchase Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1
-  },
-  {
-   "role": "Purchase User",
-   "read": 1,
-   "write": 1,
-   "create": 1
-  }
- ],
- "quick_entry": 1,
- "track_changes": 1,
- "search_fields": "supplier_name"
+ "icon": "fa fa-truck",
+ "links": [],
+ "modified": "2026-07-01 00:00:00",
+ "module": "Purchase",
+ "name": "Supplier",
+ "permissions": [{"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1}, {"create": 1, "read": 1, "role": "Purchase Manager", "write": 1}, {"read": 1, "role": "Accounts User"}],
+ "search_fields": "supplier_name, tax_id, email",
+ "sort_field": "modified",
+ "title_field": "supplier_name",
+ "track_changes": 1, "track_seen": 1
 }

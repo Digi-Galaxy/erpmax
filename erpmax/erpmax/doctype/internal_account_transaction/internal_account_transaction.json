@@ -1,0 +1,36 @@
+{
+  "actions": [],
+  "autoname": "method:erpmax.utils.naming.autoname_transaction",
+ "naming_rule": "By script",
+  "creation": "2026-07-03 00:00:00",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": ["company", "posting_date", "partner_account", "from_account", "to_account", "amount", "reference_doctype", "reference_name", "remarks", "amended_from"],
+  "fields": [
+    {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1, "in_standard_filter": 1},
+    {"default": "Today", "fieldname": "posting_date", "fieldtype": "Date", "label": "Posting Date", "reqd": 1},
+    {"fieldname": "partner_account", "fieldtype": "Link", "label": "Partner Account", "options": "Partner Account"},
+    {"fieldname": "from_account", "fieldtype": "Link", "label": "From Account", "options": "Account", "reqd": 1},
+    {"fieldname": "to_account", "fieldtype": "Link", "label": "To Account", "options": "Account", "reqd": 1},
+    {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount", "reqd": 1},
+    {"fieldname": "reference_doctype", "fieldtype": "Data", "label": "Reference DocType"},
+    {"fieldname": "reference_name", "fieldtype": "Data", "label": "Reference Name"},
+    {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"},
+    {"fieldname": "amended_from", "fieldtype": "Data", "label": "Amended From", "read_only": 1, "no_copy": 1, "print_hide": 1}
+  ],
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2026-07-03 00:00:00",
+  "module": "ERPMax",
+  "name": "Internal Account Transaction",
+  "permissions": [
+    {"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1, "submit": 1, "cancel": 1, "amend": 1},
+    {"create": 1, "read": 1, "role": "Accounts Manager", "write": 1, "submit": 1, "cancel": 1},
+    {"read": 1, "role": "Accounts User"}
+  ],
+  "search_fields": "from_account, to_account, partner_account",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

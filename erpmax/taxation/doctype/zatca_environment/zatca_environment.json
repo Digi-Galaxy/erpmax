@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "autoname": "field:name",
+ "creation": "2026-07-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name",
+  "environment_name",
+  "api_url",
+  "compliance_url",
+  "otp_url",
+  "is_sandbox"
+ ],
+ "fields": [
+  {
+   "fieldname": "name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "environment_name",
+   "fieldtype": "Data",
+   "label": "Environment Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "api_url",
+   "fieldtype": "Data",
+   "label": "API URL"
+  },
+  {
+   "fieldname": "compliance_url",
+   "fieldtype": "Data",
+   "label": "Compliance URL"
+  },
+  {
+   "fieldname": "otp_url",
+   "fieldtype": "Data",
+   "label": "OTP URL"
+  },
+  {
+   "fieldname": "is_sandbox",
+   "fieldtype": "Check",
+   "label": "Is Sandbox"
+  }
+ ],
+ "index_web_search_for_values": 0,
+ "links": [],
+ "modified": "2026-07-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Taxation",
+ "name": "Zatca Environment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

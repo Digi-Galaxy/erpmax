@@ -1,1 +1,0 @@
-from erpmax.accounting.doctype.chart_of_accounts_template.chart_of_accounts_template import *

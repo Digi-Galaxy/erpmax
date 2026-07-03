@@ -1,1 +1,0 @@
-from erpmax.accounting.doctype.sales_taxes_and_charges_template.sales_taxes_and_charges_template import *

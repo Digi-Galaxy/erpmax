@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "autoname": "field:name",
+ "creation": "2026-07-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name",
+  "sales_invoice",
+  "invoice_number",
+  "fbr_invoice_number",
+  "status",
+  "submission_date",
+  "response",
+  "qr_code"
+ ],
+ "fields": [
+  {
+   "fieldname": "name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "reqd": 1
+  },
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Data",
+   "label": "Invoice Number"
+  },
+  {
+   "fieldname": "fbr_invoice_number",
+   "fieldtype": "Data",
+   "label": "FBR Invoice Number"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nSubmitted\nAccepted\nRejected"
+  },
+  {
+   "fieldname": "submission_date",
+   "fieldtype": "Datetime",
+   "label": "Submission Date"
+  },
+  {
+   "fieldname": "response",
+   "fieldtype": "Long Text",
+   "label": "Response"
+  },
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Small Text",
+   "label": "QR Code"
+  }
+ ],
+ "index_web_search_for_values": 0,
+ "links": [],
+ "modified": "2026-07-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Taxation",
+ "name": "Fbr Invoice",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

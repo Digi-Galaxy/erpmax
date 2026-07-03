@@ -1,1 +1,6 @@
-from erpmax.reporting.doctype.reporting_standard_account.reporting_standard_account import *
+import frappe
+from frappe.model.document import Document
+
+
+class ReportingStandardAccount(Document):
+    pass

@@ -1,0 +1,53 @@
+[
+ {
+  "company_name": "Root Holding",
+  "abbreviation": "RH",
+  "status": "Active",
+  "company_type": "Holding",
+  "business_type": "Both",
+  "is_group": 1,
+  "country": "Saudi Arabia",
+  "address_line_1": "786 King Fahd Road",
+  "city": "Riyadh",
+  "doctype": "Company"
+ },
+ {
+  "company_name": "Tech Solutions",
+  "abbreviation": "TS",
+  "parent_company": "Root Holding",
+  "status": "Active",
+  "company_type": "LLC",
+  "business_type": "Services",
+  "is_group": 1,
+  "country": "Saudi Arabia",
+  "address_line_1": "123 Olaya Street",
+  "city": "Riyadh",
+  "doctype": "Company"
+ },
+ {
+  "company_name": "Logistics Hub",
+  "abbreviation": "LH",
+  "parent_company": "Root Holding",
+  "status": "Active",
+  "company_type": "LLC",
+  "business_type": "Both",
+  "is_group": 0,
+  "country": "United Arab Emirates",
+  "address_line_1": "45 Port Road",
+  "city": "Dubai",
+  "doctype": "Company"
+ },
+ {
+  "company_name": "Retail World",
+  "abbreviation": "RW",
+  "parent_company": "Tech Solutions",
+  "status": "Active",
+  "company_type": "Corporation",
+  "business_type": "Products",
+  "is_group": 0,
+  "country": "Saudi Arabia",
+  "address_line_1": "789 Tahlia Street",
+  "city": "Jeddah",
+  "doctype": "Company"
+ }
+]

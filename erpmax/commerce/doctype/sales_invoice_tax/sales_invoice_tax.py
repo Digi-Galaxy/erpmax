@@ -1,1 +1,6 @@
-from erpmax.sales.doctype.sales_invoice_tax.sales_invoice_tax import *
+import frappe
+from frappe.model.document import Document
+
+
+class SalesInvoiceTax(Document):
+    pass

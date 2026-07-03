@@ -1,72 +1,14 @@
 {
- "doctype": "DocType",
- "name": "Expense Type",
- "module": "Expense Management",
- "custom": 0,
+ "actions": [], "allow_rename": 1, "autoname": "field:expense_type_name", "creation": "2026-07-01 00:00:00",
+ "doctype": "DocType", "engine": "InnoDB",
+ "field_order": ["expense_type_name", "company", "column_break_2", "default_account"],
  "fields": [
-  {
-   "fieldname": "expense_type",
-   "label": "Expense Type",
-   "fieldtype": "Data",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
-   "fieldname": "description",
-   "label": "Description",
-   "fieldtype": "Small Text"
-  },
-  {
-   "fieldname": "expense_category",
-   "label": "Expense Category",
-   "fieldtype": "Select",
-   "options": "Travel\nFuel\nMaintenance\nMaterials\nUtilities\nOffice\nLabor\nSubcontract\nMeals\nAccommodation\nOther"
-  },
-  {
-   "fieldname": "default_mode_of_payment",
-   "label": "Default Mode of Payment",
-   "fieldtype": "Select",
-   "options": "Cash\nBank\nCheque"
-  },
-  {
-   "fieldname": "requires_receipt",
-   "label": "Requires Receipt",
-   "fieldtype": "Check",
-   "default": 1
-  },
-  {
-   "fieldname": "is_billable",
-   "label": "Is Billable",
-   "fieldtype": "Check"
-  },
-  {
-   "fieldname": "section_accounts",
-   "label": "Default Accounts",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "accounts",
-   "label": "Company Accounts",
-   "fieldtype": "Table",
-   "options": "Expense Type Account"
-  }
+  {"fieldname": "expense_type_name", "fieldtype": "Data", "in_list_view": 1, "label": "Expense Type", "reqd": 1, "unique": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1},
+  {"fieldname": "column_break_2", "fieldtype": "Column Break"},
+  {"fieldname": "default_account", "fieldtype": "Link", "label": "Default Account", "options": "Account"}
  ],
- "permissions": [
-  {
-   "role": "System Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1
-  },
-  {
-   "role": "Accounts Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1
-  }
- ],
- "track_changes": 1,
- "search_fields": "expense_type,expense_category"
+ "modified": "2026-07-01 00:00:00", "module": "Expense Management", "name": "Expense Type",
+ "permissions": [{"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1}, {"read": 1, "role": "Accounts User"}],
+ "search_fields": "expense_type_name", "sort_field": "modified", "title_field": "expense_type_name", "track_changes": 1
 }

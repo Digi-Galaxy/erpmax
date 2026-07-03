@@ -9,4 +9,5 @@ Purchase
 Sales
 Reporting
 Printings
-E-Invoicing
+
+Taxation

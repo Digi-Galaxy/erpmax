@@ -1,54 +1,41 @@
 {
-  "doctype": "DocType",
-  "name": "Chart of Accounts Template",
-  "module": "Accounting",
-  "custom": 0,
-  "fields": [
-    {
-      "fieldname": "template_name",
-      "label": "Template Name",
-      "fieldtype": "Data",
-      "reqd": 1
-    },
-    {
-      "fieldname": "country",
-      "label": "Country",
-      "fieldtype": "Data"
-    },
-    {
-      "fieldname": "standard",
-      "label": "Standard",
-      "fieldtype": "Select",
-      "options": "IFRS\nUS GAAP\nPakistan\nSaudi Arabia\nUAE"
-    },
-    {
-      "fieldname": "column_break_tpl",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "disabled",
-      "label": "Disabled",
-      "fieldtype": "Check"
-    },
-    {
-      "fieldname": "section_accounts",
-      "label": "Accounts",
-      "fieldtype": "Section Break"
-    },
-    {
-      "fieldname": "accounts",
-      "label": "Accounts",
-      "fieldtype": "Table",
-      "options": "Chart of Accounts Account"
-    }
-  ],
-  "permissions": [
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1
-    }
-  ]
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:template_name",
+ "creation": "2026-07-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "company",
+  "country",
+  "column_break_3",
+  "is_standard",
+  "sb_accounts",
+  "accounts"
+ ],
+ "fields": [
+  {"fieldname": "template_name", "fieldtype": "Data", "in_list_view": 1, "label": "Template Name", "reqd": 1, "unique": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company"},
+  {"fieldname": "country", "fieldtype": "Link", "label": "Country", "options": "Country"},
+  {"fieldname": "column_break_3", "fieldtype": "Column Break"},
+  {"default": "0", "fieldname": "is_standard", "fieldtype": "Check", "label": "Is Standard"},
+  {"fieldname": "sb_accounts", "fieldtype": "Section Break", "label": "Accounts"},
+  {"fieldname": "accounts", "fieldtype": "Table", "label": "Accounts", "options": "Chart of Accounts Account", "reqd": 1}
+ ],
+ "icon": "fa fa-sitemap",
+ "links": [],
+ "modified": "2026-07-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Accounting",
+ "name": "Chart of Accounts Template",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1},
+  {"read": 1, "role": "Accounts Manager"}
+ ],
+ "search_fields": "template_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
 }

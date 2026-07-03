@@ -1,45 +1,89 @@
 {
-  "doctype": "DocType",
-  "name": "Fiscal Year",
-  "module": "Accounting",
-  "custom": 0,
-  "fields": [
-    {
-      "fieldname": "year",
-      "label": "Year",
-      "fieldtype": "Data",
-      "reqd": 1
-    },
-    {
-      "fieldname": "year_start_date",
-      "label": "Year Start Date",
-      "fieldtype": "Date",
-      "reqd": 1
-    },
-    {
-      "fieldname": "column_break_fy",
-      "label": "",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "year_end_date",
-      "label": "Year End Date",
-      "fieldtype": "Date",
-      "reqd": 1
-    }
-  ],
-  "permissions": [
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1
-    }
-  ],
-  "sort_field": "modified",
-  "modified_by": "Administrator",
-  "owner": "Administrator",
-  "track_changes": 1,
-  "search_fields": "name"
+ "actions": [],
+ "autoname": "field:fiscal_year_name",
+ "creation": "2026-06-15 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fiscal_year_name",
+  "fiscal_year",
+  "year_start_date",
+  "column_break_3",
+  "year_end_date",
+  "is_short_year",
+  "is_closed"
+ ],
+ "fields": [
+  {
+   "fieldname": "fiscal_year_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Data",
+   "label": "Fiscal Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "year_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "year_end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_short_year",
+   "fieldtype": "Check",
+   "label": "Is Short Year"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_closed",
+   "fieldtype": "Check",
+   "label": "Is Closed",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-06-15 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Accounting",
+ "name": "Fiscal Year",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Accounts User"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
 }
