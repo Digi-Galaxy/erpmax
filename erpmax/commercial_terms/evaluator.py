@@ -373,6 +373,7 @@ def create_commission_ledger(doc):
             "rate": flt(ct.get("rate", 0)),
             "status": "Accrued",
             "posting_date": doc.get("posting_date"),
+            "is_recoverable": flt(ct.get("is_recoverable", 0)),
         })
         ledger.flags.ignore_permissions = True
         ledger.insert()
