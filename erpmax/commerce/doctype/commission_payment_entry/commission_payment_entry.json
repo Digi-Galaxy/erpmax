@@ -1,0 +1,80 @@
+{
+  "_comments": 0,
+  "_liked_by": "[]",
+  "_user_tags": "[]",
+  "actions": [],
+  "allow_rename": 0,
+  "beta": 0,
+  "creation": "2025-07-05 12:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "commission_ledger",
+    "agent",
+    "invoice",
+    "commission_amount",
+    "allocated_amount"
+  ],
+  "fields": [
+    {
+      "fieldname": "commission_ledger",
+      "fieldtype": "Link",
+      "label": "Commission Ledger",
+      "options": "Commission Ledger",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "agent",
+      "fieldtype": "Data",
+      "label": "Agent",
+      "read_only": 1,
+      "fetch_from": "commission_ledger.agent"
+    },
+    {
+      "fieldname": "invoice",
+      "fieldtype": "Data",
+      "label": "Invoice",
+      "read_only": 1,
+      "fetch_from": "commission_ledger.invoice"
+    },
+    {
+      "fieldname": "commission_amount",
+      "fieldtype": "Currency",
+      "label": "Commission Amount",
+      "read_only": 1,
+      "fetch_from": "commission_ledger.commission_amount"
+    },
+    {
+      "fieldname": "allocated_amount",
+      "fieldtype": "Currency",
+      "label": "Allocated Amount",
+      "reqd": 1,
+      "in_list_view": 1
+    }
+  ],
+  "has_web_view": 0,
+  "hide_toolbar": 0,
+  "idx": 1,
+  "is_submittable": 0,
+  "is_calendar_and_gantt": 0,
+  "is_tree": 0,
+  "is_virtual": 0,
+  "istable": 1,
+  "links": [],
+  "max_attachments": 0,
+  "modified": "2025-07-05 12:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Commerce",
+  "name": "Commission Payment Entry",
+  "naming_rule": "By Naming Series",
+  "owner": "Administrator",
+  "permissions": [],
+  "restrict_to_domain": "",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 0
+}

@@ -1,0 +1,172 @@
+{
+  "_comments": 0,
+  "_liked_by": "[]",
+  "_user_tags": "[]",
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "CMP-.YYYY.-.######",
+  "beta": 0,
+  "creation": "2025-07-05 12:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "agent",
+    "company",
+    "posting_date",
+    "payment_amount",
+    "payment_account",
+    "column_break_1",
+    "status",
+    "section_entries",
+    "entries",
+    "section_more",
+    "remarks"
+  ],
+  "fields": [
+    {
+      "fieldname": "agent",
+      "fieldtype": "Link",
+      "label": "Agent",
+      "options": "Sales Agent",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date",
+      "reqd": 1,
+      "default": "Today"
+    },
+    {
+      "fieldname": "payment_amount",
+      "fieldtype": "Currency",
+      "label": "Payment Amount",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "payment_account",
+      "fieldtype": "Link",
+      "label": "Payment Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nSubmitted\nPaid\nCancelled",
+      "default": "Draft",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_entries",
+      "fieldtype": "Section Break",
+      "label": "Commission Entries"
+    },
+    {
+      "fieldname": "entries",
+      "fieldtype": "Table",
+      "label": "Entries",
+      "options": "Commission Payment Entry",
+      "reqd": 1
+    },
+    {
+      "fieldname": "section_more",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    }
+  ],
+  "has_web_view": 0,
+  "hide_toolbar": 0,
+  "idx": 1,
+  "is_submittable": 1,
+  "is_calendar_and_gantt": 0,
+  "is_tree": 0,
+  "is_virtual": 0,
+  "links": [],
+  "max_attachments": 0,
+  "modified": "2025-07-05 12:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Commerce",
+  "name": "Commission Payment",
+  "naming_rule": "By Naming Series",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "amend": 1,
+      "cancel": 1,
+      "submit": 1,
+      "email": 1,
+      "print": 1,
+      "report": 1,
+      "import": 1,
+      "export": 1,
+      "share": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "amend": 1,
+      "cancel": 1,
+      "submit": 1,
+      "email": 1,
+      "print": 1,
+      "report": 1,
+      "import": 1,
+      "export": 1,
+      "share": 1
+    },
+    {
+      "role": "Accounts User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "amend": 0,
+      "cancel": 0,
+      "submit": 1,
+      "email": 1,
+      "print": 1,
+      "report": 1,
+      "import": 0,
+      "export": 0,
+      "share": 0
+    }
+  ],
+  "restrict_to_domain": "",
+  "search_fields": "agent, status",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "title_field": "agent",
+  "track_changes": 1
+}
