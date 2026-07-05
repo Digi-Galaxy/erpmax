@@ -4,7 +4,7 @@ from frappe.model.document import Document
 from frappe.utils import getdate, flt
 
 from erpmax.utils.naming import sync_transaction_party_fields
-from erpmax.commercial_terms.evaluator import get_gl_entries_for_term, create_commission_ledger
+from erpmax.commercial_terms.evaluator import get_gl_entries_for_term, create_commission_ledger, create_party_ledger_entry
 
 
 class SalesInvoice(Document):
@@ -126,6 +126,9 @@ class SalesInvoice(Document):
         if net_ct_adjustment:
             self.outstanding_amount = flt(self.outstanding_amount) + net_ct_adjustment
             self.db_set("outstanding_amount", self.outstanding_amount)
+
+        for ct in self.get("applied_commercial_terms", []):
+            create_party_ledger_entry(ct.as_dict(), self.company, self.posting_date, self.doctype, self.name)
 
         for entry in entries:
             gl = frappe.get_doc({

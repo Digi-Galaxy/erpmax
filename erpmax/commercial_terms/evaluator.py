@@ -355,6 +355,28 @@ def get_gl_entries_for_term(ct, debit_to):
     return entries, outstanding_impact
 
 
+
+
+def create_party_ledger_entry(ct, company, posting_date, voucher_type, voucher_no):
+    if not ct.get("party_ledger_impact") or not ct.get("party"):
+        return
+    amt = flt(ct.get("calculated_amount", 0))
+    if not amt:
+        return
+    entry = frappe.get_doc({
+        "doctype": "Party Ledger",
+        "party_type": ct.get("party_type") or "Sales Agent",
+        "party": ct.get("party"),
+        "amount": amt,
+        "posting_date": posting_date,
+        "company": company,
+        "against_voucher_type": voucher_type,
+        "against_voucher": voucher_no,
+        "remarks": ct.get("rule_label", ""),
+    })
+    entry.flags.ignore_permissions = True
+    entry.insert()
+
 def create_commission_ledger(doc):
     terms = doc.get("applied_commercial_terms", [])
     for ct in terms:

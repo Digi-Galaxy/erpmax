@@ -9,7 +9,7 @@ def resolve_templates(doc, target_document):
         "target_document": ["in", [target_document, "Both"]],
     }
     for t in frappe.get_all("Commercial Terms Template", fields=["name",
-        "split_method", "head_office_pct", "field_pct", "territory", "customer_group"], filters=filters):
+        "split_method", "head_office_pct", "field_pct", "region", "customer_group"], filters=filters):
         if t.name in seen:
             continue
         seen.add(t.name)
@@ -18,7 +18,7 @@ def resolve_templates(doc, target_document):
             "split_method": t.split_method or "Hierarchy",
             "head_office_pct": t.head_office_pct or 30,
             "field_pct": t.field_pct or 70,
-            "territory": t.territory,
+            "region": t.region,
             "customer_group": t.customer_group,
         }
         for rule in template.rules:

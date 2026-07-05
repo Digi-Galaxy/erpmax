@@ -1,0 +1,161 @@
+{
+  "_comments": 0,
+  "_liked_by": "[]",
+  "_user_tags": "[]",
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "PLED-.YYYY.-.######",
+  "beta": 0,
+  "creation": "2025-07-05 12:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "party_type",
+    "party",
+    "amount",
+    "column_break_4",
+    "posting_date",
+    "company",
+    "section_voucher",
+    "against_voucher_type",
+    "against_voucher",
+    "section_remark",
+    "remarks"
+  ],
+  "fields": [
+    {
+      "fieldname": "party_type",
+      "fieldtype": "Link",
+      "label": "Party Type",
+      "options": "DocType",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "party",
+      "fieldtype": "Dynamic Link",
+      "label": "Party",
+      "options": "party_type",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date",
+      "reqd": 1,
+      "default": "Today"
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "section_voucher",
+      "fieldtype": "Section Break",
+      "label": "Reference Voucher"
+    },
+    {
+      "fieldname": "against_voucher_type",
+      "fieldtype": "Data",
+      "label": "Against Voucher Type",
+      "read_only": 1
+    },
+    {
+      "fieldname": "against_voucher",
+      "fieldtype": "Data",
+      "label": "Against Voucher",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_remark",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    }
+  ],
+  "has_web_view": 0,
+  "hide_toolbar": 0,
+  "idx": 1,
+  "is_submittable": 0,
+  "is_calendar_and_gantt": 0,
+  "is_tree": 0,
+  "is_virtual": 0,
+  "links": [],
+  "max_attachments": 0,
+  "modified": "2025-07-05 12:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Accounting",
+  "name": "Party Ledger",
+  "naming_rule": "By Naming Series",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "report": 1,
+      "import": 1,
+      "export": 1,
+      "share": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "report": 1,
+      "import": 1,
+      "export": 1,
+      "share": 1
+    },
+    {
+      "role": "Accounts User",
+      "read": 1,
+      "write": 0,
+      "create": 0,
+      "delete": 0,
+      "email": 1,
+      "print": 1,
+      "report": 1,
+      "import": 0,
+      "export": 0,
+      "share": 0
+    }
+  ],
+  "restrict_to_domain": "",
+  "search_fields": "party_type, party, against_voucher",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "title_field": "party",
+  "track_changes": 1
+}
