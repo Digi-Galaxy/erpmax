@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": ["bank_account", "posting_date", "company", "column_break_4", "status", "sb_transaction", "transaction_id", "description", "transaction_type", "amount", "currency", "column_break_15", "voucher_type", "voucher_no", "payment_entry", "journal_entry", "sb_reconciliation", "reconciled_date", "sb_more", "provider", "remarks"],
+ "fields": [
+  {"fieldname": "bank_account", "fieldtype": "Link", "label": "Bank Account", "options": "Bank Account", "reqd": 1, "in_list_view": 1},
+  {"default": "Today", "fieldname": "posting_date", "fieldtype": "Date", "in_list_view": 1, "label": "Date", "reqd": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"default": "Pending", "fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Pending\nReconciled\nCancelled", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "sb_transaction", "fieldtype": "Section Break", "label": "Transaction Details"},
+  {"fieldname": "transaction_id", "fieldtype": "Data", "label": "Transaction ID", "read_only": 1},
+  {"fieldname": "description", "fieldtype": "Small Text", "label": "Description", "in_list_view": 1},
+  {"fieldname": "transaction_type", "fieldtype": "Select", "label": "Type", "options": "\nDebit\nCredit", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency"},
+  {"fieldname": "column_break_15", "fieldtype": "Column Break"},
+  {"fieldname": "voucher_type", "fieldtype": "Data", "label": "Voucher Type", "read_only": 1},
+  {"fieldname": "voucher_no", "fieldtype": "Data", "label": "Voucher No", "read_only": 1},
+  {"fieldname": "payment_entry", "fieldtype": "Link", "label": "Payment Entry", "options": "Payment Entry", "read_only": 1},
+  {"fieldname": "journal_entry", "fieldtype": "Link", "label": "Journal Entry", "options": "Journal Entry", "read_only": 1},
+  {"fieldname": "sb_reconciliation", "fieldtype": "Section Break", "label": "Reconciliation"},
+  {"fieldname": "reconciled_date", "fieldtype": "Date", "label": "Reconciled Date", "read_only": 1},
+  {"fieldname": "sb_more", "fieldtype": "Section Break"},
+  {"fieldname": "provider", "fieldtype": "Data", "label": "Provider", "read_only": 1},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ],
+ "modified": "2026-07-04 00:00:00",
+ "module": "Banking",
+ "name": "Bank Transaction",
+ "owner": "Administrator",
+ "permissions": [
+  {"amend": 0, "cancel": 0, "create": 1, "delete": 1, "email": 0, "export": 0, "print": 0, "read": 1, "report": 1, "role": "System Manager", "share": 1, "submit": 0, "write": 1}
+ ],
+ "search_fields": "description, transaction_id",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

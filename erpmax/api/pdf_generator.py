@@ -67,6 +67,10 @@ def _ensure_folder(folder_name, parent):
 
 
 def get_party_info(doc, doctype):
+    if doctype == "Supplier":
+        return (doc.supplier_name or doc.name, "Supplier")
+    if doctype == "Customer":
+        return (doc.customer_name or doc.name, "Customer")
     if doctype in _PURCHASE_DOCTYPES:
         supplier = doc.get("supplier") or ""
         if supplier and frappe.db.exists("Supplier", supplier):

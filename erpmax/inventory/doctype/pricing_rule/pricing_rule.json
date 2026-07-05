@@ -1,0 +1,38 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": ["rule_name", "price_list", "rule_type", "company", "column_break_4", "discount_type", "discount_percentage", "discount_amount", "sb_qty", "qty_based", "min_qty", "qty_discount_type", "qty_discount", "sb_dates", "valid_from", "valid_upto", "disabled"],
+ "fields": [
+  {"fieldname": "rule_name", "fieldtype": "Data", "label": "Rule Name", "reqd": 1},
+  {"fieldname": "price_list", "fieldtype": "Link", "label": "Price List", "options": "Price List", "reqd": 1},
+  {"fieldname": "rule_type", "fieldtype": "Select", "label": "Rule Type", "options": "\nDiscount\nMarkup\nFixed Price", "reqd": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company"},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "discount_type", "fieldtype": "Select", "label": "Discount Type", "options": "\nPercentage\nAmount"},
+  {"fieldname": "discount_percentage", "fieldtype": "Percent", "label": "Discount %"},
+  {"fieldname": "discount_amount", "fieldtype": "Currency", "label": "Discount Amount"},
+  {"fieldname": "sb_qty", "fieldtype": "Section Break", "label": "Quantity Discount"},
+  {"fieldname": "qty_based", "fieldtype": "Check", "label": "Qty Based Discount"},
+  {"fieldname": "min_qty", "fieldtype": "Float", "label": "Min Qty"},
+  {"fieldname": "qty_discount_type", "fieldtype": "Select", "label": "Qty Discount Type", "options": "\nPercentage\nAmount"},
+  {"fieldname": "qty_discount", "fieldtype": "Currency", "label": "Qty Discount"},
+  {"fieldname": "sb_dates", "fieldtype": "Section Break", "label": "Validity"},
+  {"fieldname": "valid_from", "fieldtype": "Date", "label": "Valid From"},
+  {"fieldname": "valid_upto", "fieldtype": "Date", "label": "Valid Upto"},
+  {"fieldname": "disabled", "fieldtype": "Check", "label": "Disabled", "default": 0}
+ ],
+ "modified": "2026-07-04 00:00:00",
+ "module": "Inventory",
+ "name": "Pricing Rule",
+ "owner": "Administrator",
+ "permissions": [
+  {"amend": 0, "cancel": 0, "create": 1, "delete": 1, "email": 0, "export": 0, "print": 0, "read": 1, "report": 1, "role": "System Manager", "share": 1, "submit": 0, "write": 1}
+ ],
+ "search_fields": "rule_name, price_list",
+ "sort_field": "modified",
+ "title_field": "rule_name",
+ "track_changes": 1
+}

@@ -11,3 +11,10 @@ SESSION_STATUS.md
 SESSION_CHAT.md
 DISCOVERY.md
 *.csv
+# Development/fixing scripts - DO NOT COMMIT
+fixing/
+
+# Temp files
+*.tmp
+*.bak
+*.log

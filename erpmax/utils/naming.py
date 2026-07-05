@@ -12,6 +12,7 @@ TRANSACTION_CONFIG = {
         "display_override_field": "customer_display_name",
         "display_field": "customer_name",
         "abbr_field": "customer_abbr",
+        "include_party_abbr": True,
     },
     "Proforma Invoice": {
         "prefix": "PRF",
@@ -20,6 +21,7 @@ TRANSACTION_CONFIG = {
         "display_override_field": "customer_display_name",
         "display_field": "customer_name",
         "abbr_field": "customer_abbr",
+        "include_party_abbr": True,
     },
     "Purchase Invoice": {
         "prefix": "PINV",
@@ -28,6 +30,39 @@ TRANSACTION_CONFIG = {
         "display_override_field": "supplier_display_name",
         "display_field": "supplier_name",
         "abbr_field": "supplier_abbr",
+        "include_party_abbr": True,
+    },
+    "Sales Order": {
+        "prefix": "SO",
+        "source_doctype": "Customer",
+        "link_field": "customer",
+        "display_field": "customer_name",
+        "abbr_field": "customer_abbr",
+        "include_party_abbr": True,
+    },
+    "Quotation": {
+        "prefix": "QUO",
+        "source_doctype": "Customer",
+        "link_field": "customer",
+        "display_field": "customer_name",
+        "abbr_field": "customer_abbr",
+        "include_party_abbr": True,
+    },
+    "Purchase Order": {
+        "prefix": "PO",
+        "source_doctype": "Supplier",
+        "link_field": "supplier",
+        "display_field": "supplier_name",
+        "abbr_field": "supplier_abbr",
+        "include_party_abbr": True,
+    },
+    "Supplier Quotation": {
+        "prefix": "SQ",
+        "source_doctype": "Supplier",
+        "link_field": "supplier",
+        "display_field": "supplier_name",
+        "abbr_field": "supplier_abbr",
+        "include_party_abbr": True,
     },
     "Payment Entry": {
         "prefix": "PAY",
@@ -35,6 +70,7 @@ TRANSACTION_CONFIG = {
         "display_override_field": "party_display_name",
         "display_field": "party_name",
         "abbr_field": "party_abbr",
+        "include_party_abbr": True,
     },
     "Partner Transaction": {
         "prefix": "PTRN",
@@ -42,6 +78,7 @@ TRANSACTION_CONFIG = {
         "link_field": "partner_account",
         "display_field": "partner_name",
         "abbr_field": "partner_abbr",
+        "include_party_abbr": True,
     },
     "Internal Account Transaction": {
         "prefix": "IAT",
@@ -183,9 +220,9 @@ def sync_transaction_party_fields(doc):
 
 def autoname_transaction(doc):
     context = get_transaction_context(doc)
-    abbr = context["abbr"] or make_abbreviation(getattr(doc, "company", None) or doc.doctype)
+    party_abbr = context["abbr"] or make_abbreviation(getattr(doc, "company", None) or doc.doctype)
     dt = context["date"]
-    
+
     # Add payment direction for Payment Entry
     direction = ""
     if doc.doctype == "Payment Entry":
@@ -194,9 +231,11 @@ def autoname_transaction(doc):
             direction = "-REC"
         elif payment_type == "Pay":
             direction = "-PAY"
-    
-    seq = _next_transaction_sequence(doc.doctype, abbr, dt)
-    doc.name = f"{abbr}{direction}-{dt:%m}-{dt:%y}-{seq:04d}"
+
+    seq = _next_transaction_sequence(doc.doctype, party_abbr, dt)
+
+    # Format: ABBR-PREFIX-MM-YY-NNNN
+    doc.name = f"{party_abbr}-{context['prefix']}{direction}-{dt:%m}-{dt:%y}-{seq:04d}"
 
 
 def _transaction_date(doc):
@@ -211,9 +250,9 @@ def _transaction_date(doc):
     return datetime.now()
 
 
-def _next_transaction_sequence(doctype, abbr, dt):
-    # Match both: ABBR-MM-YY-NNNN and ABBR-REC/PAY-MM-YY-NNNN
-    pattern = f"{abbr}%-{dt:%m}-{dt:%y}-%"
+def _next_transaction_sequence(doctype, party_abbr, dt):
+    # Match pattern: ABBR-PREFIX(-REC/PAY)-MM-YY-NNNN
+    pattern = f"{party_abbr}%-{dt:%m}-{dt:%y}-%"
     rows = frappe.db.sql(
         f"select name from `tab{doctype}` where name like %s",
         pattern,

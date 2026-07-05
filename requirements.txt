@@ -1,0 +1,49 @@
+# ERPMax Requirements
+# Keep in sync with pyproject.toml
+
+# Core Dependencies
+frappe>=15.0.0
+qrcode>=7.0.0
+pyjwt>=2.0.0
+cryptography>=3.0.0
+lxml>=4.6.0
+requests>=2.25.0
+python-dateutil>=2.8.0
+
+# ZATCA/FBR E-Invoicing
+hijridate>=2.3.0
+pyqrcode>=1.2.1
+pypng>=0.20220414.0
+pyzbar>=0.1.9
+
+# Reporting & PDF Generation
+weasyprint>=60.0
+jinja2>=3.1.0
+
+# Data Processing
+openpyxl>=3.1.0
+xlrd>=2.0.0
+pandas>=2.0.0
+
+# Image Processing
+Pillow>=10.0.0
+img2pdf>=0.4.0
+
+# Barcode Support
+python-barcode>=0.15.0
+
+# Financial Calculations
+numpy>=1.24.0
+
+# File Processing
+chardet>=5.0.0
+
+# Authentication & Security
+bcrypt>=4.0.0
+passlib>=1.7.0
+
+# Utilities
+pytz>=2023.3
+tzdata>=2023.3
+humanize>=4.0.0
+num2words>=0.5.0

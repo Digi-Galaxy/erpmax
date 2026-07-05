@@ -1,57 +1,41 @@
 {
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
  "doctype": "DocType",
- "name": "Purchase Order Item",
- "module": "Purchase",
- "custom": 0,
- "istable": 1,
- "fields": [
-  {
-   "fieldname": "item",
-   "label": "Item",
-   "fieldtype": "Link",
-   "options": "Item",
-   "in_list_view": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "description",
-   "label": "Description",
-   "fieldtype": "Small Text",
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "qty",
-   "label": "Qty",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "reqd": 1,
-   "default": 1
-  },
-  {
-   "fieldname": "column_break_poi1",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "rate",
-   "label": "Rate",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "amount",
-   "label": "Amount",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "received_qty",
-   "label": "Received Qty",
-   "fieldtype": "Float",
-   "read_only": 1,
-   "default": 0
-  }
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "description",
+  "qty",
+  "rate",
+  "amount",
+  "expense_account",
+  "column_break_6",
+  "uom",
+  "warehouse",
+  "received_qty",
+  "billed_qty"
  ],
- "permissions": []
+ "fields": [
+  {"fieldname": "item_code", "fieldtype": "Link", "label": "Item Code", "options": "Item", "in_list_view": 1},
+  {"fieldname": "item_name", "fieldtype": "Data", "in_list_view": 1, "label": "Item Name", "reqd": 1},
+  {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"},
+  {"fieldname": "qty", "fieldtype": "Float", "in_list_view": 1, "label": "Qty", "reqd": 1},
+  {"fieldname": "rate", "fieldtype": "Currency", "in_list_view": 1, "label": "Rate", "reqd": 1},
+  {"fieldname": "amount", "fieldtype": "Currency", "in_list_view": 1, "label": "Amount", "read_only": 1},
+  {"fieldname": "expense_account", "fieldtype": "Link", "label": "Expense Account", "options": "Account"},
+  {"fieldname": "column_break_6", "fieldtype": "Column Break"},
+  {"fieldname": "uom", "fieldtype": "Link", "label": "UOM", "options": "UOM"},
+  {"fieldname": "warehouse", "fieldtype": "Link", "label": "Warehouse", "options": "Warehouse"},
+  {"fieldname": "received_qty", "fieldtype": "Float", "label": "Received Qty", "read_only": 1},
+  {"fieldname": "billed_qty", "fieldtype": "Float", "label": "Billed Qty", "read_only": 1}
+ ],
+ "istable": 1,
+ "modified": "2026-07-04 00:00:00",
+ "module": "Purchase",
+ "name": "Purchase Order Item",
+ "permissions": [],
+ "sort_field": "modified"
 }

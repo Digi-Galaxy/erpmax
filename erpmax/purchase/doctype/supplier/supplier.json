@@ -6,7 +6,7 @@
  "doctype": "DocType",
  "document_type": "Setup",
  "engine": "InnoDB",
-  "field_order": ["supplier_name", "supplier_type", "company", "supplier_display_name", "region", "distributor", "commission_rate", "column_break_3", "tax_id", "default_currency", "sb_address", "address_line_1", "city", "state", "country", "column_break_11", "phone", "email", "website", "sb_accounting", "default_payable_account", "column_break_18", "payment_terms"],
+  "field_order": ["supplier_name", "supplier_type", "company", "supplier_display_name", "region", "distributor", "commission_rate", "column_break_3", "tax_id", "default_currency", "sb_address", "address_line_1", "city", "state", "country", "column_break_11", "phone", "email", "website", "sb_accounting", "accounts", "default_payable_account", "column_break_18", "payment_terms"],
  "fields": [
   {"fieldname": "supplier_name", "fieldtype": "Data", "in_list_view": 1, "label": "Supplier Name", "reqd": 1, "unique": 1},
   {"fieldname": "supplier_type", "fieldtype": "Select", "in_list_view": 1, "label": "Supplier Type", "options": "\nCompany\nIndividual", "reqd": 1},
@@ -28,6 +28,7 @@
   {"fieldname": "email", "fieldtype": "Data", "label": "Email", "options": "Email"},
   {"fieldname": "website", "fieldtype": "Data", "label": "Website"},
   {"fieldname": "sb_accounting", "fieldtype": "Section Break", "label": "Accounting"},
+  {"fieldname": "accounts", "fieldtype": "Table", "label": "Accounts", "options": "Party Account", "description": "Link accounts to this supplier per company. Auto-created if empty."},
   {"fieldname": "default_payable_account", "fieldtype": "Link", "label": "Default Payable Account", "options": "Account"},
   {"fieldname": "column_break_18", "fieldtype": "Column Break"},
   {"fieldname": "payment_terms", "fieldtype": "Data", "label": "Payment Terms"}

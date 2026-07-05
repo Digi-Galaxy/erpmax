@@ -1,0 +1,21 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["account_head", "rate", "amount", "column_break_4", "description"],
+ "fields": [
+  {"fieldname": "account_head", "fieldtype": "Link", "label": "Account Head", "options": "Account", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "rate", "fieldtype": "Percent", "label": "Rate", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "description", "fieldtype": "Data", "label": "Description"}
+ ],
+ "istable": 1,
+ "modified": "2026-07-04 00:00:00",
+ "module": "Purchase",
+ "name": "Debit Note Tax",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified"
+}

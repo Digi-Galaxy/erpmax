@@ -1,0 +1,26 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["payment_entry", "posting_date", "party_type", "party", "bank_amount", "column_break_6", "is_matched", "match_confidence", "match_date"],
+ "fields": [
+  {"fieldname": "payment_entry", "fieldtype": "Link", "in_list_view": 1, "label": "Payment Entry", "options": "Payment Entry", "reqd": 1},
+  {"fieldname": "posting_date", "fieldtype": "Date", "in_list_view": 1, "label": "Date", "read_only": 1},
+  {"fieldname": "party_type", "fieldtype": "Data", "label": "Party Type", "read_only": 1},
+  {"fieldname": "party", "fieldtype": "Data", "label": "Party", "read_only": 1},
+  {"fieldname": "bank_amount", "fieldtype": "Currency", "in_list_view": 1, "label": "Bank Amount", "read_only": 1},
+  {"fieldname": "column_break_6", "fieldtype": "Column Break"},
+  {"fieldname": "is_matched", "fieldtype": "Check", "in_list_view": 1, "label": "Matched", "default": 0},
+  {"fieldname": "match_confidence", "fieldtype": "Percent", "label": "Match Confidence", "read_only": 1},
+  {"fieldname": "match_date", "fieldtype": "Date", "label": "Match Date", "read_only": 1}
+ ],
+ "istable": 1,
+ "modified": "2026-07-04 00:00:00",
+ "module": "Accounting",
+ "name": "Bank Reconciliation Item",
+ "permissions": [],
+ "sort_field": "modified"
+}
+

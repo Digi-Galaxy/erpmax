@@ -38,6 +38,15 @@ class Company(NestedSet):
         self.create_linked_contact()
         if self.create_user and self.owner_email:
             self.create_owner_user()
+        self.setup_company_accounts()
+    
+    def setup_company_accounts(self):
+        """Setup all standard accounts for this company"""
+        try:
+            from erpmax.doctype.company_account_setup.company_account_setup import setup_company_accounts
+            setup_company_accounts(self.name)
+        except Exception as e:
+            frappe.log_error(f"Failed to setup company accounts: {str(e)}")
 
     def on_update(self):
         if self.has_value_changed("status") and self.status == "Active":
@@ -338,26 +347,3 @@ def add_node(parent=None, label=None, **kwargs):
     )
     doc.insert(ignore_permissions=True)
     return doc.as_dict()
-
-
-# Module-level hooks wrappers for permission hooks
-def get_permission_query_conditions(user, doctype=None):
-    return ""
-
-def has_permission(doc, user):
-    return True
-
-def onload(doc, method):
-    pass
-
-def validate(doc, method):
-    doc._apply_country_defaults()
-
-def on_update(doc, method):
-    if doc.has_value_changed("status") and doc.status == "Active":
-        doc.enable_company_access()
-    if doc.has_value_changed("linked_user") and doc.linked_user:
-        doc.set_user_permissions()
-    if doc.has_value_changed("create_user") and doc.create_user and doc.owner_email:
-        doc.create_owner_user()
-    doc._update_linked_user_on_data_change()

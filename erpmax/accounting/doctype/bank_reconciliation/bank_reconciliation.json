@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "bank_account",
+  "reconciliation_date",
+  "company",
+  "column_break_4",
+  "status",
+  "sb_items",
+  "items",
+  "sb_totals",
+  "total_reconciled",
+  "total_unreconciled",
+  "column_break_15",
+  "opening_balance",
+  "closing_balance",
+  "sb_more",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {"fieldname": "bank_account", "fieldtype": "Link", "label": "Bank Account", "options": "Bank Account", "reqd": 1, "in_list_view": 1},
+  {"default": "Today", "fieldname": "reconciliation_date", "fieldtype": "Date", "in_list_view": 1, "label": "Reconciliation Date", "reqd": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1, "in_standard_filter": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"default": "Draft", "fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nSubmitted\nCancelled", "read_only": 1},
+  {"fieldname": "sb_items", "fieldtype": "Section Break", "label": "Reconciliation Items"},
+  {"fieldname": "items", "fieldtype": "Table", "label": "Items", "options": "Bank Reconciliation Item", "reqd": 1},
+  {"fieldname": "sb_totals", "fieldtype": "Section Break", "label": "Totals"},
+  {"fieldname": "total_reconciled", "fieldtype": "Currency", "label": "Total Reconciled", "read_only": 1},
+  {"fieldname": "total_unreconciled", "fieldtype": "Currency", "label": "Total Unreconciled", "read_only": 1},
+  {"fieldname": "column_break_15", "fieldtype": "Column Break"},
+  {"fieldname": "opening_balance", "fieldtype": "Currency", "label": "Opening Balance"},
+  {"fieldname": "closing_balance", "fieldtype": "Currency", "label": "Closing Balance", "read_only": 1},
+  {"fieldname": "sb_more", "fieldtype": "Section Break"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"},
+  {"fieldname": "amended_from", "fieldtype": "Data", "label": "Amended From", "no_copy": 1, "print_hide": 1, "read_only": 1}
+ ],
+ "is_submittable": 1,
+ "modified": "2026-07-04 00:00:00",
+ "module": "Accounting",
+ "name": "Bank Reconciliation",
+ "owner": "Administrator",
+ "permissions": [
+  {"amend": 1, "cancel": 1, "create": 1, "delete": 1, "email": 0, "export": 0, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "submit": 1, "write": 1},
+  {"cancel": 1, "create": 1, "read": 1, "role": "Accounts User", "submit": 1, "write": 1}
+ ],
+ "search_fields": "remarks",
+ "sort_field": "modified",
+ "track_changes": 1
+}
+

@@ -1,1030 +1,1037 @@
 {
-  "actions": [],
-  "allow_rename": 1,
-  "autoname": "field:company_name",
-  "creation": "2026-07-01 00:00:00",
-  "doctype": "DocType",
-  "document_type": "Setup",
-  "engine": "InnoDB",
-  "field_order": [
-    "overview_tab",
-    "sb_basic",
-    "company_name",
-    "company_name_local",
-    "company_name_arabic",
-    "abbreviation",
-    "company_type",
-    "business_type",
-    "cb_basic",
-    "parent_company",
-    "is_group",
-    "status",
-    "organization_tab",
-    "sb_industries",
-    "industries",
-    "sb_registration",
-    "registration_number",
-    "tax_id",
-    "tax_regime",
-    "cb_registration",
-    "registration_date",
-    "saudi_unified_number",
-    "license_expiry",
-    "logo",
-    "company_stamp",
-    "ownership_tab",
-    "sb_owner",
-    "owner_first_name",
-    "owner_last_name",
-    "owner_email",
-    "owner_mobile",
-    "owner_signature",
-    "cb_owner",
-    "create_user",
-    "linked_user",
-    "user_created",
-    "contacts_tab",
-    "sb_address",
-    "address_title",
-    "address_line_1",
-    "address_line_2",
-    "building_no",
-    "subdivision",
-    "city",
-    "cb_address",
-    "state",
-    "country",
-    "zip_code",
-    "latitude",
-    "longitude",
-    "map_view",
-    "sb_contact",
-    "contact_email",
-    "contact_phone",
-    "contact_mobile",
-    "cb_contact",
-    "website",
-    "facebook",
-    "linkedin",
-    "sb_notes",
-    "notes",
-    "accounts_tab",
-    "sb_accounting",
-    "default_currency",
-    "fiscal_year_start",
-    "date_format",
-    "cb_accounting",
-    "default_bank_account",
-    "default_cash_account",
-    "default_receivable_account",
-    "default_payable_account",
-    "default_income_account",
-    "default_expense_account",
-    "round_off_account",
-    "write_off_account",
-    "default_discount_account",
-    "cb_accounting_2",
-    "exchange_gain_loss_account",
-    "unrealized_exchange_gain_loss_account",
-    "default_deferred_expense_account",
-    "default_deferred_revenue_account",
-    "default_inventory_account",
-    "stock_adjustment_account",
-    "accumulated_depreciation_account",
-    "depreciation_expense_account",
-    "capital_work_in_progress_account",
-    "asset_received_but_not_billed",
-    "default_advance_received_account",
-    "default_advance_paid_account",
-    "default_provisional_account",
-    "round_off_cost_center",
-    "depreciation_cost_center",
-    "default_selling_terms",
-    "default_buying_terms",
-    "default_sales_contact",
-    "default_in_transit_warehouse",
-    "default_warehouse_for_sales_return",
-    "default_holiday_list",
-    "default_payment_terms",
-    "timezone",
-    "country_language",
-    "country_alpha_2",
-    "settings_tab",
-    "sb_settings",
-    "feature_tier",
-    "enable_advanced_features",
-    "enable_multi_branch",
-    "region",
-    "default_distributor",
-    "cb_settings",
-    "max_users",
-    "max_branches",
-    "fbr_tab",
-    "sb_fbr",
-    "enable_fbr_e_invoicing",
-    "fbr_environment",
-    "fbr_registration_number",
-    "fbr_business_name",
-    "cb_fbr",
-    "fbr_sales_tax_number",
-    "fbr_province",
-    "fbr_bearer_token",
-    "zatca_tab",
-    "sb_zatca_configuration",
-    "enable_zatca_e_invoicing",
-    "enforce_date_validation",
-    "enable_multisales_invoice_on_credit_note",
-    "enable_sales_retention",
-    "include_po_no",
-    "zatca_phase",
-    "cb_zatca_configuration",
-    "location_for_csr_configuration",
-    "company_category_for_csr_configuration",
-    "csr_settings",
-    "production_csid",
-    "submission_frequency_settings",
-    "create_csr_configuration",
-    "csr_config",
-    "address_created",
-    "contact_created",
-    "lft",
-    "rgt"
-  ],
-  "fields": [
-    {
-      "fieldname": "overview_tab",
-      "fieldtype": "Tab Break",
-      "label": "Overview"
-    },
-    {
-      "fieldname": "sb_basic",
-      "fieldtype": "Section Break",
-      "label": "Basic Information"
-    },
-    {
-      "fieldname": "company_name",
-      "fieldtype": "Data",
-      "in_list_view": 1,
-      "label": "Company Name",
-      "reqd": 1,
-      "unique": 1
-    },
-    {
-      "depends_on": "eval:doc.country",
-      "fieldname": "company_name_local",
-      "fieldtype": "Data",
-      "label": "Company Name (Local)"
-    },
-    {
-      "fieldname": "company_name_arabic",
-      "fieldtype": "Data",
-      "label": "Company Name (Arabic)"
-    },
-    {
-      "fieldname": "abbreviation",
-      "fieldtype": "Data",
-      "in_list_view": 1,
-      "label": "Abbreviation",
-      "reqd": 1
-    },
-    {
-      "default": "LLC",
-      "fieldname": "company_type",
-      "fieldtype": "Select",
-      "in_list_view": 1,
-      "label": "Company Type",
-      "options": "Sole Proprietorship\nPartnership\nLLC\nCorporation\nNon-Profit\nGovernment\nHolding\nBranch\nOther",
-      "reqd": 1
-    },
-    {
-      "default": "Both",
-      "fieldname": "business_type",
-      "fieldtype": "Select",
-      "in_list_view": 1,
-      "label": "Business Type",
-      "options": "Services\nProducts\nBoth",
-      "reqd": 1
-    },
-    {
-      "fieldname": "cb_basic",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "parent_company",
-      "fieldtype": "Link",
-      "label": "Parent Company",
-      "options": "Company"
-    },
-    {
-      "default": "0",
-      "fieldname": "is_group",
-      "fieldtype": "Check",
-      "label": "Is Group Company"
-    },
-    {
-      "default": "Draft",
-      "fieldname": "status",
-      "fieldtype": "Select",
-      "label": "Status",
-      "options": "Draft\nActive\nSuspended\nDormant\nClosed",
-      "reqd": 1
-    },
-    {
-      "fieldname": "organization_tab",
-      "fieldtype": "Tab Break",
-      "label": "Organization"
-    },
-    {
-      "fieldname": "sb_industries",
-      "fieldtype": "Section Break",
-      "label": "Industries"
-    },
-    {
-      "fieldname": "industries",
-      "fieldtype": "Table",
-      "label": "Industries",
-      "options": "Company Industry"
-    },
-    {
-      "fieldname": "sb_registration",
-      "fieldtype": "Section Break",
-      "label": "Registration & Tax"
-    },
-    {
-      "fieldname": "registration_number",
-      "fieldtype": "Data",
-      "label": "Registration / CR Number"
-    },
-    {
-      "fieldname": "tax_id",
-      "fieldtype": "Data",
-      "label": "Tax ID / VAT Number"
-    },
-    {
-      "fieldname": "tax_regime",
-      "fieldtype": "Select",
-      "label": "Tax Regime",
-      "options": "\nStandard\nSimplified\nExempt\nVAT Registered"
-    },
-    {
-      "fieldname": "cb_registration",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "registration_date",
-      "fieldtype": "Date",
-      "label": "Registration Date"
-    },
-    {
-      "depends_on": "eval:doc.country == 'Saudi Arabia' || doc.country_alpha_2 == 'SA'",
-      "fieldname": "saudi_unified_number",
-      "fieldtype": "Data",
-      "label": "Unified Number (Saudi Arabia)"
-    },
-    {
-      "fieldname": "license_expiry",
-      "fieldtype": "Date",
-      "label": "License Expiry Date"
-    },
-    {
-      "fieldname": "logo",
-      "fieldtype": "Attach Image",
-      "label": "Company Logo"
-    },
-    {
-      "fieldname": "company_stamp",
-      "fieldtype": "Attach Image",
-      "label": "Company Stamp"
-    },
-    {
-      "fieldname": "ownership_tab",
-      "fieldtype": "Tab Break",
-      "label": "Ownership"
-    },
-    {
-      "fieldname": "sb_owner",
-      "fieldtype": "Section Break",
-      "label": "Owner Information"
-    },
-    {
-      "fieldname": "owner_first_name",
-      "fieldtype": "Data",
-      "label": "Owner First Name",
-      "mandatory_depends_on": "eval:doc.create_user == 1"
-    },
-    {
-      "fieldname": "owner_last_name",
-      "fieldtype": "Data",
-      "label": "Owner Last Name"
-    },
-    {
-      "fieldname": "owner_email",
-      "fieldtype": "Data",
-      "label": "Owner Email",
-      "options": "Email",
-      "mandatory_depends_on": "eval:doc.create_user == 1"
-    },
-    {
-      "fieldname": "owner_mobile",
-      "fieldtype": "Data",
-      "label": "Owner Mobile",
-      "options": "Phone"
-    },
-    {
-      "fieldname": "owner_signature",
-      "fieldtype": "Attach Image",
-      "label": "Owner Signature"
-    },
-    {
-      "fieldname": "cb_owner",
-      "fieldtype": "Column Break"
-    },
-    {
-      "default": "1",
-      "fieldname": "create_user",
-      "fieldtype": "Check",
-      "label": "Create User Account"
-    },
-    {
-      "fieldname": "linked_user",
-      "fieldtype": "Link",
-      "label": "Linked User",
-      "options": "User",
-      "read_only": 1
-    },
-    {
-      "default": "0",
-      "fieldname": "user_created",
-      "fieldtype": "Check",
-      "label": "User Created",
-      "read_only": 1
-    },
-    {
-      "fieldname": "contacts_tab",
-      "fieldtype": "Tab Break",
-      "label": "Contacts"
-    },
-    {
-      "fieldname": "sb_address",
-      "fieldtype": "Section Break",
-      "label": "Address Details"
-    },
-    {
-      "fieldname": "address_title",
-      "fieldtype": "Data",
-      "label": "Address Title"
-    },
-    {
-      "fieldname": "address_line_1",
-      "fieldtype": "Data",
-      "label": "Address Line 1",
-      "reqd": 1
-    },
-    {
-      "fieldname": "address_line_2",
-      "fieldtype": "Data",
-      "label": "Address Line 2"
-    },
-    {
-      "fieldname": "building_no",
-      "fieldtype": "Data",
-      "label": "Building Number"
-    },
-    {
-      "fieldname": "subdivision",
-      "fieldtype": "Data",
-      "label": "Subdivision / Area"
-    },
-    {
-      "fieldname": "city",
-      "fieldtype": "Link",
-      "label": "City",
-      "options": "City",
-      "reqd": 1
-    },
-    {
-      "fieldname": "cb_address",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "state",
-      "fieldtype": "Link",
-      "label": "State / Province",
-      "options": "State"
-    },
-    {
-      "fieldname": "country",
-      "fieldtype": "Link",
-      "label": "Country",
-      "options": "Country",
-      "reqd": 1
-    },
-    {
-      "fieldname": "zip_code",
-      "fieldtype": "Data",
-      "label": "ZIP / Postal Code"
-    },
-    {
-      "fieldname": "latitude",
-      "fieldtype": "Float",
-      "label": "Latitude"
-    },
-    {
-      "fieldname": "longitude",
-      "fieldtype": "Float",
-      "label": "Longitude"
-    },
-    {
-      "fieldname": "map_view",
-      "fieldtype": "HTML",
-      "label": "Map View",
-      "read_only": 1
-    },
-    {
-      "fieldname": "sb_contact",
-      "fieldtype": "Section Break",
-      "label": "Contact Details"
-    },
-    {
-      "fieldname": "contact_email",
-      "fieldtype": "Data",
-      "label": "Contact Email",
-      "options": "Email"
-    },
-    {
-      "fieldname": "contact_phone",
-      "fieldtype": "Data",
-      "label": "Contact Phone",
-      "options": "Phone"
-    },
-    {
-      "fieldname": "contact_mobile",
-      "fieldtype": "Data",
-      "label": "Contact Mobile",
-      "options": "Phone"
-    },
-    {
-      "fieldname": "cb_contact",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "website",
-      "fieldtype": "Data",
-      "label": "Website URL"
-    },
-    {
-      "fieldname": "facebook",
-      "fieldtype": "Data",
-      "label": "Facebook"
-    },
-    {
-      "fieldname": "linkedin",
-      "fieldtype": "Data",
-      "label": "LinkedIn"
-    },
-    {
-      "fieldname": "sb_notes",
-      "fieldtype": "Section Break",
-      "label": "Notes"
-    },
-    {
-      "fieldname": "notes",
-      "fieldtype": "Small Text",
-      "label": "Notes"
-    },
-    {
-      "fieldname": "accounts_tab",
-      "fieldtype": "Tab Break",
-      "label": "Accounts"
-    },
-    {
-      "fieldname": "sb_accounting",
-      "fieldtype": "Section Break",
-      "label": "Accounting Defaults"
-    },
-    {
-      "depends_on": "eval:doc.country",
-      "fieldname": "default_currency",
-      "fieldtype": "Link",
-      "label": "Default Currency",
-      "options": "Currency"
-    },
-    {
-      "default": "January",
-      "fieldname": "fiscal_year_start",
-      "fieldtype": "Select",
-      "label": "Fiscal Year Start",
-      "options": "January\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
-    },
-    {
-      "default": "DD-MM-YYYY",
-      "depends_on": "eval:doc.country",
-      "fieldname": "date_format",
-      "fieldtype": "Select",
-      "label": "Date Format",
-      "options": "DD-MM-YYYY\nMM-DD-YYYY\nYYYY-MM-DD"
-    },
-    {
-      "fieldname": "cb_accounting",
-      "fieldtype": "Section Break",
-      "label": "Account Links"
-    },
-    {
-      "fieldname": "default_bank_account",
-      "fieldtype": "Link",
-      "label": "Default Bank Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_cash_account",
-      "fieldtype": "Link",
-      "label": "Default Cash Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_receivable_account",
-      "fieldtype": "Link",
-      "label": "Default Receivable Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_payable_account",
-      "fieldtype": "Link",
-      "label": "Default Payable Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_income_account",
-      "fieldtype": "Link",
-      "label": "Default Income Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_expense_account",
-      "fieldtype": "Link",
-      "label": "Default Expense Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "round_off_account",
-      "fieldtype": "Link",
-      "label": "Round Off Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "write_off_account",
-      "fieldtype": "Link",
-      "label": "Write Off Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_discount_account",
-      "fieldtype": "Link",
-      "label": "Default Discount Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "cb_accounting_2",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "exchange_gain_loss_account",
-      "fieldtype": "Link",
-      "label": "Exchange Gain / Loss Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "unrealized_exchange_gain_loss_account",
-      "fieldtype": "Link",
-      "label": "Unrealized Exchange Gain/Loss Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_deferred_expense_account",
-      "fieldtype": "Link",
-      "label": "Default Deferred Expense Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_deferred_revenue_account",
-      "fieldtype": "Link",
-      "label": "Default Deferred Revenue Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_inventory_account",
-      "fieldtype": "Link",
-      "label": "Default Inventory Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "stock_adjustment_account",
-      "fieldtype": "Link",
-      "label": "Stock Adjustment Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "accumulated_depreciation_account",
-      "fieldtype": "Link",
-      "label": "Accumulated Depreciation Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "depreciation_expense_account",
-      "fieldtype": "Link",
-      "label": "Depreciation Expense Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "capital_work_in_progress_account",
-      "fieldtype": "Link",
-      "label": "Capital Work in Progress Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "asset_received_but_not_billed",
-      "fieldtype": "Link",
-      "label": "Asset Received But Not Billed",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_advance_received_account",
-      "fieldtype": "Link",
-      "label": "Default Advance Received Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_advance_paid_account",
-      "fieldtype": "Link",
-      "label": "Default Advance Paid Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "default_provisional_account",
-      "fieldtype": "Link",
-      "label": "Default Provisional Account",
-      "options": "Account"
-    },
-    {
-      "fieldname": "round_off_cost_center",
-      "fieldtype": "Link",
-      "label": "Round Off Cost Center",
-      "options": "Cost Center"
-    },
-    {
-      "fieldname": "depreciation_cost_center",
-      "fieldtype": "Link",
-      "label": "Depreciation Cost Center",
-      "options": "Cost Center"
-    },
-    {
-      "fieldname": "default_selling_terms",
-      "fieldtype": "Link",
-      "label": "Default Selling Terms",
-      "options": "Terms and Conditions"
-    },
-    {
-      "fieldname": "default_buying_terms",
-      "fieldtype": "Link",
-      "label": "Default Buying Terms",
-      "options": "Terms and Conditions"
-    },
-    {
-      "fieldname": "default_sales_contact",
-      "fieldtype": "Link",
-      "label": "Default Sales Contact",
-      "options": "Contact"
-    },
-    {
-      "fieldname": "default_in_transit_warehouse",
-      "fieldtype": "Link",
-      "label": "Default In-Transit Warehouse",
-      "options": "Warehouse"
-    },
-    {
-      "fieldname": "default_warehouse_for_sales_return",
-      "fieldtype": "Link",
-      "label": "Default Warehouse for Sales Return",
-      "options": "Warehouse"
-    },
-    {
-      "depends_on": "eval:doc.country",
-      "fieldname": "default_holiday_list",
-      "fieldtype": "Data",
-      "label": "Default Holiday List"
-    },
-    {
-      "depends_on": "eval:doc.country",
-      "fieldname": "default_payment_terms",
-      "fieldtype": "Data",
-      "label": "Default Payment Terms"
-    },
-    {
-      "depends_on": "eval:doc.country",
-      "fieldname": "timezone",
-      "fieldtype": "Select",
-      "label": "Timezone",
-      "options": "\nUTC\nAsia/Riyadh\nAsia/Dubai\nAsia/Karachi\nAsia/Kolkata\nAsia/Bangkok\nAsia/Shanghai\nEurope/London\nEurope/Berlin\nAmerica/New_York\nAmerica/Chicago\nAmerica/Denver\nAmerica/Los_Angeles"
-    },
-    {
-      "fieldname": "country_language",
-      "fieldtype": "Data",
-      "hidden": 1,
-      "label": "Country Language",
-      "read_only": 1
-    },
-    {
-      "fieldname": "country_alpha_2",
-      "fieldtype": "Data",
-      "hidden": 1,
-      "label": "Country ISO Code",
-      "read_only": 1
-    },
-    {
-      "fieldname": "settings_tab",
-      "fieldtype": "Tab Break",
-      "label": "Settings"
-    },
-    {
-      "fieldname": "sb_settings",
-      "fieldtype": "Section Break",
-      "label": "Settings"
-    },
-    {
-      "default": "Small Company",
-      "fieldname": "feature_tier",
-      "fieldtype": "Select",
-      "label": "Feature Tier",
-      "options": "Small Company\nMedium Company\nAdvanced Enterprise"
-    },
-    {
-      "default": "0",
-      "fieldname": "enable_advanced_features",
-      "fieldtype": "Check",
-      "label": "Enable Advanced Features"
-    },
-    {
-      "default": "0",
-      "fieldname": "enable_multi_branch",
-      "fieldtype": "Check",
-      "label": "Enable Multi-Branch"
-    },
-    {
-      "fieldname": "region",
-      "fieldtype": "Link",
-      "label": "Region",
-      "options": "Region"
-    },
-    {
-      "fieldname": "default_distributor",
-      "fieldtype": "Link",
-      "label": "Default Distributor",
-      "options": "Distributor"
-    },
-    {
-      "fieldname": "cb_settings",
-      "fieldtype": "Column Break"
-    },
-    {
-      "default": "5",
-      "fieldname": "max_users",
-      "fieldtype": "Int",
-      "label": "Max Users"
-    },
-    {
-      "default": "1",
-      "fieldname": "max_branches",
-      "fieldtype": "Int",
-      "label": "Max Branches"
-    },
-    {
-      "fieldname": "fbr_tab",
-      "fieldtype": "Tab Break",
-      "label": "FBR"
-    },
-    {
-      "fieldname": "sb_fbr",
-      "fieldtype": "Section Break",
-      "label": "FBR Configuration"
-    },
-    {
-      "fieldname": "enable_fbr_e_invoicing",
-      "fieldtype": "Check",
-      "label": "Enable FBR E Invoicing"
-    },
-    {
-      "default": "Sandbox",
-      "fieldname": "fbr_environment",
-      "fieldtype": "Select",
-      "label": "FBR Environment",
-      "options": "Sandbox\nProduction",
-      "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "fbr_registration_number",
-      "fieldtype": "Data",
-      "label": "FBR Registration Number",
-      "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "fbr_business_name",
-      "fieldtype": "Data",
-      "label": "FBR Business Name",
-      "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "cb_fbr",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "fbr_sales_tax_number",
-      "fieldtype": "Data",
-      "label": "FBR Sales Tax Number",
-      "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "fbr_province",
-      "fieldtype": "Data",
-      "label": "FBR Province",
-      "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "fbr_bearer_token",
-      "fieldtype": "Password",
-      "label": "FBR Bearer Token",
-      "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "zatca_tab",
-      "fieldtype": "Tab Break",
-      "label": "ZATCA"
-    },
-    {
-      "fieldname": "sb_zatca_configuration",
-      "fieldtype": "Section Break",
-      "label": "ZATCA Configuration"
-    },
-    {
-      "fieldname": "enable_zatca_e_invoicing",
-      "fieldtype": "Check",
-      "label": "Enable ZATCA E Invoicing"
-    },
-    {
-      "fieldname": "enforce_date_validation",
-      "fieldtype": "Check",
-      "label": "Enforce Date Validation",
-      "depends_on": "eval:doc.enable_zatca_e_invoicing == '1'",
-      "mandatory_depends_on": "eval:doc.enable_zatca_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "enable_multisales_invoice_on_credit_note",
-      "fieldtype": "Check",
-      "label": "Enable Multi-Sales Invoice on Credit Note",
-      "depends_on": "eval:doc.enable_zatca_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "enable_sales_retention",
-      "fieldtype": "Check",
-      "label": "Enable Sales Retention",
-      "depends_on": "eval:doc.enable_zatca_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "include_po_no",
-      "fieldtype": "Check",
-      "label": "Include PO No",
-      "depends_on": "eval:doc.enable_zatca_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "zatca_phase",
-      "fieldtype": "Select",
-      "label": "ZATCA Phase",
-      "options": "ZATCA Phase 2\nZATCA Phase 1",
-      "default": "ZATCA Phase 2",
-      "depends_on": "eval:doc.enable_zatca_e_invoicing == '1'",
-      "mandatory_depends_on": "eval:doc.enable_zatca_e_invoicing == '1'"
-    },
-    {
-      "fieldname": "cb_zatca_configuration",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "location_for_csr_configuration",
-      "fieldtype": "Data",
-      "label": "Location for CSR Configuration"
-    },
-    {
-      "fieldname": "company_category_for_csr_configuration",
-      "fieldtype": "Data",
-      "label": "Company Category for CSR Configuration"
-    },
-    {
-      "fieldname": "csr_settings",
-      "fieldtype": "Link",
-      "label": "CSR Settings (Phase 1 Only)",
-      "options": "Zatca CSR Settings",
-      "depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 1')",
-      "mandatory_depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 1')"
-    },
-    {
-      "fieldname": "production_csid",
-      "fieldtype": "Data",
-      "label": "Production CSID (Phase 2 Only)",
-      "depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 2')",
-      "mandatory_depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 2')"
-    },
-    {
-      "fieldname": "submission_frequency_settings",
-      "fieldtype": "Section Break",
-      "label": "Submission Frequency Settings",
-      "depends_on": "eval: doc.enable_zatca_e_invoicing==1"
-    },
-    {
-      "fieldname": "create_csr_configuration",
-      "fieldtype": "Button",
-      "label": "Create CSR Configuration"
-    },
-    {
-      "default": "csr.common.name=TST-886431145-399999999900003\ncsr.serial.number=1-TST|2-TST|3-(8digit)-(4digit)-(4digit)-(4digit)-(12digit)\ncsr.organization.identifier= 399999999900003\ncsr.organization.unit.name= 399999999900003\ncsr.organization.name=Your Company name\ncsr.country.name=SA\ncsr.invoice.type=1100\ncsr.location.address=RIYADH\ncsr.industry.business.category=Your company activities\n",
-      "fieldname": "csr_config",
-      "fieldtype": "Long Text",
-      "label": "CSR Config"
-    },
-    {
-      "default": "0",
-      "fieldname": "address_created",
-      "fieldtype": "Check",
-      "label": "Address Created",
-      "read_only": 1
-    },
-    {
-      "default": "0",
-      "fieldname": "contact_created",
-      "fieldtype": "Check",
-      "label": "Contact Created",
-      "read_only": 1
-    },
-    {
-      "fieldname": "lft",
-      "fieldtype": "Int",
-      "hidden": 1,
-      "label": "Left",
-      "no_copy": 1,
-      "read_only": 1
-    },
-    {
-      "fieldname": "rgt",
-      "fieldtype": "Int",
-      "hidden": 1,
-      "label": "Right",
-      "no_copy": 1,
-      "read_only": 1
-    }
-  ],
-  "icon": "fa fa-building",
-  "is_tree": 1,
-  "links": [],
-  "modified": "2026-07-03 12:30:00",
-  "modified_by": "Administrator",
-  "module": "ERPMax",
-  "name": "Company",
-  "naming_rule": "By fieldname",
-  "nsm_parent_field": "parent_company",
-  "owner": "Administrator",
-  "permissions": [
-    {
-      "create": 1,
-      "delete": 1,
-      "read": 1,
-      "role": "System Manager",
-      "write": 1
-    },
-    {
-      "create": 1,
-      "read": 1,
-      "role": "Company Admin",
-      "write": 1
-    },
-    {
-      "read": 1,
-      "role": "Accounts Manager",
-      "write": 1
-    },
-    {
-      "read": 1,
-      "role": "Accounts User"
-    },
-    {
-      "read": 1,
-      "role": "Sales User"
-    }
-  ],
-  "row_format": "Dynamic",
-  "search_fields": "company_name, registration_number, tax_id, owner_email",
-  "show_title_field_in_link": 1,
-  "sort_field": "modified",
-  "sort_order": "DESC",
-  "states": [],
-  "title_field": "company_name",
-  "track_changes": 1,
-  "track_seen": 1
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:company_name",
+ "creation": "2026-07-01 00:00:00",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "overview_tab",
+  "sb_basic",
+  "company_name",
+  "company_name_local",
+  "company_name_arabic",
+  "abbreviation",
+  "company_type",
+  "business_type",
+  "cb_basic",
+  "parent_company",
+  "is_group",
+  "status",
+  "organization_tab",
+  "sb_industries",
+  "industries",
+  "sb_registration",
+  "registration_number",
+  "tax_id",
+  "tax_regime",
+  "cb_registration",
+  "registration_date",
+  "saudi_unified_number",
+  "license_expiry",
+  "logo",
+  "company_stamp",
+  "ownership_tab",
+  "sb_owner",
+  "owner_first_name",
+  "owner_last_name",
+  "owner_email",
+  "owner_mobile",
+  "owner_signature",
+  "cb_owner",
+  "create_user",
+  "linked_user",
+  "user_created",
+  "contacts_tab",
+  "sb_address",
+  "address_title",
+  "address_line_1",
+  "address_line_2",
+  "building_no",
+  "subdivision",
+  "city",
+  "cb_address",
+  "state",
+  "country",
+  "zip_code",
+  "latitude",
+  "longitude",
+  "map_view",
+  "sb_contact",
+  "contact_email",
+  "contact_phone",
+  "contact_mobile",
+  "cb_contact",
+  "website",
+  "facebook",
+  "linkedin",
+  "sb_notes",
+  "notes",
+  "accounts_tab",
+  "sb_accounting",
+  "default_currency",
+  "fiscal_year_start",
+  "date_format",
+  "cb_accounting",
+  "default_bank_account",
+  "default_cash_account",
+  "default_receivable_account",
+  "default_payable_account",
+  "default_income_account",
+  "default_expense_account",
+  "round_off_account",
+  "write_off_account",
+  "default_discount_account",
+  "cb_accounting_2",
+  "exchange_gain_loss_account",
+  "unrealized_exchange_gain_loss_account",
+  "default_deferred_expense_account",
+  "default_deferred_revenue_account",
+  "default_inventory_account",
+  "stock_adjustment_account",
+  "accumulated_depreciation_account",
+  "depreciation_expense_account",
+  "capital_work_in_progress_account",
+  "asset_received_but_not_billed",
+  "default_advance_received_account",
+  "default_advance_paid_account",
+  "default_provisional_account",
+  "round_off_cost_center",
+  "depreciation_cost_center",
+  "default_selling_terms",
+  "default_buying_terms",
+  "default_sales_contact",
+  "default_in_transit_warehouse",
+  "default_warehouse_for_sales_return",
+  "default_holiday_list",
+  "default_payment_terms",
+  "timezone",
+  "country_language",
+  "country_alpha_2",
+  "settings_tab",
+  "sb_settings",
+  "feature_tier",
+  "enable_advanced_features",
+  "enable_multi_branch",
+  "region",
+  "default_distributor",
+  "cb_settings",
+  "max_users",
+  "max_branches",
+  "fbr_tab",
+  "sb_fbr",
+  "enable_fbr_e_invoicing",
+  "fbr_environment",
+  "fbr_registration_number",
+  "fbr_business_name",
+  "cb_fbr",
+  "fbr_sales_tax_number",
+  "fbr_province",
+  "fbr_bearer_token",
+  "zatca_tab",
+  "sb_zatca_configuration",
+  "enable_zatca_e_invoicing",
+  "enforce_date_validation",
+  "enable_multisales_invoice_on_credit_note",
+  "enable_sales_retention",
+  "include_po_no",
+  "zatca_phase",
+  "cb_zatca_configuration",
+  "location_for_csr_configuration",
+  "company_category_for_csr_configuration",
+  "csr_settings",
+  "production_csid",
+  "submission_frequency_settings",
+  "create_csr_configuration",
+  "csr_config",
+  "address_created",
+  "contact_created",
+  "lft",
+  "rgt"
+ ],
+ "fields": [
+  {
+   "fieldname": "overview_tab",
+   "fieldtype": "Tab Break",
+   "label": "Overview"
+  },
+  {
+   "fieldname": "sb_basic",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "depends_on": "eval:doc.country",
+   "fieldname": "company_name_local",
+   "fieldtype": "Data",
+   "label": "Company Name (Local)"
+  },
+  {
+   "fieldname": "company_name_arabic",
+   "fieldtype": "Data",
+   "label": "Company Name (Arabic)"
+  },
+  {
+   "fieldname": "abbreviation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Abbreviation",
+   "reqd": 1
+  },
+  {
+   "default": "LLC",
+   "fieldname": "company_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Company Type",
+   "options": "Sole Proprietorship\nPartnership\nLLC\nCorporation\nNon-Profit\nGovernment\nHolding\nBranch\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "Both",
+   "fieldname": "business_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Business Type",
+   "options": "Services\nProducts\nBoth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parent_company",
+   "fieldtype": "Link",
+   "label": "Parent Company",
+   "options": "Company"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group Company"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nActive\nSuspended\nDormant\nClosed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "organization_tab",
+   "fieldtype": "Tab Break",
+   "label": "Organization"
+  },
+  {
+   "fieldname": "sb_industries",
+   "fieldtype": "Section Break",
+   "label": "Industries"
+  },
+  {
+   "fieldname": "industries",
+   "fieldtype": "Table",
+   "label": "Industries",
+   "options": "Company Industry"
+  },
+  {
+   "fieldname": "sb_registration",
+   "fieldtype": "Section Break",
+   "label": "Registration & Tax"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration / CR Number"
+  },
+  {
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "Tax ID / VAT Number"
+  },
+  {
+   "fieldname": "tax_regime",
+   "fieldtype": "Select",
+   "label": "Tax Regime",
+   "options": "\nStandard\nSimplified\nExempt\nVAT Registered"
+  },
+  {
+   "fieldname": "cb_registration",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Registration Date"
+  },
+  {
+   "depends_on": "eval:doc.country == 'Saudi Arabia' || doc.country_alpha_2 == 'SA'",
+   "fieldname": "saudi_unified_number",
+   "fieldtype": "Data",
+   "label": "Unified Number (Saudi Arabia)"
+  },
+  {
+   "fieldname": "license_expiry",
+   "fieldtype": "Date",
+   "label": "License Expiry Date"
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "label": "Company Logo"
+  },
+  {
+   "fieldname": "company_stamp",
+   "fieldtype": "Attach Image",
+   "label": "Company Stamp"
+  },
+  {
+   "fieldname": "ownership_tab",
+   "fieldtype": "Tab Break",
+   "label": "Ownership"
+  },
+  {
+   "fieldname": "sb_owner",
+   "fieldtype": "Section Break",
+   "label": "Owner Information"
+  },
+  {
+   "fieldname": "owner_first_name",
+   "fieldtype": "Data",
+   "label": "Owner First Name",
+   "mandatory_depends_on": "eval:doc.create_user == 1"
+  },
+  {
+   "fieldname": "owner_last_name",
+   "fieldtype": "Data",
+   "label": "Owner Last Name"
+  },
+  {
+   "fieldname": "owner_email",
+   "fieldtype": "Data",
+   "label": "Owner Email",
+   "mandatory_depends_on": "eval:doc.create_user == 1",
+   "options": "Email"
+  },
+  {
+   "fieldname": "owner_mobile",
+   "fieldtype": "Data",
+   "label": "Owner Mobile",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "owner_signature",
+   "fieldtype": "Attach Image",
+   "label": "Owner Signature"
+  },
+  {
+   "fieldname": "cb_owner",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "create_user",
+   "fieldtype": "Check",
+   "label": "Create User Account"
+  },
+  {
+   "fieldname": "linked_user",
+   "fieldtype": "Link",
+   "label": "Linked User",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "user_created",
+   "fieldtype": "Check",
+   "label": "User Created",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contacts_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contacts"
+  },
+  {
+   "fieldname": "sb_address",
+   "fieldtype": "Section Break",
+   "label": "Address Details"
+  },
+  {
+   "fieldname": "address_title",
+   "fieldtype": "Data",
+   "label": "Address Title"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "building_no",
+   "fieldtype": "Data",
+   "label": "Building Number"
+  },
+  {
+   "fieldname": "subdivision",
+   "fieldtype": "Data",
+   "label": "Subdivision / Area"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_address",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State / Province",
+   "options": "State"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "zip_code",
+   "fieldtype": "Data",
+   "label": "ZIP / Postal Code"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "map_view",
+   "fieldtype": "HTML",
+   "label": "Map View",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_contact",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "contact_email",
+   "fieldtype": "Data",
+   "label": "Contact Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "contact_phone",
+   "fieldtype": "Data",
+   "label": "Contact Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "contact_mobile",
+   "fieldtype": "Data",
+   "label": "Contact Mobile",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "cb_contact",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website URL"
+  },
+  {
+   "fieldname": "facebook",
+   "fieldtype": "Data",
+   "label": "Facebook"
+  },
+  {
+   "fieldname": "linkedin",
+   "fieldtype": "Data",
+   "label": "LinkedIn"
+  },
+  {
+   "fieldname": "sb_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "accounts_tab",
+   "fieldtype": "Tab Break",
+   "label": "Accounts"
+  },
+  {
+   "fieldname": "sb_accounting",
+   "fieldtype": "Section Break",
+   "label": "Accounting Defaults"
+  },
+  {
+   "depends_on": "eval:doc.country",
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency"
+  },
+  {
+   "default": "January",
+   "fieldname": "fiscal_year_start",
+   "fieldtype": "Select",
+   "label": "Fiscal Year Start",
+   "options": "January\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+  },
+  {
+   "default": "DD-MM-YYYY",
+   "depends_on": "eval:doc.country",
+   "fieldname": "date_format",
+   "fieldtype": "Select",
+   "label": "Date Format",
+   "options": "DD-MM-YYYY\nMM-DD-YYYY\nYYYY-MM-DD"
+  },
+  {
+   "fieldname": "cb_accounting",
+   "fieldtype": "Section Break",
+   "label": "Account Links"
+  },
+  {
+   "fieldname": "default_bank_account",
+   "fieldtype": "Link",
+   "label": "Default Bank Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_cash_account",
+   "fieldtype": "Link",
+   "label": "Default Cash Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_receivable_account",
+   "fieldtype": "Link",
+   "label": "Default Receivable Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_payable_account",
+   "fieldtype": "Link",
+   "label": "Default Payable Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_income_account",
+   "fieldtype": "Link",
+   "label": "Default Income Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_expense_account",
+   "fieldtype": "Link",
+   "label": "Default Expense Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "round_off_account",
+   "fieldtype": "Link",
+   "label": "Round Off Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "write_off_account",
+   "fieldtype": "Link",
+   "label": "Write Off Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_discount_account",
+   "fieldtype": "Link",
+   "label": "Default Discount Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "cb_accounting_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exchange_gain_loss_account",
+   "fieldtype": "Link",
+   "label": "Exchange Gain / Loss Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "unrealized_exchange_gain_loss_account",
+   "fieldtype": "Link",
+   "label": "Unrealized Exchange Gain/Loss Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_deferred_expense_account",
+   "fieldtype": "Link",
+   "label": "Default Deferred Expense Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_deferred_revenue_account",
+   "fieldtype": "Link",
+   "label": "Default Deferred Revenue Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_inventory_account",
+   "fieldtype": "Link",
+   "label": "Default Inventory Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "stock_adjustment_account",
+   "fieldtype": "Link",
+   "label": "Stock Adjustment Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "accumulated_depreciation_account",
+   "fieldtype": "Link",
+   "label": "Accumulated Depreciation Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "depreciation_expense_account",
+   "fieldtype": "Link",
+   "label": "Depreciation Expense Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "capital_work_in_progress_account",
+   "fieldtype": "Link",
+   "label": "Capital Work in Progress Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "asset_received_but_not_billed",
+   "fieldtype": "Link",
+   "label": "Asset Received But Not Billed",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_advance_received_account",
+   "fieldtype": "Link",
+   "label": "Default Advance Received Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_advance_paid_account",
+   "fieldtype": "Link",
+   "label": "Default Advance Paid Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_provisional_account",
+   "fieldtype": "Link",
+   "label": "Default Provisional Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "round_off_cost_center",
+   "fieldtype": "Link",
+   "label": "Round Off Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "depreciation_cost_center",
+   "fieldtype": "Link",
+   "label": "Depreciation Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "default_selling_terms",
+   "fieldtype": "Link",
+   "label": "Default Selling Terms",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "default_buying_terms",
+   "fieldtype": "Link",
+   "label": "Default Buying Terms",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "default_sales_contact",
+   "fieldtype": "Link",
+   "label": "Default Sales Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "default_in_transit_warehouse",
+   "fieldtype": "Link",
+   "label": "Default In-Transit Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "default_warehouse_for_sales_return",
+   "fieldtype": "Link",
+   "label": "Default Warehouse for Sales Return",
+   "options": "Warehouse"
+  },
+  {
+   "depends_on": "eval:doc.country",
+   "fieldname": "default_holiday_list",
+   "fieldtype": "Data",
+   "label": "Default Holiday List"
+  },
+  {
+   "depends_on": "eval:doc.country",
+   "fieldname": "default_payment_terms",
+   "fieldtype": "Data",
+   "label": "Default Payment Terms"
+  },
+  {
+   "depends_on": "eval:doc.country",
+   "fieldname": "timezone",
+   "fieldtype": "Select",
+   "label": "Timezone",
+   "options": "\nUTC\nAsia/Riyadh\nAsia/Dubai\nAsia/Karachi\nAsia/Kolkata\nAsia/Bangkok\nAsia/Shanghai\nEurope/London\nEurope/Berlin\nAmerica/New_York\nAmerica/Chicago\nAmerica/Denver\nAmerica/Los_Angeles"
+  },
+  {
+   "fieldname": "country_language",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Country Language",
+   "read_only": 1
+  },
+  {
+   "fieldname": "country_alpha_2",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Country ISO Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "settings_tab",
+   "fieldtype": "Tab Break",
+   "label": "Settings"
+  },
+  {
+   "fieldname": "sb_settings",
+   "fieldtype": "Section Break",
+   "label": "Settings"
+  },
+  {
+   "default": "Small Company",
+   "fieldname": "feature_tier",
+   "fieldtype": "Select",
+   "label": "Feature Tier",
+   "options": "Small Company\nMedium Company\nAdvanced Enterprise"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_advanced_features",
+   "fieldtype": "Check",
+   "label": "Enable Advanced Features"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_multi_branch",
+   "fieldtype": "Check",
+   "label": "Enable Multi-Branch"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "Region"
+  },
+  {
+   "fieldname": "default_distributor",
+   "fieldtype": "Link",
+   "label": "Default Distributor",
+   "options": "Distributor"
+  },
+  {
+   "fieldname": "cb_settings",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "5",
+   "fieldname": "max_users",
+   "fieldtype": "Int",
+   "label": "Max Users"
+  },
+  {
+   "default": "1",
+   "fieldname": "max_branches",
+   "fieldtype": "Int",
+   "label": "Max Branches"
+  },
+  {
+   "fieldname": "fbr_tab",
+   "fieldtype": "Tab Break",
+   "label": "FBR"
+  },
+  {
+   "fieldname": "sb_fbr",
+   "fieldtype": "Section Break",
+   "label": "FBR Configuration"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_fbr_e_invoicing",
+   "fieldtype": "Check",
+   "label": "Enable FBR E Invoicing"
+  },
+  {
+   "default": "Sandbox",
+   "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'",
+   "fieldname": "fbr_environment",
+   "fieldtype": "Select",
+   "label": "FBR Environment",
+   "options": "Sandbox\nProduction"
+  },
+  {
+   "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'",
+   "fieldname": "fbr_registration_number",
+   "fieldtype": "Data",
+   "label": "FBR Registration Number"
+  },
+  {
+   "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'",
+   "fieldname": "fbr_business_name",
+   "fieldtype": "Data",
+   "label": "FBR Business Name"
+  },
+  {
+   "fieldname": "cb_fbr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'",
+   "fieldname": "fbr_sales_tax_number",
+   "fieldtype": "Data",
+   "label": "FBR Sales Tax Number"
+  },
+  {
+   "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'",
+   "fieldname": "fbr_province",
+   "fieldtype": "Data",
+   "label": "FBR Province"
+  },
+  {
+   "depends_on": "eval:doc.enable_fbr_e_invoicing == '1'",
+   "fieldname": "fbr_bearer_token",
+   "fieldtype": "Password",
+   "label": "FBR Bearer Token"
+  },
+  {
+   "fieldname": "zatca_tab",
+   "fieldtype": "Tab Break",
+   "label": "ZATCA"
+  },
+  {
+   "fieldname": "sb_zatca_configuration",
+   "fieldtype": "Section Break",
+   "label": "ZATCA Configuration"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_zatca_e_invoicing",
+   "fieldtype": "Check",
+   "label": "Enable ZATCA E Invoicing"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.enable_zatca_e_invoicing == '1'",
+   "fieldname": "enforce_date_validation",
+   "fieldtype": "Check",
+   "label": "Enforce Date Validation",
+   "mandatory_depends_on": "eval:doc.enable_zatca_e_invoicing == '1'"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.enable_zatca_e_invoicing == '1'",
+   "fieldname": "enable_multisales_invoice_on_credit_note",
+   "fieldtype": "Check",
+   "label": "Enable Multi-Sales Invoice on Credit Note"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.enable_zatca_e_invoicing == '1'",
+   "fieldname": "enable_sales_retention",
+   "fieldtype": "Check",
+   "label": "Enable Sales Retention"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.enable_zatca_e_invoicing == '1'",
+   "fieldname": "include_po_no",
+   "fieldtype": "Check",
+   "label": "Include PO No"
+  },
+  {
+   "default": "ZATCA Phase 2",
+   "depends_on": "eval:doc.enable_zatca_e_invoicing == '1'",
+   "fieldname": "zatca_phase",
+   "fieldtype": "Select",
+   "label": "ZATCA Phase",
+   "mandatory_depends_on": "eval:doc.enable_zatca_e_invoicing == '1'",
+   "options": "ZATCA Phase 2\nZATCA Phase 1"
+  },
+  {
+   "fieldname": "cb_zatca_configuration",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location_for_csr_configuration",
+   "fieldtype": "Data",
+   "label": "Location for CSR Configuration"
+  },
+  {
+   "fieldname": "company_category_for_csr_configuration",
+   "fieldtype": "Data",
+   "label": "Company Category for CSR Configuration"
+  },
+  {
+   "depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 1')",
+   "fieldname": "csr_settings",
+   "fieldtype": "Link",
+   "label": "CSR Settings (Phase 1 Only)",
+   "mandatory_depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 1')",
+   "options": "Zatca Csr Settings"
+  },
+  {
+   "depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 2')",
+   "fieldname": "production_csid",
+   "fieldtype": "Link",
+   "label": "Production CSID (Phase 2 Only)",
+   "mandatory_depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 2')",
+   "options": "Zatca Csid"
+  },
+  {
+   "depends_on": "eval: doc.enable_zatca_e_invoicing==1",
+   "fieldname": "submission_frequency_settings",
+   "fieldtype": "Section Break",
+   "label": "Submission Frequency Settings"
+  },
+  {
+   "fieldname": "create_csr_configuration",
+   "fieldtype": "Button",
+   "label": "Create CSR Configuration"
+  },
+  {
+   "default": "csr.common.name=TST-886431145-399999999900003\ncsr.serial.number=1-TST|2-TST|3-(8digit)-(4digit)-(4digit)-(4digit)-(12digit)\ncsr.organization.identifier= 399999999900003\ncsr.organization.unit.name= 399999999900003\ncsr.organization.name=Your Company name\ncsr.country.name=SA\ncsr.invoice.type=1100\ncsr.location.address=RIYADH\ncsr.industry.business.category=Your company activities\n",
+   "fieldname": "csr_config",
+   "fieldtype": "Long Text",
+   "label": "CSR Config"
+  },
+  {
+   "default": "0",
+   "fieldname": "address_created",
+   "fieldtype": "Check",
+   "label": "Address Created",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "contact_created",
+   "fieldtype": "Check",
+   "label": "Contact Created",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  }
+ ],
+ "icon": "fa fa-building",
+ "is_tree": 1,
+ "links": [],
+ "modified": "2026-07-04 00:40:10.845049",
+ "modified_by": "Administrator",
+ "module": "ERPMax",
+ "name": "Company",
+ "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_company",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Company Admin",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Accounts Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Accounts User"
+  },
+  {
+   "read": 1,
+   "role": "Sales User"
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "company_name, registration_number, tax_id, owner_email",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "company_name",
+ "track_changes": 1,
+ "track_seen": 1
 }

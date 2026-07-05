@@ -1,5 +1,7 @@
 import frappe
+from frappe import _
 from frappe.model.document import Document
+from frappe.utils import getdate, flt
 
 from erpmax.utils.naming import sync_transaction_party_fields
 
@@ -13,28 +15,105 @@ class SalesInvoice(Document):
         sync_transaction_party_fields(self)
         self.calculate_totals()
         self.calculate_commission()
+        self.calculate_discount()
+        self.validate_addon_settings()
 
     def calculate_totals(self):
         self.total = sum((row.amount or 0) for row in self.items)
         self.tax_total = sum((row.tax_amount or 0) for row in self.taxes)
         self.grand_total = self.total + self.tax_total
-        self.outstanding_amount = self.grand_total
+        if not self.outstanding_amount:
+            self.outstanding_amount = self.grand_total
 
     def calculate_commission(self):
-        """Calculate commission amount based on distributor and commission rate"""
         if self.distributor and self.commission_rate:
             self.commission_amount = (self.total * self.commission_rate) / 100
         else:
             self.commission_amount = 0
 
+    def calculate_discount(self):
+        """Calculate discount amounts"""
+        # Line discount
+        if self.line_discount_percent:
+            self.discount_amount = self.total * (self.line_discount_percent / 100)
+        # Invoice discount
+        elif self.invoice_discount_percent:
+            self.discount_amount = self.grand_total * (self.invoice_discount_percent / 100)
+        else:
+            self.discount_amount = 0
+        
+        # Calculate net total after discount
+        self.net_discounted_total = self.grand_total - self.discount_amount
+
+    def validate_addon_settings(self):
+        """Validate addon settings"""
+        try:
+            settings = frappe.get_single("Sales Invoice Addon Settings")
+            
+            # Validate partial payment
+            if self.allow_partial_payment and settings.min_payment_percent:
+                min_amount = self.grand_total * (settings.min_payment_percent / 100)
+                self.min_payment_amount = min_amount
+            
+            # Validate discount
+            if settings.max_discount_percent and self.invoice_discount_percent:
+                if self.invoice_discount_percent > settings.max_discount_percent:
+                    frappe.throw(_("Invoice discount cannot exceed {0}%").format(settings.max_discount_percent))
+            
+            # Calculate payment suggestions
+            if settings.payment_suggestions:
+                self.calculate_payment_suggestions()
+                
+        except:
+            pass
+
+    def calculate_payment_suggestions(self):
+        """Calculate payment suggestions based on outstanding amount"""
+        outstanding = self.outstanding_amount or self.grand_total
+        
+        # Suggestion 1: 25%
+        self.payment_suggestion_1 = outstanding * 0.25
+        
+        # Suggestion 2: 50%
+        self.payment_suggestion_2 = outstanding * 0.50
+        
+        # Suggestion 3: 75%
+        self.payment_suggestion_3 = outstanding * 0.75
+
     def on_submit(self):
         self.status = "Submitted"
         self.make_gl_entries()
         self.create_distributor_commission()
+        self.update_outstanding_info()
 
     def on_cancel(self):
         self.status = "Cancelled"
         self.make_reverse_gl_entries()
+        self.revert_outstanding()
+
+    def update_outstanding_info(self):
+        """Update outstanding balance information"""
+        # Get customer outstanding
+        customer_outstanding = frappe.db.get_value(
+            "Sales Invoice",
+            {
+                "customer": self.customer,
+                "outstanding_amount": [">", 0],
+                "docstatus": 1,
+                "name": ["!=", self.name]
+            },
+            "sum(outstanding_amount)"
+        ) or 0
+        
+        # Add current invoice outstanding
+        total_outstanding = customer_outstanding + (self.outstanding_amount or 0)
+        
+        # Update customer fields
+        frappe.db.set_value("Customer", self.customer, {
+            "outstanding_balance": total_outstanding,
+            "outstanding_status": "Overdue" if self.due_date and self.due_date < getdate() else "Current",
+            "outstanding_days_overdue": max(0, (getdate() - self.due_date).days) if self.due_date and self.due_date < getdate() else 0
+        })
 
     def make_gl_entries(self):
         customer = frappe.get_cached_doc("Customer", self.customer)
@@ -72,27 +151,125 @@ class SalesInvoice(Document):
     def make_reverse_gl_entries(self):
         existing = frappe.get_all("GL Entry", filters={
             "voucher_type": self.doctype,
-            "voucher_no": self.name
+            "voucher_no": self.name,
         })
         for gle in existing:
             frappe.db.set_value("GL Entry", gle.name, "is_cancelled", 1)
 
-    def create_distributor_commission(self):
-        """Create distributor commission entry if distributor and commission rate are set"""
-        if not self.distributor or not self.commission_rate or not self.commission_amount:
-            return
+    def revert_outstanding(self):
+        self.outstanding_amount = self.grand_total
+        self.status = "Submitted"
+        self.db_update()
 
-        try:
-            from erpmax.business_setup.doctype.distributor_commission.distributor_commission import (
-                create_commission_for_invoice,
-            )
-            create_commission_for_invoice(self)
-        except Exception as e:
-            frappe.log_error(f"Failed to create distributor commission for {self.name}: {str(e)}")
+    def get_payments_received(self):
+        filters = {
+            "reference_doctype": "Sales Invoice",
+            "reference_name": self.name,
+            "docstatus": 1,
+        }
+
+        paid = frappe.db.get_value(
+            "Payment Entry Reference",
+            filters,
+            "sum(allocated_amount)",
+        ) or 0
+
+        return paid
 
     @frappe.whitelist()
     def create_transport_delivery(self):
-        """Create Transport Delivery from Sales Invoice"""
+        try:
+            from erpmax.sales.doctype.transport_delivery.transport_delivery import (
+                create_delivery_from_invoice,
+            )
+            delivery_name = create_delivery_from_invoice(self.name)
+            self.db_set("delivery_status", "Ready for Pickup")
+            return delivery_name
+        except Exception as e:
+            frappe.throw(f"Failed to create transport delivery: {str(e)}")
+
+    @frappe.whitelist()
+    def fetch_outstanding_balance(self):
+        """Fetch outstanding balance for customer"""
+        customer_outstanding = frappe.db.get_value(
+            "Sales Invoice",
+            {
+                "customer": self.customer,
+                "outstanding_amount": [">", 0],
+                "docstatus": 1,
+                "name": ["!=", self.name]
+            },
+            "sum(outstanding_amount)"
+        ) or 0
+        
+        self.outstanding_balance = customer_outstanding
+        self.outstanding_status = "Overdue" if self.due_date and self.due_date < getdate() else "Current"
+        self.outstanding_days_overdue = max(0, (getdate() - self.due_date).days) if self.due_date and self.due_date < getdate() else 0
+        
+        if self.outstanding_days_overdue > 30:
+            self.outstanding_warning = "WARNING: Customer has significant overdue balance"
+        
+        self.db_update()
+        return {
+            "outstanding_balance": self.outstanding_balance,
+            "outstanding_status": self.outstanding_status,
+            "outstanding_days_overdue": self.outstanding_days_overdue,
+            "outstanding_warning": self.outstanding_warning
+        }
+
+    @frappe.whitelist()
+    def get_payment_suggestions(self):
+        """Get payment suggestions"""
+        outstanding = self.outstanding_amount or self.grand_total
+        
+        suggestions = [
+            {"label": "Full Payment", "amount": outstanding},
+            {"label": "25% Payment", "amount": outstanding * 0.25},
+            {"label": "50% Payment", "amount": outstanding * 0.50},
+            {"label": "75% Payment", "amount": outstanding * 0.75},
+        ]
+        
+        return suggestions
+
+    @frappe.whitelist()
+    def apply_partial_payment(self, amount):
+        """Apply partial payment"""
+        if amount <= 0:
+            frappe.throw(_("Payment amount must be greater than 0"))
+        
+        if amount > self.outstanding_amount:
+            frappe.throw(_("Payment amount cannot exceed outstanding amount"))
+        
+        # Check minimum payment
+        try:
+            settings = frappe.get_single("Sales Invoice Addon Settings")
+            if settings.allow_partial_payment and settings.min_payment_percent:
+                min_amount = self.grand_total * (settings.min_payment_percent / 100)
+                if amount < min_amount:
+                    frappe.throw(_("Payment amount must be at least {0}% ({1})").format(
+                        settings.min_payment_percent, min_amount
+                    ))
+        except:
+            pass
+        
+        # Update outstanding
+        self.outstanding_amount = self.outstanding_amount - amount
+        
+        # Update status
+        if self.outstanding_amount <= 0:
+            self.status = "Paid"
+        else:
+            self.status = "Partly Paid"
+        
+        self.db_update()
+        
+        return {
+            "outstanding_amount": self.outstanding_amount,
+            "status": self.status
+        }
+
+    @frappe.whitelist()
+    def create_transport_delivery(self):
         try:
             from erpmax.sales.doctype.transport_delivery.transport_delivery import (
                 create_delivery_from_invoice,

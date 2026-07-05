@@ -10,6 +10,7 @@
   "year_start_date",
   "column_break_3",
   "year_end_date",
+  "time_span",
   "is_short_year",
   "is_closed"
  ],
@@ -32,7 +33,8 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "Start Date",
-   "reqd": 1
+   "reqd": 1,
+   "onchange": "erpmax.accounting.doctype.fiscal_year.fiscal_year.on_start_date_change"
   },
   {
    "fieldname": "column_break_3",
@@ -44,6 +46,13 @@
    "in_list_view": 1,
    "label": "End Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "time_span",
+   "fieldtype": "Select",
+   "label": "Time Span",
+   "options": "1 Month\n3 Months\n6 Months\nShort Year\nLong Year",
+   "onchange": "erpmax.accounting.doctype.fiscal_year.fiscal_year.on_time_span_change"
   },
   {
    "default": "0",

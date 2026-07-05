@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "hash",
+ "autoname": "field:address_title",
  "creation": "2026-07-01 00:00:00",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -19,33 +19,112 @@
   "links"
  ],
  "fields": [
-  {"fieldname": "address_title", "fieldtype": "Data", "in_list_view": 1, "label": "Address Title"},
-  {"fieldname": "address_type", "fieldtype": "Select", "in_list_view": 1, "label": "Address Type", "options": "\nOffice\nBilling\nShipping\nWarehouse\nOther", "reqd": 1},
-  {"fieldname": "address_line_1", "fieldtype": "Data", "label": "Address Line 1", "reqd": 1},
-  {"fieldname": "address_line_2", "fieldtype": "Data", "label": "Address Line 2"},
-  {"fieldname": "city", "fieldtype": "Link", "label": "City", "options": "City"},
-  {"fieldname": "state", "fieldtype": "Link", "label": "State", "options": "State"},
-  {"fieldname": "country", "fieldtype": "Link", "label": "Country", "options": "Country"},
-  {"fieldname": "zip_code", "fieldtype": "Data", "label": "ZIP Code"},
-  {"fieldname": "email_id", "fieldtype": "Data", "label": "Email", "options": "Email"},
-  {"fieldname": "phone", "fieldtype": "Data", "label": "Phone", "options": "Phone"},
-  {"default": "0", "fieldname": "is_primary_address", "fieldtype": "Check", "label": "Is Primary"},
-  {"fieldname": "links", "fieldtype": "Table", "label": "Links", "options": "Address Link"}
+  {
+   "fieldname": "address_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Address Title",
+   "unique": 1
+  },
+  {
+   "fieldname": "address_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Address Type",
+   "options": "\nOffice\nBilling\nShipping\nWarehouse\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "State"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "zip_code",
+   "fieldtype": "Data",
+   "label": "ZIP Code"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_primary_address",
+   "fieldtype": "Check",
+   "label": "Is Primary"
+  },
+  {
+   "fieldname": "links",
+   "fieldtype": "Table",
+   "label": "Links",
+   "options": "Address Link"
+  }
  ],
  "links": [],
- "modified": "2026-07-01 00:00:00",
+ "modified": "2026-07-04 22:29:36.146524",
  "modified_by": "Administrator",
  "module": "Commerce",
  "name": "Address",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
-  {"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1},
-  {"create": 1, "read": 1, "role": "Sales Manager", "write": 1},
-  {"create": 1, "read": 1, "role": "Accounts User", "write": 1}
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Sales Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Accounts User",
+   "write": 1
+  }
  ],
  "row_format": "Dynamic",
  "search_fields": "address_title, city, email_id",
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1
 }

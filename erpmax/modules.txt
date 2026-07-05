@@ -1,5 +1,6 @@
 ERPMax
 Accounting
+Banking
 Business Setup
 Commerce
 Project Management
@@ -9,5 +10,4 @@ Purchase
 Sales
 Reporting
 Printings
-
 Taxation

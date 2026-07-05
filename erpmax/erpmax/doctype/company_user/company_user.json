@@ -1,0 +1,38 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["company", "user_email", "user_name", "column_break_4", "role", "is_active", "sb_permissions", "can_create", "can_read", "can_write", "column_break_permissions", "can_delete", "can_submit", "sb_modules", "allowed_modules", "column_break_modules", "restricted_doctypes", "sb_notes", "notes"],
+ "fields": [
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "user_email", "fieldtype": "Data", "label": "User Email", "reqd": 1, "unique": 1, "options": "Email"},
+  {"fieldname": "user_name", "fieldtype": "Data", "label": "User Name", "reqd": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "role", "fieldtype": "Select", "label": "Role", "options": "\nCompany Admin\nAccounts Manager\nAccounts User\nSales Manager\nSales User\nPurchase Manager\nPurchase User\nInventory Manager\nInventory User", "reqd": 1},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": 1},
+  {"fieldname": "sb_permissions", "fieldtype": "Section Break", "label": "Permissions"},
+  {"fieldname": "can_create", "fieldtype": "Check", "label": "Can Create", "default": 1},
+  {"fieldname": "can_read", "fieldtype": "Check", "label": "Can Read", "default": 1},
+  {"fieldname": "can_write", "fieldtype": "Check", "label": "Can Write", "default": 1},
+  {"fieldname": "column_break_permissions", "fieldtype": "Column Break"},
+  {"fieldname": "can_delete", "fieldtype": "Check", "label": "Can Delete", "default": 0},
+  {"fieldname": "can_submit", "fieldtype": "Check", "label": "Can Submit", "default": 1},
+  {"fieldname": "sb_modules", "fieldtype": "Section Break", "label": "Module Access"},
+  {"fieldname": "allowed_modules", "fieldtype": "Small Text", "label": "Allowed Modules", "description": "Comma-separated list of modules user can access"},
+  {"fieldname": "column_break_modules", "fieldtype": "Column Break"},
+  {"fieldname": "restricted_doctypes", "fieldtype": "Small Text", "label": "Restricted DocTypes", "description": "Comma-separated list of doctypes user cannot access"},
+  {"fieldname": "sb_notes", "fieldtype": "Section Break", "label": "Notes"},
+  {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+ ],
+ "modified": "2026-07-04 00:00:00",
+ "module": "ERPMax",
+ "name": "Company User",
+ "owner": "Administrator",
+ "permissions": [
+  {"amend": 0, "cancel": 0, "create": 1, "delete": 1, "email": 0, "export": 0, "print": 0, "read": 1, "report": 1, "role": "System Manager", "share": 1, "submit": 0, "write": 1}
+ ],
+ "search_fields": "company, user_email, user_name",
+ "sort_field": "modified",
+ "track_changes": 1
+}

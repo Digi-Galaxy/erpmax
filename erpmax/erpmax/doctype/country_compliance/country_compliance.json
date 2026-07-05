@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["country", "country_name", "column_break_4", "compliance_type", "sb_features", "enable_einvoicing", "einv_provider", "column_break_features", "enable_vat", "vat_rate", "sb_documents", "tax_invoice_format", "digital_signature", "column_break_documents", "qr_code_required", "sb_integration", "api_endpoint", "api_key", "column_break_integration", "auto_submit", "sb_settings", "default_currency", "currency_symbol"],
+ "fields": [
+  {"fieldname": "country", "fieldtype": "Data", "label": "Country Code", "reqd": 1, "unique": 1, "description": "ISO 3166-1 alpha-2 code (e.g., PK, SA, AE)"},
+  {"fieldname": "country_name", "fieldtype": "Data", "label": "Country Name", "reqd": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "compliance_type", "fieldtype": "Select", "label": "Compliance Type", "options": "\nFBR\nZATCA\nUAE\nVAT\nGST\nStandard", "reqd": 1},
+  {"fieldname": "sb_features", "fieldtype": "Section Break", "label": "Features"},
+  {"fieldname": "enable_einvoicing", "fieldtype": "Check", "label": "Enable E-Invoicing", "default": 0},
+  {"fieldname": "einv_provider", "fieldtype": "Select", "label": "E-Invoice Provider", "options": "\nFBR\nZATCA\nUAE FTA\nCustom", "depends_on": "eval:doc.enable_einvoicing"},
+  {"fieldname": "column_break_features", "fieldtype": "Column Break"},
+  {"fieldname": "enable_vat", "fieldtype": "Check", "label": "Enable VAT/Tax", "default": 0},
+  {"fieldname": "vat_rate", "fieldtype": "Percent", "label": "Default VAT Rate", "depends_on": "eval:doc.enable_vat"},
+  {"fieldname": "sb_documents", "fieldtype": "Section Break", "label": "Document Requirements"},
+  {"fieldname": "tax_invoice_format", "fieldtype": "Select", "label": "Tax Invoice Format", "options": "\nStandard\nSimplified\nDigital"},
+  {"fieldname": "digital_signature", "fieldtype": "Check", "label": "Require Digital Signature", "default": 0},
+  {"fieldname": "column_break_documents", "fieldtype": "Column Break"},
+  {"fieldname": "qr_code_required", "fieldtype": "Check", "label": "Require QR Code", "default": 0},
+  {"fieldname": "sb_integration", "fieldtype": "Section Break", "label": "Integration"},
+  {"fieldname": "api_endpoint", "fieldtype": "Data", "label": "API Endpoint"},
+  {"fieldname": "api_key", "fieldtype": "Password", "label": "API Key"},
+  {"fieldname": "column_break_integration", "fieldtype": "Column Break"},
+  {"fieldname": "auto_submit", "fieldtype": "Check", "label": "Auto Submit to Authority", "default": 0},
+  {"fieldname": "sb_settings", "fieldtype": "Section Break", "label": "Settings"},
+  {"fieldname": "default_currency", "fieldtype": "Link", "label": "Default Currency", "options": "Currency"},
+  {"fieldname": "currency_symbol", "fieldtype": "Data", "label": "Currency Symbol"}
+ ],
+ "modified": "2026-07-04 00:00:00",
+ "module": "ERPMax",
+ "name": "Country Compliance",
+ "owner": "Administrator",
+ "permissions": [
+  {"amend": 0, "cancel": 0, "create": 1, "delete": 1, "email": 0, "export": 0, "print": 0, "read": 1, "report": 1, "role": "System Manager", "share": 1, "submit": 0, "write": 1}
+ ],
+ "search_fields": "country, country_name, compliance_type",
+ "sort_field": "modified",
+ "track_changes": 1
+}

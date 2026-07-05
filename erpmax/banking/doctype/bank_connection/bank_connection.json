@@ -1,0 +1,36 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": ["connection_name", "provider", "status", "company", "column_break_4", "linked_bank_account", "last_sync", "sb_credentials", "client_id", "access_token", "secret_key", "sb_settings", "sync_frequency", "auto_sync", "column_break_15", "remarks"],
+ "fields": [
+  {"fieldname": "connection_name", "fieldtype": "Data", "label": "Connection Name", "reqd": 1},
+  {"fieldname": "provider", "fieldtype": "Select", "label": "Provider", "options": "\nPlaid\nStripe\nGoCardless\nManual\nCSV Upload", "reqd": 1, "in_list_view": 1},
+  {"default": "Disconnected", "fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Disconnected\nConnected\nError", "read_only": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "linked_bank_account", "fieldtype": "Link", "label": "Bank Account", "options": "Bank Account"},
+  {"fieldname": "last_sync", "fieldtype": "Datetime", "label": "Last Sync", "read_only": 1},
+  {"fieldname": "sb_credentials", "fieldtype": "Section Break", "label": "API Credentials", "collapsible": 1},
+  {"fieldname": "client_id", "fieldtype": "Data", "label": "Client ID"},
+  {"fieldname": "access_token", "fieldtype": "Password", "label": "Access Token"},
+  {"fieldname": "secret_key", "fieldtype": "Password", "label": "Secret Key"},
+  {"fieldname": "sb_settings", "fieldtype": "Section Break", "label": "Sync Settings"},
+  {"fieldname": "sync_frequency", "fieldtype": "Select", "label": "Sync Frequency", "options": "\nManual\nDaily\nWeekly\nMonthly"},
+  {"fieldname": "auto_sync", "fieldtype": "Check", "label": "Auto Sync", "default": 0},
+  {"fieldname": "column_break_15", "fieldtype": "Column Break"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ],
+ "modified": "2026-07-04 00:00:00",
+ "module": "Banking",
+ "name": "Bank Connection",
+ "owner": "Administrator",
+ "permissions": [
+  {"amend": 0, "cancel": 0, "create": 1, "delete": 1, "email": 0, "export": 0, "print": 0, "read": 1, "report": 1, "role": "System Manager", "share": 1, "submit": 0, "write": 1}
+ ],
+ "search_fields": "connection_name, provider",
+ "sort_field": "modified",
+ "track_changes": 1
+}
