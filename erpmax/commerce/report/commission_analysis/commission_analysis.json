@@ -1,0 +1,26 @@
+{
+  "doctype": "Report",
+  "is_standard": "Yes",
+  "name": "Commission Analysis",
+  "report_name": "Commission Analysis",
+  "ref_doctype": "Commission Ledger",
+  "module": "ERPMax",
+  "report_type": "Script Report",
+  "add_total_row": 1,
+  "disabled": 0,
+  "prepared_report": 0,
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Accounts Manager"
+    },
+    {
+      "role": "Accounts User"
+    },
+    {
+      "role": "Sales Master Manager"
+    }
+  ]
+}
