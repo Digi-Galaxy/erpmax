@@ -4,7 +4,7 @@ from frappe.model.document import Document
 from frappe.utils import getdate, flt
 
 from erpmax.utils.naming import sync_transaction_party_fields
-from erpmax.commercial_terms.evaluator import get_gl_entries_for_term
+from erpmax.commercial_terms.evaluator import get_gl_entries_for_term, create_commission_ledger
 
 
 class SalesInvoice(Document):
@@ -69,6 +69,7 @@ class SalesInvoice(Document):
         self.status = "Submitted"
         self.make_gl_entries()
         self.create_distributor_commission()
+        create_commission_ledger(self)
         self.update_outstanding_info()
 
     def on_cancel(self):

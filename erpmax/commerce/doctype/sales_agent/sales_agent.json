@@ -55,10 +55,10 @@
    "default": 1
   },
   {
-   "fieldname": "territory",
+   "fieldname": "region",
    "fieldtype": "Link",
-   "label": "Territory",
-   "options": "Territory"
+   "label": "Region",
+   "options": "Region"
   },
   {
    "fieldname": "default_commission_account",
@@ -95,7 +95,7 @@
    "role": "Sales User"
   }
  ],
- "search_fields": "agent_name, territory",
+ "search_fields": "agent_name, region",
  "sort_field": "modified",
  "title_field": "agent_name",
  "track_changes": 1

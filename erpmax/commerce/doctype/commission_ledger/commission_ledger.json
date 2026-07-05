@@ -1,0 +1,175 @@
+{
+ "_comments": 0,
+ "_liked_by": "[]",
+ "_user_tags": "[]",
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "COM-LED-.YYYY.-.MM.-.######",
+ "beta": 0,
+ "creation": "2025-07-05 12:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "agent",
+  "invoice",
+  "commission_amount",
+  "rate",
+  "split_method",
+  "status",
+  "section_timing",
+  "posting_date",
+  "due_date",
+  "paid_date",
+  "payment_reference",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "label": "Agent",
+   "options": "Sales Agent",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "invoice",
+   "fieldtype": "Link",
+   "label": "Invoice",
+   "options": "Sales Invoice",
+   "reqd": 1,
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "commission_amount",
+   "fieldtype": "Currency",
+   "label": "Commission Amount",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Percent",
+   "label": "Rate",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "split_method",
+   "fieldtype": "Data",
+   "label": "Split Method",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Accrued\nPaid\nRecovered\nCancelled",
+   "default": "Accrued",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "section_timing",
+   "fieldtype": "Section Break",
+   "label": "Timing"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "paid_date",
+   "fieldtype": "Date",
+   "label": "Paid Date"
+  },
+  {
+   "fieldname": "payment_reference",
+   "fieldtype": "Data",
+   "label": "Payment Reference"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "has_web_view": 0,
+ "hide_toolbar": 0,
+ "idx": 1,
+ "is_submittable": 0,
+ "is_calendar_and_gantt": 0,
+ "is_tree": 0,
+ "is_virtual": 0,
+ "links": [],
+ "modified": "2025-07-05 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Commerce",
+ "name": "Commission Ledger",
+ "naming_rule": "By Naming Series",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "amend": 0,
+   "cancel": 0,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "import": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "amend": 0,
+   "cancel": 0,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "import": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Accounts User",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "amend": 0,
+   "cancel": 0,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "import": 0,
+   "export": 0,
+   "share": 0
+  }
+ ],
+ "restrict_to_domain": "",
+ "search_fields": "agent, invoice, status",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "agent",
+ "track_changes": 1
+}

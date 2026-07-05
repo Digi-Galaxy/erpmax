@@ -310,7 +310,7 @@ def apply_rules(doc, rules):
         if rule.get("effect") == "Commission":
             dist_rows = rule.get("distribution", [])
             has_manual = any(flt(d.get("allocation_pct", 0)) for d in dist_rows)
-            if not has_manual:
+            if not has_manual and rule.get("split_method") != "Rule Based":
                 agents = resolve_agent_hierarchy(doc)
                 if agents:
                     split_method = rule.get("split_method", "Hierarchy")
@@ -353,3 +353,26 @@ def get_gl_entries_for_term(ct, debit_to):
         entries.append({"account": party_account, "debit": amt, "credit": 0})
         entries.append({"account": ct_account, "debit": 0, "credit": amt})
     return entries, outstanding_impact
+
+
+def create_commission_ledger(doc):
+    terms = doc.get("applied_commercial_terms", [])
+    for ct in terms:
+        if ct.get("effect") != "Commission":
+            continue
+        agent = ct.get("party")
+        if not agent:
+            continue
+        if frappe.db.exists("Commission Ledger", {"invoice": doc.name, "agent": agent}):
+            continue
+        ledger = frappe.get_doc({
+            "doctype": "Commission Ledger",
+            "agent": agent,
+            "invoice": doc.name,
+            "commission_amount": flt(ct.get("calculated_amount", 0)),
+            "rate": flt(ct.get("rate", 0)),
+            "status": "Accrued",
+            "posting_date": doc.get("posting_date"),
+        })
+        ledger.flags.ignore_permissions = True
+        ledger.insert()

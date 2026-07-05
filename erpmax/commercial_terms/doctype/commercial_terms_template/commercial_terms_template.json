@@ -17,7 +17,7 @@
   "head_office_pct",
   "field_pct",
   "column_break_commission",
-  "territory",
+  "region",
   "customer_group",
   "rules"
  ],
@@ -101,9 +101,9 @@
     "fieldtype": "Column Break"
    },
    {
-    "fieldname": "territory",
+    "fieldname": "region",
     "fieldtype": "Link",
-    "label": "Territory Filter",
+    "label": "Region Filter",
     "options": "Region",
     "description": "If set, template only applies to customers in this region"
    },
