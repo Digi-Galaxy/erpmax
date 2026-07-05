@@ -42,46 +42,252 @@
   "sb_more",
   "is_return",
   "return_against",
-  "amended_from"
+  "amended_from",
+  "sb_commercial_terms",
+  "applied_commercial_terms"
  ],
  "fields": [
-  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Naming Series", "options": "PINV-.YYYY.-"},
-  {"fieldname": "supplier", "fieldtype": "Link", "in_list_view": 1, "in_standard_filter": 1, "label": "Supplier", "options": "Supplier", "reqd": 1},
-  {"fieldname": "supplier_display_name", "fieldtype": "Data", "label": "Supplier Display Name", "description": "Optional temporary name used for naming and display"},
-  {"fieldname": "supplier_name", "fieldtype": "Data", "in_list_view": 1, "label": "Supplier Name", "read_only": 1},
-  {"fieldname": "supplier_abbr", "fieldtype": "Data", "label": "Supplier Abbr", "read_only": 1},
-  {"fieldname": "region", "fieldtype": "Link", "label": "Region", "options": "Region"},
-  {"default": "Today", "fieldname": "posting_date", "fieldtype": "Date", "in_list_view": 1, "label": "Posting Date", "reqd": 1},
-  {"fieldname": "company", "fieldtype": "Link", "in_list_view": 1, "in_standard_filter": 1, "label": "Company", "options": "Company", "reqd": 1},
-  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
-  {"fieldname": "due_date", "fieldtype": "Date", "label": "Due Date", "reqd": 1},
-  {"default": "Draft", "fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nSubmitted\nPartly Paid\nPaid\nOverdue\nCancelled", "read_only": 1, "in_standard_filter": 1},
-  {"fieldname": "sb_items", "fieldtype": "Section Break", "label": "Invoice Items"},
-  {"fieldname": "items", "fieldtype": "Table", "label": "Items", "options": "Purchase Invoice Item", "reqd": 1},
-  {"fieldname": "sb_taxes", "fieldtype": "Section Break", "label": "Taxes"},
-  {"fieldname": "taxes", "fieldtype": "Table", "label": "Taxes", "options": "Purchase Invoice Tax"},
-  {"fieldname": "sb_totals", "fieldtype": "Section Break", "label": "Totals"},
-  {"fieldname": "total", "fieldtype": "Currency", "label": "Total", "read_only": 1},
-  {"fieldname": "tax_total", "fieldtype": "Currency", "label": "Tax Total", "read_only": 1},
-  {"fieldname": "discount_amount", "fieldtype": "Currency", "label": "Discount Amount", "read_only": 1},
-  {"fieldname": "column_break_15", "fieldtype": "Column Break"},
-  {"fieldname": "grand_total", "fieldtype": "Currency", "label": "Grand Total", "read_only": 1},
-  {"fieldname": "outstanding_amount", "fieldtype": "Currency", "label": "Outstanding Amount", "read_only": 1, "in_list_view": 1},
-  {"fieldname": "sb_accounts", "fieldtype": "Section Break", "label": "Accounts"},
-  {"fieldname": "payable_account", "fieldtype": "Link", "label": "Payable Account", "options": "Account", "description": "Default: Supplier's payable account or company default"},
-  {"fieldname": "expense_account", "fieldtype": "Link", "label": "Expense Account", "options": "Account", "description": "Default: Company expense account"},
-  {"fieldname": "column_break_accounts", "fieldtype": "Column Break"},
-  {"fieldname": "cost_center", "fieldtype": "Link", "label": "Cost Center", "options": "Cost Center"},
-  {"fieldname": "bank_account", "fieldtype": "Link", "label": "Bank Account", "options": "Account", "description": "For payment entry creation"},
-  {"fieldname": "sb_withholding", "fieldtype": "Section Break", "label": "Withholding Tax", "collapsible": 1},
-  {"fieldname": "apply_withholding_tax", "fieldtype": "Check", "label": "Apply Withholding Tax", "default": 0},
-  {"fieldname": "total_withholding_tax", "fieldtype": "Currency", "label": "Total Withholding Tax", "read_only": 1},
-  {"fieldname": "sb_notes", "fieldtype": "Section Break", "label": "Notes"},
-  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"},
-  {"fieldname": "sb_more", "fieldtype": "Section Break"},
-  {"fieldname": "is_return", "fieldtype": "Check", "label": "Is Return (Debit Note)", "default": 0},
-  {"fieldname": "return_against", "fieldtype": "Link", "label": "Return Against", "options": "Purchase Invoice", "read_only": 1},
-  {"fieldname": "amended_from", "fieldtype": "Data", "label": "Amended From", "no_copy": 1, "print_hide": 1, "read_only": 1}
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "PINV-.YYYY.-"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Supplier",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier_display_name",
+   "fieldtype": "Data",
+   "label": "Supplier Display Name",
+   "description": "Optional temporary name used for naming and display"
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Supplier Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier_abbr",
+   "fieldtype": "Data",
+   "label": "Supplier Abbr",
+   "read_only": 1
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "Region"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nPartly Paid\nPaid\nOverdue\nCancelled",
+   "read_only": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "sb_items",
+   "fieldtype": "Section Break",
+   "label": "Invoice Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Purchase Invoice Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_taxes",
+   "fieldtype": "Section Break",
+   "label": "Taxes"
+  },
+  {
+   "fieldname": "taxes",
+   "fieldtype": "Table",
+   "label": "Taxes",
+   "options": "Purchase Invoice Tax"
+  },
+  {
+   "fieldname": "sb_totals",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_total",
+   "fieldtype": "Currency",
+   "label": "Tax Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "sb_accounts",
+   "fieldtype": "Section Break",
+   "label": "Accounts"
+  },
+  {
+   "fieldname": "payable_account",
+   "fieldtype": "Link",
+   "label": "Payable Account",
+   "options": "Account",
+   "description": "Default: Supplier's payable account or company default"
+  },
+  {
+   "fieldname": "expense_account",
+   "fieldtype": "Link",
+   "label": "Expense Account",
+   "options": "Account",
+   "description": "Default: Company expense account"
+  },
+  {
+   "fieldname": "column_break_accounts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Account",
+   "description": "For payment entry creation"
+  },
+  {
+   "fieldname": "sb_withholding",
+   "fieldtype": "Section Break",
+   "label": "Withholding Tax",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "apply_withholding_tax",
+   "fieldtype": "Check",
+   "label": "Apply Withholding Tax",
+   "default": 0
+  },
+  {
+   "fieldname": "total_withholding_tax",
+   "fieldtype": "Currency",
+   "label": "Total Withholding Tax",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "sb_more",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "is_return",
+   "fieldtype": "Check",
+   "label": "Is Return (Debit Note)",
+   "default": 0
+  },
+  {
+   "fieldname": "return_against",
+   "fieldtype": "Link",
+   "label": "Return Against",
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Data",
+   "label": "Amended From",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_commercial_terms",
+   "fieldtype": "Section Break",
+   "label": "Commercial Terms",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "applied_commercial_terms",
+   "fieldtype": "Table",
+   "label": "Applied Commercial Terms",
+   "options": "Applied Commercial Terms",
+   "read_only": 1
+  }
  ],
  "is_submittable": 1,
  "modified": "2026-07-04 00:00:00",
@@ -89,9 +295,33 @@
  "name": "Purchase Invoice",
  "owner": "Administrator",
  "permissions": [
-  {"amend": 1, "cancel": 1, "create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "submit": 1, "write": 1},
-  {"cancel": 1, "create": 1, "read": 1, "role": "Accounts User", "submit": 1, "write": 1},
-  {"read": 1, "role": "Purchase User"}
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "read": 1,
+   "role": "Accounts User",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Purchase User"
+  }
  ],
  "row_format": "Dynamic",
  "search_fields": "supplier_name, supplier_abbr, grand_total",

@@ -99,6 +99,7 @@ default_roles = [
 app_include_js = [
     "/assets/erpmax/js/erpmax.bundle.js?v=2",
     "/assets/erpmax/js/pdf_generator.js",
+    "/assets/erpmax/js/feature_toggle.js",
 ]
 app_include_css = "/assets/erpmax/css/erpmax.bundle.css?v=2"
 
@@ -127,6 +128,16 @@ doc_events = {
     },
     "*": {
     },
+    "Sales Invoice": {
+        "validate": "erpmax.commercial_terms.hooks.sales_invoice_validate",
+        "on_submit": "erpmax.commercial_terms.hooks.sales_invoice_on_submit",
+        "on_cancel": "erpmax.commercial_terms.hooks.sales_invoice_on_cancel",
+    },
+    "Purchase Invoice": {
+        "validate": "erpmax.commercial_terms.hooks.purchase_invoice_validate",
+        "on_submit": "erpmax.commercial_terms.hooks.purchase_invoice_on_submit",
+        "on_cancel": "erpmax.commercial_terms.hooks.purchase_invoice_on_cancel",
+    },
 }
 
 page_js = {"erpmax-dashboard": "erpmax.accounting.page.erpmax_dashboard.erpmax_dashboard.js"}
@@ -144,6 +155,7 @@ whitelisted_methods = {
     "erpmax.banking.report.cash_bank_balances.cash_bank_balances.get_cash_bank_balances": True,
     "erpmax.utils.fuzzy_matching.test_fuzzy_match": True,
     "erpmax.utils.fuzzy_matching.get_matching_suggestions": True,
+    "erpmax.utils.feature_toggle.get_feature_toggles": True,
     "erpmax.banking.doctype.bank_transaction.auto_reconcile.auto_reconcile_statement": True,
     "erpmax.banking.doctype.bank_transaction.auto_reconcile.auto_reconcile_single": True,
     "erpmax.erpmax.page.control_room.control_room.get_realtime_data": True,

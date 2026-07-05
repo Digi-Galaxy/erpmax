@@ -53,59 +53,323 @@
   "customer_notes",
   "notes_for_print",
   "sb_more",
-  "amended_from"
+  "amended_from",
+  "sb_commercial_terms",
+  "applied_commercial_terms"
  ],
  "fields": [
-  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Naming Series", "options": "SINV-.YYYY.-"},
-  {"fieldname": "customer", "fieldtype": "Link", "in_list_view": 1, "in_standard_filter": 1, "label": "Customer", "options": "Customer", "reqd": 1},
-  {"fieldname": "customer_display_name", "fieldtype": "Data", "label": "Customer Display Name", "description": "Optional temporary name used for naming and display"},
-  {"fieldname": "customer_name", "fieldtype": "Data", "in_list_view": 1, "label": "Customer Name", "read_only": 1},
-  {"fieldname": "customer_abbr", "fieldtype": "Data", "label": "Customer Abbr", "read_only": 1},
-  {"fieldname": "region", "fieldtype": "Link", "label": "Region", "options": "Region"},
-  {"fieldname": "distributor", "fieldtype": "Link", "label": "Distributor", "options": "Distributor"},
-  {"fieldname": "commission_rate", "fieldtype": "Float", "label": "Commission Rate"},
-  {"fieldname": "commission_amount", "fieldtype": "Currency", "label": "Commission Amount", "read_only": 1},
-  {"default": "Today", "fieldname": "posting_date", "fieldtype": "Date", "in_list_view": 1, "label": "Posting Date", "reqd": 1},
-  {"fieldname": "company", "fieldtype": "Link", "in_list_view": 1, "in_standard_filter": 1, "label": "Company", "options": "Company", "reqd": 1},
-  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
-  {"fieldname": "due_date", "fieldtype": "Date", "label": "Due Date", "reqd": 1},
-  {"default": "Draft", "fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nSubmitted\nPartly Paid\nPaid\nOverdue\nCancelled", "read_only": 1},
-  {"fieldname": "sb_items", "fieldtype": "Section Break", "label": "Invoice Items"},
-  {"fieldname": "items", "fieldtype": "Table", "label": "Items", "options": "Sales Invoice Item", "reqd": 1},
-  {"fieldname": "sb_taxes", "fieldtype": "Section Break", "label": "Taxes"},
-  {"fieldname": "taxes", "fieldtype": "Table", "label": "Taxes", "options": "Sales Invoice Tax"},
-  {"fieldname": "sb_totals", "fieldtype": "Section Break", "label": "Totals"},
-  {"fieldname": "total", "fieldtype": "Currency", "label": "Total", "read_only": 1},
-  {"fieldname": "tax_total", "fieldtype": "Currency", "label": "Tax Total", "read_only": 1},
-  {"fieldname": "grand_total", "fieldtype": "Currency", "label": "Grand Total", "read_only": 1},
-  {"fieldname": "column_break_15", "fieldtype": "Column Break"},
-  {"fieldname": "outstanding_amount", "fieldtype": "Currency", "label": "Outstanding Amount", "read_only": 1},
-  {"fieldname": "delivery_status", "fieldtype": "Select", "label": "Delivery Status", "options": "Not Delivered\nReady for Pickup\nIn Transit\nDelivered\nReturned", "read_only": 1, "in_standard_filter": 1},
-  {"fieldname": "sb_outstanding", "fieldtype": "Section Break", "label": "Outstanding Balance", "collapsible": 1},
-  {"fieldname": "outstanding_balance", "fieldtype": "Currency", "label": "Outstanding Balance", "read_only": 1},
-  {"fieldname": "outstanding_status", "fieldtype": "Select", "label": "Status", "options": "Current\nOverdue\nPartial", "read_only": 1},
-  {"fieldname": "column_break_outstanding", "fieldtype": "Column Break"},
-  {"fieldname": "outstanding_days_overdue", "fieldtype": "Int", "label": "Days Overdue", "read_only": 1},
-  {"fieldname": "outstanding_warning", "fieldtype": "Data", "label": "Warning", "read_only": 1},
-  {"fieldname": "sb_payment", "fieldtype": "Section Break", "label": "Payment Options", "collapsible": 1},
-  {"fieldname": "allow_partial_payment", "fieldtype": "Check", "label": "Allow Partial Payment", "default": 1},
-  {"fieldname": "min_payment_amount", "fieldtype": "Currency", "label": "Minimum Payment Amount", "depends_on": "eval:doc.allow_partial_payment"},
-  {"fieldname": "payment_suggestion_1", "fieldtype": "Currency", "label": "Payment Suggestion 1", "read_only": 1},
-  {"fieldname": "column_break_payment", "fieldtype": "Column Break"},
-  {"fieldname": "payment_suggestion_2", "fieldtype": "Currency", "label": "Payment Suggestion 2", "read_only": 1},
-  {"fieldname": "payment_suggestion_3", "fieldtype": "Currency", "label": "Payment Suggestion 3", "read_only": 1},
-  {"fieldname": "sb_discount", "fieldtype": "Section Break", "label": "Discount Options", "collapsible": 1},
-  {"fieldname": "line_discount_percent", "fieldtype": "Percent", "label": "Line Discount %"},
-  {"fieldname": "invoice_discount_percent", "fieldtype": "Percent", "label": "Invoice Discount %"},
-  {"fieldname": "column_break_discount", "fieldtype": "Column Break"},
-  {"fieldname": "discount_amount", "fieldtype": "Currency", "label": "Discount Amount", "read_only": 1},
-  {"fieldname": "net_discounted_total", "fieldtype": "Currency", "label": "Net Total After Discount", "read_only": 1},
-  {"fieldname": "sb_notes", "fieldtype": "Section Break", "label": "Customer Notes", "collapsible": 1},
-  {"fieldname": "customer_notes", "fieldtype": "Small Text", "label": "Customer Notes"},
-  {"fieldname": "notes_for_print", "fieldtype": "Check", "label": "Show Notes on Print", "default": 0},
-  {"fieldname": "sb_more", "fieldtype": "Section Break"},
-  {"fieldname": "proforma_invoice", "fieldtype": "Link", "label": "Proforma Invoice", "options": "Proforma Invoice", "read_only": 1},
-  {"fieldname": "amended_from", "fieldtype": "Data", "label": "Amended From", "no_copy": 1, "print_hide": 1, "read_only": 1}
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "SINV-.YYYY.-"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_display_name",
+   "fieldtype": "Data",
+   "label": "Customer Display Name",
+   "description": "Optional temporary name used for naming and display"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_abbr",
+   "fieldtype": "Data",
+   "label": "Customer Abbr",
+   "read_only": 1
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "Region"
+  },
+  {
+   "fieldname": "distributor",
+   "fieldtype": "Link",
+   "label": "Distributor",
+   "options": "Distributor"
+  },
+  {
+   "fieldname": "commission_rate",
+   "fieldtype": "Float",
+   "label": "Commission Rate"
+  },
+  {
+   "fieldname": "commission_amount",
+   "fieldtype": "Currency",
+   "label": "Commission Amount",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nPartly Paid\nPaid\nOverdue\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_items",
+   "fieldtype": "Section Break",
+   "label": "Invoice Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Sales Invoice Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_taxes",
+   "fieldtype": "Section Break",
+   "label": "Taxes"
+  },
+  {
+   "fieldname": "taxes",
+   "fieldtype": "Table",
+   "label": "Taxes",
+   "options": "Sales Invoice Tax"
+  },
+  {
+   "fieldname": "sb_totals",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_total",
+   "fieldtype": "Currency",
+   "label": "Tax Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_status",
+   "fieldtype": "Select",
+   "label": "Delivery Status",
+   "options": "Not Delivered\nReady for Pickup\nIn Transit\nDelivered\nReturned",
+   "read_only": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "sb_outstanding",
+   "fieldtype": "Section Break",
+   "label": "Outstanding Balance",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "outstanding_balance",
+   "fieldtype": "Currency",
+   "label": "Outstanding Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Current\nOverdue\nPartial",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_outstanding",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outstanding_days_overdue",
+   "fieldtype": "Int",
+   "label": "Days Overdue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_warning",
+   "fieldtype": "Data",
+   "label": "Warning",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_payment",
+   "fieldtype": "Section Break",
+   "label": "Payment Options",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "allow_partial_payment",
+   "fieldtype": "Check",
+   "label": "Allow Partial Payment",
+   "default": 1
+  },
+  {
+   "fieldname": "min_payment_amount",
+   "fieldtype": "Currency",
+   "label": "Minimum Payment Amount",
+   "depends_on": "eval:doc.allow_partial_payment"
+  },
+  {
+   "fieldname": "payment_suggestion_1",
+   "fieldtype": "Currency",
+   "label": "Payment Suggestion 1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_payment",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_suggestion_2",
+   "fieldtype": "Currency",
+   "label": "Payment Suggestion 2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_suggestion_3",
+   "fieldtype": "Currency",
+   "label": "Payment Suggestion 3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_discount",
+   "fieldtype": "Section Break",
+   "label": "Discount Options",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "line_discount_percent",
+   "fieldtype": "Percent",
+   "label": "Line Discount %"
+  },
+  {
+   "fieldname": "invoice_discount_percent",
+   "fieldtype": "Percent",
+   "label": "Invoice Discount %"
+  },
+  {
+   "fieldname": "column_break_discount",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_discounted_total",
+   "fieldtype": "Currency",
+   "label": "Net Total After Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_notes",
+   "fieldtype": "Section Break",
+   "label": "Customer Notes",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "customer_notes",
+   "fieldtype": "Small Text",
+   "label": "Customer Notes"
+  },
+  {
+   "fieldname": "notes_for_print",
+   "fieldtype": "Check",
+   "label": "Show Notes on Print",
+   "default": 0
+  },
+  {
+   "fieldname": "sb_more",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "proforma_invoice",
+   "fieldtype": "Link",
+   "label": "Proforma Invoice",
+   "options": "Proforma Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Data",
+   "label": "Amended From",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_commercial_terms",
+   "fieldtype": "Section Break",
+   "label": "Commercial Terms",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "applied_commercial_terms",
+   "fieldtype": "Table",
+   "label": "Applied Commercial Terms",
+   "options": "Applied Commercial Terms",
+   "read_only": 1
+  }
  ],
  "icon": "fa fa-file-text",
  "is_submittable": 1,
@@ -116,15 +380,39 @@
  "name": "Sales Invoice",
  "owner": "Administrator",
  "permissions": [
-  {"amend": 1, "cancel": 1, "create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "submit": 1, "write": 1},
-  {"cancel": 1, "create": 1, "read": 1, "role": "Accounts User", "submit": 1, "write": 1},
-  {"read": 1, "role": "Sales User"}
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "read": 1,
+   "role": "Accounts User",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Sales User"
+  }
  ],
  "row_format": "Dynamic",
-  "search_fields": "customer_name, customer_abbr, grand_total",
+ "search_fields": "customer_name, customer_abbr, grand_total",
  "sort_field": "modified",
  "sort_order": "DESC",
-  "title_field": "customer_name",
+ "title_field": "customer_name",
  "track_changes": 1,
  "track_seen": 1
 }

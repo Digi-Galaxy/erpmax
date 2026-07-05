@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "rule_label",
+  "rule_type",
+  "base_amount",
+  "rate",
+  "calculated_amount",
+  "account",
+  "party_ledger_impact",
+  "is_recoverable",
+  "recovery_status",
+  "template_reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "rule_label",
+   "fieldtype": "Data",
+   "label": "Rule",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rule_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Deduction\nAddition\nReceivable Hold\nPayable Hold",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "base_amount",
+   "fieldtype": "Currency",
+   "label": "Base Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Percent",
+   "label": "Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "calculated_amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "label": "Account",
+   "options": "Account",
+   "read_only": 1
+  },
+  {
+   "fieldname": "party_ledger_impact",
+   "fieldtype": "Check",
+   "label": "Affects Party",
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_recoverable",
+   "fieldtype": "Check",
+   "label": "Recoverable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recovery_status",
+   "fieldtype": "Select",
+   "label": "Recovery Status",
+   "options": "Pending\nRecovered\nWritten Off",
+   "read_only": 1,
+   "default": "Pending"
+  },
+  {
+   "fieldname": "template_reference",
+   "fieldtype": "Data",
+   "label": "Template Ref",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2026-07-04 00:00:00",
+ "module": "Commercial Terms",
+ "name": "Applied Commercial Terms",
+ "owner": "Administrator",
+ "sort_field": "creation"
+}

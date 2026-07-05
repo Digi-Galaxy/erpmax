@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "rule_label",
+  "rule_type",
+  "apply_on",
+  "rate_or_amount",
+  "rate",
+  "amount",
+  "formula",
+  "account",
+  "party_ledger_impact",
+  "is_recoverable",
+  "recovery_stage",
+  "recovery_account",
+  "is_taxable",
+  "priority"
+ ],
+ "fields": [
+  {
+   "fieldname": "rule_label",
+   "fieldtype": "Data",
+   "label": "Rule Label",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "rule_type",
+   "fieldtype": "Select",
+   "label": "Rule Type",
+   "options": "Deduction\nAddition\nReceivable Hold\nPayable Hold",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "apply_on",
+   "fieldtype": "Select",
+   "label": "Apply On",
+   "options": "Before Tax\nAfter Tax\nGrand Total\nItem Amount",
+   "default": "Grand Total"
+  },
+  {
+   "fieldname": "rate_or_amount",
+   "fieldtype": "Select",
+   "label": "Rate or Amount",
+   "options": "Rate (%) | Fixed Amount | Formula",
+   "default": "Rate (%)"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Percent",
+   "label": "Rate %"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "formula",
+   "fieldtype": "Small Text",
+   "label": "Formula",
+   "description": "Use: percent(grand_total, 10), fixed(5000), max(...)"
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "label": "Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "party_ledger_impact",
+   "fieldtype": "Check",
+   "label": "Affects Party Balance",
+   "default": 0
+  },
+  {
+   "fieldname": "is_recoverable",
+   "fieldtype": "Check",
+   "label": "Is Recoverable",
+   "default": 0
+  },
+  {
+   "fieldname": "recovery_stage",
+   "fieldtype": "Select",
+   "label": "Recovery Stage",
+   "options": "\nNext Invoice\nPayment\nManual\nOn Completion"
+  },
+  {
+   "fieldname": "recovery_account",
+   "fieldtype": "Link",
+   "label": "Recovery Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "is_taxable",
+   "fieldtype": "Check",
+   "label": "Taxable",
+   "default": 0
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Int",
+   "label": "Priority",
+   "default": 100
+  }
+ ],
+ "istable": 1,
+ "modified": "2026-07-04 00:00:00",
+ "module": "Commercial Terms",
+ "name": "Commercial Terms Rule",
+ "owner": "Administrator",
+ "sort_field": "priority",
+ "sort_order": "ASC"
+}
