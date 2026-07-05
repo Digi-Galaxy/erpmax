@@ -1,5 +1,5 @@
 import frappe
-from erpmax.commercial_terms.evaluator import evaluate, apply_rules
+from erpmax.commercial_terms.evaluator import apply_rules
 
 def resolve_templates(doc, target_document):
     seen = set()

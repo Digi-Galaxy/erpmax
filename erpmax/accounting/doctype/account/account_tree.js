@@ -1,7 +1,7 @@
 frappe.treeview_settings["Account"] = {
   ignore_fields: ["parent_account"],
-  get_tree_nodes: "erpmax.accounts.doctype.account.account.get_children",
-  add_tree_node: "erpmax.accounts.doctype.account.account.add_node",
+  get_tree_nodes: "erpmax.accounting.doctype.account.account.get_children",
+  add_tree_node: "erpmax.accounting.doctype.account.account.add_node",
   filters: [
     {
       fieldname: "company",

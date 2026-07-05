@@ -233,3 +233,21 @@ class BankConnection(Document):
         except Exception as e:
             frappe.log_error(f"Failed to create bank transaction: {str(e)}")
             return None
+
+
+@frappe.whitelist()
+def sync_all_connected_banks():
+    connections = frappe.get_all(
+        "Bank Connection",
+        filters={"status": "Connected", "auto_sync": 1},
+        fields=["name"],
+    )
+    results = []
+    for conn in connections:
+        try:
+            bank_conn = frappe.get_doc("Bank Connection", conn.name)
+            results.append({"connection": conn.name, "result": bank_conn.sync_transactions()})
+        except Exception as e:
+            frappe.log_error(f"Failed to sync bank connection {conn.name}: {str(e)}")
+            results.append({"connection": conn.name, "error": str(e)})
+    return results

@@ -1,0 +1,39 @@
+{
+ "doctype": "Report",
+ "name": "CSIDs Due for Renewal",
+ "module": "Taxation",
+ "ref_doctype": "Zatca Csid",
+ "is_standard": "Yes",
+ "report_type": "Script Report",
+ "report_name": "CSIDs Due for Renewal",
+ "report_script": "erpmax.taxation.report.csid_due_for_renewal.csid_due_for_renewal",
+ "filters": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "csid_type",
+   "fieldtype": "Select",
+   "label": "CSID Type",
+   "options": "\nCompliance\nProduction"
+  },
+  {
+   "fieldname": "renewal_window_days",
+   "fieldtype": "Int",
+   "label": "Renewal Window (Days)",
+   "default": 30
+  },
+  {
+   "fieldname": "include_expired",
+   "fieldtype": "Check",
+   "label": "Include Expired",
+   "default": 0
+  }
+ ],
+ "created": "2026-07-05 00:00:00",
+ "modified": "2026-07-05 00:00:00",
+ "owner": "Administrator"
+}

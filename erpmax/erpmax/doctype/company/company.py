@@ -310,6 +310,22 @@ def apply_feature_profile(company, feature_tier):
     return doc.as_dict()
 
 
+def get_permission_query_conditions(user=None):
+    """Hook used by reportview/list queries.
+
+    Returning None delegates filtering to standard Role + User Permission checks.
+    """
+    return None
+
+
+def has_permission(doc, ptype=None, user=None):
+    """Controller permission hook for Company.
+
+    Returning None keeps default Frappe permission evaluation intact.
+    """
+    return None
+
+
 @frappe.whitelist()
 def get_children(parent=None, company=None, **kwargs):
     root = parent or company or ""

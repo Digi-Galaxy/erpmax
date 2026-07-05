@@ -1,0 +1,460 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:customer_name",
+    "creation": "2026-07-01 00:00:00",
+    "doctype": "DocType",
+    "document_type": "Setup",
+    "engine": "InnoDB",
+    "field_order": [
+        "customer_name",
+        "customer_type",
+        "company",
+        "customer_display_name",
+        "region",
+        "distributor",
+        "commission_rate",
+        "default_sales_agent",
+        "column_break_3",
+        "tax_id",
+        "default_currency",
+        "sb_address",
+        "address_line_1",
+        "city",
+        "state",
+        "country",
+        "column_break_11",
+        "phone",
+        "email",
+        "website",
+        "sb_accounting",
+        "accounts",
+        "default_receivable_account",
+        "credit_limit",
+        "column_break_18",
+        "payment_terms",
+        "sb_loyalty",
+        "enable_loyalty_points",
+        "loyalty_program",
+        "loyalty_points",
+        "column_break_loyalty",
+        "loyalty_currency",
+        "total_points_earned",
+        "total_points_redeemed",
+        "sb_dunning",
+        "enable_dunning",
+        "dunning_level",
+        "last_dunning_date",
+        "column_break_dunning",
+        "dunning_method",
+        "next_dunning_date",
+        "dunning_count",
+        "sb_banking",
+        "enable_banking_details",
+        "bank_name",
+        "account_number",
+        "column_break_banking",
+        "iban",
+        "swift_code",
+        "sb_documents",
+        "enable_documents",
+        "document_count",
+        "column_break_documents",
+        "last_document_date",
+        "sb_communication",
+        "enable_communication_log",
+        "last_contact_date",
+        "column_break_communication",
+        "communication_count",
+        "next_follow_up"
+    ],
+    "fields": [
+        {
+            "fieldname": "customer_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Customer Name",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "customer_type",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Customer Type",
+            "options": "\nCompany\nIndividual",
+            "reqd": 1
+        },
+        {
+            "fieldname": "company",
+            "fieldtype": "Link",
+            "in_standard_filter": 1,
+            "label": "Company",
+            "options": "Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "customer_display_name",
+            "fieldtype": "Data",
+            "label": "Customer Display Name"
+        },
+        {
+            "fieldname": "region",
+            "fieldtype": "Link",
+            "label": "Region",
+            "options": "Region"
+        },
+        {
+            "fieldname": "distributor",
+            "fieldtype": "Link",
+            "label": "Distributor",
+            "options": "Distributor"
+        },
+        {
+            "fieldname": "commission_rate",
+            "fieldtype": "Float",
+            "label": "Commission Rate"
+        },
+        {
+            "fieldname": "default_sales_agent",
+            "fieldtype": "Link",
+            "label": "Default Sales Agent",
+            "options": "Sales Agent"
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "tax_id",
+            "fieldtype": "Data",
+            "label": "Tax ID / VAT Number"
+        },
+        {
+            "fieldname": "default_currency",
+            "fieldtype": "Link",
+            "label": "Default Currency",
+            "options": "Currency"
+        },
+        {
+            "fieldname": "sb_address",
+            "fieldtype": "Section Break",
+            "label": "Address"
+        },
+        {
+            "fieldname": "address_line_1",
+            "fieldtype": "Data",
+            "label": "Address Line 1"
+        },
+        {
+            "fieldname": "city",
+            "fieldtype": "Link",
+            "label": "City",
+            "options": "City"
+        },
+        {
+            "fieldname": "state",
+            "fieldtype": "Link",
+            "label": "State",
+            "options": "State"
+        },
+        {
+            "fieldname": "country",
+            "fieldtype": "Link",
+            "label": "Country",
+            "options": "Country"
+        },
+        {
+            "fieldname": "column_break_11",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "phone",
+            "fieldtype": "Data",
+            "label": "Phone",
+            "options": "Phone"
+        },
+        {
+            "fieldname": "email",
+            "fieldtype": "Data",
+            "label": "Email",
+            "options": "Email"
+        },
+        {
+            "fieldname": "website",
+            "fieldtype": "Data",
+            "label": "Website"
+        },
+        {
+            "fieldname": "sb_accounting",
+            "fieldtype": "Section Break",
+            "label": "Accounting"
+        },
+        {
+            "fieldname": "accounts",
+            "fieldtype": "Table",
+            "label": "Accounts",
+            "options": "Party Account",
+            "description": "Link accounts to this customer per company. Auto-created if empty."
+        },
+        {
+            "fieldname": "default_receivable_account",
+            "fieldtype": "Link",
+            "label": "Default Receivable Account",
+            "options": "Account"
+        },
+        {
+            "fieldname": "credit_limit",
+            "fieldtype": "Currency",
+            "label": "Credit Limit"
+        },
+        {
+            "fieldname": "column_break_18",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "payment_terms",
+            "fieldtype": "Data",
+            "label": "Payment Terms"
+        },
+        {
+            "fieldname": "sb_loyalty",
+            "fieldtype": "Section Break",
+            "label": "Loyalty Program",
+            "depends_on": "eval:doc.enable_loyalty_points",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "enable_loyalty_points",
+            "fieldtype": "Check",
+            "label": "Enable Loyalty Points",
+            "default": 0
+        },
+        {
+            "fieldname": "loyalty_program",
+            "fieldtype": "Data",
+            "label": "Loyalty Program Name",
+            "depends_on": "eval:doc.enable_loyalty_points"
+        },
+        {
+            "fieldname": "loyalty_points",
+            "fieldtype": "Int",
+            "label": "Current Points",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_loyalty",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "loyalty_currency",
+            "fieldtype": "Link",
+            "label": "Loyalty Currency",
+            "options": "Currency",
+            "depends_on": "eval:doc.enable_loyalty_points"
+        },
+        {
+            "fieldname": "total_points_earned",
+            "fieldtype": "Int",
+            "label": "Total Points Earned",
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_points_redeemed",
+            "fieldtype": "Int",
+            "label": "Total Points Redeemed",
+            "read_only": 1
+        },
+        {
+            "fieldname": "sb_dunning",
+            "fieldtype": "Section Break",
+            "label": "Dunning",
+            "depends_on": "eval:doc.enable_dunning",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "enable_dunning",
+            "fieldtype": "Check",
+            "label": "Enable Dunning",
+            "default": 0
+        },
+        {
+            "fieldname": "dunning_level",
+            "fieldtype": "Select",
+            "label": "Current Dunning Level",
+            "options": "\nNone\nLevel 1\nLevel 2\nLevel 3\nLevel 4",
+            "default": "None",
+            "read_only": 1
+        },
+        {
+            "fieldname": "last_dunning_date",
+            "fieldtype": "Date",
+            "label": "Last Dunning Date",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_dunning",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "dunning_method",
+            "fieldtype": "Select",
+            "label": "Dunning Method",
+            "options": "\nEmail\nSMS\nBoth",
+            "depends_on": "eval:doc.enable_dunning"
+        },
+        {
+            "fieldname": "next_dunning_date",
+            "fieldtype": "Date",
+            "label": "Next Dunning Date",
+            "read_only": 1
+        },
+        {
+            "fieldname": "dunning_count",
+            "fieldtype": "Int",
+            "label": "Dunning Count",
+            "read_only": 1
+        },
+        {
+            "fieldname": "sb_banking",
+            "fieldtype": "Section Break",
+            "label": "Banking Details",
+            "depends_on": "eval:doc.enable_banking_details",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "enable_banking_details",
+            "fieldtype": "Check",
+            "label": "Enable Banking Details",
+            "default": 0
+        },
+        {
+            "fieldname": "bank_name",
+            "fieldtype": "Data",
+            "label": "Bank Name",
+            "depends_on": "eval:doc.enable_banking_details"
+        },
+        {
+            "fieldname": "account_number",
+            "fieldtype": "Data",
+            "label": "Account Number",
+            "depends_on": "eval:doc.enable_banking_details"
+        },
+        {
+            "fieldname": "column_break_banking",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "iban",
+            "fieldtype": "Data",
+            "label": "IBAN",
+            "depends_on": "eval:doc.enable_banking_details"
+        },
+        {
+            "fieldname": "swift_code",
+            "fieldtype": "Data",
+            "label": "SWIFT Code",
+            "depends_on": "eval:doc.enable_banking_details"
+        },
+        {
+            "fieldname": "sb_documents",
+            "fieldtype": "Section Break",
+            "label": "Document Management",
+            "depends_on": "eval:doc.enable_documents",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "enable_documents",
+            "fieldtype": "Check",
+            "label": "Enable Document Management",
+            "default": 0
+        },
+        {
+            "fieldname": "document_count",
+            "fieldtype": "Int",
+            "label": "Document Count",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_documents",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "last_document_date",
+            "fieldtype": "Date",
+            "label": "Last Document Date",
+            "read_only": 1
+        },
+        {
+            "fieldname": "sb_communication",
+            "fieldtype": "Section Break",
+            "label": "Communication Log",
+            "depends_on": "eval:doc.enable_communication_log",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "enable_communication_log",
+            "fieldtype": "Check",
+            "label": "Enable Communication Log",
+            "default": 0
+        },
+        {
+            "fieldname": "last_contact_date",
+            "fieldtype": "Date",
+            "label": "Last Contact Date",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_communication",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "communication_count",
+            "fieldtype": "Int",
+            "label": "Communication Count",
+            "read_only": 1
+        },
+        {
+            "fieldname": "next_follow_up",
+            "fieldtype": "Date",
+            "label": "Next Follow Up Date"
+        }
+    ],
+    "icon": "fa fa-user",
+    "links": [],
+    "modified": "2026-07-01 00:00:00",
+    "modified_by": "Administrator",
+    "module": "Sales",
+    "name": "Customer",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "read": 1,
+            "role": "System Manager",
+            "write": 1
+        },
+        {
+            "create": 1,
+            "read": 1,
+            "role": "Sales Manager",
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "Sales User"
+        },
+        {
+            "read": 1,
+            "role": "Accounts User"
+        }
+    ],
+    "row_format": "Dynamic",
+    "search_fields": "customer_name, tax_id, email",
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "title_field": "customer_name",
+    "track_changes": 1,
+    "track_seen": 1
+}
