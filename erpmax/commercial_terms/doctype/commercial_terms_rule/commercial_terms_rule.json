@@ -23,16 +23,16 @@
   {
    "fieldname": "rule_label",
    "fieldtype": "Data",
-   "label": "Rule Label",
    "in_list_view": 1,
+   "label": "Rule Label",
    "reqd": 1
   },
   {
    "fieldname": "rule_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Rule Type",
    "options": "Deduction\nAddition\nReceivable Hold\nPayable Hold",
-   "in_list_view": 1,
    "reqd": 1
   },
   {
@@ -46,7 +46,7 @@
    "fieldname": "rate_or_amount",
    "fieldtype": "Select",
    "label": "Rate or Amount",
-   "options": "Rate (%) | Fixed Amount | Formula",
+   "options": "Rate (%)\nFixed Amount\nFormula",
    "default": "Rate (%)"
   },
   {
@@ -62,8 +62,8 @@
   {
    "fieldname": "formula",
    "fieldtype": "Small Text",
-   "label": "Formula",
-   "description": "Use: percent(grand_total, 10), fixed(5000), max(...)"
+   "description": "Use: percent(grand_total, 10), fixed(5000), max(...)",
+   "label": "Formula"
   },
   {
    "fieldname": "account",
@@ -75,14 +75,14 @@
   {
    "fieldname": "party_ledger_impact",
    "fieldtype": "Check",
-   "label": "Affects Party Balance",
-   "default": 0
+   "default": 0,
+   "label": "Affects Party Balance"
   },
   {
    "fieldname": "is_recoverable",
    "fieldtype": "Check",
-   "label": "Is Recoverable",
-   "default": 0
+   "default": 0,
+   "label": "Is Recoverable"
   },
   {
    "fieldname": "recovery_stage",
@@ -99,14 +99,14 @@
   {
    "fieldname": "is_taxable",
    "fieldtype": "Check",
-   "label": "Taxable",
-   "default": 0
+   "default": 0,
+   "label": "Taxable"
   },
   {
    "fieldname": "priority",
    "fieldtype": "Int",
-   "label": "Priority",
-   "default": 100
+   "default": 100,
+   "label": "Priority"
   }
  ],
  "istable": 1,

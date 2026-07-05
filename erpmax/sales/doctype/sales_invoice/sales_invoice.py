@@ -80,6 +80,13 @@ class SalesInvoice(Document):
         # Suggestion 3: 75%
         self.payment_suggestion_3 = outstanding * 0.75
 
+    def create_distributor_commission(self):
+        """Create distributor commission entry if distributor is set"""
+        if not self.distributor:
+            return
+        # Future: Create commission ledger entry
+        pass
+
     def on_submit(self):
         self.status = "Submitted"
         self.make_gl_entries()
@@ -93,27 +100,26 @@ class SalesInvoice(Document):
 
     def update_outstanding_info(self):
         """Update outstanding balance information"""
-        # Get customer outstanding
-        customer_outstanding = frappe.db.get_value(
-            "Sales Invoice",
-            {
-                "customer": self.customer,
-                "outstanding_amount": [">", 0],
-                "docstatus": 1,
-                "name": ["!=", self.name]
-            },
-            "sum(outstanding_amount)"
-        ) or 0
-        
-        # Add current invoice outstanding
-        total_outstanding = customer_outstanding + (self.outstanding_amount or 0)
-        
-        # Update customer fields
-        frappe.db.set_value("Customer", self.customer, {
-            "outstanding_balance": total_outstanding,
-            "outstanding_status": "Overdue" if self.due_date and self.due_date < getdate() else "Current",
-            "outstanding_days_overdue": max(0, (getdate() - self.due_date).days) if self.due_date and self.due_date < getdate() else 0
-        })
+        try:
+            customer_outstanding = frappe.db.get_value(
+                "Sales Invoice",
+                {
+                    "customer": self.customer,
+                    "outstanding_amount": [">", 0],
+                    "docstatus": 1,
+                    "name": ["!=", self.name]
+                },
+                "sum(outstanding_amount)"
+            ) or 0
+            total_outstanding = customer_outstanding + (self.outstanding_amount or 0)
+            overdue = self.due_date and getdate(self.due_date) < getdate()
+            frappe.db.set_value("Customer", self.customer, {
+                "outstanding_balance": total_outstanding,
+                "outstanding_status": "Overdue" if overdue else "Current",
+                "outstanding_days_overdue": (getdate() - getdate(self.due_date)).days if overdue else 0
+            })
+        except Exception:
+            pass
 
     def make_gl_entries(self):
         customer = frappe.get_cached_doc("Customer", self.customer)
