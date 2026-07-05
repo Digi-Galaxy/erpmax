@@ -4,6 +4,7 @@ from frappe.model.document import Document
 from frappe.utils import getdate, flt
 
 from erpmax.utils.naming import sync_transaction_party_fields
+from erpmax.commercial_terms.evaluator import get_gl_entries_for_term
 
 
 class SalesInvoice(Document):
@@ -116,25 +117,10 @@ class SalesInvoice(Document):
 
         net_ct_adjustment = 0
         for ct in self.get("applied_commercial_terms", []):
-            amt = flt(ct.calculated_amount)
-            if not amt or not ct.account:
-                continue
-            rule_type = ct.rule_type
-            if rule_type == "Receivable Hold":
-                entries.append({"account": ct.account, "debit": amt, "credit": 0})
-                entries.append({"account": debit_to, "debit": 0, "credit": amt})
-                net_ct_adjustment -= amt
-            elif rule_type == "Deduction":
-                entries.append({"account": ct.account, "debit": amt, "credit": 0})
-                entries.append({"account": debit_to, "debit": 0, "credit": amt})
-                net_ct_adjustment -= amt
-            elif rule_type == "Addition":
-                entries.append({"account": debit_to, "debit": amt, "credit": 0})
-                entries.append({"account": ct.account, "debit": 0, "credit": amt})
-                net_ct_adjustment += amt
-            elif rule_type == "Payable Hold":
-                entries.append({"account": debit_to, "debit": 0, "credit": amt})
-                entries.append({"account": ct.account, "debit": 0, "credit": amt})
+            term_entries, impact = get_gl_entries_for_term(ct.as_dict(), debit_to)
+            for entry in term_entries:
+                entries.append(entry)
+            net_ct_adjustment += impact
 
         if net_ct_adjustment:
             self.outstanding_amount = flt(self.outstanding_amount) + net_ct_adjustment

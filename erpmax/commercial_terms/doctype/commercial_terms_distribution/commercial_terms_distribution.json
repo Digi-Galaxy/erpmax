@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "creation": "2026-07-05 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "party_type",
+  "party",
+  "allocation_pct",
+  "rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "party_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Party Type",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Party",
+   "options": "party_type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "allocation_pct",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Allocation %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Percent",
+   "label": "Commission Rate %"
+  }
+ ],
+ "istable": 1,
+ "modified": "2026-07-05 00:00:00",
+ "module": "Commercial Terms",
+ "name": "Commercial Terms Distribution",
+ "owner": "Administrator",
+ "sort_field": "creation"
+}

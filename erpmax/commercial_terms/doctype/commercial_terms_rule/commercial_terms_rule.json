@@ -6,12 +6,18 @@
  "field_order": [
   "rule_label",
   "rule_type",
+  "effect",
+  "direction",
   "apply_on",
   "rate_or_amount",
   "rate",
   "amount",
   "formula",
   "account",
+  "auto_account",
+  "section_distribution",
+  "distribution",
+  "section_accounting",
   "party_ledger_impact",
   "is_recoverable",
   "recovery_stage",
@@ -30,9 +36,25 @@
   {
    "fieldname": "rule_type",
    "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Rule Type (Legacy)",
+   "options": "Deduction\nAddition\nReceivable Hold\nPayable Hold"
+  },
+  {
+   "fieldname": "effect",
+   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Rule Type",
-   "options": "Deduction\nAddition\nReceivable Hold\nPayable Hold",
+   "label": "Effect",
+   "options": "Hold\nDeduction\nAddition\nCommission",
+   "reqd": 1,
+   "default": "Deduction"
+  },
+  {
+   "fieldname": "direction",
+   "fieldtype": "Select",
+   "label": "Direction",
+   "options": "Receive\nPay",
+   "default": "Receive",
    "reqd": 1
   },
   {
@@ -69,8 +91,29 @@
    "fieldname": "account",
    "fieldtype": "Link",
    "label": "Account",
-   "options": "Account",
-   "reqd": 1
+   "options": "Account"
+  },
+  {
+   "fieldname": "auto_account",
+   "fieldtype": "Check",
+   "default": 1,
+   "label": "Auto-Create Account"
+  },
+  {
+   "fieldname": "section_distribution",
+   "fieldtype": "Section Break",
+   "label": "Distribution (Multi-Party)"
+  },
+  {
+   "fieldname": "distribution",
+   "fieldtype": "Table",
+   "label": "Distribution",
+   "options": "Commercial Terms Distribution"
+  },
+  {
+   "fieldname": "section_accounting",
+   "fieldtype": "Section Break",
+   "label": "Accounting"
   },
   {
    "fieldname": "party_ledger_impact",
@@ -110,7 +153,7 @@
   }
  ],
  "istable": 1,
- "modified": "2026-07-04 00:00:00",
+ "modified": "2026-07-05 00:00:00",
  "module": "Commercial Terms",
  "name": "Commercial Terms Rule",
  "owner": "Administrator",
