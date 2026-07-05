@@ -12,6 +12,13 @@
   "valid_from",
   "valid_to",
   "description",
+  "sb_commission",
+  "split_method",
+  "head_office_pct",
+  "field_pct",
+  "column_break_commission",
+  "territory",
+  "customer_group",
   "rules"
  ],
  "fields": [
@@ -56,15 +63,61 @@
    "fieldtype": "Date",
    "label": "Valid To"
   },
-  {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
-  },
-  {
-   "fieldname": "rules",
-   "fieldtype": "Table",
-   "label": "Rules",
+   {
+    "fieldname": "description",
+    "fieldtype": "Small Text",
+    "label": "Description"
+   },
+   {
+    "fieldname": "sb_commission",
+    "fieldtype": "Section Break",
+    "label": "Commission Configuration",
+    "collapsible": 1
+   },
+   {
+    "fieldname": "split_method",
+    "fieldtype": "Select",
+    "label": "Split Method",
+    "options": "Hierarchy\nPercentage\nRule Based",
+    "default": "Hierarchy",
+    "description": "Hierarchy = each agent gets share proportional to rate. Percentage = Head Office gets fixed %, field splits the rest."
+   },
+   {
+    "fieldname": "head_office_pct",
+    "fieldtype": "Percent",
+    "label": "Head Office Share",
+    "default": 30,
+    "depends_on": "eval:doc.split_method=='Percentage'"
+   },
+   {
+    "fieldname": "field_pct",
+    "fieldtype": "Percent",
+    "label": "Field Team Share",
+    "default": 70,
+    "depends_on": "eval:doc.split_method=='Percentage'"
+   },
+   {
+    "fieldname": "column_break_commission",
+    "fieldtype": "Column Break"
+   },
+   {
+    "fieldname": "territory",
+    "fieldtype": "Link",
+    "label": "Territory Filter",
+    "options": "Region",
+    "description": "If set, template only applies to customers in this region"
+   },
+   {
+    "fieldname": "customer_group",
+    "fieldtype": "Link",
+    "label": "Customer Group Filter",
+    "options": "Customer Group",
+    "description": "If set, template only applies to this customer group"
+   },
+   {
+    "fieldname": "rules",
+    "fieldtype": "Table",
+    "label": "Rules",
    "options": "Commercial Terms Rule",
    "reqd": 1
   }

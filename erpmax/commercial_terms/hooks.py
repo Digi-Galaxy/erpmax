@@ -2,29 +2,29 @@ import frappe
 from erpmax.commercial_terms.evaluator import evaluate, apply_rules
 
 def resolve_templates(doc, target_document):
-    company = doc.get("company")
-    templates = frappe.get_all("Commercial Terms Template", filters={
-        "is_active": 1,
-        "target_document": ["in", [target_document, "Both"]],
-    })
-    if company:
-        templates += frappe.get_all("Commercial Terms Template", filters={
-            "is_active": 1,
-            "company": company,
-            "target_document": ["in", [target_document, "Both"]],
-        })
     seen = set()
     rules = []
-    for t in frappe.get_all("Commercial Terms Template", fields=["name"], filters={
+    filters = {
         "is_active": 1,
         "target_document": ["in", [target_document, "Both"]],
-    }):
+    }
+    for t in frappe.get_all("Commercial Terms Template", fields=["name",
+        "split_method", "head_office_pct", "field_pct", "territory", "customer_group"], filters=filters):
         if t.name in seen:
             continue
         seen.add(t.name)
         template = frappe.get_cached_doc("Commercial Terms Template", t.name)
+        template_fields = {
+            "split_method": t.split_method or "Hierarchy",
+            "head_office_pct": t.head_office_pct or 30,
+            "field_pct": t.field_pct or 70,
+            "territory": t.territory,
+            "customer_group": t.customer_group,
+        }
         for rule in template.rules:
-            rules.append(rule.as_dict())
+            rd = rule.as_dict()
+            rd.update(template_fields)
+            rules.append(rd)
     return sorted(rules, key=lambda r: r.get("priority", 100))
 
 def apply_commercial_terms(doc, target_document):

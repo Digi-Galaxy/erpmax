@@ -26,7 +26,7 @@ ACCOUNT_NAME_TEMPLATES = {
     ("Deduction", "Pay"): "{label} Income",
     ("Addition", "Receive"): "{label} Income",
     ("Addition", "Pay"): "{label} Expense",
-    ("Commission", "Pay"): "{label} Payable",
+    ("Commission", "Pay"): "Commission Expense",
 }
 
 ACCOUNT_TYPE_MAP = {
@@ -36,7 +36,7 @@ ACCOUNT_TYPE_MAP = {
     ("Deduction", "Pay"): "Income",
     ("Addition", "Receive"): "Income",
     ("Addition", "Pay"): "Expense",
-    ("Commission", "Pay"): "Payable",
+    ("Commission", "Pay"): "Expense",
 }
 
 ROOT_TYPE_MAP = {
@@ -46,7 +46,7 @@ ROOT_TYPE_MAP = {
     ("Deduction", "Pay"): "Income",
     ("Addition", "Receive"): "Income",
     ("Addition", "Pay"): "Expense",
-    ("Commission", "Pay"): "Liability",
+    ("Commission", "Pay"): "Expense",
 }
 
 
@@ -83,7 +83,7 @@ def ensure_account(rule, doc):
     company = doc.get("company")
     if not company:
         return None
-    abbr = frappe.db.get_value("Company", company, "abbr")
+    abbr = frappe.db.get_value("Company", company, "abbreviation")
     account_name = ACCOUNT_NAME_TEMPLATES.get((effect, direction), "{label} Expense").format(label=label)
     full_name = "%s - %s" % (account_name, abbr)
     existing = frappe.db.get_value("Account", {"name": full_name})
@@ -96,15 +96,14 @@ def ensure_account(rule, doc):
         return None
     acc = frappe.get_doc({
         "doctype": "Account",
-        "account_name": account_name,
-        "company": company,
+        "account_name": full_name,
         "parent_account": parent_account,
         "root_type": root_type,
         "account_type": account_type,
         "is_group": 0,
     })
     acc.flags.ignore_permissions = True
-    acc.insert()
+    acc.insert(ignore_mandatory=True)
     frappe.db.commit()
     return acc.name
 
@@ -117,7 +116,14 @@ def _find_parent(company, root_type):
     """, (company, root_type))
     if candidates:
         return candidates[0][0]
-    return frappe.db.get_value("Account", {"company": company, "is_group": 1}, "name")
+    candidates = frappe.db.sql("""
+        SELECT name FROM tabAccount
+        WHERE (company IS NULL OR company = '') AND root_type = %s AND is_group = 1
+        ORDER BY lft ASC LIMIT 1
+    """, (root_type,))
+    if candidates:
+        return candidates[0][0]
+    return frappe.db.get_value("Account", {"is_group": 1}, "name")
 
 
 def compute_base_amount(rule, doc):
@@ -188,6 +194,108 @@ def apply_distribution(rule, base_amount, calculated_amount):
     return results
 
 
+def resolve_agent_hierarchy(doc):
+    customer_name = doc.get("customer")
+    if not customer_name:
+        return []
+    agent_name = frappe.db.get_value("Customer", customer_name, "default_sales_agent")
+    if not agent_name:
+        return []
+    agents = []
+    seen = set()
+    current = agent_name
+    while current and current not in seen:
+        seen.add(current)
+        row = frappe.db.get_value("Sales Agent", current,
+            ["agent_name", "parent_agent", "commission_rate", "agent_type", "default_commission_account"],
+            as_dict=True)
+        if not row:
+            break
+        agents.append(row)
+        current = row.parent_agent
+    agents.reverse()
+    for i, a in enumerate(agents):
+        a["level"] = i + 1
+    return agents
+
+
+def split_commission_hierarchy(total_commission, agents, expense_account=None):
+    if not agents:
+        return []
+    total_rate = sum(flt(a.commission_rate) for a in agents) or 100
+    results = []
+    for a in agents:
+        share = total_commission * flt(a.commission_rate) / total_rate
+        results.append({
+            "rule_label": "Commission - %s" % a.agent_name,
+            "effect": "Commission",
+            "direction": "Pay",
+            "base_amount": 0,
+            "rate": flt(a.commission_rate),
+            "calculated_amount": share,
+            "account": expense_account or "",
+            "party_type": "Sales Agent",
+            "party": a.agent_name,
+            "allocation_pct": flt(a.commission_rate) * 100 / total_rate if total_rate else 0,
+            "party_ledger_impact": 1,
+            "is_recoverable": 0,
+            "recovery_status": "",
+            "template_reference": "",
+        })
+    return results
+
+
+def split_commission_percentage(total_commission, agents, head_pct, field_pct, expense_account=None):
+    if not agents:
+        return []
+    head_share = total_commission * flt(head_pct) / 100.0
+    field_share = total_commission * flt(field_pct) / 100.0
+    results = []
+    field_agents = [a for a in agents if a.agent_type not in ("Company/Head",)]
+    head_agents = [a for a in agents if a.agent_type in ("Company/Head",)]
+    if not head_agents and field_agents:
+        head_agents = [agents[0]]
+        field_agents = agents[1:] or agents
+    for a in head_agents:
+        share = head_share / max(len(head_agents), 1)
+        results.append({
+            "rule_label": "Commission - %s" % a.agent_name,
+            "effect": "Commission",
+            "direction": "Pay",
+            "base_amount": 0,
+            "rate": flt(a.commission_rate),
+            "calculated_amount": share,
+            "account": expense_account or "",
+            "party_type": "Sales Agent",
+            "party": a.agent_name,
+            "allocation_pct": flt(head_pct) / max(len(head_agents), 1),
+            "party_ledger_impact": 1,
+            "is_recoverable": 0,
+            "recovery_status": "",
+            "template_reference": "",
+        })
+    total_field_rate = sum(flt(a.commission_rate) for a in field_agents) or 100
+    for a in field_agents:
+        share = field_share * flt(a.commission_rate) / total_field_rate
+        results.append({
+            "rule_label": "Commission - %s" % a.agent_name,
+            "effect": "Commission",
+            "direction": "Pay",
+            "base_amount": 0,
+            "rate": flt(a.commission_rate),
+            "calculated_amount": share,
+            "account": expense_account or "",
+            "party_type": "Sales Agent",
+            "party": a.agent_name,
+            "allocation_pct": flt(a.commission_rate) * 100 / total_field_rate if total_field_rate else 0,
+            "party_ledger_impact": 1,
+            "is_recoverable": 0,
+            "recovery_status": "",
+            "template_reference": "",
+        })
+    return results
+
+
 def apply_rules(doc, rules):
     results = []
     for rule in rules:
@@ -197,6 +305,23 @@ def apply_rules(doc, rules):
             continue
         account = ensure_account(rule, doc)
         rule["account"] = account or rule.get("account")
+
+        # Commission with hierarchy resolution
+        if rule.get("effect") == "Commission":
+            dist_rows = rule.get("distribution", [])
+            has_manual = any(flt(d.get("allocation_pct", 0)) for d in dist_rows)
+            if not has_manual:
+                agents = resolve_agent_hierarchy(doc)
+                if agents:
+                    split_method = rule.get("split_method", "Hierarchy")
+                    if split_method == "Percentage":
+                        head_pct = rule.get("head_office_pct", 30)
+                        field_pct = rule.get("field_pct", 70)
+                        results.extend(split_commission_percentage(calculated_amount, agents, head_pct, field_pct, rule.get("account")))
+                    else:
+                        results.extend(split_commission_hierarchy(calculated_amount, agents, rule.get("account")))
+                    continue
+
         for entry in apply_distribution(rule, base_amount, calculated_amount):
             results.append(entry)
     return results
@@ -217,8 +342,10 @@ def get_gl_entries_for_term(ct, debit_to):
     outstanding_impact = outstanding_factor * amt
     party_account = debit_to
     if effect == "Commission":
-        sp_account = ct.get("party") and frappe.db.get_value("Sales Person", ct.get("party"), "commission_payable_account")
-        party_account = sp_account or ct_account
+        agent_account = ct.get("party") and frappe.db.get_value("Sales Agent", ct.get("party"), "default_commission_account")
+        if not agent_account:
+            return [], 0
+        party_account = agent_account
     if pattern["dr"] == "ct_account":
         entries.append({"account": ct_account, "debit": amt, "credit": 0})
         entries.append({"account": party_account, "debit": 0, "credit": amt})
