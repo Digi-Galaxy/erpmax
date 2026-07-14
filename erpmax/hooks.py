@@ -18,12 +18,12 @@ required_apps = ["frappe"]
 
 # DocTypes
 doctype_js = {
-    "Company": "erpmax/doctype/company/company.js",
+    "Company": "organization/doctype/company/company.js",
 }
 
 doctype_tree_js = {
     "Account": "accounting/doctype/account/account_tree.js",
-    "Company": "erpmax/doctype/company/company_tree.js",
+    "Company": "organization/doctype/company/company_tree.js",
     "Item Category": "inventory/doctype/item_category/item_category_tree.js",
 }
 
@@ -56,12 +56,12 @@ fixtures = [
 
 # Permission Query Conditions
 permission_query_conditions = {
-    "Company": "erpmax.erpmax.doctype.company.company.get_permission_query_conditions",
+    "Company": "erpmax.organization.doctype.company.company.get_permission_query_conditions",
 }
 
 # Has Permission
 has_permission = {
-    "Company": "erpmax.erpmax.doctype.company.company.has_permission",
+    "Company": "erpmax.organization.doctype.company.company.has_permission",
 }
 
 # Jinja Filters
