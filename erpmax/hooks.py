@@ -191,7 +191,6 @@ ignore_links_on_delete = [
 # Override Whitelisted Methods
 override_whitelisted_methods = {
 	"frappe.client.get_count": "erpmax.utils.client.get_count",
-	"frappe.desk.query_report.run": "erpmax.utils.client.run_query_report",
 }
 
 # Tree Doctypes
