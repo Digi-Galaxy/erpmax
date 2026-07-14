@@ -42,7 +42,7 @@ scheduler_events = {
 fixtures = [
     {
         "dt": "DocType",
-        "filters": [["module", "in", ["ERPMax", "Accounting", "Sales", "Purchase", "Inventory", "Commerce", "Banking", "Expense Management"]]]
+        "filters": [["module", "in", ["ERPMax", "Accounting", "Sales", "Purchase", "Inventory", "Commerce", "Banking", "Expense Management", "CRM"]]]
     },
     {
         "dt": "Role",

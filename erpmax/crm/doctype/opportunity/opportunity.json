@@ -1,158 +1,36 @@
 {
-  "actions": [],
-  "autoname": "format:OPP-{####}",
-  "creation": "2026-07-04 00:00:00",
-  "doctype": "DocType",
-  "document_type": "Document",
-  "engine": "InnoDB",
-  "field_order": [
-    "lead",
-    "customer",
-    "customer_name",
-    "company",
-    "column_break_4",
-    "posting_date",
-    "status",
-    "sb_details",
-    "opportunity_type",
-    "expected_amount",
-    "probability",
-    "column_break_15",
-    "expected_close_date",
-    "opportunity_owner",
-    "sb_notes",
-    "notes",
-    "sb_more",
-    "amended_from"
-  ],
-  "fields": [
-    {
-      "fieldname": "lead",
-      "fieldtype": "Link",
-      "label": "Lead",
-      "options": "Lead"
-    },
-    {
-      "fieldname": "customer",
-      "fieldtype": "Link",
-      "label": "Customer",
-      "options": "Customer"
-    },
-    {
-      "fieldname": "customer_name",
-      "fieldtype": "Data",
-      "label": "Customer Name",
-      "read_only": 1
-    },
-    {
-      "fieldname": "company",
-      "fieldtype": "Link",
-      "label": "Company",
-      "options": "Company",
-      "reqd": 1
-    },
-    {
-      "fieldname": "column_break_4",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "posting_date",
-      "fieldtype": "Date",
-      "label": "Posting Date",
-      "reqd": 1,
-      "default": "Today"
-    },
-    {
-      "fieldname": "status",
-      "fieldtype": "Select",
-      "label": "Status",
-      "options": "Open\nReplied\nProposal\nNegotiation\nClosed Won\nClosed Lost",
-      "default": "Open",
-      "in_list_view": 1
-    },
-    {
-      "fieldname": "sb_details",
-      "fieldtype": "Section Break",
-      "label": "Details"
-    },
-    {
-      "fieldname": "opportunity_type",
-      "fieldtype": "Select",
-      "label": "Type",
-      "options": "\nSales\nMaintenance\nSupport",
-      "default": "Sales"
-    },
-    {
-      "fieldname": "expected_amount",
-      "fieldtype": "Currency",
-      "label": "Expected Amount",
-      "in_list_view": 1
-    },
-    {
-      "fieldname": "probability",
-      "fieldtype": "Percent",
-      "label": "Probability (%)"
-    },
-    {
-      "fieldname": "column_break_15",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "expected_close_date",
-      "fieldtype": "Date",
-      "label": "Expected Close Date"
-    },
-    {
-      "fieldname": "opportunity_owner",
-      "fieldtype": "Link",
-      "label": "Opportunity Owner",
-      "options": "User"
-    },
-    {
-      "fieldname": "sb_notes",
-      "fieldtype": "Section Break",
-      "label": "Notes"
-    },
-    {
-      "fieldname": "notes",
-      "fieldtype": "Small Text",
-      "label": "Notes"
-    },
-    {
-      "fieldname": "sb_more",
-      "fieldtype": "Section Break"
-    },
-    {
-      "fieldname": "amended_from",
-      "fieldtype": "Data",
-      "label": "Amended From",
-      "no_copy": 1,
-      "print_hide": 1,
-      "read_only": 1
-    }
-  ],
-  "modified": "2026-07-04 00:00:00",
-  "module": "CRM",
-  "name": "Opportunity",
-  "owner": "Administrator",
-  "permissions": [
-    {
-      "amend": 0,
-      "cancel": 0,
-      "create": 1,
-      "delete": 1,
-      "email": 1,
-      "export": 1,
-      "print": 1,
-      "read": 1,
-      "report": 1,
-      "role": "Sales User",
-      "share": 1,
-      "submit": 0,
-      "write": 1
-    }
-  ],
-  "search_fields": "customer_name,notes",
-  "sort_field": "modified",
-  "track_changes": 1
+ "actions": [],
+ "autoname": "naming_series:OPP-.YYYY.-",
+ "creation": "2025-07-15 00:00:00.000000",
+ "default_print_format": "",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["opportunity_from", "party_name", "contact_person", "lead", "customer_name", "amount", "probability", "expected_close_date", "stage", "status", "notes"],
+ "fields": [
+  {"fieldname":"opportunity_from","fieldtype":"Select","in_list_view":1,"label":"Opportunity From","options":"\nLead\nCustomer","reqd":1},
+  {"fieldname":"party_name","fieldtype":"Dynamic Link","label":"Party Name","options":"opportunity_from","reqd":1},
+  {"fieldname":"contact_person","fieldtype":"Link","label":"Contact Person","options":"Contact"},
+  {"fieldname":"lead","fieldtype":"Link","label":"Lead","options":"Lead","read_only":1},
+  {"fieldname":"customer_name","fieldtype":"Data","label":"Customer Name"},
+  {"fieldname":"amount","fieldtype":"Currency","in_list_view":1,"label":"Expected Amount"},
+  {"fieldname":"probability","fieldtype":"Percent","label":"Probability"},
+  {"fieldname":"expected_close_date","fieldtype":"Date","in_list_view":1,"label":"Expected Close Date"},
+  {"fieldname":"stage","fieldtype":"Select","in_list_view":1,"label":"Stage","options":"\nQualification\nProposal\nNegotiation\nClosed Won\nClosed Lost"},
+  {"fieldname":"status","fieldtype":"Select","in_list_view":1,"label":"Status","options":"Open\nWon\nLost\nQuotation"},
+  {"fieldname":"notes","fieldtype":"Text Editor","label":"Notes"}
+ ],
+ "icon": "star",
+ "modified": "2025-07-15 00:00:00.000000",
+ "module": "CRM",
+ "name": "Opportunity",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {"role":"System Manager","read":1,"write":1,"create":1,"delete":1,"email":1,"report":1},
+  {"role":"Sales User","read":1,"write":1,"create":1},
+  {"role":"Sales Manager","read":1,"write":1,"create":1,"delete":1,"amend":1}
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
 }
