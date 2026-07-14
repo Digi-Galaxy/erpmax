@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"hPeople\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>People</b></span>\", \"col\": 12}}, {\"id\": \"sEmployee\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Employee\", \"col\": 3}}, {\"id\": \"sHolidayList\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Holiday List\", \"col\": 3}}, {\"id\": \"sTimesheet\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Timesheet\", \"col\": 3}}]",
+ "content": "[{\"id\": \"hdrPeople\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>People</b></span>\", \"col\": 12}}, {\"id\": \"sc_Employee\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Employee\", \"col\": 3}}, {\"id\": \"sc_HolidayList\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Holiday List\", \"col\": 3}}, {\"id\": \"sc_Timesheet\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Timesheet\", \"col\": 3}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"cardPeople\", \"type\": \"card\", \"data\": {\"card_name\": \"People\", \"col\": 4}}]",
  "creation": "2026-07-15 01:59:09.910836",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,8 @@
    "is_query_report": 0,
    "label": "People",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -56,7 +57,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-07-15 01:59:09.910836",
+ "modified": "2026-07-15 02:45:43.085814",
  "modified_by": "Administrator",
  "module": "HRMS",
  "name": "HRMS",

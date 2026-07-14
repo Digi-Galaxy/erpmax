@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"hMasters\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Masters</b></span>\", \"col\": 12}}, {\"id\": \"sAccount\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Account\", \"col\": 3}}, {\"id\": \"sCompany\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company\", \"col\": 3}}, {\"id\": \"sFiscalYear\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fiscal Year\", \"col\": 3}}, {\"id\": \"sChartofAccountsTemplate\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Chart of Accounts Template\", \"col\": 3}}, {\"id\": \"sReportingStandard\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reporting Standard\", \"col\": 3}}, {\"id\": \"sPDFSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"PDF Settings\", \"col\": 3}}, {\"id\": \"sPartyAccount\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Party Account\", \"col\": 3}}, {\"id\": \"sPartnerAccount\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Partner Account\", \"col\": 3}}, {\"id\": \"sPartnerTransaction\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Partner Transaction\", \"col\": 3}}, {\"id\": \"sInternalAccountTransaction\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Internal Account Transaction\", \"col\": 3}}, {\"id\": \"sBudget\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Budget\", \"col\": 3}}, {\"id\": \"sExchangeRate\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Exchange Rate\", \"col\": 3}}, {\"id\": \"sPaymentTerm\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Payment Term\", \"col\": 3}}, {\"id\": \"hTransactions\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Transactions</b></span>\", \"col\": 12}}, {\"id\": \"sJournalEntry\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Journal Entry\", \"col\": 3}}, {\"id\": \"sPaymentEntry\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Payment Entry\", \"col\": 3}}, {\"id\": \"sSalesInvoice\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales Invoice\", \"col\": 3}}, {\"id\": \"sPurchaseInvoice\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Purchase Invoice\", \"col\": 3}}, {\"id\": \"hReports\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Reports</b></span>\", \"col\": 12}}, {\"id\": \"sProfitandLoss\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Profit and Loss\", \"col\": 3}}, {\"id\": \"sBalanceSheet\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Balance Sheet\", \"col\": 3}}, {\"id\": \"sTrialBalance\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trial Balance\", \"col\": 3}}, {\"id\": \"sGeneralLedger\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"General Ledger\", \"col\": 3}}]",
+ "content": "[{\"id\": \"hdrMasters\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Masters</b></span>\", \"col\": 12}}, {\"id\": \"sc_Account\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Account\", \"col\": 3}}, {\"id\": \"sc_Company\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company\", \"col\": 3}}, {\"id\": \"sc_FiscalYear\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Fiscal Year\", \"col\": 3}}, {\"id\": \"sc_ChartofAccountsTemplate\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Chart of Accounts Template\", \"col\": 3}}, {\"id\": \"sc_ReportingStandard\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reporting Standard\", \"col\": 3}}, {\"id\": \"sc_PDFSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"PDF Settings\", \"col\": 3}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"hdrAccounts\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Accounts & Transactions</b></span>\", \"col\": 12}}, {\"id\": \"cardCOA\", \"type\": \"card\", \"data\": {\"card_name\": \"Chart of Accounts\", \"col\": 4}}, {\"id\": \"cardAccts\", \"type\": \"card\", \"data\": {\"card_name\": \"Accounts\", \"col\": 4}}, {\"id\": \"cardTrans\", \"type\": \"card\", \"data\": {\"card_name\": \"Transactions\", \"col\": 4}}, {\"id\": \"sp2\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"hdrReports\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Reports</b></span>\", \"col\": 12}}, {\"id\": \"cardReports\", \"type\": \"card\", \"data\": {\"card_name\": \"Reports\", \"col\": 4}}]",
  "creation": "2026-07-15 01:59:10.120947",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,8 @@
    "is_query_report": 0,
    "label": "Chart of Accounts",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -93,7 +94,8 @@
    "is_query_report": 0,
    "label": "Accounts",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -179,7 +181,8 @@
    "is_query_report": 0,
    "label": "Transactions",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -232,7 +235,8 @@
    "is_query_report": 0,
    "label": "Reports",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -281,7 +285,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-07-15 01:59:10.120947",
+ "modified": "2026-07-15 02:07:59.458910",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Accounts",

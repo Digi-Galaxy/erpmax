@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"hSetup\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Setup</b></span>\", \"col\": 12}}, {\"id\": \"sCompany\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company\", \"col\": 3}}, {\"id\": \"sCompanyIndustry\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company Industry\", \"col\": 3}}, {\"id\": \"sCompanyUser\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company User\", \"col\": 3}}, {\"id\": \"sCompanyAccountSetup\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company Account Setup\", \"col\": 3}}, {\"id\": \"sCompanyAccount\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company Account\", \"col\": 3}}, {\"id\": \"sCompanyConfigurationRow\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company Configuration Row\", \"col\": 3}}]",
+ "content": "[{\"id\": \"hdrSetup\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Setup</b></span>\", \"col\": 12}}, {\"id\": \"sc_Company\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company\", \"col\": 3}}, {\"id\": \"sc_CompanyIndustry\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company Industry\", \"col\": 3}}, {\"id\": \"sc_CompanyUser\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company User\", \"col\": 3}}, {\"id\": \"sc_CompanyAccountSetup\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company Account Setup\", \"col\": 3}}, {\"id\": \"sc_CompanyAccount\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company Account\", \"col\": 3}}, {\"id\": \"sc_CompanyConfigurationRow\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company Configuration Row\", \"col\": 3}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"cardSetup\", \"type\": \"card\", \"data\": {\"card_name\": \"Setup\", \"col\": 4}}]",
  "creation": "2026-07-15 01:59:10.244116",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,8 @@
    "is_query_report": 0,
    "label": "Setup",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -89,7 +90,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-07-15 01:59:10.244116",
+ "modified": "2026-07-15 02:45:42.959614",
  "modified_by": "Administrator",
  "module": "Organization",
  "name": "Organization",

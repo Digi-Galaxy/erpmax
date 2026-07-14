@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"hSalesPipeline\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Sales Pipeline</b></span>\", \"col\": 12}}, {\"id\": \"sLead\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Lead\", \"col\": 3}}, {\"id\": \"sOpportunity\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Opportunity\", \"col\": 3}}, {\"id\": \"hMasterData\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Master Data</b></span>\", \"col\": 12}}, {\"id\": \"sParty\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Party\", \"col\": 3}}, {\"id\": \"sPartyType\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Party Type\", \"col\": 3}}, {\"id\": \"sCustomer\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer\", \"col\": 3}}, {\"id\": \"sAddress\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Address\", \"col\": 3}}, {\"id\": \"sContact\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Contact\", \"col\": 3}}]",
+ "content": "[{\"id\": \"hdrPipeline\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Sales Pipeline</b></span>\", \"col\": 12}}, {\"id\": \"sc_Lead\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Lead\", \"col\": 3}}, {\"id\": \"sc_Opportunity\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Opportunity\", \"col\": 3}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"hdrData\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Master Data</b></span>\", \"col\": 12}}, {\"id\": \"cardPipeline\", \"type\": \"card\", \"data\": {\"card_name\": \"Sales Pipeline\", \"col\": 4}}, {\"id\": \"cardData\", \"type\": \"card\", \"data\": {\"card_name\": \"Master Data\", \"col\": 4}}]",
  "creation": "2026-07-15 01:59:10.198014",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,8 @@
    "is_query_report": 0,
    "label": "Sales Pipeline",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -49,7 +50,8 @@
    "is_query_report": 0,
    "label": "Master Data",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -109,7 +111,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-07-15 01:59:10.198014",
+ "modified": "2026-07-15 02:45:23.715806",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "CRM",

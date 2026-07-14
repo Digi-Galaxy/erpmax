@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"hConfiguration\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Configuration</b></span>\", \"col\": 12}}, {\"id\": \"sTaxTemplate\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tax Template\", \"col\": 3}}, {\"id\": \"sTaxCategory\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tax Category\", \"col\": 3}}, {\"id\": \"sTaxRate\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tax Rate\", \"col\": 3}}, {\"id\": \"sHSCode\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"HS Code\", \"col\": 3}}, {\"id\": \"sCountryTaxProfile\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Country Tax Profile\", \"col\": 3}}, {\"id\": \"sComplianceLog\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Compliance Log\", \"col\": 3}}, {\"id\": \"hZATCA\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>ZATCA</b></span>\", \"col\": 12}}, {\"id\": \"sZATCACSRSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA CSR Settings\", \"col\": 3}}, {\"id\": \"sZATCAEnvironment\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA Environment\", \"col\": 3}}, {\"id\": \"sZATCACSID\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA CSID\", \"col\": 3}}, {\"id\": \"sZATCAProductionCSID\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA Production CSID\", \"col\": 3}}, {\"id\": \"sZATCAComplianceCSID\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA Compliance CSID\", \"col\": 3}}, {\"id\": \"sZATCATransactions\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA Transactions\", \"col\": 3}}, {\"id\": \"hFBR\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>FBR</b></span>\", \"col\": 12}}, {\"id\": \"sFBRSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"FBR Settings\", \"col\": 3}}, {\"id\": \"sFBRSaleType\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"FBR Sale Type\", \"col\": 3}}, {\"id\": \"sFBRInvoice\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"FBR Invoice\", \"col\": 3}}]",
+ "content": "[{\"id\": \"hdrConfig\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Configuration</b></span>\", \"col\": 12}}, {\"id\": \"sc_TaxTemplate\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tax Template\", \"col\": 3}}, {\"id\": \"sc_TaxCategory\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tax Category\", \"col\": 3}}, {\"id\": \"sc_TaxRate\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tax Rate\", \"col\": 3}}, {\"id\": \"sc_HSCode\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"HS Code\", \"col\": 3}}, {\"id\": \"sc_CountryTaxProfile\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Country Tax Profile\", \"col\": 3}}, {\"id\": \"sc_ComplianceLog\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Compliance Log\", \"col\": 3}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"hdrZatca\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>ZATCA</b></span>\", \"col\": 12}}, {\"id\": \"sc_ZATCACSRSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA CSR Settings\", \"col\": 3}}, {\"id\": \"sc_ZATCAEnvironment\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA Environment\", \"col\": 3}}, {\"id\": \"sc_ZATCACSID\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA CSID\", \"col\": 3}}, {\"id\": \"sc_ZATCAProductionCSID\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA Production CSID\", \"col\": 3}}, {\"id\": \"sc_ZATCAComplianceCSID\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA Compliance CSID\", \"col\": 3}}, {\"id\": \"sc_ZATCATransactions\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ZATCA Transactions\", \"col\": 3}}, {\"id\": \"sp2\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"hdrFBR\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>FBR</b></span>\", \"col\": 12}}, {\"id\": \"sc_FBRSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"FBR Settings\", \"col\": 3}}, {\"id\": \"sc_FBRSaleType\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"FBR Sale Type\", \"col\": 3}}, {\"id\": \"sc_FBRInvoice\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"FBR Invoice\", \"col\": 3}}, {\"id\": \"sp3\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"cardConfig\", \"type\": \"card\", \"data\": {\"card_name\": \"Configuration\", \"col\": 4}}, {\"id\": \"cardZatca\", \"type\": \"card\", \"data\": {\"card_name\": \"ZATCA\", \"col\": 4}}, {\"id\": \"cardFBR\", \"type\": \"card\", \"data\": {\"card_name\": \"FBR\", \"col\": 4}}]",
  "creation": "2026-07-15 01:59:10.402645",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,8 @@
    "is_query_report": 0,
    "label": "Configuration",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -93,7 +94,8 @@
    "is_query_report": 0,
    "label": "ZATCA",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -168,7 +170,8 @@
    "is_query_report": 0,
    "label": "FBR",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -206,7 +209,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-07-15 01:59:10.402645",
+ "modified": "2026-07-15 02:46:15.230749",
  "modified_by": "Administrator",
  "module": "Taxation",
  "name": "Taxation",

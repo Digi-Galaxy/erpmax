@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"hContracts\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Contracts</b></span>\", \"col\": 12}}, {\"id\": \"sServiceContract\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Service Contract\", \"col\": 3}}, {\"id\": \"sRentalContract\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rental Contract\", \"col\": 3}}, {\"id\": \"sEmployeeContract\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Employee Contract\", \"col\": 3}}, {\"id\": \"hOperations\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Operations</b></span>\", \"col\": 12}}, {\"id\": \"sSite\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Site\", \"col\": 3}}, {\"id\": \"sMaintenanceSchedule\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Schedule\", \"col\": 3}}, {\"id\": \"sMaintenanceVisit\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Visit\", \"col\": 3}}, {\"id\": \"sStageLog\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Stage Log\", \"col\": 3}}]",
+ "content": "[{\"id\": \"hdrContracts\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Contracts</b></span>\", \"col\": 12}}, {\"id\": \"sc_ServiceContract\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Service Contract\", \"col\": 3}}, {\"id\": \"sc_RentalContract\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rental Contract\", \"col\": 3}}, {\"id\": \"sc_EmployeeContract\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Employee Contract\", \"col\": 3}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"hdrOps\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Operations</b></span>\", \"col\": 12}}, {\"id\": \"sc_Site\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Site\", \"col\": 3}}, {\"id\": \"sc_MaintenanceSchedule\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Schedule\", \"col\": 3}}, {\"id\": \"sc_MaintenanceVisit\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Visit\", \"col\": 3}}, {\"id\": \"sc_StageLog\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Stage Log\", \"col\": 3}}, {\"id\": \"sp2\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"cardContracts\", \"type\": \"card\", \"data\": {\"card_name\": \"Contracts\", \"col\": 4}}, {\"id\": \"cardOps\", \"type\": \"card\", \"data\": {\"card_name\": \"Operations\", \"col\": 4}}]",
  "creation": "2026-07-15 01:59:10.222569",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,8 @@
    "is_query_report": 0,
    "label": "Contracts",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -60,7 +61,8 @@
    "is_query_report": 0,
    "label": "Operations",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -109,7 +111,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-07-15 01:59:10.222569",
+ "modified": "2026-07-15 02:45:54.095597",
  "modified_by": "Administrator",
  "module": "Service Management",
  "name": "Service Management",

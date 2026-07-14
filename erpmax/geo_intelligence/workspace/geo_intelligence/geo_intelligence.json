@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"hConfiguration\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Configuration</b></span>\", \"col\": 12}}, {\"id\": \"sGeoSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Geo Settings\", \"col\": 3}}, {\"id\": \"sGeoFieldMapping\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Geo Field Mapping\", \"col\": 3}}]",
+ "content": "[{\"id\": \"hdrConfig\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Configuration</b></span>\", \"col\": 12}}, {\"id\": \"sc_GeoSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Geo Settings\", \"col\": 3}}, {\"id\": \"sc_GeoFieldMapping\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Geo Field Mapping\", \"col\": 3}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"cardConfig\", \"type\": \"card\", \"data\": {\"card_name\": \"Configuration\", \"col\": 4}}]",
  "creation": "2026-07-15 01:59:10.388294",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,8 @@
    "is_query_report": 0,
    "label": "Configuration",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -45,7 +46,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-07-15 01:59:10.388294",
+ "modified": "2026-07-15 02:45:32.805928",
  "modified_by": "Administrator",
  "module": "Geo Intelligence",
  "name": "Geo Intelligence",

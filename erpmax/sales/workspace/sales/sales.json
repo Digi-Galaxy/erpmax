@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"hCore\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Core</b></span>\", \"col\": 12}}, {\"id\": \"sCustomer\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer\", \"col\": 3}}, {\"id\": \"sItem\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item\", \"col\": 3}}, {\"id\": \"sAddress\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Address\", \"col\": 3}}, {\"id\": \"hSalesCycle\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Sales Cycle</b></span>\", \"col\": 12}}, {\"id\": \"sQuotation\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Quotation\", \"col\": 3}}, {\"id\": \"sSalesOrder\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales Order\", \"col\": 3}}, {\"id\": \"sProformaInvoice\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Proforma Invoice\", \"col\": 3}}, {\"id\": \"sSalesInvoice\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales Invoice\", \"col\": 3}}, {\"id\": \"sDeliveryNote\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Delivery Note\", \"col\": 3}}, {\"id\": \"sCreditNote\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Credit Note\", \"col\": 3}}, {\"id\": \"sTransportDelivery\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Transport Delivery\", \"col\": 3}}, {\"id\": \"hConfiguration\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Configuration</b></span>\", \"col\": 12}}, {\"id\": \"sSalesInvoiceAddonSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales Invoice Addon Settings\", \"col\": 3}}, {\"id\": \"sCustomerAddonSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer Addon Settings\", \"col\": 3}}, {\"id\": \"sRecurringInvoiceTemplate\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Recurring Invoice Template\", \"col\": 3}}, {\"id\": \"sSalesAgent\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales Agent\", \"col\": 3}}]",
+ "content": "[{\"id\": \"hdrCore\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Core</b></span>\", \"col\": 12}}, {\"id\": \"sc_Customer\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer\", \"col\": 3}}, {\"id\": \"sc_Item\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item\", \"col\": 3}}, {\"id\": \"sc_Address\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Address\", \"col\": 3}}, {\"id\": \"sp1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"hdrCycle\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Sales Cycle</b></span>\", \"col\": 12}}, {\"id\": \"sc_Quotation\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Quotation\", \"col\": 3}}, {\"id\": \"sc_SalesOrder\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales Order\", \"col\": 3}}, {\"id\": \"sc_ProformaInvoice\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Proforma Invoice\", \"col\": 3}}, {\"id\": \"sc_SalesInvoice\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales Invoice\", \"col\": 3}}, {\"id\": \"sc_DeliveryNote\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Delivery Note\", \"col\": 3}}, {\"id\": \"sc_CreditNote\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Credit Note\", \"col\": 3}}, {\"id\": \"sc_TransportDelivery\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Transport Delivery\", \"col\": 3}}, {\"id\": \"sp2\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"hdrConfig\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Configuration</b></span>\", \"col\": 12}}, {\"id\": \"cardCore\", \"type\": \"card\", \"data\": {\"card_name\": \"Core\", \"col\": 4}}, {\"id\": \"cardCycle\", \"type\": \"card\", \"data\": {\"card_name\": \"Sales Cycle\", \"col\": 4}}, {\"id\": \"cardConfig\", \"type\": \"card\", \"data\": {\"card_name\": \"Configuration\", \"col\": 4}}]",
  "creation": "2026-07-15 01:59:10.362116",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,8 @@
    "is_query_report": 0,
    "label": "Core",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -60,7 +61,8 @@
    "is_query_report": 0,
    "label": "Sales Cycle",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -146,7 +148,8 @@
    "is_query_report": 0,
    "label": "Configuration",
    "link_count": 0,
-   "link_type": "DocType",
+   "link_to": "",
+   "link_type": "",
    "onboard": 0,
    "type": "Card Break"
   },
@@ -195,7 +198,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-07-15 01:59:10.362116",
+ "modified": "2026-07-15 02:45:53.950993",
  "modified_by": "Administrator",
  "module": "Sales",
  "name": "Sales",
