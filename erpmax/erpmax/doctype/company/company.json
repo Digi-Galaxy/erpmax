@@ -50,11 +50,16 @@
   "address_line_2",
   "building_no",
   "subdivision",
-  "city",
-  "cb_address",
-  "state",
-  "country",
-  "zip_code",
+   "city",
+   "cb_address",
+   "state",
+   "division",
+   "district",
+   "subdistrict",
+   "union_council",
+   "town",
+   "country",
+   "zip_code",
   "latitude",
   "longitude",
   "map_view",
@@ -77,6 +82,7 @@
   "default_bank_account",
   "default_cash_account",
   "default_receivable_account",
+  "default_retention_receivable_account",
   "default_payable_account",
   "default_income_account",
   "default_expense_account",
@@ -397,24 +403,47 @@
   },
   {
    "fieldname": "city",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "City",
-   "options": "City",
    "reqd": 1
   },
   {
    "fieldname": "cb_address",
    "fieldtype": "Column Break"
   },
-  {
-   "fieldname": "state",
-   "fieldtype": "Link",
-   "label": "State / Province",
-   "options": "State"
-  },
-  {
-   "fieldname": "country",
-   "fieldtype": "Link",
+   {
+    "fieldname": "state",
+    "fieldtype": "Data",
+    "label": "State / Province"
+   },
+   {
+    "fieldname": "division",
+    "fieldtype": "Data",
+    "label": "Division"
+   },
+   {
+    "fieldname": "district",
+    "fieldtype": "Data",
+    "label": "District"
+   },
+   {
+    "fieldname": "subdistrict",
+    "fieldtype": "Data",
+    "label": "Subdistrict / Tehsil"
+   },
+   {
+    "fieldname": "union_council",
+    "fieldtype": "Data",
+    "label": "Union Council"
+   },
+   {
+    "fieldname": "town",
+    "fieldtype": "Data",
+    "label": "Town / Village"
+   },
+   {
+    "fieldname": "country",
+    "fieldtype": "Link",
    "label": "Country",
    "options": "Country",
    "reqd": 1
@@ -510,6 +539,13 @@
    "options": "Currency"
   },
   {
+   "fieldname": "coa_template",
+   "fieldtype": "Select",
+   "label": "Chart of Accounts Template",
+   "options": "\nGAAP\nIFRS\nUK\nSKR03\nPCG\nKSA\nNGO\nPK\nMY\nUAE",
+   "insert_after": "default_currency"
+  },
+  {
    "default": "January",
    "fieldname": "fiscal_year_start",
    "fieldtype": "Select",
@@ -545,6 +581,12 @@
    "fieldname": "default_receivable_account",
    "fieldtype": "Link",
    "label": "Default Receivable Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "default_retention_receivable_account",
+   "fieldtype": "Link",
+   "label": "Default Retention Receivable Account",
    "options": "Account"
   },
   {
@@ -667,15 +709,13 @@
   },
   {
    "fieldname": "round_off_cost_center",
-   "fieldtype": "Link",
-   "label": "Round Off Cost Center",
-   "options": "Cost Center"
+   "fieldtype": "Data",
+   "label": "Round Off Cost Center"
   },
   {
    "fieldname": "depreciation_cost_center",
-   "fieldtype": "Link",
-   "label": "Depreciation Cost Center",
-   "options": "Cost Center"
+   "fieldtype": "Data",
+   "label": "Depreciation Cost Center"
   },
   {
    "fieldname": "default_selling_terms",
@@ -768,12 +808,6 @@
    "fieldname": "enable_multi_branch",
    "fieldtype": "Check",
    "label": "Enable Multi-Branch"
-  },
-  {
-   "fieldname": "region",
-   "fieldtype": "Link",
-   "label": "Region",
-   "options": "Region"
   },
   {
    "fieldname": "default_distributor",
@@ -929,15 +963,14 @@
    "fieldtype": "Link",
    "label": "CSR Settings (Phase 1 Only)",
    "mandatory_depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 1')",
-   "options": "Zatca Csr Settings"
+   "options": "ZATCA CSR Settings"
   },
   {
    "depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 2')",
    "fieldname": "production_csid",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Production CSID (Phase 2 Only)",
-   "mandatory_depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 2')",
-   "options": "Zatca Csid"
+   "mandatory_depends_on": "eval:(doc.enable_zatca_e_invoicing == '1' && doc.zatca_phase == 'ZATCA Phase 2')"
   },
   {
    "depends_on": "eval: doc.enable_zatca_e_invoicing==1",
@@ -985,14 +1018,21 @@
    "label": "Right",
    "no_copy": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "company_accounts",
+   "fieldtype": "Table",
+   "label": "Company Accounts",
+   "options": "Company Account",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-building",
  "is_tree": 1,
  "links": [],
- "modified": "2026-07-04 00:40:10.845049",
- "modified_by": "Administrator",
- "module": "ERPMax",
+ "modified": "2026-07-10 23:08:17.169731",
+ "modified_by": "abc@test.com",
+ "module": "Accounts",
  "name": "Company",
  "naming_rule": "By fieldname",
  "nsm_parent_field": "parent_company",

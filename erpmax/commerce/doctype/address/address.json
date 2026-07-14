@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "field:address_title",
+ "autoname": "hash",
  "creation": "2026-07-01 00:00:00",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,10 +10,18 @@
   "address_line_1",
   "address_line_2",
   "city",
-  "state",
-  "country",
-  "zip_code",
-  "email_id",
+   "state",
+   "country",
+    "zip_code",
+    "division",
+    "district",
+    "subdistrict",
+    "union_council",
+    "town",
+   "latitude",
+   "longitude",
+   "map_view",
+    "email_id",
   "phone",
   "is_primary_address",
   "links"
@@ -23,8 +31,7 @@
    "fieldname": "address_title",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Address Title",
-   "unique": 1
+   "label": "Address Title"
   },
   {
    "fieldname": "address_type",
@@ -47,30 +54,69 @@
   },
   {
    "fieldname": "city",
-   "fieldtype": "Link",
-   "label": "City",
-   "options": "City"
+   "fieldtype": "Data",
+   "label": "City"
   },
   {
    "fieldname": "state",
-   "fieldtype": "Link",
-   "label": "State",
-   "options": "State"
-  },
-  {
-   "fieldname": "country",
-   "fieldtype": "Link",
-   "label": "Country",
-   "options": "Country"
-  },
-  {
-   "fieldname": "zip_code",
    "fieldtype": "Data",
-   "label": "ZIP Code"
+   "label": "State"
   },
-  {
-   "fieldname": "email_id",
-   "fieldtype": "Data",
+   {
+    "fieldname": "country",
+    "fieldtype": "Link",
+    "label": "Country",
+    "options": "Country"
+   },
+   {
+    "fieldname": "zip_code",
+    "fieldtype": "Data",
+    "label": "ZIP Code"
+   },
+    {
+     "fieldname": "division",
+     "fieldtype": "Data",
+     "label": "Division"
+    },
+   {
+    "fieldname": "district",
+    "fieldtype": "Data",
+    "label": "District"
+   },
+   {
+    "fieldname": "subdistrict",
+    "fieldtype": "Data",
+    "label": "Subdistrict / Tehsil"
+   },
+   {
+    "fieldname": "union_council",
+    "fieldtype": "Data",
+    "label": "Union Council"
+   },
+   {
+    "fieldname": "town",
+    "fieldtype": "Data",
+    "label": "Town / Village"
+   },
+   {
+    "fieldname": "latitude",
+    "fieldtype": "Float",
+    "label": "Latitude"
+   },
+   {
+    "fieldname": "longitude",
+    "fieldtype": "Float",
+    "label": "Longitude"
+   },
+   {
+    "fieldname": "map_view",
+    "fieldtype": "HTML",
+    "label": "Map View",
+    "read_only": 1
+   },
+   {
+    "fieldname": "email_id",
+    "fieldtype": "Data",
    "label": "Email",
    "options": "Email"
   },
@@ -94,11 +140,10 @@
   }
  ],
  "links": [],
- "modified": "2026-07-04 22:29:36.146524",
+ "modified": "2026-07-01 00:00:00",
  "modified_by": "Administrator",
- "module": "Commerce",
+ "module": "CRM",
  "name": "Address",
- "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -125,6 +170,6 @@
  "search_fields": "address_title, city, email_id",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "track_changes": 1
+ "track_changes": 1,
+ "title_field": "address_title"
 }

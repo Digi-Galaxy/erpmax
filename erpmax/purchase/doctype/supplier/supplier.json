@@ -6,41 +6,250 @@
  "doctype": "DocType",
  "document_type": "Setup",
  "engine": "InnoDB",
-  "field_order": ["supplier_name", "supplier_type", "company", "supplier_display_name", "region", "distributor", "commission_rate", "column_break_3", "tax_id", "default_currency", "sb_address", "address_line_1", "city", "state", "country", "column_break_11", "phone", "email", "website", "sb_accounting", "accounts", "default_payable_account", "column_break_18", "payment_terms"],
+ "field_order": [
+  "supplier_name",
+  "supplier_type",
+  "company",
+   "supplier_display_name",
+   "distributor",
+  "commission_rate",
+  "column_break_3",
+  "tax_id",
+  "default_currency",
+  "sb_address",
+  "address_line_1",
+   "city",
+   "state",
+   "subdivision",
+   "division",
+   "district",
+   "subdistrict",
+   "union_council",
+   "town",
+   "zip_code",
+    "country",
+   "latitude",
+   "longitude",
+   "map_view",
+   "column_break_11",
+   "phone",
+  "email",
+  "website",
+  "sb_accounting",
+  "accounts",
+  "default_payable_account",
+  "column_break_18",
+  "payment_terms"
+ ],
  "fields": [
-  {"fieldname": "supplier_name", "fieldtype": "Data", "in_list_view": 1, "label": "Supplier Name", "reqd": 1, "unique": 1},
-  {"fieldname": "supplier_type", "fieldtype": "Select", "in_list_view": 1, "label": "Supplier Type", "options": "\nCompany\nIndividual", "reqd": 1},
-   {"fieldname": "company", "fieldtype": "Link", "in_standard_filter": 1, "label": "Company", "options": "Company", "reqd": 1},
-   {"fieldname": "supplier_display_name", "fieldtype": "Data", "label": "Supplier Display Name"},
-   {"fieldname": "region", "fieldtype": "Link", "label": "Region", "options": "Region"},
-   {"fieldname": "distributor", "fieldtype": "Link", "label": "Distributor", "options": "Distributor"},
-   {"fieldname": "commission_rate", "fieldtype": "Float", "label": "Commission Rate"},
-   {"fieldname": "column_break_3", "fieldtype": "Column Break"},
-  {"fieldname": "tax_id", "fieldtype": "Data", "label": "Tax ID"},
-  {"fieldname": "default_currency", "fieldtype": "Link", "label": "Default Currency", "options": "Currency"},
-  {"fieldname": "sb_address", "fieldtype": "Section Break", "label": "Address"},
-  {"fieldname": "address_line_1", "fieldtype": "Data", "label": "Address Line 1"},
-  {"fieldname": "city", "fieldtype": "Link", "label": "City", "options": "City"},
-  {"fieldname": "state", "fieldtype": "Link", "label": "State", "options": "State"},
-  {"fieldname": "country", "fieldtype": "Link", "label": "Country", "options": "Country"},
-  {"fieldname": "column_break_11", "fieldtype": "Column Break"},
-  {"fieldname": "phone", "fieldtype": "Data", "label": "Phone", "options": "Phone"},
-  {"fieldname": "email", "fieldtype": "Data", "label": "Email", "options": "Email"},
-  {"fieldname": "website", "fieldtype": "Data", "label": "Website"},
-  {"fieldname": "sb_accounting", "fieldtype": "Section Break", "label": "Accounting"},
-  {"fieldname": "accounts", "fieldtype": "Table", "label": "Accounts", "options": "Party Account", "description": "Link accounts to this supplier per company. Auto-created if empty."},
-  {"fieldname": "default_payable_account", "fieldtype": "Link", "label": "Default Payable Account", "options": "Account"},
-  {"fieldname": "column_break_18", "fieldtype": "Column Break"},
-  {"fieldname": "payment_terms", "fieldtype": "Data", "label": "Payment Terms"}
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Supplier Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "supplier_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Supplier Type",
+   "options": "\nCompany\nIndividual",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier_display_name",
+   "fieldtype": "Data",
+   "label": "Supplier Display Name"
+  },
+  {
+   "fieldname": "distributor",
+   "fieldtype": "Link",
+   "label": "Distributor",
+   "options": "Distributor"
+  },
+  {
+   "fieldname": "commission_rate",
+   "fieldtype": "Float",
+   "label": "Commission Rate"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "Tax ID"
+  },
+  {
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "sb_address",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+   {
+    "fieldname": "state",
+    "fieldtype": "Data",
+    "label": "State"
+   },
+   {
+    "fieldname": "subdivision",
+    "fieldtype": "Data",
+    "label": "Subdivision / Area"
+   },
+   {
+    "fieldname": "division",
+    "fieldtype": "Data",
+    "label": "Division"
+   },
+   {
+    "fieldname": "district",
+    "fieldtype": "Data",
+    "label": "District"
+   },
+   {
+    "fieldname": "subdistrict",
+    "fieldtype": "Data",
+    "label": "Subdistrict / Tehsil"
+   },
+   {
+    "fieldname": "union_council",
+    "fieldtype": "Data",
+    "label": "Union Council"
+   },
+   {
+    "fieldname": "town",
+    "fieldtype": "Data",
+    "label": "Town / Village"
+   },
+   {
+    "fieldname": "zip_code",
+    "fieldtype": "Data",
+    "label": "ZIP Code"
+   },
+    {
+     "fieldname": "country",
+     "fieldtype": "Link",
+    "label": "Country",
+    "options": "Country"
+   },
+   {
+    "fieldname": "latitude",
+    "fieldtype": "Float",
+    "label": "Latitude"
+   },
+   {
+    "fieldname": "longitude",
+    "fieldtype": "Float",
+    "label": "Longitude"
+   },
+   {
+    "fieldname": "map_view",
+    "fieldtype": "HTML",
+    "label": "Map View",
+    "read_only": 1
+   },
+   {
+    "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "sb_accounting",
+   "fieldtype": "Section Break",
+   "label": "Accounting"
+  },
+  {
+   "fieldname": "accounts",
+   "fieldtype": "Table",
+   "label": "Accounts",
+   "options": "Party Account",
+   "description": "Link accounts to this supplier per company. Auto-created if empty."
+  },
+  {
+   "fieldname": "default_payable_account",
+   "fieldtype": "Link",
+   "label": "Default Payable Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Data",
+   "label": "Payment Terms"
+  }
  ],
  "icon": "fa fa-truck",
  "links": [],
  "modified": "2026-07-01 00:00:00",
  "module": "Purchase",
  "name": "Supplier",
- "permissions": [{"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1}, {"create": 1, "read": 1, "role": "Purchase Manager", "write": 1}, {"read": 1, "role": "Accounts User"}],
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Purchase Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Accounts User"
+  }
+ ],
  "search_fields": "supplier_name, tax_id, email",
  "sort_field": "modified",
  "title_field": "supplier_name",
- "track_changes": 1, "track_seen": 1
+ "track_changes": 1,
+ "track_seen": 1
 }

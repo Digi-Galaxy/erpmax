@@ -6,15 +6,18 @@
   "doctype": "DocType",
   "document_type": "Setup",
   "engine": "InnoDB",
-  "field_order": ["region_name", "region_abbr", "company", "parent_region", "is_group", "status", "notes"],
+   "field_order": ["region_name", "region_abbr", "customer", "parent_region", "old_parent", "is_group", "status", "notes", "lft", "rgt"],
   "fields": [
     {"fieldname": "region_name", "fieldtype": "Data", "label": "Region Name", "reqd": 1, "unique": 1, "in_list_view": 1},
     {"fieldname": "region_abbr", "fieldtype": "Data", "label": "Region Abbr", "in_list_view": 1},
-    {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "in_standard_filter": 1},
+    {"fieldname": "customer", "fieldtype": "Link", "label": "Customer", "options": "Customer", "in_standard_filter": 1},
     {"fieldname": "parent_region", "fieldtype": "Link", "label": "Parent Region", "options": "Region"},
+    {"fieldname": "old_parent", "fieldtype": "Data", "hidden": 1, "label": "Old Parent", "no_copy": 1},
     {"default": "0", "fieldname": "is_group", "fieldtype": "Check", "label": "Is Group"},
     {"default": "Active", "fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nInactive"},
-    {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+    {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"},
+    {"fieldname": "lft", "fieldtype": "Int", "hidden": 1, "label": "lft", "no_copy": 1, "read_only": 1},
+    {"fieldname": "rgt", "fieldtype": "Int", "hidden": 1, "label": "rgt", "no_copy": 1, "read_only": 1}
   ],
   "is_tree": 1,
   "links": [],
