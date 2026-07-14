@@ -383,7 +383,7 @@ def has_permission(doc, user=None, permission_type=None):
 def create_transaction_deletion_request(company):
     frappe.only_for("System Manager")
 
-    from erpmax.erpmax.doctype.transaction_deletion_record.transaction_deletion_record import (
+    from erpmax.utilities.doctype.transaction_deletion_record.transaction_deletion_record import (
         is_deletion_doc_running,
     )
 

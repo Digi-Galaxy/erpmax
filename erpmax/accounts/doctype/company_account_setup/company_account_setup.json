@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "status",
+  "column_break_4",
+  "setup_date",
+  "sb_accounts",
+  "create_receivable",
+  "create_payable",
+  "create_income",
+  "column_break_accounts",
+  "create_expense",
+  "create_bank",
+  "create_cash",
+  "sb_status",
+  "accounts_created",
+  "last_run",
+  "column_break_status",
+  "errors"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nCompleted\nFailed",
+   "default": "Pending",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "setup_date",
+   "fieldtype": "Date",
+   "label": "Setup Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_accounts",
+   "fieldtype": "Section Break",
+   "label": "Accounts to Create"
+  },
+  {
+   "fieldname": "create_receivable",
+   "fieldtype": "Check",
+   "label": "Create Receivable Accounts",
+   "default": 1
+  },
+  {
+   "fieldname": "create_payable",
+   "fieldtype": "Check",
+   "label": "Create Payable Accounts",
+   "default": 1
+  },
+  {
+   "fieldname": "create_income",
+   "fieldtype": "Check",
+   "label": "Create Income Accounts",
+   "default": 1
+  },
+  {
+   "fieldname": "column_break_accounts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "create_expense",
+   "fieldtype": "Check",
+   "label": "Create Expense Accounts",
+   "default": 1
+  },
+  {
+   "fieldname": "create_bank",
+   "fieldtype": "Check",
+   "label": "Create Bank Accounts",
+   "default": 1
+  },
+  {
+   "fieldname": "create_cash",
+   "fieldtype": "Check",
+   "label": "Create Cash Accounts",
+   "default": 1
+  },
+  {
+   "fieldname": "sb_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "accounts_created",
+   "fieldtype": "Int",
+   "label": "Accounts Created",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_run",
+   "fieldtype": "Datetime",
+   "label": "Last Run",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "errors",
+   "fieldtype": "Small Text",
+   "label": "Errors",
+   "read_only": 1
+  }
+ ],
+ "modified": "2026-07-04 00:00:00",
+ "module": "Accounts",
+ "name": "Company Account Setup",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 0,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "track_changes": 1
+}

@@ -148,12 +148,6 @@ doc_events = {
     "GL Entry": {
         "after_insert": "erpmax.accounting.realtime.gl_entry.collect_gl_entry",
     },
-    # Activity logging hooks
-    "*": {
-        "on_update": "erpmax.erpmax.doctype.activity_log.activity_log.on_document_update",
-        "after_insert": "erpmax.erpmax.doctype.activity_log.activity_log.on_document_create",
-        "on_trash": "erpmax.erpmax.doctype.activity_log.activity_log.on_document_delete",
-    },
 }
 
 # Page JS

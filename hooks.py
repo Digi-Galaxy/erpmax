@@ -56,11 +56,11 @@ after_migrate = "erpmax.setup.migrate.after_migrate"
 notification_config = "erpmax.notifications.get_notification_config"
 
 permission_query_conditions = {
-    "Company": "erpmax.accounts.doctype.company.company.get_permission_query_conditions",
+    "Company": "erpmax.organization.doctype.company.company.get_permission_query_conditions",
 }
 
 has_permission = {
-    "Company": "erpmax.accounts.doctype.company.company.has_permission",
+    "Company": "erpmax.organization.doctype.company.company.has_permission",
 }
 
 doc_events = {
@@ -192,8 +192,8 @@ default_language = "en"
 # after_install = "erpmax.setup.install.after_install"
 # after_migrate = "erpmax.setup.migrate.after_migrate"
 # notification_config = "erpmax.notifications.get_notification_config"
-# permission_query_conditions = {"Company": "erpmax.accounts.doctype.company.company.get_permission_query_conditions"}
-# has_permission = {"Company": "erpmax.accounts.doctype.company.company.has_permission"}
+# permission_query_conditions = {"Company": "erpmax.organization.doctype.company.company.get_permission_query_conditions"}
+# has_permission = {"Company": "erpmax.organization.doctype.company.company.has_permission"}
 # doc_events = {
 # 	"Branch": {"after_insert": "erpmax.overrides.address.after_insert", "on_update": "erpmax.overrides.address.on_update"},
 # 	"Staff": {"after_insert": "erpmax.overrides.address.after_insert", "on_update": "erpmax.overrides.address.on_update"},
