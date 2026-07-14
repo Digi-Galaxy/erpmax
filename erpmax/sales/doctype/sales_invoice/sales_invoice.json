@@ -55,7 +55,8 @@
   "sb_more",
   "amended_from",
   "sb_commercial_terms",
-  "applied_commercial_terms"
+  "applied_commercial_terms",
+  "subscription"
  ],
  "fields": [
   {
@@ -369,12 +370,19 @@
    "label": "Applied Commercial Terms",
    "options": "Applied Commercial Terms",
    "read_only": 1
+  },
+  {
+   "fieldname": "subscription",
+   "fieldtype": "Link",
+   "label": "Subscription",
+   "options": "Subscription",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-file-text",
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-01 00:00:00",
+ "modified": "2026-07-15 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "Sales",
  "name": "Sales Invoice",

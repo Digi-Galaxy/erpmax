@@ -1,0 +1,11 @@
+{
+ "actions": [], "creation": "2026-07-15 00:00:00", "doctype": "DocType", "engine": "InnoDB",
+ "field_order": ["specification", "numeric", "min_value", "max_value"],
+ "fields": [
+  {"fieldname": "specification", "fieldtype": "Data", "in_list_view": 1, "label": "Parameter", "reqd": 1},
+  {"default": "1", "fieldname": "numeric", "fieldtype": "Check", "label": "Numeric"},
+  {"fieldname": "min_value", "fieldtype": "Float", "label": "Minimum Value", "depends_on": "numeric"},
+  {"fieldname": "max_value", "fieldtype": "Float", "label": "Maximum Value", "depends_on": "numeric"}
+ ],
+ "istable": 1, "modified": "2026-07-15 00:00:00", "module": "Inventory", "name": "Item Quality Inspection Parameter"
+}

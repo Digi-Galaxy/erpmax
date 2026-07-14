@@ -1,31 +1,46 @@
 import frappe
 from frappe import _
-def flt(v): return round(float(v or 0), 2)
-def execute(f=None):
-    cols = [
-        {"label":_("Account"),"fieldname":"account","fieldtype":"Data","width":300},
-        {"label":_("Debit"),"fieldname":"debit","fieldtype":"Currency","width":150},
-        {"label":_("Credit"),"fieldname":"credit","fieldtype":"Currency","width":150},
-        {"label":_("Balance"),"fieldname":"balance","fieldtype":"Currency","width":150},
+
+def execute(filters=None):
+    filters = filters or {}
+    cond = ["gl.is_cancelled = 0"]
+    params = {}
+    if filters.get("company"):
+        cond.append("gl.company=%(company)s")
+        params["company"] = filters["company"]
+    if filters.get("from_date") and filters.get("to_date"):
+        cond.append("gl.posting_date BETWEEN %(from_date)s AND %(to_date)s")
+        params.update({"from_date": filters["from_date"], "to_date": filters["to_date"]})
+
+    rows = frappe.db.sql("""SELECT gl.account, a.root_type, a.account_type,
+              SUM(gl.debit - gl.credit) AS balance
+       FROM `tabGL Entry` gl
+       LEFT JOIN `tabAccount` a ON a.name = gl.account
+       WHERE {cond} AND a.root_type IN ('Income', 'Expense')
+       GROUP BY gl.account, a.root_type, a.account_type
+       ORDER BY a.root_type, gl.account""".format(cond=" AND ".join(cond)),
+        params, as_dict=True)
+    income = []
+    expense = []
+    income_total = 0
+    expense_total = 0
+    for r in rows:
+        bal = r.balance or 0
+        if r.root_type == "Income":
+            income.append({"account": r.account, "amount": abs(bal)})
+            income_total += abs(bal)
+        else:
+            expense.append({"account": r.account, "amount": abs(bal)})
+            expense_total += abs(bal)
+    data = income + [{"account": "<b>Total Income</b>", "amount": income_total}]
+    data += [{"account": "", "amount": 0}] + expense
+    data += [{"account": "<b>Total Expense</b>", "amount": expense_total}]
+    net = income_total - expense_total
+    data += [{"account": "<b>Net Profit/Loss</b>", "amount": net}]
+    return get_columns(), data
+
+def get_columns():
+    return [
+        {"label": _("Account"), "fieldname": "account", "fieldtype": "Data", "width": 300},
+        {"label": _("Amount"), "fieldname": "amount", "fieldtype": "Currency", "width": 150},
     ]
-    co = f.get("company") if f else None
-    fd = f.get("from_date") if f else None
-    td = f.get("to_date") if f else None
-    if not all([co, fd, td]): return cols, []
-    inc = frappe.db.get_all("Account",{"company":co,"account_type":["in",["Income","Revenue"]],"is_group":0},pluck="name")
-    exp = frappe.db.get_all("Account",{"company":co,"account_type":["in",["Expense","Cost of Goods Sold","Depreciation","Tax Expense"]],"is_group":0},pluck="name")
-    data = []
-    def _bal(acc):
-        r = frappe.db.sql("""SELECT COALESCE(SUM(credit-debit),0) FROM `tabJournal Entry Account` jea JOIN `tabJournal Entry` je ON je.name=jea.parent WHERE jea.account=%s AND je.docstatus=1 AND je.posting_date BETWEEN %s AND %s""", (acc, fd, td))[0][0]
-        return flt(r)
-    if inc:
-        data.append({"account":"<b>Income</b>"})
-        for a in inc:
-            b = _bal(a)
-            data.append({"account":a,"credit":b if b>0 else None,"debit":-b if b<0 else None,"balance":b})
-    if exp:
-        data.append({"account":"<b>Expenses</b>"})
-        for a in exp:
-            b = _bal(a)
-            data.append({"account":a,"debit":b if b>0 else None,"credit":-b if b<0 else None,"balance":-b})
-    return cols, data

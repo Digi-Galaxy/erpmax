@@ -1,29 +1,20 @@
 {
- "add_total_row": 1,
+ "add_total_row": 0,
  "columns": [],
  "disabled": 0,
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
+ "idx": 0,
  "is_standard": "Yes",
- "javascript": "",
- "json": "",
- "modified": "2025-01-01 00:00:00",
+ "json": "{}",
+ "modified": "2025-07-14 19:26:00.000000",
+ "module": "Reporting",
  "name": "Income and Expenditure",
- "prepared_report": 0,
  "query": "",
  "ref_doctype": "Journal Entry",
  "report_name": "Income and Expenditure",
+ "report_script": "",
  "report_type": "Script Report",
- "roles": [
-  {
-   "role": "Accounts Manager"
-  },
-  {
-   "role": "Accounts User"
-  },
-  {
-   "role": "Auditor"
-  }
- ]
+ "roles": []
 }

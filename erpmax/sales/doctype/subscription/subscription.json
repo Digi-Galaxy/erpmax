@@ -1,0 +1,31 @@
+{
+ "actions": [], "creation": "2026-07-15 00:00:00", "doctype": "DocType", "engine": "InnoDB",
+ "field_order": ["customer", "customer_name", "company", "column_break_3", "status", "sb_dates", "start_date", "end_date", "trial_period_end", "sb_schedule", "billing_interval", "billing_interval_count", "generate_invoice_at", "days_until_due", "column_break_12", "submit_invoice", "cancel_at_period_end", "sb_plans", "plans", "sb_invoices", "invoices", "notes"],
+ "fields": [
+  {"fieldname": "customer", "fieldtype": "Link", "in_standard_filter": 1, "label": "Customer", "options": "Customer", "reqd": 1},
+  {"fieldname": "customer_name", "fieldtype": "Data", "label": "Customer Name", "fetch_from": "customer.customer_name", "read_only": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1},
+  {"fieldname": "column_break_3", "fieldtype": "Column Break"},
+  {"default": "Active", "fieldname": "status", "fieldtype": "Select", "in_list_view": 1, "label": "Status", "options": "\nTrialling\nActive\nPast Due Date\nCancelled\nCompleted", "read_only": 1},
+  {"fieldname": "sb_dates", "fieldtype": "Section Break", "label": "Dates"},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date", "reqd": 1},
+  {"fieldname": "end_date", "fieldtype": "Date", "label": "End Date"},
+  {"fieldname": "trial_period_end", "fieldtype": "Date", "label": "Trial Period End"},
+  {"fieldname": "sb_schedule", "fieldtype": "Section Break", "label": "Schedule"},
+  {"default": "Month", "fieldname": "billing_interval", "fieldtype": "Select", "label": "Billing Interval", "options": "\nDay\nWeek\nMonth\nYear", "reqd": 1},
+  {"default": "1", "fieldname": "billing_interval_count", "fieldtype": "Int", "label": "Billing Interval Count", "reqd": 1},
+  {"default": "End of the current subscription period", "fieldname": "generate_invoice_at", "fieldtype": "Select", "label": "Generate Invoice At", "options": "\nBeginning of the current subscription period\nEnd of the current subscription period", "reqd": 1},
+  {"default": "0", "fieldname": "days_until_due", "fieldtype": "Int", "label": "Days Until Due"},
+  {"fieldname": "column_break_12", "fieldtype": "Column Break"},
+  {"default": "1", "fieldname": "submit_invoice", "fieldtype": "Check", "label": "Submit Invoice Automatically"},
+  {"default": "0", "fieldname": "cancel_at_period_end", "fieldtype": "Check", "label": "Cancel at Period End"},
+  {"fieldname": "sb_plans", "fieldtype": "Section Break", "label": "Plans"},
+  {"fieldname": "plans", "fieldtype": "Table", "label": "Plans", "options": "Subscription Plan Detail", "reqd": 1},
+  {"fieldname": "sb_invoices", "fieldtype": "Section Break", "label": "Generated Invoices"},
+  {"fieldname": "invoices", "fieldtype": "Table", "label": "Invoices", "options": "Subscription Invoice", "read_only": 1},
+  {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+ ],
+ "modified": "2026-07-15 00:00:00", "module": "Sales", "name": "Subscription",
+ "permissions": [{"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1}, {"create": 1, "read": 1, "role": "Sales Manager", "write": 1, "delete": 1}, {"read": 1, "role": "Sales User"}],
+ "search_fields": "customer,customer_name", "sort_field": "modified", "track_changes": 1, "track_seen": 1
+}

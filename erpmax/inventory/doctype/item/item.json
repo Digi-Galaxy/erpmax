@@ -1,26 +1,196 @@
 {
- "actions": [], "allow_rename": 1, "autoname": "field:item_name", "creation": "2026-07-01 00:00:00",
- "doctype": "DocType", "engine": "InnoDB",
-  "field_order": ["item_name", "item_type", "company", "item_category", "region", "distributor", "commissionable", "column_break_3", "uom", "rate", "item_description", "sb_accounting", "income_account", "expense_account", "column_break_9", "stock_uom"],
- "fields": [
-  {"fieldname": "item_name", "fieldtype": "Data", "in_list_view": 1, "label": "Item Name", "reqd": 1, "unique": 1},
-  {"fieldname": "item_type", "fieldtype": "Select", "in_list_view": 1, "label": "Type", "options": "\nProduct\nService", "reqd": 1},
-   {"fieldname": "company", "fieldtype": "Link", "in_standard_filter": 1, "label": "Company", "options": "Company", "reqd": 1},
-   {"fieldname": "item_category", "fieldtype": "Link", "label": "Item Category", "options": "Item Category"},
-   {"fieldname": "region", "fieldtype": "Link", "label": "Region", "options": "Region"},
-   {"fieldname": "distributor", "fieldtype": "Link", "label": "Distributor", "options": "Distributor"},
-   {"default": "0", "fieldname": "commissionable", "fieldtype": "Check", "label": "Commissionable"},
-   {"fieldname": "column_break_3", "fieldtype": "Column Break"},
-   {"fieldname": "uom", "fieldtype": "Data", "in_list_view": 1, "label": "UOM"},
-   {"fieldname": "rate", "fieldtype": "Currency", "label": "Default Rate"},
-   {"fieldname": "item_description", "fieldtype": "Small Text", "label": "Item Description"},
-   {"fieldname": "sb_accounting", "fieldtype": "Section Break", "label": "Accounting"},
-  {"fieldname": "income_account", "fieldtype": "Link", "label": "Default Income Account", "options": "Account"},
-  {"fieldname": "expense_account", "fieldtype": "Link", "label": "Default Expense Account", "options": "Account"},
-  {"fieldname": "column_break_9", "fieldtype": "Column Break"},
-  {"fieldname": "stock_uom", "fieldtype": "Data", "label": "Stock UOM"}
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:item_name",
+ "creation": "2026-07-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item_name",
+  "item_type",
+  "company",
+  "item_category",
+  "region",
+  "distributor",
+  "commissionable",
+  "column_break_3",
+  "uom",
+  "rate",
+  "item_description",
+  "sb_accounting",
+  "income_account",
+  "expense_account",
+  "column_break_9",
+  "stock_uom",
+  "has_batch_no",
+  "has_serial_no",
+  "batch_number_series",
+  "serial_no_series",
+  "has_expiry_date",
+  "shelf_life_in_days"
  ],
- "modified": "2026-07-01 00:00:00", "module": "Inventory", "name": "Item",
- "permissions": [{"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1}, {"create": 1, "read": 1, "role": "Item Manager", "write": 1}, {"read": 1, "role": "Sales User"}, {"read": 1, "role": "Purchase User"}],
- "search_fields": "item_name", "sort_field": "modified", "title_field": "item_name", "track_changes": 1, "track_seen": 1
+ "fields": [
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "item_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "\nProduct\nService",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_category",
+   "fieldtype": "Link",
+   "label": "Item Category",
+   "options": "Item Category"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "Region"
+  },
+  {
+   "fieldname": "distributor",
+   "fieldtype": "Link",
+   "label": "Distributor",
+   "options": "Distributor"
+  },
+  {
+   "default": "0",
+   "fieldname": "commissionable",
+   "fieldtype": "Check",
+   "label": "Commissionable"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "UOM"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Default Rate"
+  },
+  {
+   "fieldname": "item_description",
+   "fieldtype": "Small Text",
+   "label": "Item Description"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_batch_no",
+   "fieldtype": "Check",
+   "label": "Has Batch No"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_serial_no",
+   "fieldtype": "Check",
+   "label": "Has Serial No"
+  },
+  {
+   "fieldname": "batch_number_series",
+   "fieldtype": "Data",
+   "label": "Batch Number Series",
+   "depends_on": "has_batch_no"
+  },
+  {
+   "fieldname": "serial_no_series",
+   "fieldtype": "Data",
+   "label": "Serial Number Series",
+   "depends_on": "has_serial_no"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_expiry_date",
+   "fieldtype": "Check",
+   "label": "Has Expiry Date",
+   "depends_on": "has_batch_no"
+  },
+  {
+   "fieldname": "shelf_life_in_days",
+   "fieldtype": "Int",
+   "label": "Shelf Life In Days",
+   "depends_on": "has_expiry_date"
+  },
+  {
+   "fieldname": "sb_accounting",
+   "fieldtype": "Section Break",
+   "label": "Accounting"
+  },
+  {
+   "fieldname": "income_account",
+   "fieldtype": "Link",
+   "label": "Default Income Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "expense_account",
+   "fieldtype": "Link",
+   "label": "Default Expense Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stock_uom",
+   "fieldtype": "Data",
+   "label": "Stock UOM"
+  }
+ ],
+ "modified": "2026-07-15 00:00:00.000000",
+ "module": "Inventory",
+ "name": "Item",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Item Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Sales User"
+  },
+  {
+   "read": 1,
+   "role": "Purchase User"
+  }
+ ],
+ "search_fields": "item_name",
+ "sort_field": "modified",
+ "title_field": "item_name",
+ "track_changes": 1,
+ "track_seen": 1
 }

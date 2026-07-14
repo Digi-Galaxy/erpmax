@@ -1,0 +1,22 @@
+{
+ "actions": [], "allow_rename": 1, "autoname": "field:plan_name", "creation": "2026-07-15 00:00:00",
+ "doctype": "DocType", "engine": "InnoDB",
+ "field_order": ["plan_name", "item", "item_name", "column_break_4", "currency", "cost", "sb_billing", "billing_interval", "billing_interval_count", "column_break_9", "price_determination", "price_list"],
+ "fields": [
+  {"fieldname": "plan_name", "fieldtype": "Data", "in_list_view": 1, "label": "Plan Name", "reqd": 1, "unique": 1},
+  {"fieldname": "item", "fieldtype": "Link", "label": "Item", "options": "Item", "reqd": 1},
+  {"fieldname": "item_name", "fieldtype": "Data", "label": "Item Name", "fetch_from": "item.item_name", "read_only": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency", "reqd": 1},
+  {"fieldname": "cost", "fieldtype": "Currency", "label": "Cost", "reqd": 1},
+  {"fieldname": "sb_billing", "fieldtype": "Section Break", "label": "Billing"},
+  {"fieldname": "billing_interval", "fieldtype": "Select", "label": "Billing Interval", "options": "\nDay\nWeek\nMonth\nYear", "reqd": 1},
+  {"default": "1", "fieldname": "billing_interval_count", "fieldtype": "Int", "label": "Billing Interval Count", "reqd": 1},
+  {"fieldname": "column_break_9", "fieldtype": "Column Break"},
+  {"default": "Fixed Rate", "fieldname": "price_determination", "fieldtype": "Select", "hidden": 1, "label": "Price Determination", "options": "\nFixed Rate\nBased On Price List"},
+  {"fieldname": "price_list", "fieldtype": "Link", "label": "Price List", "options": "Price List", "depends_on": "eval:doc.price_determination=='Based On Price List'"}
+ ],
+ "modified": "2026-07-15 00:00:00", "module": "Sales", "name": "Subscription Plan",
+ "permissions": [{"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1}, {"read": 1, "role": "Sales Manager"}],
+ "search_fields": "plan_name,item", "sort_field": "modified", "title_field": "plan_name", "track_changes": 1
+}

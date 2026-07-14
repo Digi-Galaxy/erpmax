@@ -4,7 +4,7 @@
   "name": "Commission Analysis",
   "report_name": "Commission Analysis",
   "ref_doctype": "Commission Ledger",
-  "module": "ERPMax",
+  "module": "Commerce",
   "report_type": "Script Report",
   "add_total_row": 1,
   "disabled": 0,

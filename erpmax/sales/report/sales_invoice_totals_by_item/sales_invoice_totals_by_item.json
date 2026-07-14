@@ -1,0 +1,17 @@
+{
+  "doctype": "Report",
+  "is_standard": "Yes",
+  "name": "Sales Invoice Totals by Item",
+  "report_name": "Sales Invoice Totals by Item",
+  "ref_doctype": "Sales Invoice",
+  "module": "Sales",
+  "report_type": "Script Report",
+  "add_total_row": 1,
+  "disabled": 0,
+  "prepared_report": 0,
+  "roles": [
+    {
+      "role": "All"
+    }
+  ]
+}

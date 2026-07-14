@@ -18,31 +18,126 @@
   "valuation_rate",
   "stock_value",
   "sb_more",
-  "is_cancelled"
+  "is_cancelled",
+  "batch_no",
+  "serial_no"
  ],
  "fields": [
-  {"fieldname": "item_code", "fieldtype": "Link", "label": "Item Code", "options": "Item", "in_list_view": 1, "reqd": 1},
-  {"fieldname": "item_name", "fieldtype": "Data", "label": "Item Name", "in_list_view": 1},
-  {"fieldname": "warehouse", "fieldtype": "Link", "label": "Warehouse", "options": "Warehouse", "in_list_view": 1, "reqd": 1},
-  {"fieldname": "posting_date", "fieldtype": "Date", "label": "Posting Date", "reqd": 1},
-  {"fieldname": "posting_time", "fieldtype": "Time", "label": "Posting Time"},
-  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
-  {"fieldname": "voucher_type", "fieldtype": "Data", "label": "Voucher Type", "reqd": 1},
-  {"fieldname": "voucher_no", "fieldtype": "Data", "label": "Voucher No", "reqd": 1},
-  {"fieldname": "sb_qty", "fieldtype": "Section Break", "label": "Quantity"},
-  {"fieldname": "actual_qty", "fieldtype": "Float", "label": "Actual Qty", "reqd": 1, "in_list_view": 1},
-  {"fieldname": "qty_after_transaction", "fieldtype": "Float", "label": "Qty After Transaction"},
-  {"fieldname": "valuation_rate", "fieldtype": "Currency", "label": "Valuation Rate"},
-  {"fieldname": "stock_value", "fieldtype": "Currency", "label": "Stock Value"},
-  {"fieldname": "sb_more", "fieldtype": "Section Break"},
-  {"fieldname": "is_cancelled", "fieldtype": "Check", "label": "Is Cancelled", "default": 0}
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "in_list_view": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "voucher_type",
+   "fieldtype": "Data",
+   "label": "Voucher Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "voucher_no",
+   "fieldtype": "Data",
+   "label": "Voucher No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_qty",
+   "fieldtype": "Section Break",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "actual_qty",
+   "fieldtype": "Float",
+   "label": "Actual Qty",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "qty_after_transaction",
+   "fieldtype": "Float",
+   "label": "Qty After Transaction"
+  },
+  {
+   "fieldname": "valuation_rate",
+   "fieldtype": "Currency",
+   "label": "Valuation Rate"
+  },
+  {
+   "fieldname": "stock_value",
+   "fieldtype": "Currency",
+   "label": "Stock Value"
+  },
+  {
+   "fieldname": "sb_more",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "label": "Batch No",
+   "options": "Batch"
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Small Text",
+   "label": "Serial No"
+  },
+  {
+   "fieldname": "is_cancelled",
+   "fieldtype": "Check",
+   "label": "Is Cancelled",
+   "default": 0
+  }
  ],
- "modified": "2026-07-04 00:00:00",
+ "modified": "2026-07-15 00:00:00.000000",
  "module": "Inventory",
  "name": "Stock Ledger Entry",
  "owner": "Administrator",
  "permissions": [
-  {"create": 0, "delete": 0, "email": 0, "export": 0, "print": 0, "read": 1, "report": 1, "role": "System Manager", "share": 0, "write": 0}
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 0,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 0
+  }
  ],
  "search_fields": "item_name, voucher_no",
  "sort_field": "modified",

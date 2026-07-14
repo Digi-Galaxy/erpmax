@@ -1,0 +1,20 @@
+{
+ "actions": [], "allow_rename": 1, "autoname": "field:serial_no", "creation": "2026-07-15 00:00:00",
+ "doctype": "DocType", "engine": "InnoDB",
+ "field_order": ["serial_no", "item_code", "item_name", "batch_no", "column_break_5", "status", "warehouse", "company", "purchase_rate", "customer"],
+ "fields": [
+  {"fieldname": "serial_no", "fieldtype": "Data", "in_list_view": 1, "label": "Serial No", "reqd": 1, "unique": 1},
+  {"fieldname": "item_code", "fieldtype": "Link", "in_list_view": 1, "label": "Item Code", "options": "Item", "reqd": 1},
+  {"fieldname": "item_name", "fieldtype": "Data", "label": "Item Name", "fetch_from": "item_code.item_name", "read_only": 1},
+  {"fieldname": "batch_no", "fieldtype": "Link", "label": "Batch No", "options": "Batch", "read_only": 1},
+  {"fieldname": "column_break_5", "fieldtype": "Column Break"},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "\nActive\nInactive\nConsumed\nDelivered\nExpired", "read_only": 1, "default": "Active"},
+  {"fieldname": "warehouse", "fieldtype": "Link", "label": "Warehouse", "options": "Warehouse", "read_only": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1},
+  {"fieldname": "purchase_rate", "fieldtype": "Currency", "label": "Purchase Rate", "read_only": 1},
+  {"fieldname": "customer", "fieldtype": "Link", "label": "Customer", "options": "Customer", "read_only": 1}
+ ],
+ "modified": "2026-07-15 00:00:00", "module": "Inventory", "name": "Serial No",
+ "permissions": [{"create": 1, "delete": 1, "read": 1, "role": "System Manager", "write": 1}, {"read": 1, "role": "Stock User"}, {"read": 1, "role": "Stock Manager"}],
+ "search_fields": "serial_no,item_code", "sort_field": "modified", "title_field": "serial_no", "track_changes": 1
+}

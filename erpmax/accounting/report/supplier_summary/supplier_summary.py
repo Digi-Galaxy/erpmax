@@ -16,7 +16,7 @@ def execute(filters=None):
         params.update({"from_date": filters["from_date"], "to_date": filters["to_date"]})
 
     rows = frappe.db.sql("""SELECT supplier,
-              SUM(grand_total) AS billed,
+              SUM(base_grand_total) AS billed,
               SUM(paid_amount) AS paid,
               SUM(outstanding_amount) AS outstanding
        FROM `tabPurchase Invoice`

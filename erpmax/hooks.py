@@ -34,6 +34,7 @@ calendars = ["Holiday List"]
 scheduler_events = {
     "daily": [
         "erpmax.sales.doctype.recurring_invoice_template.recurring_invoice_template.process_recurring_invoices",
+        "erpmax.sales.doctype.subscription.subscription.process_all_subscriptions",
         "erpmax.banking.doctype.bank_connection.bank_connection.sync_all_connected_banks",
     ]
 }

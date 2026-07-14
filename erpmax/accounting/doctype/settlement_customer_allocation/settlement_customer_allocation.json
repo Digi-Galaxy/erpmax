@@ -1,0 +1,14 @@
+{
+ "actions": [], "creation": "2026-07-15 00:00:00", "doctype": "DocType", "engine": "InnoDB",
+ "editable_grid": 1,
+ "field_order": ["sales_invoice", "posting_date", "invoice_total", "outstanding", "allocate_amount", "remarks"],
+ "fields": [
+  {"fieldname": "sales_invoice", "fieldtype": "Link", "in_list_view": 1, "label": "Sales Invoice", "options": "Sales Invoice", "reqd": 1},
+  {"fieldname": "posting_date", "fieldtype": "Date", "in_list_view": 1, "label": "Posting Date", "fetch_from": "sales_invoice.posting_date", "read_only": 1},
+  {"fieldname": "invoice_total", "fieldtype": "Currency", "label": "Invoice Total", "fetch_from": "sales_invoice.grand_total", "read_only": 1},
+  {"fieldname": "outstanding", "fieldtype": "Currency", "in_list_view": 1, "label": "Outstanding", "fetch_from": "sales_invoice.outstanding_amount", "read_only": 1},
+  {"fieldname": "allocate_amount", "fieldtype": "Currency", "in_list_view": 1, "label": "Allocate Amount", "reqd": 1},
+  {"fieldname": "remarks", "fieldtype": "Data", "label": "Remarks"}
+ ],
+ "istable": 1, "modified": "2026-07-15 00:00:00", "module": "Accounting", "name": "Settlement Customer Allocation"
+}

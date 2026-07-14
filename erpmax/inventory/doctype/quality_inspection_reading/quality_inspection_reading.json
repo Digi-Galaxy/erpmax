@@ -1,0 +1,27 @@
+{
+ "actions": [], "creation": "2026-07-15 00:00:00", "doctype": "DocType", "engine": "InnoDB",
+ "field_order": ["specification", "status", "numeric", "sb_values", "min_value", "max_value", "column_break_5", "reading_value", "sb_readings", "reading_1", "reading_2", "reading_3", "reading_4", "reading_5", "column_break_8", "reading_6", "reading_7", "reading_8", "reading_9", "reading_10"],
+ "fields": [
+  {"fieldname": "specification", "fieldtype": "Data", "in_list_view": 1, "label": "Parameter", "reqd": 1},
+  {"fieldname": "status", "fieldtype": "Select", "in_list_view": 1, "label": "Status", "options": "\nAccepted\nRejected", "default": "Accepted"},
+  {"default": "1", "fieldname": "numeric", "fieldtype": "Check", "label": "Numeric"},
+  {"fieldname": "sb_values", "fieldtype": "Section Break", "label": "Acceptance Criteria"},
+  {"fieldname": "min_value", "fieldtype": "Float", "label": "Minimum Value", "depends_on": "numeric"},
+  {"fieldname": "max_value", "fieldtype": "Float", "label": "Maximum Value", "depends_on": "numeric"},
+  {"fieldname": "column_break_5", "fieldtype": "Column Break"},
+  {"fieldname": "reading_value", "fieldtype": "Data", "label": "Reading Value", "depends_on": "eval:doc.numeric==0"},
+  {"fieldname": "sb_readings", "fieldtype": "Section Break", "label": "Readings"},
+  {"fieldname": "reading_1", "fieldtype": "Float", "label": "Reading 1", "depends_on": "numeric"},
+  {"fieldname": "reading_2", "fieldtype": "Float", "label": "Reading 2", "depends_on": "numeric"},
+  {"fieldname": "reading_3", "fieldtype": "Float", "label": "Reading 3", "depends_on": "numeric"},
+  {"fieldname": "reading_4", "fieldtype": "Float", "label": "Reading 4", "depends_on": "numeric"},
+  {"fieldname": "reading_5", "fieldtype": "Float", "label": "Reading 5", "depends_on": "numeric"},
+  {"fieldname": "column_break_8", "fieldtype": "Column Break"},
+  {"fieldname": "reading_6", "fieldtype": "Float", "label": "Reading 6", "depends_on": "numeric"},
+  {"fieldname": "reading_7", "fieldtype": "Float", "label": "Reading 7", "depends_on": "numeric"},
+  {"fieldname": "reading_8", "fieldtype": "Float", "label": "Reading 8", "depends_on": "numeric"},
+  {"fieldname": "reading_9", "fieldtype": "Float", "label": "Reading 9", "depends_on": "numeric"},
+  {"fieldname": "reading_10", "fieldtype": "Float", "label": "Reading 10", "depends_on": "numeric"}
+ ],
+ "istable": 1, "modified": "2026-07-15 00:00:00", "module": "Inventory", "name": "Quality Inspection Reading"
+}

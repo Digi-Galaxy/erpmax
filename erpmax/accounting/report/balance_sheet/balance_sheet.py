@@ -1,19 +1,54 @@
 import frappe
 from frappe import _
-def flt(v): return round(float(v or 0), 2)
-def execute(f=None):
-    cols = [{"label":_("Account"),"fieldname":"account","fieldtype":"Data","width":300},{"label":_("Balance"),"fieldname":"balance","fieldtype":"Currency","width":150}]
-    co = f.get("company") if f else None
-    ad = f.get("as_on_date") if f else None
-    if not all([co, ad]): return cols, []
-    data = []
-    def _bal(acc):
-        r = frappe.db.sql("""SELECT COALESCE(SUM(debit-credit),0) FROM `tabJournal Entry Account` jea JOIN `tabJournal Entry` je ON je.name=jea.parent WHERE jea.account=%s AND je.docstatus=1 AND je.posting_date<=%s AND je.company=%s""", (acc, ad, co))[0][0]
-        return flt(r)
-    for section, types in [("Assets",["Asset","Fixed Asset","Current Asset","Bank","Cash","Receivable","Stock"]),("Liabilities",["Liability","Current Liability","Payable"]),("Equity",["Equity","Capital","Retained Earnings"])]:
-        accs = frappe.db.get_all("Account",{"company":co,"account_type":["in",types],"is_group":0},pluck="name")
-        if accs:
-            data.append({"account":"<b>"+section+"</b>"})
-            for a in accs:
-                data.append({"account":a,"balance":_bal(a)})
-    return cols, data
+
+def execute(filters=None):
+    filters = filters or {}
+    cond = ["gl.is_cancelled = 0"]
+    params = {}
+    if filters.get("company"):
+        cond.append("gl.company=%(company)s")
+        params["company"] = filters["company"]
+    if filters.get("to_date"):
+        cond.append("gl.posting_date <= %(to_date)s")
+        params["to_date"] = filters["to_date"]
+
+    rows = frappe.db.sql("""SELECT gl.account, a.root_type, a.account_type,
+              SUM(gl.debit - gl.credit) AS balance
+       FROM `tabGL Entry` gl
+       LEFT JOIN `tabAccount` a ON a.name = gl.account
+       WHERE {cond} AND a.root_type IN ('Asset', 'Liability', 'Equity')
+       GROUP BY gl.account, a.root_type, a.account_type
+       ORDER BY a.root_type, gl.account""".format(cond=" AND ".join(cond)),
+        params, as_dict=True)
+    assets = []
+    liabilities = []
+    equity = []
+    asset_total = 0
+    liability_total = 0
+    equity_total = 0
+    for r in rows:
+        bal = r.balance or 0
+        if r.root_type == "Asset":
+            assets.append({"account": r.account, "amount": abs(bal)})
+            asset_total += abs(bal)
+        elif r.root_type == "Liability":
+            liabilities.append({"account": r.account, "amount": abs(bal)})
+            liability_total += abs(bal)
+        else:
+            equity.append({"account": r.account, "amount": abs(bal)})
+            equity_total += abs(bal)
+    data = [{"account": "<b>ASSETS</b>", "amount": 0}] + assets
+    data += [{"account": "<b>Total Assets</b>", "amount": asset_total}]
+    data += [{"account": "", "amount": 0}]
+    data += [{"account": "<b>LIABILITIES</b>", "amount": 0}] + liabilities
+    data += [{"account": "<b>Total Liabilities</b>", "amount": liability_total}]
+    data += [{"account": "", "amount": 0}]
+    data += [{"account": "<b>EQUITY</b>", "amount": 0}] + equity
+    data += [{"account": "<b>Total Equity</b>", "amount": equity_total}]
+    return get_columns(), data
+
+def get_columns():
+    return [
+        {"label": _("Account"), "fieldname": "account", "fieldtype": "Data", "width": 350},
+        {"label": _("Balance"), "fieldname": "amount", "fieldtype": "Currency", "width": 150},
+    ]

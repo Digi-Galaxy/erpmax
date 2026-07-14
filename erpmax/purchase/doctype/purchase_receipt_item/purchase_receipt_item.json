@@ -55,5 +55,15 @@
    "fieldtype": "Data"
   }
  ],
- "permissions": []
+ "permissions": [],
+ "field_order": [
+  "item",
+  "description",
+  "qty",
+  "column_break_pri1",
+  "rate",
+  "amount",
+  "purchase_order",
+  "po_item"
+ ]
 }

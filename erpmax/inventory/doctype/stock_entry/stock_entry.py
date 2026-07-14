@@ -75,6 +75,8 @@ class StockEntry(Document):
                     "actual_qty": -qty,
                     "valuation_rate": item.rate or 0,
                     "stock_value": -(qty * (item.rate or 0)),
+                    "batch_no": item.batch_no or "",
+                    "serial_no": item.serial_no or "",
                 })
                 sle_out.flags.ignore_permissions = True
                 sle_out.insert()
@@ -98,6 +100,8 @@ class StockEntry(Document):
                     "actual_qty": actual_qty,
                     "valuation_rate": item.rate or 0,
                     "stock_value": actual_qty * (item.rate or 0),
+                    "batch_no": item.batch_no or "",
+                    "serial_no": item.serial_no or "",
                 })
                 sle.flags.ignore_permissions = True
                 sle.insert()

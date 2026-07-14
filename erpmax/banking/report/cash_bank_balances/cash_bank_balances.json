@@ -1,0 +1,17 @@
+{
+  "doctype": "Report",
+  "is_standard": "Yes",
+  "name": "Cash and Bank Balances",
+  "report_name": "Cash and Bank Balances",
+  "ref_doctype": "GL Entry",
+  "module": "Banking",
+  "report_type": "Script Report",
+  "add_total_row": 1,
+  "disabled": 0,
+  "prepared_report": 0,
+  "roles": [
+    {
+      "role": "All"
+    }
+  ]
+}
