@@ -34,25 +34,35 @@ TEMPLATES_LIST = [
 ]
 
 @frappe.whitelist()
-def onboard(template="GAAP"):
+def onboard(template="GAAP", company=None):
     COA_TEMPLATES = _get_templates_cache()
     if template not in COA_TEMPLATES:
         frappe.throw(_("Unknown COA template: {0}").format(template))
     config = COA_TEMPLATES[template]
 
+    if not company:
+        company = frappe.db.get_value("Company", {}, "name")
+    if not company:
+        company = frappe.db.get_value("Company", {}, "name")
+    if not company:
+        company = _create_default_company()
+    if not company:
+        frappe.throw(_("No company found. Please create a company first."))
+
     created = []
     for ac in config.get("accounts", []):
-        existing = frappe.db.exists("Account", {"account_name": ac["account_name"]})
+        existing = frappe.db.exists("Account", {"account_name": ac["account_name"], "company": company})
         if existing:
             continue
         parent_name = None
         if ac.get("parent_account"):
-            parent = frappe.db.get_value("Account", {"account_name": ac["parent_account"]}, "name")
+            parent = frappe.db.get_value("Account", {"account_name": ac["parent_account"], "company": company}, "name")
             if parent:
                 parent_name = parent
         doc = frappe.get_doc({
             "doctype": "Account",
             "account_name": ac["account_name"],
+            "company": company,
             "root_type": ac["root_type"],
             "is_group": ac.get("is_group", 0),
             "account_number": ac.get("account_number"),
@@ -70,7 +80,25 @@ def onboard(template="GAAP"):
     frappe.db.set_default("erpmax_currency", config.get("currency", "SAR"))
     frappe.db.set_default("erpmax_vat_rate", config.get("vat_rate", 0))
 
-    return {"created": created, "template": template, "currency": config.get("currency", "SAR"), "total": len(created)}
+    return {"created": created, "template": template, "company": company, "currency": config.get("currency", "SAR"), "total": len(created)}
+
+
+def _create_default_company():
+    """Create a default company if none exists."""
+    if frappe.db.exists("Company", "Default Company"):
+        return "Default Company"
+    doc = frappe.get_doc({
+        "doctype": "Company",
+        "company_name": "Default Company",
+        "abbr": "DC",
+        "country": "United States",
+        "default_currency": "USD",
+        "address_line_1": "123 Main Street",
+        "city": "New York",
+    })
+    doc.flags.ignore_permissions = True
+    doc.insert()
+    return doc.name
 
 @frappe.whitelist()
 def get_templates():
