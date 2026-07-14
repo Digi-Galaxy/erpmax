@@ -1,0 +1,361 @@
+{
+ "title": "International IFRS",
+ "currency": "USD",
+ "vat_rate": 15,
+ "accounts": [
+  {
+   "account_name": "Non-Current Assets",
+   "root_type": "Asset",
+   "is_group": 1
+  },
+  {
+   "account_name": "Property, Plant and Equipment",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Non-Current Assets"
+  },
+  {
+   "account_name": "Land and Buildings",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Property, Plant and Equipment"
+  },
+  {
+   "account_name": "Plant and Machinery",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Property, Plant and Equipment"
+  },
+  {
+   "account_name": "Fixtures and Fittings",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Property, Plant and Equipment"
+  },
+  {
+   "account_name": "Right-of-Use Assets",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Non-Current Assets",
+   "account_number": "IFRS16"
+  },
+  {
+   "account_name": "Intangible Assets",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Non-Current Assets"
+  },
+  {
+   "account_name": "Goodwill",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Intangible Assets"
+  },
+  {
+   "account_name": "Patents and Trademarks",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Intangible Assets"
+  },
+  {
+   "account_name": "Investments in Associates",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Non-Current Assets"
+  },
+  {
+   "account_name": "Deferred Tax Assets",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Non-Current Assets"
+  },
+  {
+   "account_name": "Current Assets",
+   "root_type": "Asset",
+   "is_group": 1
+  },
+  {
+   "account_name": "Inventories",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Raw Materials",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Inventories"
+  },
+  {
+   "account_name": "Work in Progress",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Inventories"
+  },
+  {
+   "account_name": "Finished Goods",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Inventories"
+  },
+  {
+   "account_name": "Trade Receivables",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Other Receivables",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Cash and Cash Equivalents",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Cash on Hand",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Cash and Cash Equivalents"
+  },
+  {
+   "account_name": "Cash at Bank",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Cash and Cash Equivalents"
+  },
+  {
+   "account_name": "Prepaid Expenses",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Current Tax Assets",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Equity",
+   "root_type": "Equity",
+   "is_group": 1
+  },
+  {
+   "account_name": "Share Capital",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Equity"
+  },
+  {
+   "account_name": "Share Premium",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Equity"
+  },
+  {
+   "account_name": "Retained Earnings",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Equity"
+  },
+  {
+   "account_name": "Revaluation Reserve",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Equity"
+  },
+  {
+   "account_name": "Foreign Currency Translation Reserve",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Equity"
+  },
+  {
+   "account_name": "Non-Controlling Interest",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Equity"
+  },
+  {
+   "account_name": "Non-Current Liabilities",
+   "root_type": "Liability",
+   "is_group": 1
+  },
+  {
+   "account_name": "Borrowings",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Non-Current Liabilities"
+  },
+  {
+   "account_name": "Lease Liabilities",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Non-Current Liabilities"
+  },
+  {
+   "account_name": "Deferred Tax Liabilities",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Non-Current Liabilities"
+  },
+  {
+   "account_name": "Provisions",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Non-Current Liabilities"
+  },
+  {
+   "account_name": "Current Liabilities",
+   "root_type": "Liability",
+   "is_group": 1
+  },
+  {
+   "account_name": "Trade Payables",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Current Liabilities"
+  },
+  {
+   "account_name": "Accrued Expenses",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Current Liabilities"
+  },
+  {
+   "account_name": "Current Tax Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Current Liabilities"
+  },
+  {
+   "account_name": "VAT Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Current Liabilities"
+  },
+  {
+   "account_name": "Deferred Revenue",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Current Liabilities"
+  },
+  {
+   "account_name": "Income",
+   "root_type": "Income",
+   "is_group": 1
+  },
+  {
+   "account_name": "Revenue",
+   "root_type": "Income",
+   "is_group": 1,
+   "parent_account": "Income"
+  },
+  {
+   "account_name": "Sales of Goods",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Revenue"
+  },
+  {
+   "account_name": "Rendering of Services",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Revenue"
+  },
+  {
+   "account_name": "Interest Income",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Income"
+  },
+  {
+   "account_name": "Other Income",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Income"
+  },
+  {
+   "account_name": "Expenses",
+   "root_type": "Expense",
+   "is_group": 1
+  },
+  {
+   "account_name": "Cost of Sales",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Expenses"
+  },
+  {
+   "account_name": "Distribution Costs",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Expenses"
+  },
+  {
+   "account_name": "Administrative Expenses",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "Expenses"
+  },
+  {
+   "account_name": "Salaries",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Rent",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Utilities",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Office Expenses",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Professional Fees",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Depreciation",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Expenses"
+  },
+  {
+   "account_name": "Amortization",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Expenses"
+  },
+  {
+   "account_name": "Finance Costs",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Expenses"
+  },
+  {
+   "account_name": "Income Tax Expense",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Expenses"
+  }
+ ]
+}

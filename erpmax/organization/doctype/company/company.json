@@ -50,16 +50,16 @@
   "address_line_2",
   "building_no",
   "subdivision",
-   "city",
-   "cb_address",
-   "state",
-   "division",
-   "district",
-   "subdistrict",
-   "union_council",
-   "town",
-   "country",
-   "zip_code",
+  "city",
+  "cb_address",
+  "state",
+  "division",
+  "district",
+  "subdistrict",
+  "union_council",
+  "town",
+  "country",
+  "zip_code",
   "latitude",
   "longitude",
   "map_view",
@@ -120,8 +120,6 @@
   "feature_tier",
   "enable_advanced_features",
   "enable_multi_branch",
-  "region",
-  "default_distributor",
   "cb_settings",
   "max_users",
   "max_branches",
@@ -411,39 +409,39 @@
    "fieldname": "cb_address",
    "fieldtype": "Column Break"
   },
-   {
-    "fieldname": "state",
-    "fieldtype": "Data",
-    "label": "State / Province"
-   },
-   {
-    "fieldname": "division",
-    "fieldtype": "Data",
-    "label": "Division"
-   },
-   {
-    "fieldname": "district",
-    "fieldtype": "Data",
-    "label": "District"
-   },
-   {
-    "fieldname": "subdistrict",
-    "fieldtype": "Data",
-    "label": "Subdistrict / Tehsil"
-   },
-   {
-    "fieldname": "union_council",
-    "fieldtype": "Data",
-    "label": "Union Council"
-   },
-   {
-    "fieldname": "town",
-    "fieldtype": "Data",
-    "label": "Town / Village"
-   },
-   {
-    "fieldname": "country",
-    "fieldtype": "Link",
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State / Province"
+  },
+  {
+   "fieldname": "division",
+   "fieldtype": "Data",
+   "label": "Division"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District"
+  },
+  {
+   "fieldname": "subdistrict",
+   "fieldtype": "Data",
+   "label": "Subdistrict / Tehsil"
+  },
+  {
+   "fieldname": "union_council",
+   "fieldtype": "Data",
+   "label": "Union Council"
+  },
+  {
+   "fieldname": "town",
+   "fieldtype": "Data",
+   "label": "Town / Village"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
    "label": "Country",
    "options": "Country",
    "reqd": 1
@@ -1025,6 +1023,34 @@
    "label": "Company Accounts",
    "options": "Company Account",
    "read_only": 1
+  },
+  {
+   "fieldname": "sb_chart_of_accounts",
+   "fieldtype": "Section Break",
+   "label": "Chart of Accounts",
+   "insert_after": "coa_template"
+  },
+  {
+   "fieldname": "create_chart_of_accounts_based_on",
+   "fieldtype": "Select",
+   "label": "Create Chart of Accounts Based On",
+   "options": "Standard Template\nOur Templates\nStandard with Numbers",
+   "default": "Standard Template",
+   "insert_after": "sb_chart_of_accounts",
+   "reqd": 0
+  },
+  {
+   "fieldname": "chart_of_accounts_template",
+   "fieldtype": "Link",
+   "label": "Chart of Accounts Template",
+   "options": "Chart of Accounts Template",
+   "insert_after": "create_chart_of_accounts_based_on",
+   "depends_on": "eval:doc.create_chart_of_accounts_based_on==\"Our Templates\""
+  },
+  {
+   "fieldname": "cb_chart_of_accounts",
+   "fieldtype": "Column Break",
+   "insert_after": "chart_of_accounts_template"
   }
  ],
  "icon": "fa fa-building",
@@ -1032,7 +1058,7 @@
  "links": [],
  "modified": "2026-07-10 23:08:17.169731",
  "modified_by": "abc@test.com",
- "module": "Accounts",
+ "module": "Organization",
  "name": "Company",
  "naming_rule": "By fieldname",
  "nsm_parent_field": "parent_company",

@@ -32,6 +32,7 @@ class Company(NestedSet):
 
     def validate(self):
         self._apply_country_defaults()
+        self._suggest_coa_template()
 
     def after_insert(self):
         self.create_linked_address()
@@ -59,6 +60,19 @@ class Company(NestedSet):
             self.create_owner_user()
 
         self._update_linked_user_on_data_change()
+        self._handle_coa_creation()
+
+    COA_COUNTRY_MAP = {
+        "Saudi Arabia": "KSA",
+        "United States": "GAAP",
+        "United Kingdom": "UK",
+        "Germany": "SKR03",
+        "France": "PCG",
+        "Pakistan": "PK",
+        "Malaysia": "MY",
+        "United Arab Emirates": "UAE",
+    }
+    FALLBACK_COA = "IFRS"
 
     def _apply_country_defaults(self):
         if not self.country:
@@ -89,6 +103,75 @@ class Company(NestedSet):
             timezone = country.get("timezone") or country.get("default_timezone")
             if isinstance(timezone, str):
                 self.timezone = timezone
+
+    def _suggest_coa_template(self):
+        if self.coa_template:
+            return
+        if self.country in self.COA_COUNTRY_MAP:
+            self.coa_template = self.COA_COUNTRY_MAP[self.country]
+        if not self.coa_template:
+            self.coa_template = self.FALLBACK_COA
+
+    def _handle_coa_creation(self):
+        coa_triggered = self.get("__coa_triggered")
+        if coa_triggered:
+            return
+        if not self.has_value_changed("coa_template"):
+            return
+        if not self.coa_template:
+            return
+        self.__coa_triggered = True
+        self._create_chart_of_accounts()
+
+    def _create_chart_of_accounts(self):
+        if not self.coa_template:
+            return
+        from erpmax.accounting.api.coa import onboard
+        onboard(template=self.coa_template)
+        self._populate_company_accounts()
+
+    def _populate_company_accounts(self):
+        config = frappe.db.get_value("Company", self.name, "coa_template")
+        if not config:
+            config = self.coa_template
+        from erpmax.accounting.api.coa import get_template_config
+        tmpl = get_template_config(config)
+        if not tmpl:
+            return
+        currency = tmpl["currency"]
+        accounts = frappe.db.sql("""
+            SELECT name, account_name, account_currency, root_type
+            FROM `tabAccount`
+            WHERE account_currency = %s
+            ORDER BY name
+        """, currency, as_dict=1)
+        for ac in accounts:
+            existing = frappe.db.get_value("Company Account", {
+                "parent": self.name, "account": ac.name
+            })
+            if existing:
+                continue
+            ac_type = self._map_root_to_account_type(ac.root_type)
+            row = frappe.get_doc({
+                "doctype": "Company Account",
+                "parent": self.name,
+                "parentfield": "company_accounts",
+                "parenttype": "Company",
+                "account": ac.name,
+                "account_name": ac.account_name,
+                "account_type": ac_type,
+                "is_active": 1,
+                "account_currency": ac.account_currency or self.default_currency,
+            })
+            row.flags.ignore_permissions = True
+            row.insert()
+
+    def _map_root_to_account_type(self, root_type):
+        mapping = {
+            "Asset": "Bank", "Liability": "Payable",
+            "Income": "Income", "Expense": "Expense", "Equity": "Equity",
+        }
+        return mapping.get(root_type, "Other")
 
     def _update_linked_user_on_data_change(self):
         if not self.linked_user:
@@ -279,6 +362,23 @@ class Company(NestedSet):
             self.max_branches = self.max_branches or 1
 
 
+def get_permission_query_conditions(user=None):
+    user = user or frappe.session.user
+    if "System Manager" in frappe.get_roles(user):
+        return ""
+
+    user_sql = frappe.db.escape(user)
+    return f"(`tabCompany`.owner = {user_sql} OR `tabCompany`.linked_user = {user_sql})"
+
+
+def has_permission(doc, user=None, permission_type=None):
+    user = user or frappe.session.user
+    if "System Manager" in frappe.get_roles(user):
+        return True
+
+    return doc.owner == user or doc.linked_user == user
+
+
 @frappe.whitelist()
 def create_transaction_deletion_request(company):
     frappe.only_for("System Manager")
@@ -308,22 +408,6 @@ def apply_feature_profile(company, feature_tier):
     doc._apply_feature_tier()
     doc.save(ignore_permissions=True)
     return doc.as_dict()
-
-
-def get_permission_query_conditions(user=None):
-    """Hook used by reportview/list queries.
-
-    Returning None delegates filtering to standard Role + User Permission checks.
-    """
-    return None
-
-
-def has_permission(doc, ptype=None, user=None):
-    """Controller permission hook for Company.
-
-    Returning None keeps default Frappe permission evaluation intact.
-    """
-    return None
 
 
 @frappe.whitelist()

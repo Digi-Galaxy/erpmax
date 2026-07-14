@@ -1,0 +1,474 @@
+{
+ "title": "Germany SKR03",
+ "currency": "EUR",
+ "vat_rate": 19,
+ "accounts": [
+  {
+   "account_name": "Aktivkonten",
+   "root_type": "Asset",
+   "is_group": 1
+  },
+  {
+   "account_name": "Anlagevermögen",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Aktivkonten"
+  },
+  {
+   "account_name": "Grundstücke und Bauten",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Anlagevermögen",
+   "account_number": "0050"
+  },
+  {
+   "account_name": "Maschinen",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Anlagevermögen",
+   "account_number": "0200"
+  },
+  {
+   "account_name": "Betriebsausstattung",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Anlagevermögen",
+   "account_number": "0400"
+  },
+  {
+   "account_name": "Fuhrpark",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Anlagevermögen",
+   "account_number": "0500"
+  },
+  {
+   "account_name": "Büroeinrichtung",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Anlagevermögen",
+   "account_number": "0600"
+  },
+  {
+   "account_name": "EDV-Anlagen",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Anlagevermögen",
+   "account_number": "0630"
+  },
+  {
+   "account_name": "Immaterielle Vermögensgegenstände",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Anlagevermögen"
+  },
+  {
+   "account_name": "Konzessionen und Lizenzen",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Immaterielle Vermögensgegenstände",
+   "account_number": "0005"
+  },
+  {
+   "account_name": "Geschäfts- oder Firmenwert",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Immaterielle Vermögensgegenstände",
+   "account_number": "0010"
+  },
+  {
+   "account_name": "Umlaufvermögen",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Aktivkonten"
+  },
+  {
+   "account_name": "Kasse",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Umlaufvermögen",
+   "account_number": "1000"
+  },
+  {
+   "account_name": "Bank",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Umlaufvermögen",
+   "account_number": "1200"
+  },
+  {
+   "account_name": "Forderungen aus Lieferungen und Leistungen",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Umlaufvermögen",
+   "account_number": "1400"
+  },
+  {
+   "account_name": "Sonstige Vermögensgegenstände",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Umlaufvermögen",
+   "account_number": "1500"
+  },
+  {
+   "account_name": "Vorräte",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Umlaufvermögen"
+  },
+  {
+   "account_name": "Rohstoffe",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Vorräte",
+   "account_number": "2000"
+  },
+  {
+   "account_name": "Fertige Erzeugnisse",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Vorräte",
+   "account_number": "2100"
+  },
+  {
+   "account_name": "Aktive Rechnungsabgrenzung",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Umlaufvermögen",
+   "account_number": "1900"
+  },
+  {
+   "account_name": "Passivkonten",
+   "root_type": "Liability",
+   "is_group": 1
+  },
+  {
+   "account_name": "Eigenkapital",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "Passivkonten"
+  },
+  {
+   "account_name": "Gezeichnetes Kapital",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Eigenkapital",
+   "account_number": "2900"
+  },
+  {
+   "account_name": "Kapitalrücklage",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Eigenkapital",
+   "account_number": "2930"
+  },
+  {
+   "account_name": "Gewinnrücklagen",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Eigenkapital",
+   "account_number": "2970"
+  },
+  {
+   "account_name": "Jahresüberschuss/Jahresfehlbetrag",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Eigenkapital",
+   "account_number": "2990"
+  },
+  {
+   "account_name": "Rückstellungen",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "Passivkonten"
+  },
+  {
+   "account_name": "Rückstellungen für Pensionen",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Rückstellungen",
+   "account_number": "2400"
+  },
+  {
+   "account_name": "Steuerrückstellungen",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Rückstellungen",
+   "account_number": "2450"
+  },
+  {
+   "account_name": "Sonstige Rückstellungen",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Rückstellungen",
+   "account_number": "2480"
+  },
+  {
+   "account_name": "Verbindlichkeiten",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "Passivkonten"
+  },
+  {
+   "account_name": "Verbindlichkeiten aus L+L",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Verbindlichkeiten",
+   "account_number": "3300"
+  },
+  {
+   "account_name": "Verbindlichkeiten ggü. Kreditinstituten",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Verbindlichkeiten",
+   "account_number": "3400"
+  },
+  {
+   "account_name": "Erhaltene Anzahlungen",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Verbindlichkeiten",
+   "account_number": "3500"
+  },
+  {
+   "account_name": "Verbindlichkeiten aus Steuern",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Verbindlichkeiten",
+   "account_number": "3600"
+  },
+  {
+   "account_name": "Umsatzsteuer 19%",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Verbindlichkeiten",
+   "account_number": "3800",
+   "tax_rate": 19
+  },
+  {
+   "account_name": "Umsatzsteuer 7%",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Verbindlichkeiten",
+   "account_number": "3806",
+   "tax_rate": 7
+  },
+  {
+   "account_name": "Passive Rechnungsabgrenzung",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Passivkonten",
+   "account_number": "3900"
+  },
+  {
+   "account_name": "Erträge",
+   "root_type": "Income",
+   "is_group": 1
+  },
+  {
+   "account_name": "Betriebliche Erträge",
+   "root_type": "Income",
+   "is_group": 1,
+   "parent_account": "Erträge"
+  },
+  {
+   "account_name": "Umsatzerlöse 19%",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Betriebliche Erträge",
+   "account_number": "8000",
+   "tax_rate": 19
+  },
+  {
+   "account_name": "Umsatzerlöse 7%",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Betriebliche Erträge",
+   "account_number": "8100",
+   "tax_rate": 7
+  },
+  {
+   "account_name": "Umsatzerlöse steuerfrei",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Betriebliche Erträge",
+   "account_number": "8200"
+  },
+  {
+   "account_name": "Bestandsveränderungen",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Betriebliche Erträge",
+   "account_number": "8400"
+  },
+  {
+   "account_name": "Sonstige betriebliche Erträge",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Betriebliche Erträge",
+   "account_number": "8500"
+  },
+  {
+   "account_name": "Nicht betriebliche Erträge",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Erträge",
+   "account_number": "8600"
+  },
+  {
+   "account_name": "Aufwendungen",
+   "root_type": "Expense",
+   "is_group": 1
+  },
+  {
+   "account_name": "Materialaufwand",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "Aufwendungen"
+  },
+  {
+   "account_name": "Wareneingang",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Materialaufwand",
+   "account_number": "5000"
+  },
+  {
+   "account_name": "Bezogene Leistungen",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Materialaufwand",
+   "account_number": "5100"
+  },
+  {
+   "account_name": "Personalkosten",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "Aufwendungen"
+  },
+  {
+   "account_name": "Gehälter",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Personalkosten",
+   "account_number": "6100"
+  },
+  {
+   "account_name": "Löhne",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Personalkosten",
+   "account_number": "6000"
+  },
+  {
+   "account_name": "Sozialversicherung",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Personalkosten",
+   "account_number": "6130"
+  },
+  {
+   "account_name": "Abschreibungen",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Aufwendungen",
+   "account_number": "6500"
+  },
+  {
+   "account_name": "Betriebliche Aufwendungen",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "Aufwendungen"
+  },
+  {
+   "account_name": "Miete",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Betriebliche Aufwendungen",
+   "account_number": "4100"
+  },
+  {
+   "account_name": "Bürobedarf",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Betriebliche Aufwendungen",
+   "account_number": "4900"
+  },
+  {
+   "account_name": "Versicherungen",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Betriebliche Aufwendungen",
+   "account_number": "4350"
+  },
+  {
+   "account_name": "Reisekosten",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Betriebliche Aufwendungen",
+   "account_number": "4650"
+  },
+  {
+   "account_name": "Fortbildung",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Betriebliche Aufwendungen",
+   "account_number": "4520"
+  },
+  {
+   "account_name": "Rechts- und Beratungskosten",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Betriebliche Aufwendungen",
+   "account_number": "4800"
+  },
+  {
+   "account_name": "Werbekosten",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Betriebliche Aufwendungen",
+   "account_number": "4600"
+  },
+  {
+   "account_name": "Telefon und Internet",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Betriebliche Aufwendungen",
+   "account_number": "4920"
+  },
+  {
+   "account_name": "Kfz-Kosten",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Betriebliche Aufwendungen",
+   "account_number": "4550"
+  },
+  {
+   "account_name": "Finanzaufwendungen",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "Aufwendungen"
+  },
+  {
+   "account_name": "Zinsen und ähnliche Aufwendungen",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Finanzaufwendungen",
+   "account_number": "7300"
+  },
+  {
+   "account_name": "Bankgebühren",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Finanzaufwendungen",
+   "account_number": "7500"
+  },
+  {
+   "account_name": "Steuern",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Aufwendungen",
+   "account_number": "7600"
+  }
+ ]
+}

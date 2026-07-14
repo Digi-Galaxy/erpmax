@@ -1,7 +1,7 @@
 frappe.treeview_settings["Company"] = {
   ignore_fields: ["parent_company"],
-  get_tree_nodes: "erpmax.erpmax.doctype.company.company.get_children",
-  add_tree_node: "erpmax.erpmax.doctype.company.company.add_node",
+  get_tree_nodes: "erpmax.organization.doctype.company.company.get_children",
+  add_tree_node: "erpmax.organization.doctype.company.company.add_node",
   breadcrumb: "ERPMax",
   root_label: "All Companies",
   get_tree_root: false,

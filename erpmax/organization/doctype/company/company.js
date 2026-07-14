@@ -41,7 +41,7 @@ frappe.ui.form.on("Company", {
               ],
               (values) => {
                 frappe.call({
-                  method: "erpmax.erpmax.doctype.company.company.apply_feature_profile",
+                  method: "erpmax.organization.doctype.company.company.apply_feature_profile",
                   args: {
                     company: frm.doc.name,
                     feature_tier: values.feature_tier,
@@ -78,7 +78,7 @@ frappe.ui.form.on("Company", {
                     return;
                   }
                   frappe.call({
-                    method: "erpmax.erpmax.doctype.company.company.create_transaction_deletion_request",
+                    method: "erpmax.organization.doctype.company.company.create_transaction_deletion_request",
                     args: { company: frm.doc.name },
                     freeze: true,
                   });

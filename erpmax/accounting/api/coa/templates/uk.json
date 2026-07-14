@@ -1,0 +1,359 @@
+{
+ "title": "United Kingdom",
+ "currency": "GBP",
+ "vat_rate": 20,
+ "accounts": [
+  {
+   "account_name": "Fixed Assets",
+   "root_type": "Asset",
+   "is_group": 1
+  },
+  {
+   "account_name": "Tangible Assets",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Fixed Assets"
+  },
+  {
+   "account_name": "Freehold Property",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Tangible Assets"
+  },
+  {
+   "account_name": "Leasehold Improvements",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Tangible Assets"
+  },
+  {
+   "account_name": "Plant and Machinery",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Tangible Assets"
+  },
+  {
+   "account_name": "Office Equipment",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Tangible Assets"
+  },
+  {
+   "account_name": "Motor Vehicles",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Tangible Assets"
+  },
+  {
+   "account_name": "Intangible Assets",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Fixed Assets"
+  },
+  {
+   "account_name": "Goodwill",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Intangible Assets"
+  },
+  {
+   "account_name": "Software",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Intangible Assets"
+  },
+  {
+   "account_name": "Investments",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Fixed Assets"
+  },
+  {
+   "account_name": "Current Assets",
+   "root_type": "Asset",
+   "is_group": 1
+  },
+  {
+   "account_name": "Stock",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Debtors",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Trade Debtors",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Debtors"
+  },
+  {
+   "account_name": "Prepayments",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Debtors"
+  },
+  {
+   "account_name": "Other Debtors",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Debtors"
+  },
+  {
+   "account_name": "Cash at Bank",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Cash in Hand",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Creditors: Amounts Falling Due Within One Year",
+   "root_type": "Liability",
+   "is_group": 1
+  },
+  {
+   "account_name": "Trade Creditors",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Creditors: Amounts Falling Due Within One Year"
+  },
+  {
+   "account_name": "Accruals",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Creditors: Amounts Falling Due Within One Year"
+  },
+  {
+   "account_name": "VAT Liability",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Creditors: Amounts Falling Due Within One Year"
+  },
+  {
+   "account_name": "PAYE/NI Liability",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Creditors: Amounts Falling Due Within One Year"
+  },
+  {
+   "account_name": "Corporation Tax Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Creditors: Amounts Falling Due Within One Year"
+  },
+  {
+   "account_name": "Deferred Income",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Creditors: Amounts Falling Due Within One Year"
+  },
+  {
+   "account_name": "Creditors: Amounts Falling Due After One Year",
+   "root_type": "Liability",
+   "is_group": 1
+  },
+  {
+   "account_name": "Bank Loans",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Creditors: Amounts Falling Due After One Year"
+  },
+  {
+   "account_name": "Hire Purchase Creditors",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Creditors: Amounts Falling Due After One Year"
+  },
+  {
+   "account_name": "Provisions for Liabilities",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Creditors: Amounts Falling Due After One Year"
+  },
+  {
+   "account_name": "Capital and Reserves",
+   "root_type": "Equity",
+   "is_group": 1
+  },
+  {
+   "account_name": "Called Up Share Capital",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Capital and Reserves"
+  },
+  {
+   "account_name": "Share Premium Account",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Capital and Reserves"
+  },
+  {
+   "account_name": "Profit and Loss Account",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Capital and Reserves"
+  },
+  {
+   "account_name": "Revaluation Reserve",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Capital and Reserves"
+  },
+  {
+   "account_name": "Capital Redemption Reserve",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Capital and Reserves"
+  },
+  {
+   "account_name": "Turnover",
+   "root_type": "Income",
+   "is_group": 1
+  },
+  {
+   "account_name": "Sales - UK",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Turnover"
+  },
+  {
+   "account_name": "Service Revenue",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Turnover"
+  },
+  {
+   "account_name": "Other Income",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Turnover"
+  },
+  {
+   "account_name": "Cost of Sales",
+   "root_type": "Expense",
+   "is_group": 1
+  },
+  {
+   "account_name": "Cost of Materials",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Cost of Sales"
+  },
+  {
+   "account_name": "Direct Labour",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Cost of Sales"
+  },
+  {
+   "account_name": "Other Direct Costs",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Cost of Sales"
+  },
+  {
+   "account_name": "Gross Profit/(Loss)",
+   "root_type": "Expense",
+   "is_group": 1
+  },
+  {
+   "account_name": "Administrative Expenses",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "Gross Profit/(Loss)"
+  },
+  {
+   "account_name": "Wages and Salaries",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Directors Remuneration",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Rent and Rates",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Heat, Light and Power",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Telephone and Internet",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Printing, Postage and Stationery",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Insurance",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Professional Fees",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Depreciation",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Amortisation",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Administrative Expenses"
+  },
+  {
+   "account_name": "Finance Costs",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "Gross Profit/(Loss)"
+  },
+  {
+   "account_name": "Bank Charges",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Finance Costs"
+  },
+  {
+   "account_name": "Interest Payable",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Finance Costs"
+  },
+  {
+   "account_name": "Taxation",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Gross Profit/(Loss)"
+  }
+ ]
+}

@@ -1,0 +1,290 @@
+{
+ "title": "Saudi Arabia (SOCPA)",
+ "currency": "SAR",
+ "vat_rate": 15,
+ "accounts": [
+  {
+   "account_name": "الأصول",
+   "root_type": "Asset",
+   "is_group": 1,
+   "account_number": "1"
+  },
+  {
+   "account_name": "الأصول المتداولة",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "الأصول",
+   "account_number": "11"
+  },
+  {
+   "account_name": "النقدية",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول المتداولة",
+   "account_number": "111"
+  },
+  {
+   "account_name": "البنك",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول المتداولة",
+   "account_number": "112"
+  },
+  {
+   "account_name": "حسابات القبض",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول المتداولة",
+   "account_number": "113"
+  },
+  {
+   "account_name": "مخزون",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول المتداولة",
+   "account_number": "114"
+  },
+  {
+   "account_name": "مصروفات مدفوعة قبلا",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول المتداولة",
+   "account_number": "115"
+  },
+  {
+   "account_name": "الأصول غير المتداولة",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "الأصول",
+   "account_number": "12"
+  },
+  {
+   "account_name": "أراضي",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول غير المتداولة",
+   "account_number": "121"
+  },
+  {
+   "account_name": "مباني",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول غير المتداولة",
+   "account_number": "122"
+  },
+  {
+   "account_name": "آلات ومعدات",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول غير المتداولة",
+   "account_number": "123"
+  },
+  {
+   "account_name": "مركبات",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول غير المتداولة",
+   "account_number": "124"
+  },
+  {
+   "account_name": "أثاث ومفروشات",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول غير المتداولة",
+   "account_number": "125"
+  },
+  {
+   "account_name": "مجمّع الإهلاك",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول غير المتداولة",
+   "account_number": "129"
+  },
+  {
+   "account_name": "الأصول غير الملموسة",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "الأصول غير المتداولة",
+   "account_number": "127"
+  },
+  {
+   "account_name": "الخصوم",
+   "root_type": "Liability",
+   "is_group": 1,
+   "account_number": "2"
+  },
+  {
+   "account_name": "الخصوم المتداولة",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "الخصوم",
+   "account_number": "21"
+  },
+  {
+   "account_name": "حسابات الدفع",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "الخصوم المتداولة",
+   "account_number": "211"
+  },
+  {
+   "account_name": "ضريبة القيمة المضافة",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "الخصوم المتداولة",
+   "account_number": "212",
+   "tax_rate": 15
+  },
+  {
+   "account_name": "الرواتب والأجور المستحقة",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "الخصوم المتداولة",
+   "account_number": "213"
+  },
+  {
+   "account_name": "مصروفات مستحقة",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "الخصوم المتداولة",
+   "account_number": "214"
+  },
+  {
+   "account_name": "إيرادات مؤجلة",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "الخصوم المتداولة",
+   "account_number": "215"
+  },
+  {
+   "account_name": "الخصوم غير المتداولة",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "الخصوم",
+   "account_number": "22"
+  },
+  {
+   "account_name": "قروض طويلة الأجل",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "الخصوم غير المتداولة",
+   "account_number": "221"
+  },
+  {
+   "account_name": "حقوق الملكية",
+   "root_type": "Equity",
+   "is_group": 1,
+   "account_number": "3"
+  },
+  {
+   "account_name": "رأس المال",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "حقوق الملكية",
+   "account_number": "31"
+  },
+  {
+   "account_name": "الأرباح المحتجزة",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "حقوق الملكية",
+   "account_number": "32"
+  },
+  {
+   "account_name": "أرباح السنة الحالية",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "حقوق الملكية",
+   "account_number": "33"
+  },
+  {
+   "account_name": "الإيرادات",
+   "root_type": "Income",
+   "is_group": 1,
+   "account_number": "4"
+  },
+  {
+   "account_name": "إيرادات المبيعات",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "الإيرادات",
+   "account_number": "41"
+  },
+  {
+   "account_name": "إيرادات الخدمات",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "الإيرادات",
+   "account_number": "42"
+  },
+  {
+   "account_name": "إيرادات أخرى",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "الإيرادات",
+   "account_number": "43"
+  },
+  {
+   "account_name": "المصروفات",
+   "root_type": "Expense",
+   "is_group": 1,
+   "account_number": "5"
+  },
+  {
+   "account_name": "تكلفة البضاعة المباعة",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "المصروفات",
+   "account_number": "51"
+  },
+  {
+   "account_name": "الرواتب والأجور",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "المصروفات",
+   "account_number": "52"
+  },
+  {
+   "account_name": "الإيجار",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "المصروفات",
+   "account_number": "53"
+  },
+  {
+   "account_name": "المرافق",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "المصروفات",
+   "account_number": "54"
+  },
+  {
+   "account_name": "اللوازم المكتبية",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "المصروفات",
+   "account_number": "55"
+  },
+  {
+   "account_name": "مصاريف السفر",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "المصروفات",
+   "account_number": "56"
+  },
+  {
+   "account_name": "الإهلاك",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "المصروفات",
+   "account_number": "57"
+  },
+  {
+   "account_name": "مصاريف أخرى",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "المصروفات",
+   "account_number": "59"
+  }
+ ]
+}

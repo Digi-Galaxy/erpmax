@@ -1,0 +1,350 @@
+{
+ "title": "Non-Profit (SFAS 117)",
+ "currency": "USD",
+ "vat_rate": 0,
+ "accounts": [
+  {
+   "account_name": "ASSETS",
+   "root_type": "Asset",
+   "is_group": 1
+  },
+  {
+   "account_name": "Current Assets",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "ASSETS"
+  },
+  {
+   "account_name": "Cash - Operations",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Cash - Restricted",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Bank Accounts",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Petty Cash",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Accounts Receivable",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Grants Receivable",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Prepaid Expenses",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Current Assets"
+  },
+  {
+   "account_name": "Non-Current Assets",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "ASSETS"
+  },
+  {
+   "account_name": "Land and Buildings",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Non-Current Assets"
+  },
+  {
+   "account_name": "Equipment",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Non-Current Assets"
+  },
+  {
+   "account_name": "Vehicles",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Non-Current Assets"
+  },
+  {
+   "account_name": "Furniture and Fixtures",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Non-Current Assets"
+  },
+  {
+   "account_name": "Accumulated Depreciation",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Non-Current Assets"
+  },
+  {
+   "account_name": "LIABILITIES",
+   "root_type": "Liability",
+   "is_group": 1
+  },
+  {
+   "account_name": "Current Liabilities",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "LIABILITIES"
+  },
+  {
+   "account_name": "Accounts Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Current Liabilities"
+  },
+  {
+   "account_name": "Accrued Expenses",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Current Liabilities"
+  },
+  {
+   "account_name": "Grants Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Current Liabilities"
+  },
+  {
+   "account_name": "Deferred Revenue",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Current Liabilities"
+  },
+  {
+   "account_name": "Payroll Liabilities",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Current Liabilities"
+  },
+  {
+   "account_name": "Long-Term Liabilities",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "LIABILITIES"
+  },
+  {
+   "account_name": "Loans Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Long-Term Liabilities"
+  },
+  {
+   "account_name": "NET ASSETS",
+   "root_type": "Equity",
+   "is_group": 1
+  },
+  {
+   "account_name": "Unrestricted Net Assets",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "NET ASSETS"
+  },
+  {
+   "account_name": "Temporarily Restricted Net Assets",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "NET ASSETS"
+  },
+  {
+   "account_name": "Permanently Restricted Net Assets",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "NET ASSETS"
+  },
+  {
+   "account_name": "Current Year Activity",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "NET ASSETS"
+  },
+  {
+   "account_name": "REVENUE",
+   "root_type": "Income",
+   "is_group": 1
+  },
+  {
+   "account_name": "Contributions",
+   "root_type": "Income",
+   "is_group": 1,
+   "parent_account": "REVENUE"
+  },
+  {
+   "account_name": "Individual Donations",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Contributions"
+  },
+  {
+   "account_name": "Corporate Sponsorships",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Contributions"
+  },
+  {
+   "account_name": "Foundation Grants",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Contributions"
+  },
+  {
+   "account_name": "Government Grants",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Contributions"
+  },
+  {
+   "account_name": "Membership Fees",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "REVENUE"
+  },
+  {
+   "account_name": "Program Service Revenue",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "REVENUE"
+  },
+  {
+   "account_name": "Interest and Investment Income",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "REVENUE"
+  },
+  {
+   "account_name": "Fundraising Events",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "REVENUE"
+  },
+  {
+   "account_name": "EXPENSES",
+   "root_type": "Expense",
+   "is_group": 1
+  },
+  {
+   "account_name": "Program Expenses",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "EXPENSES"
+  },
+  {
+   "account_name": "Program A - Direct Costs",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Program Expenses"
+  },
+  {
+   "account_name": "Program B - Direct Costs",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Program Expenses"
+  },
+  {
+   "account_name": "Program Travel",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Program Expenses"
+  },
+  {
+   "account_name": "Program Supplies",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Program Expenses"
+  },
+  {
+   "account_name": "Program Personnel",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Program Expenses"
+  },
+  {
+   "account_name": "Management and General",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "EXPENSES"
+  },
+  {
+   "account_name": "Administrative Salaries",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Management and General"
+  },
+  {
+   "account_name": "Office Rent",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Management and General"
+  },
+  {
+   "account_name": "Office Utilities",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Management and General"
+  },
+  {
+   "account_name": "Office Supplies",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Management and General"
+  },
+  {
+   "account_name": "Insurance",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Management and General"
+  },
+  {
+   "account_name": "Professional Fees",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Management and General"
+  },
+  {
+   "account_name": "Depreciation",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Management and General"
+  },
+  {
+   "account_name": "Fundraising",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "EXPENSES"
+  },
+  {
+   "account_name": "Fundraising Personnel",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Fundraising"
+  },
+  {
+   "account_name": "Fundraising Events Costs",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Fundraising"
+  },
+  {
+   "account_name": "Marketing and Communications",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Fundraising"
+  }
+ ]
+}

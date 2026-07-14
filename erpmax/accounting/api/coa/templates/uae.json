@@ -1,0 +1,635 @@
+{
+ "title": "UAE",
+ "currency": "AED",
+ "vat_rate": 5,
+ "accounts": [
+  {
+   "account_name": "1000 Assets",
+   "root_type": "Asset",
+   "is_group": 1
+  },
+  {
+   "account_name": "1100 Cash and Cash Equivalents",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "1000 Assets"
+  },
+  {
+   "account_name": "1110 Cash - Operating",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1100 Cash and Cash Equivalents",
+   "account_number": "1110"
+  },
+  {
+   "account_name": "1120 Cash - Payroll",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1100 Cash and Cash Equivalents",
+   "account_number": "1120"
+  },
+  {
+   "account_name": "1130 Petty Cash",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1100 Cash and Cash Equivalents",
+   "account_number": "1130"
+  },
+  {
+   "account_name": "1140 Checking Account",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1100 Cash and Cash Equivalents",
+   "account_number": "1140"
+  },
+  {
+   "account_name": "1150 Savings Account",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1100 Cash and Cash Equivalents",
+   "account_number": "1150"
+  },
+  {
+   "account_name": "1200 Accounts Receivable",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "1000 Assets"
+  },
+  {
+   "account_name": "1210 Accounts Receivable - Trade",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1200 Accounts Receivable",
+   "account_number": "1210"
+  },
+  {
+   "account_name": "1220 Allowance for Doubtful Accounts",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1200 Accounts Receivable",
+   "account_number": "1220"
+  },
+  {
+   "account_name": "1230 Employee Receivables",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1200 Accounts Receivable",
+   "account_number": "1230"
+  },
+  {
+   "account_name": "1300 Inventory",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "1000 Assets"
+  },
+  {
+   "account_name": "1310 Raw Materials",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1300 Inventory",
+   "account_number": "1310"
+  },
+  {
+   "account_name": "1320 Work in Progress",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1300 Inventory",
+   "account_number": "1320"
+  },
+  {
+   "account_name": "1330 Finished Goods",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1300 Inventory",
+   "account_number": "1330"
+  },
+  {
+   "account_name": "1400 Prepaid Expenses",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "1000 Assets"
+  },
+  {
+   "account_name": "1410 Prepaid Insurance",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1400 Prepaid Expenses",
+   "account_number": "1410"
+  },
+  {
+   "account_name": "1420 Prepaid Rent",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1400 Prepaid Expenses",
+   "account_number": "1420"
+  },
+  {
+   "account_name": "1500 Fixed Assets",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "1000 Assets"
+  },
+  {
+   "account_name": "1510 Land",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1500 Fixed Assets",
+   "account_number": "1510"
+  },
+  {
+   "account_name": "1520 Buildings",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1500 Fixed Assets",
+   "account_number": "1520"
+  },
+  {
+   "account_name": "1530 Machinery and Equipment",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1500 Fixed Assets",
+   "account_number": "1530"
+  },
+  {
+   "account_name": "1540 Vehicles",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1500 Fixed Assets",
+   "account_number": "1540"
+  },
+  {
+   "account_name": "1550 Furniture and Fixtures",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1500 Fixed Assets",
+   "account_number": "1550"
+  },
+  {
+   "account_name": "1560 Computers and Software",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1500 Fixed Assets",
+   "account_number": "1560"
+  },
+  {
+   "account_name": "1600 Accumulated Depreciation",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "1000 Assets"
+  },
+  {
+   "account_name": "1610 Accum Dep - Buildings",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1600 Accumulated Depreciation",
+   "account_number": "1610"
+  },
+  {
+   "account_name": "1620 Accum Dep - Equipment",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1600 Accumulated Depreciation",
+   "account_number": "1620"
+  },
+  {
+   "account_name": "1630 Accum Dep - Vehicles",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1600 Accumulated Depreciation",
+   "account_number": "1630"
+  },
+  {
+   "account_name": "1700 Intangible Assets",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "1000 Assets"
+  },
+  {
+   "account_name": "1710 Goodwill",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1700 Intangible Assets",
+   "account_number": "1710"
+  },
+  {
+   "account_name": "1720 Patents",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1700 Intangible Assets",
+   "account_number": "1720"
+  },
+  {
+   "account_name": "1730 Trademarks",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1700 Intangible Assets",
+   "account_number": "1730"
+  },
+  {
+   "account_name": "1800 Other Assets",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "1000 Assets"
+  },
+  {
+   "account_name": "1810 Investments",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1800 Other Assets",
+   "account_number": "1810"
+  },
+  {
+   "account_name": "1820 Deposits",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "1800 Other Assets",
+   "account_number": "1820"
+  },
+  {
+   "account_name": "2000 Liabilities",
+   "root_type": "Liability",
+   "is_group": 1
+  },
+  {
+   "account_name": "2100 Accounts Payable",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "2000 Liabilities"
+  },
+  {
+   "account_name": "2110 Accounts Payable - Trade",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2100 Accounts Payable",
+   "account_number": "2110"
+  },
+  {
+   "account_name": "2120 Accrued Liabilities",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2100 Accounts Payable",
+   "account_number": "2120"
+  },
+  {
+   "account_name": "2200 Tax Payables",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "2000 Liabilities"
+  },
+  {
+   "account_name": "2210 VAT/Sales Tax Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2200 Tax Payables",
+   "account_number": "2210"
+  },
+  {
+   "account_name": "2220 Income Tax Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2200 Tax Payables",
+   "account_number": "2220"
+  },
+  {
+   "account_name": "2230 Payroll Tax Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2200 Tax Payables",
+   "account_number": "2230"
+  },
+  {
+   "account_name": "2300 Accrued Expenses",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "2000 Liabilities"
+  },
+  {
+   "account_name": "2310 Accrued Salaries",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2300 Accrued Expenses",
+   "account_number": "2310"
+  },
+  {
+   "account_name": "2320 Accrued Interest",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2300 Accrued Expenses",
+   "account_number": "2320"
+  },
+  {
+   "account_name": "2400 Deferred Revenue",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "2000 Liabilities"
+  },
+  {
+   "account_name": "2410 Unearned Revenue",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2400 Deferred Revenue",
+   "account_number": "2410"
+  },
+  {
+   "account_name": "2500 Long Term Liabilities",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "2000 Liabilities"
+  },
+  {
+   "account_name": "2510 Bank Loans",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2500 Long Term Liabilities",
+   "account_number": "2510"
+  },
+  {
+   "account_name": "2520 Notes Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2500 Long Term Liabilities",
+   "account_number": "2520"
+  },
+  {
+   "account_name": "2530 Bonds Payable",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "2500 Long Term Liabilities",
+   "account_number": "2530"
+  },
+  {
+   "account_name": "3000 Equity",
+   "root_type": "Equity",
+   "is_group": 1
+  },
+  {
+   "account_name": "3100 Common Stock",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "3000 Equity",
+   "account_number": "3100"
+  },
+  {
+   "account_name": "3200 Additional Paid-in Capital",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "3000 Equity",
+   "account_number": "3200"
+  },
+  {
+   "account_name": "3300 Retained Earnings",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "3000 Equity",
+   "account_number": "3300"
+  },
+  {
+   "account_name": "3400 Current Year Earnings",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "3000 Equity",
+   "account_number": "3400"
+  },
+  {
+   "account_name": "3500 Owner's Draws",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "3000 Equity",
+   "account_number": "3500"
+  },
+  {
+   "account_name": "4000 Income",
+   "root_type": "Income",
+   "is_group": 1
+  },
+  {
+   "account_name": "4100 Revenue",
+   "root_type": "Income",
+   "is_group": 1,
+   "parent_account": "4000 Income"
+  },
+  {
+   "account_name": "4110 Product Sales",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "4100 Revenue",
+   "account_number": "4110"
+  },
+  {
+   "account_name": "4120 Service Revenue",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "4100 Revenue",
+   "account_number": "4120"
+  },
+  {
+   "account_name": "4130 Interest Income",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "4100 Revenue",
+   "account_number": "4130"
+  },
+  {
+   "account_name": "4140 Rental Income",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "4100 Revenue",
+   "account_number": "4140"
+  },
+  {
+   "account_name": "4200 Other Income",
+   "root_type": "Income",
+   "is_group": 1,
+   "parent_account": "4000 Income"
+  },
+  {
+   "account_name": "4210 Gain on Sale of Assets",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "4200 Other Income",
+   "account_number": "4210"
+  },
+  {
+   "account_name": "4220 Foreign Exchange Gain",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "4200 Other Income",
+   "account_number": "4220"
+  },
+  {
+   "account_name": "5000 Expenses",
+   "root_type": "Expense",
+   "is_group": 1
+  },
+  {
+   "account_name": "5100 Cost of Goods Sold",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "5000 Expenses"
+  },
+  {
+   "account_name": "5110 COGS - Materials",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5100 Cost of Goods Sold",
+   "account_number": "5110"
+  },
+  {
+   "account_name": "5120 COGS - Labor",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5100 Cost of Goods Sold",
+   "account_number": "5120"
+  },
+  {
+   "account_name": "5130 COGS - Overhead",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5100 Cost of Goods Sold",
+   "account_number": "5130"
+  },
+  {
+   "account_name": "5200 Salaries and Wages",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5000 Expenses",
+   "account_number": "5200"
+  },
+  {
+   "account_name": "5300 Rent and Utilities",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "5000 Expenses"
+  },
+  {
+   "account_name": "5310 Rent Expense",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5300 Rent and Utilities",
+   "account_number": "5310"
+  },
+  {
+   "account_name": "5320 Electricity",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5300 Rent and Utilities",
+   "account_number": "5320"
+  },
+  {
+   "account_name": "5330 Water and Gas",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5300 Rent and Utilities",
+   "account_number": "5330"
+  },
+  {
+   "account_name": "5340 Internet and Telephone",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5300 Rent and Utilities",
+   "account_number": "5340"
+  },
+  {
+   "account_name": "5400 Office and Admin",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "5000 Expenses"
+  },
+  {
+   "account_name": "5410 Office Supplies",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5400 Office and Admin",
+   "account_number": "5410"
+  },
+  {
+   "account_name": "5420 Insurance",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5400 Office and Admin",
+   "account_number": "5420"
+  },
+  {
+   "account_name": "5430 Legal and Professional",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5400 Office and Admin",
+   "account_number": "5430"
+  },
+  {
+   "account_name": "5440 Bank Charges",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5400 Office and Admin",
+   "account_number": "5440"
+  },
+  {
+   "account_name": "5500 Depreciation and Amortization",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5000 Expenses",
+   "account_number": "5500"
+  },
+  {
+   "account_name": "5600 Travel and Entertainment",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "5000 Expenses"
+  },
+  {
+   "account_name": "5610 Travel Expense",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5600 Travel and Entertainment",
+   "account_number": "5610"
+  },
+  {
+   "account_name": "5620 Meals and Entertainment",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5600 Travel and Entertainment",
+   "account_number": "5620"
+  },
+  {
+   "account_name": "5700 Marketing and Advertising",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5000 Expenses",
+   "account_number": "5700"
+  },
+  {
+   "account_name": "5800 Taxes and Licenses",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5000 Expenses",
+   "account_number": "5800"
+  },
+  {
+   "account_name": "5900 Other Expenses",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "5000 Expenses"
+  },
+  {
+   "account_name": "5910 Loss on Asset Disposal",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5900 Other Expenses",
+   "account_number": "5910"
+  },
+  {
+   "account_name": "5920 Foreign Exchange Loss",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5900 Other Expenses",
+   "account_number": "5920"
+  },
+  {
+   "account_name": "5990 Miscellaneous",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "5900 Other Expenses",
+   "account_number": "5990"
+  }
+ ]
+}

@@ -1,0 +1,419 @@
+{
+ "title": "France PCG",
+ "currency": "EUR",
+ "vat_rate": 20,
+ "accounts": [
+  {
+   "account_name": "Comptes de Actif",
+   "root_type": "Asset",
+   "is_group": 1
+  },
+  {
+   "account_name": "Actif Immobilisé",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Comptes de Actif"
+  },
+  {
+   "account_name": "Immobilisations Incorporelles",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Actif Immobilisé"
+  },
+  {
+   "account_name": "Frais d'Établissement",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Immobilisations Incorporelles",
+   "account_number": "201"
+  },
+  {
+   "account_name": "Logiciels",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Immobilisations Incorporelles",
+   "account_number": "205"
+  },
+  {
+   "account_name": "Immobilisations Corporelles",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Actif Immobilisé"
+  },
+  {
+   "account_name": "Terrains",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Immobilisations Corporelles",
+   "account_number": "211"
+  },
+  {
+   "account_name": "Constructions",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Immobilisations Corporelles",
+   "account_number": "213"
+  },
+  {
+   "account_name": "Installations Techniques",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Immobilisations Corporelles",
+   "account_number": "215"
+  },
+  {
+   "account_name": "Matériel de Bureau",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Immobilisations Corporelles",
+   "account_number": "218"
+  },
+  {
+   "account_name": "Matériel Informatique",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Immobilisations Corporelles",
+   "account_number": "2183"
+  },
+  {
+   "account_name": "Mobilier",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Immobilisations Corporelles",
+   "account_number": "2184"
+  },
+  {
+   "account_name": "Amortissements",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Actif Immobilisé"
+  },
+  {
+   "account_name": "Amortissements des Constructions",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Amortissements",
+   "account_number": "2813"
+  },
+  {
+   "account_name": "Amortissements du Matériel",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Amortissements",
+   "account_number": "2815"
+  },
+  {
+   "account_name": "Actif Circulant",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Comptes de Actif"
+  },
+  {
+   "account_name": "Stocks",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Actif Circulant"
+  },
+  {
+   "account_name": "Matières Premières",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Stocks",
+   "account_number": "31"
+  },
+  {
+   "account_name": "Produits Finis",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Stocks",
+   "account_number": "35"
+  },
+  {
+   "account_name": "Créances",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Actif Circulant"
+  },
+  {
+   "account_name": "Clients",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Créances",
+   "account_number": "411"
+  },
+  {
+   "account_name": "Créances Sociales",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Créances",
+   "account_number": "421"
+  },
+  {
+   "account_name": "Trésorerie",
+   "root_type": "Asset",
+   "is_group": 1,
+   "parent_account": "Actif Circulant"
+  },
+  {
+   "account_name": "Caisse",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Trésorerie",
+   "account_number": "53"
+  },
+  {
+   "account_name": "Banque",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Trésorerie",
+   "account_number": "512"
+  },
+  {
+   "account_name": "Charges Constatées d'Avance",
+   "root_type": "Asset",
+   "is_group": 0,
+   "parent_account": "Actif Circulant",
+   "account_number": "486"
+  },
+  {
+   "account_name": "Comptes de Passif",
+   "root_type": "Liability",
+   "is_group": 1
+  },
+  {
+   "account_name": "Provisions",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "Comptes de Passif"
+  },
+  {
+   "account_name": "Provisions pour Risques",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Provisions",
+   "account_number": "151"
+  },
+  {
+   "account_name": "Provisions pour Charges",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Provisions",
+   "account_number": "153"
+  },
+  {
+   "account_name": "Dettes",
+   "root_type": "Liability",
+   "is_group": 1,
+   "parent_account": "Comptes de Passif"
+  },
+  {
+   "account_name": "Fournisseurs",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Dettes",
+   "account_number": "401"
+  },
+  {
+   "account_name": "Dettes Sociales",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Dettes",
+   "account_number": "431"
+  },
+  {
+   "account_name": "Dettes Fiscales",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Dettes",
+   "account_number": "44"
+  },
+  {
+   "account_name": "TVA à Décaisser",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Dettes Fiscales",
+   "account_number": "445"
+  },
+  {
+   "account_name": "Emprunts",
+   "root_type": "Liability",
+   "is_group": 0,
+   "parent_account": "Comptes de Passif",
+   "account_number": "164"
+  },
+  {
+   "account_name": "Capitaux Propres",
+   "root_type": "Equity",
+   "is_group": 1
+  },
+  {
+   "account_name": "Capital Social",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Capitaux Propres",
+   "account_number": "101"
+  },
+  {
+   "account_name": "Prime d'Émission",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Capitaux Propres",
+   "account_number": "104"
+  },
+  {
+   "account_name": "Réserves",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Capitaux Propres",
+   "account_number": "106"
+  },
+  {
+   "account_name": "Report à Nouveau",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Capitaux Propres",
+   "account_number": "110"
+  },
+  {
+   "account_name": "Résultat de l'Exercice",
+   "root_type": "Equity",
+   "is_group": 0,
+   "parent_account": "Capitaux Propres",
+   "account_number": "120"
+  },
+  {
+   "account_name": "Comptes de Charges",
+   "root_type": "Expense",
+   "is_group": 1
+  },
+  {
+   "account_name": "Achats",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Comptes de Charges",
+   "account_number": "601"
+  },
+  {
+   "account_name": "Charges Externes",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "Comptes de Charges"
+  },
+  {
+   "account_name": "Loyers",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Charges Externes",
+   "account_number": "613"
+  },
+  {
+   "account_name": "Honoraires",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Charges Externes",
+   "account_number": "622"
+  },
+  {
+   "account_name": "Publicité",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Charges Externes",
+   "account_number": "623"
+  },
+  {
+   "account_name": "Transports",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Charges Externes",
+   "account_number": "624"
+  },
+  {
+   "account_name": "Frais de Téléphone",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Charges Externes",
+   "account_number": "626"
+  },
+  {
+   "account_name": "Frais Bancaires",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Charges Externes",
+   "account_number": "627"
+  },
+  {
+   "account_name": "Charges de Personnel",
+   "root_type": "Expense",
+   "is_group": 1,
+   "parent_account": "Comptes de Charges"
+  },
+  {
+   "account_name": "Salaires",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Charges de Personnel",
+   "account_number": "641"
+  },
+  {
+   "account_name": "Charges Sociales",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Charges de Personnel",
+   "account_number": "645"
+  },
+  {
+   "account_name": "Impôts et Taxes",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Comptes de Charges",
+   "account_number": "635"
+  },
+  {
+   "account_name": "Dotations aux Amortissements",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Comptes de Charges",
+   "account_number": "681"
+  },
+  {
+   "account_name": "Intérêts et Charges Financières",
+   "root_type": "Expense",
+   "is_group": 0,
+   "parent_account": "Comptes de Charges",
+   "account_number": "661"
+  },
+  {
+   "account_name": "Comptes de Produits",
+   "root_type": "Income",
+   "is_group": 1
+  },
+  {
+   "account_name": "Ventes",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Comptes de Produits",
+   "account_number": "701"
+  },
+  {
+   "account_name": "Prestations de Services",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Comptes de Produits",
+   "account_number": "706"
+  },
+  {
+   "account_name": "Produits Financiers",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Comptes de Produits",
+   "account_number": "76"
+  },
+  {
+   "account_name": "Produits Exceptionnels",
+   "root_type": "Income",
+   "is_group": 0,
+   "parent_account": "Comptes de Produits",
+   "account_number": "77"
+  }
+ ]
+}
