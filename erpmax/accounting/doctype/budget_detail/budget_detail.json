@@ -1,0 +1,26 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": ["account", "account_name", "description", "column_break_4", "allocated_amount", "actual_amount", "utilized_percent", "sb_more", "remarks"],
+ "fields": [
+  {"fieldname": "account", "fieldtype": "Link", "in_list_view": 1, "label": "Account", "options": "Account", "reqd": 1},
+  {"fieldname": "account_name", "fieldtype": "Data", "label": "Account Name", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "allocated_amount", "fieldtype": "Currency", "in_list_view": 1, "label": "Allocated Amount", "reqd": 1},
+  {"fieldname": "actual_amount", "fieldtype": "Currency", "label": "Actual Amount", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "utilized_percent", "fieldtype": "Percent", "label": "Utilized %", "read_only": 1},
+  {"fieldname": "sb_more", "fieldtype": "Section Break"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ],
+ "istable": 1,
+ "modified": "2026-07-04 00:00:00",
+ "module": "Accounting",
+ "name": "Budget Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified"
+}

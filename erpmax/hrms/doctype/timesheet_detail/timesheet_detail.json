@@ -1,0 +1,81 @@
+{
+  "actions": [],
+  "creation": "2026-07-04 00:00:00",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "project",
+    "task",
+    "description",
+    "column_break_4",
+    "from_time",
+    "to_time",
+    "hours",
+    "rate",
+    "amount"
+  ],
+  "fields": [
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "task",
+      "fieldtype": "Link",
+      "label": "Task",
+      "options": "Task"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "from_time",
+      "fieldtype": "Time",
+      "in_list_view": 1,
+      "label": "From Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "to_time",
+      "fieldtype": "Time",
+      "in_list_view": 1,
+      "label": "To Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "hours",
+      "fieldtype": "Float",
+      "label": "Hours",
+      "read_only": 1
+    },
+    {
+      "fieldname": "rate",
+      "fieldtype": "Currency",
+      "label": "Rate"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "read_only": 1
+    }
+  ],
+  "istable": 1,
+  "modified": "2026-07-04 00:00:00",
+  "module": "HRMS",
+  "name": "Timesheet Detail",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified"
+}

@@ -1,0 +1,164 @@
+{
+  "actions": [],
+  "autoname": "format:TS-{####}",
+  "creation": "2026-07-04 00:00:00",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "employee",
+    "employee_name",
+    "company",
+    "column_break_4",
+    "posting_date",
+    "status",
+    "sb_details",
+    "timesheet\u660e\u7ec6",
+    "time_logs",
+    "sb_totals",
+    "total_hours",
+    "total_amount",
+    "column_break_15",
+    "remarks",
+    "sb_more",
+    "amended_from"
+  ],
+  "fields": [
+    {
+      "fieldname": "employee",
+      "fieldtype": "Link",
+      "label": "Employee",
+      "options": "User",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "employee_name",
+      "fieldtype": "Data",
+      "label": "Employee Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date",
+      "reqd": 1,
+      "default": "Today"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nSubmitted\nApproved\nRejected",
+      "default": "Draft",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "sb_details",
+      "fieldtype": "Section Break",
+      "label": "Time Logs"
+    },
+    {
+      "fieldname": "timesheet\u660e\u7ec6",
+      "fieldtype": "Section Break",
+      "label": "Timesheet Details"
+    },
+    {
+      "fieldname": "time_logs",
+      "fieldtype": "Table",
+      "label": "Time Logs",
+      "options": "Timesheet Detail",
+      "reqd": 1
+    },
+    {
+      "fieldname": "sb_totals",
+      "fieldtype": "Section Break",
+      "label": "Totals"
+    },
+    {
+      "fieldname": "total_hours",
+      "fieldtype": "Float",
+      "label": "Total Hours",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_amount",
+      "fieldtype": "Currency",
+      "label": "Total Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_15",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    },
+    {
+      "fieldname": "sb_more",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Data",
+      "label": "Amended From",
+      "no_copy": 1,
+      "print_hide": 1,
+      "read_only": 1
+    }
+  ],
+  "is_submittable": 1,
+  "modified": "2026-07-04 00:00:00",
+  "module": "HRMS",
+  "name": "Timesheet",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "amend": 1,
+      "cancel": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Accounts Manager",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "amend": 0,
+      "cancel": 0,
+      "create": 1,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Accounts User",
+      "share": 0,
+      "submit": 1,
+      "write": 1
+    }
+  ],
+  "search_fields": "employee_name,remarks",
+  "sort_field": "modified",
+  "track_changes": 1
+}

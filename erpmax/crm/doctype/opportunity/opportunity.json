@@ -1,0 +1,158 @@
+{
+  "actions": [],
+  "autoname": "format:OPP-{####}",
+  "creation": "2026-07-04 00:00:00",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "lead",
+    "customer",
+    "customer_name",
+    "company",
+    "column_break_4",
+    "posting_date",
+    "status",
+    "sb_details",
+    "opportunity_type",
+    "expected_amount",
+    "probability",
+    "column_break_15",
+    "expected_close_date",
+    "opportunity_owner",
+    "sb_notes",
+    "notes",
+    "sb_more",
+    "amended_from"
+  ],
+  "fields": [
+    {
+      "fieldname": "lead",
+      "fieldtype": "Link",
+      "label": "Lead",
+      "options": "Lead"
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer"
+    },
+    {
+      "fieldname": "customer_name",
+      "fieldtype": "Data",
+      "label": "Customer Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "label": "Posting Date",
+      "reqd": 1,
+      "default": "Today"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Open\nReplied\nProposal\nNegotiation\nClosed Won\nClosed Lost",
+      "default": "Open",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "sb_details",
+      "fieldtype": "Section Break",
+      "label": "Details"
+    },
+    {
+      "fieldname": "opportunity_type",
+      "fieldtype": "Select",
+      "label": "Type",
+      "options": "\nSales\nMaintenance\nSupport",
+      "default": "Sales"
+    },
+    {
+      "fieldname": "expected_amount",
+      "fieldtype": "Currency",
+      "label": "Expected Amount",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "probability",
+      "fieldtype": "Percent",
+      "label": "Probability (%)"
+    },
+    {
+      "fieldname": "column_break_15",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "expected_close_date",
+      "fieldtype": "Date",
+      "label": "Expected Close Date"
+    },
+    {
+      "fieldname": "opportunity_owner",
+      "fieldtype": "Link",
+      "label": "Opportunity Owner",
+      "options": "User"
+    },
+    {
+      "fieldname": "sb_notes",
+      "fieldtype": "Section Break",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "sb_more",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Data",
+      "label": "Amended From",
+      "no_copy": 1,
+      "print_hide": 1,
+      "read_only": 1
+    }
+  ],
+  "modified": "2026-07-04 00:00:00",
+  "module": "CRM",
+  "name": "Opportunity",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "amend": 0,
+      "cancel": 0,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Sales User",
+      "share": 1,
+      "submit": 0,
+      "write": 1
+    }
+  ],
+  "search_fields": "customer_name,notes",
+  "sort_field": "modified",
+  "track_changes": 1
+}

@@ -732,26 +732,23 @@ def _find_region(name):
     return frappe.db.get_value("Region", {"region_name": name}, "name")
 
 
-def _create_region(name, parent_region=None, customer=None, is_group=0, notes=None):
+def _create_region(name, parent_region=None, company=None, is_group=0, notes=None):
     region = frappe.get_doc({
         "doctype": "Region",
         "region_name": name,
         "region_abbr": _region_abbr(name),
-        "customer": customer,
+        "company": company,
         "parent_region": parent_region,
         "is_group": 1 if is_group else 0,
         "status": "Active",
         "notes": notes or "",
     })
-    try:
-        region.insert(ignore_permissions=True)
-        return region.name
-    except frappe.DuplicateEntryError:
-        return _find_region(name) or name
+    region.insert(ignore_permissions=True)
+    return region.name
 
 
 @frappe.whitelist()
-def resolve_region(country=None, doc=None, customer=None, create=0):
+def resolve_region(country=None, doc=None, company=None, create=0):
     if isinstance(doc, str):
         try:
             doc = json.loads(doc)
@@ -765,7 +762,6 @@ def resolve_region(country=None, doc=None, customer=None, create=0):
         return {"region": "", "created": [], "path": [], "profile": profile}
 
     created = []
-    customer = customer or doc.get("customer") or ""
     current_parent = None
     notes = "Derived from address fields: " + ", ".join([c for c in components if c])
 
@@ -776,7 +772,7 @@ def resolve_region(country=None, doc=None, customer=None, create=0):
             existing = _create_region(
                 current_name,
                 parent_region=current_parent,
-                customer=customer if idx == len(components) - 1 else "",
+                company=company,
                 is_group=idx < len(components) - 1,
                 notes=notes,
             )
@@ -789,53 +785,6 @@ def resolve_region(country=None, doc=None, customer=None, create=0):
         "path": components,
         "profile": profile,
     }
-
-
-def _address_customer_name(doc):
-    for link in doc.get("links") or []:
-        if (link.get("link_doctype") or "") == "Customer" and link.get("link_name"):
-            return link.get("link_name")
-    return ""
-
-
-@frappe.whitelist()
-def bulk_resolve_region(doctype=None, names=None, company=None, create=1):
-    if doctype not in {"Address", "Customer"}:
-        frappe.throw("Bulk region creation is only supported for Address and Customer")
-    if isinstance(names, str):
-        try:
-            names = json.loads(names)
-        except Exception:
-            names = [n.strip() for n in names.split(",") if n.strip()]
-    names = names or []
-    create = str(create).lower() in {"1", "true", "yes", "y"}
-
-    results = []
-    processed = 0
-    created = 0
-    for name in names:
-        if not name:
-            continue
-        try:
-            doc = frappe.get_doc(doctype, name)
-        except Exception:
-            continue
-        processed += 1
-        customer_value = doc.get("customer") or ""
-        if doctype == "Address":
-            customer_value = customer_value or _address_customer_name(doc)
-        response = resolve_region(country=doc.get("country"), doc=doc.as_dict(), customer=customer_value, create=create)
-        if response.get("created"):
-            created += len(response.get("created") or [])
-        results.append({"name": name, "region": response.get("region") or "", "created": response.get("created") or []})
-        target_customer = customer_value if doctype == "Address" else (doc.get("name") if doctype == "Customer" else "")
-        if target_customer and response.get("region"):
-            try:
-                frappe.db.set_value("Customer", target_customer, "region", response.get("region"), update_modified=False)
-            except Exception:
-                pass
-
-    return {"processed": processed, "created": created, "results": results}
 
 
 @frappe.whitelist()

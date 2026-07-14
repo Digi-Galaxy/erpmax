@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "autoname": "format:Budget-{fiscal_year}-{company}-{####}",
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": ["budget_name", "fiscal_year", "company", "column_break_4", "status", "sb_details", "budget明细", "budget_details", "sb_totals", "total_allocated", "total_actual", "variance", "column_break_15", "remarks", "sb_approvals", "approved_by", "approval_date", "sb_more", "amended_from"],
+ "fields": [
+  {"fieldname": "budget_name", "fieldtype": "Data", "label": "Budget Name", "reqd": 1},
+  {"fieldname": "fiscal_year", "fieldtype": "Link", "label": "Fiscal Year", "options": "Fiscal Year", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1, "in_standard_filter": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nSubmitted\nApproved\nRejected\nCancelled", "default": "Draft", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "sb_details", "fieldtype": "Section Break", "label": "Budget Details"},
+  {"fieldname": "budget明细", "fieldtype": "Section Break", "label": "Budget Allocation"},
+  {"fieldname": "budget_details", "fieldtype": "Table", "label": "Budget Details", "options": "Budget Detail", "reqd": 1},
+  {"fieldname": "sb_totals", "fieldtype": "Section Break", "label": "Totals"},
+  {"fieldname": "total_allocated", "fieldtype": "Currency", "label": "Total Allocated", "read_only": 1},
+  {"fieldname": "total_actual", "fieldtype": "Currency", "label": "Total Actual", "read_only": 1},
+  {"fieldname": "variance", "fieldtype": "Currency", "label": "Variance", "read_only": 1},
+  {"fieldname": "column_break_15", "fieldtype": "Column Break"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"},
+  {"fieldname": "sb_approvals", "fieldtype": "Section Break", "label": "Approvals"},
+  {"fieldname": "approved_by", "fieldtype": "Link", "label": "Approved By", "options": "User", "read_only": 1},
+  {"fieldname": "approval_date", "fieldtype": "Date", "label": "Approval Date", "read_only": 1},
+  {"fieldname": "sb_more", "fieldtype": "Section Break"},
+  {"fieldname": "amended_from", "fieldtype": "Data", "label": "Amended From", "no_copy": 1, "print_hide": 1, "read_only": 1}
+ ],
+ "is_submittable": 1,
+ "modified": "2026-07-04 00:00:00",
+ "module": "Accounting",
+ "name": "Budget",
+ "owner": "Administrator",
+ "permissions": [
+  {"amend": 1, "cancel": 1, "create": 1, "delete": 1, "email": 0, "export": 0, "print": 1, "read": 1, "report": 1, "role": "Accounts Manager", "share": 1, "submit": 1, "write": 1},
+  {"amend": 0, "cancel": 0, "create": 1, "delete": 0, "email": 0, "export": 0, "print": 1, "read": 1, "report": 1, "role": "Accounts User", "share": 0, "submit": 0, "write": 1}
+ ],
+ "search_fields": "budget_name",
+ "sort_field": "modified",
+ "title_field": "budget_name",
+ "track_changes": 1
+}

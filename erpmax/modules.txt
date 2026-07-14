@@ -16,3 +16,7 @@ Organization
 Accounts
 CRM
 E-Invoicing
+Geo Intelligence
+HRMS
+Service Management
+Utilities

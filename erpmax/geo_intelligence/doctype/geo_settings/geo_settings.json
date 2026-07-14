@@ -1,0 +1,146 @@
+{
+  "actions": [],
+  "creation": "2026-07-14 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "section_map",
+    "map_provider",
+    "column_break_settings",
+    "clamp_marker_to_boundary",
+    "fallback_to_osm",
+    "require_place_id",
+    "section_break_on_map",
+    "minimum_address_level",
+    "google_maps_api_key",
+    "column_break_jivk",
+    "default_radius_m",
+    "autocomplete_bias_radius_m",
+    "google_places_api_key",
+    "section_break_iusf",
+    "mapping_help_html",
+    "doctype_fields_html",
+    "field_palette_html",
+    "doctype_mappings"
+  ],
+  "fields": [
+    {
+      "fieldname": "section_map",
+      "fieldtype": "Section Break",
+      "label": "Map Defaults"
+    },
+    {
+      "default": "Leaflet",
+      "fieldname": "map_provider",
+      "fieldtype": "Select",
+      "label": "Map Provider",
+      "options": "Leaflet\nGoogle"
+    },
+    {
+      "fieldname": "column_break_settings",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "1",
+      "fieldname": "clamp_marker_to_boundary",
+      "fieldtype": "Check",
+      "label": "Clamp Marker to Boundary"
+    },
+    {
+      "default": "1",
+      "fieldname": "fallback_to_osm",
+      "fieldtype": "Check",
+      "label": "Fallback to OpenStreetMap"
+    },
+    {
+      "default": "0",
+      "fieldname": "require_place_id",
+      "fieldtype": "Check",
+      "label": "Require Place ID"
+    },
+        {
+      "fieldname": "section_break_on_map",
+      "fieldtype": "Section Break"
+    },
+        {
+      "default": "town",
+      "fieldname": "minimum_address_level",
+      "fieldtype": "Select",
+      "label": "Minimum Address Level",
+      "options": "zip_code\ntown\ncity\ndistrict\ndivision\nstate"
+    },
+      {
+      "fieldname": "google_maps_api_key",
+      "fieldtype": "Password",
+      "label": "Google Maps API Key",
+      "depends_on": "eval:doc.map_provider==\"Google\""
+    },
+    {
+      "fieldname": "column_break_jivk",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "20000",
+      "fieldname": "default_radius_m",
+      "fieldtype": "Int",
+      "label": "Default Radius (m)"
+    },
+    {
+      "default": "15000",
+      "fieldname": "autocomplete_bias_radius_m",
+      "fieldtype": "Int",
+      "label": "Autocomplete Bias Radius (m)"
+    },
+    {
+      "fieldname": "google_places_api_key",
+      "fieldtype": "Password",
+      "label": "Google Places API Key",
+      "depends_on": "eval:doc.map_provider==\"Google\""
+    },
+    {
+      "fieldname": "section_break_iusf",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "mapping_help_html",
+      "fieldtype": "HTML",
+      "options": "<div style=\"line-height:1.6\"><strong>Reserved geo keys</strong>: country, state, division, district, subdistrict, town, city, zip_code, address_line_1, address_line_2, latitude, longitude, place_id, map_view, region, geofence_radius_m, geofence_center_lat, geofence_center_lng.<br><strong>Tip</strong>: map your custom DocType fields to these keys here. The shared geo engine will use this mapping for that DocType.</div>",
+      "label": "Mapping Help"
+    },
+    {
+      "fieldname": "doctype_fields_html",
+      "fieldtype": "HTML",
+      "label": "Selected DocType Fields"
+    },
+    {
+      "fieldname": "field_palette_html",
+      "fieldtype": "HTML",
+      "label": "Field Palette"
+    },
+    {
+      "fieldname": "doctype_mappings",
+      "fieldtype": "Table",
+      "label": "DocType Field Mapping",
+      "options": "Geo Field Mapping"
+    }
+  ],
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-07-14 15:12:18.580704",
+  "modified_by": "Administrator",
+  "module": "Geo Intelligence",
+  "name": "Geo Settings",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "read": 1,
+      "role": "System Manager",
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

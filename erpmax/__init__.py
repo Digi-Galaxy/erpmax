@@ -1,4 +1,4 @@
-__version__ = "0.0.01"
+__version__ = "0.0.02"
 __title__ = "ERPMax"
 __description__ = "Standalone configurable ERP platform for small to enterprise businesses"
 __author__ = "ERPMax"

@@ -1,0 +1,29 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": ["from_currency", "to_currency", "exchange_rate", "column_break_4", "valid_from", "valid_upto", "company", "sb_more", "remarks"],
+ "fields": [
+  {"fieldname": "from_currency", "fieldtype": "Link", "label": "From Currency", "options": "Currency", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "to_currency", "fieldtype": "Link", "label": "To Currency", "options": "Currency", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "exchange_rate", "fieldtype": "Float", "label": "Exchange Rate", "reqd": 1, "in_list_view": 1, "precision": 6},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "valid_from", "fieldtype": "Date", "label": "Valid From", "reqd": 1, "default": "Today"},
+  {"fieldname": "valid_upto", "fieldtype": "Date", "label": "Valid Upto"},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company"},
+  {"fieldname": "sb_more", "fieldtype": "Section Break"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ],
+ "modified": "2026-07-04 00:00:00",
+ "module": "Accounting",
+ "name": "Exchange Rate",
+ "owner": "Administrator",
+ "permissions": [
+  {"amend": 0, "cancel": 0, "create": 1, "delete": 1, "email": 0, "export": 0, "print": 0, "read": 1, "report": 1, "role": "Accounts Manager", "share": 1, "submit": 0, "write": 1}
+ ],
+ "search_fields": "from_currency,to_currency",
+ "sort_field": "modified",
+ "track_changes": 1
+}

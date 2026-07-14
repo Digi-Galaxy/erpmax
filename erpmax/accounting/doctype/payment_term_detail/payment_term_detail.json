@@ -1,0 +1,24 @@
+{
+ "actions": [],
+ "creation": "2026-07-04 00:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": ["description", "due_date", "column_break_4", "percentage", "amount", "sb_more", "remarks"],
+ "fields": [
+  {"fieldname": "description", "fieldtype": "Data", "in_list_view": 1, "label": "Description", "reqd": 1},
+  {"fieldname": "due_date", "fieldtype": "Data", "label": "Due Date (Days)", "reqd": 1, "description": "Number of days after invoice date"},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "percentage", "fieldtype": "Percent", "in_list_view": 1, "label": "Percentage", "reqd": 1},
+  {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount", "read_only": 1},
+  {"fieldname": "sb_more", "fieldtype": "Section Break"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ],
+ "istable": 1,
+ "modified": "2026-07-04 00:00:00",
+ "module": "Accounting",
+ "name": "Payment Term Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified"
+}
