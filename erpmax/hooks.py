@@ -57,6 +57,10 @@ fixtures = [
         "dt": "Chart of Accounts Template",
         "filters": [["is_standard", "=", 1]]
     },
+    {
+        "dt": "Workspace",
+        "filters": [["module", "=", "Accounting"]]
+    },
 ]
 
 # Permission Query Conditions
