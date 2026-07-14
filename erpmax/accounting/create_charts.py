@@ -1,7 +1,7 @@
 import frappe, json, os
 
 TEMPLATE_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)),
-    "accounts", "onboarding", "chart_of_accounts")
+    "accounting", "onboarding", "chart_of_accounts")
 
 def get_available_templates():
     """Return list of available COA template names."""

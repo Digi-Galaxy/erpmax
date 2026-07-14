@@ -1,0 +1,33 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "field:company",
+  "creation": "2026-07-01 00:00:00",
+  "doctype": "DocType",
+  "document_type": "Setup",
+  "engine": "InnoDB",
+  "field_order": ["company", "environment", "csid", "secret", "expiry_date", "status", "notes"],
+  "fields": [
+    {"fieldname": "company", "fieldtype": "Link", "in_list_view": 1, "label": "Company", "options": "Company", "reqd": 1, "unique": 1},
+    {"fieldname": "environment", "fieldtype": "Select", "in_list_view": 1, "label": "Environment", "options": "Sandbox\nProduction", "reqd": 1, "default": "Production"},
+    {"fieldname": "csid", "fieldtype": "Data", "label": "CSID", "reqd": 1},
+    {"fieldname": "secret", "fieldtype": "Password", "label": "Secret", "reqd": 1},
+    {"fieldname": "expiry_date", "fieldtype": "Date", "label": "Expiry Date"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nExpired\nRevoked", "default": "Active"},
+    {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+  ],
+  "icon": "fa fa-id-card",
+  "links": [],
+  "modified": "2026-07-01 00:00:00",
+  "modified_by": "Administrator",
+  "module": "E-Invoicing",
+  "name": "ZATCA CSID",
+  "owner": "Administrator",
+  "permissions": [
+    {"create": 1, "delete": 1, "email": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1}
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "company",
+  "track_changes": 1
+}

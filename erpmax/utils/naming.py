@@ -103,6 +103,46 @@ TRANSACTION_CONFIG = {
         "source_field": "customer_name",
         "fallback_field": "project_name",
     },
+    "Service Contract": {
+        "prefix": "SRV",
+        "source_doctype": "Customer",
+        "link_field": "customer",
+        "display_field": "customer_name",
+        "abbr_field": "customer_abbr",
+        "include_party_abbr": True,
+    },
+    "Maintenance Schedule": {
+        "prefix": "MNT",
+        "source_doctype": "Customer",
+        "link_field": "customer",
+        "display_field": "customer_name",
+        "abbr_field": "customer_abbr",
+        "include_party_abbr": True,
+    },
+    "Maintenance Visit": {
+        "prefix": "MTV",
+        "source_doctype": "Customer",
+        "link_field": "customer",
+        "display_field": "customer_name",
+        "abbr_field": "customer_abbr",
+        "include_party_abbr": True,
+    },
+    "Rental Contract": {
+        "prefix": "REN",
+        "source_doctype": "Customer",
+        "link_field": "customer",
+        "display_field": "customer_name",
+        "abbr_field": "customer_abbr",
+        "include_party_abbr": True,
+    },
+    "Employee Contract": {
+        "prefix": "EMP",
+        "source_doctype": "Customer",
+        "link_field": "customer",
+        "display_field": "customer_name",
+        "abbr_field": "customer_abbr",
+        "include_party_abbr": True,
+    },
 }
 
 
@@ -271,3 +311,9 @@ def get_transaction_naming_series(doctype):
     if config:
         return config.get("prefix", "TXN")
     return "TXN"
+
+
+def get_naming_series_options(doctype=None):
+    if doctype:
+        return [get_transaction_naming_series(doctype)]
+    return sorted({config.get("prefix", "TXN") for config in TRANSACTION_CONFIG.values()})

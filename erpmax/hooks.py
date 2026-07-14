@@ -53,6 +53,10 @@ fixtures = [
         "dt": "Workflow",
         "filters": [["document_type", "in", ["Sales Invoice", "Purchase Invoice", "Journal Entry", "Payment Entry", "Expense Claim", "Credit Note", "Debit Note"]]]
     },
+    {
+        "dt": "Chart of Accounts Template",
+        "filters": [["is_standard", "=", 1]]
+    },
 ]
 
 # Permission Query Conditions
