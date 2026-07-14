@@ -1,0 +1,60 @@
+{
+ "charts": [],
+ "content": "[{\"id\": \"hConfiguration\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Configuration</b></span>\", \"col\": 12}}, {\"id\": \"sGeoSettings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Geo Settings\", \"col\": 3}}, {\"id\": \"sGeoFieldMapping\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Geo Field Mapping\", \"col\": 3}}]",
+ "creation": "2026-07-15 01:59:10.388294",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "globe",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Geo Intelligence",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuration",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Geo Settings",
+   "link_count": 0,
+   "link_to": "Geo Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Geo Field Mapping",
+   "link_count": 0,
+   "link_to": "Geo Field Mapping",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-07-15 01:59:10.388294",
+ "modified_by": "Administrator",
+ "module": "Geo Intelligence",
+ "name": "Geo Intelligence",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [],
+ "title": "Geo Intelligence"
+}
