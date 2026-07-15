@@ -14,7 +14,7 @@ def execute(filters=None):
 
     rows = frappe.db.sql("""SELECT customer,
               COUNT(name) AS invoice_count,
-              SUM(base_grand_total) AS total_amount,
+              SUM(grand_total) AS total_amount,
               SUM(outstanding_amount) AS total_outstanding
        FROM `tabSales Invoice`
        WHERE {cond} GROUP BY customer ORDER BY total_amount DESC""".format(cond=" AND ".join(cond)),

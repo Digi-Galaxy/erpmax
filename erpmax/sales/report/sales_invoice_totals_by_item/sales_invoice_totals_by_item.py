@@ -12,12 +12,12 @@ def execute(filters=None):
         cond.append("si.posting_date BETWEEN %(from_date)s AND %(to_date)s")
         params.update({"from_date": filters["from_date"], "to_date": filters["to_date"]})
 
-    rows = frappe.db.sql("""SELECT sii.item_code AS item,
+    rows = frappe.db.sql("""SELECT sii.item_name AS item,
               SUM(sii.qty) AS total_qty,
-              SUM(sii.base_net_amount) AS total_amount
+              SUM(sii.amount) AS total_amount
        FROM `tabSales Invoice Item` sii
        INNER JOIN `tabSales Invoice` si ON si.name = sii.parent
-       WHERE {cond} GROUP BY sii.item_code ORDER BY total_amount DESC""".format(cond=" AND ".join(cond)),
+       WHERE {cond} GROUP BY sii.item_name ORDER BY total_amount DESC""".format(cond=" AND ".join(cond)),
         params, as_dict=True)
     data = [{"item": r.item, "total_qty": r.total_qty or 0,
         "total_amount": r.total_amount or 0} for r in rows]

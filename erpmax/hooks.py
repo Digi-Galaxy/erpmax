@@ -127,7 +127,7 @@ default_roles = [
 
 # Translations
 app_include_js = [
-    "/assets/erpmax/js/erpmax.bundle.js",
+    "/assets/erpmax/js/erpmax.bundle.js?v=20260715_1",
     "/assets/erpmax/js/charts.js",
     "/assets/erpmax/js/report_engine.js",
 ]

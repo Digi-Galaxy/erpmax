@@ -13,9 +13,9 @@ def execute(filters=None):
         params.update({"from_date": filters["from_date"], "to_date": filters["to_date"]})
 
     rows = frappe.db.sql("""SELECT COUNT(name) AS invoice_count,
-              SUM(base_grand_total) AS total_amount,
-              SUM(base_total_taxes_and_charges) AS total_tax,
-              SUM(net_total) AS net_total,
+              SUM(grand_total) AS total_amount,
+              SUM(tax_total) AS total_tax,
+              SUM(total) AS net_total,
               SUM(outstanding_amount) AS total_outstanding
        FROM `tabSales Invoice`
        WHERE {cond}""".format(cond=" AND ".join(cond)),

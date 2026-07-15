@@ -13,8 +13,8 @@ def execute(filters=None):
         params.update({"from_date": filters["from_date"], "to_date": filters["to_date"]})
 
     rows = frappe.db.sql("""SELECT customer,
-              SUM(net_total) AS net_sales,
-              SUM(base_grand_total) AS grand_total,
+              SUM(total) AS net_sales,
+              SUM(grand_total) AS grand_total,
               COUNT(name) AS invoice_count
        FROM `tabSales Invoice`
        WHERE {cond} GROUP BY customer ORDER BY grand_total DESC LIMIT 50""".format(cond=" AND ".join(cond)),
